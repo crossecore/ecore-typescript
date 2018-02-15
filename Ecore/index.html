@@ -1,0 +1,1775 @@
+<!doctype html>
+<html lang="de">  
+  <head>    
+    <meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Package Ecore
+    </title>    
+    <!-- Latest compiled and minified CSS -->    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">    
+    <!-- Optional theme -->    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">    
+    <!-- Latest compiled and minified JavaScript -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/9.5.0/styles/default.min.css">
+	<style>
+
+	.panel-body > h4{
+	    color: #31708f;
+	    background-color: #d9edf7;
+	    border: 1px solid #bce8f1;
+	    padding: 10px;
+	  
+	}
+	
+	.panel-body > table{
+	  width:100%;
+	  
+	}
+	
+	.panel-body > table td{
+	  padding: 10px;
+	}
+	
+	.panel-body > table th{
+	  padding: 0 10px;
+	}
+	</style>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    
+
+    <script src="https://cdn.jsdelivr.net/highlight.js/9.5.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+      </head>  
+      <body>  
+        <div class="container">
+        <div class="jumbotron">
+          <h1>Package Ecore</h1>
+          Version: <br />
+          Date:
+          </p>
+          </div>
+          <!-- METAMODEL -->  
+          <div class="bs-docs-section">        
+            <div class="page-header">          
+              <div class="row">            
+                <div class="col-lg-12">              
+                  <h1>Meta Model</h1>            
+                </div>          
+              </div>        
+            </div>        
+            <div class="row">
+            
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><b>EClassifier</b> EAttribute</h3>
+     </div>
+<div class="panel-body">
+<h4>Description</h4>
+<p>To be defined.</p>
+<h4>Invariants</h4>
+<table>
+	<tbody>
+	<tr><td>ConsistentTransient</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	</tbody>
+</table>
+<h4>EStructuralFeatures</h4>
+<table class="">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Multiplicity</th>
+			<th>Tags</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>iD</td>
+		<td>EBoolean</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eAttributeType</td>
+		<td>EDataType</td>
+		<td>1..1</td>
+		<td>
+			<span class="label label-primary">derived</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">volatile</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><b>EClassifier</b> EAnnotation</h3>
+     </div>
+<div class="panel-body">
+<h4>Description</h4>
+<p>To be defined.</p>
+<h4>Invariants</h4>
+<table>
+	<tbody>
+	<tr><td>WellFormedSourceURI</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	</tbody>
+</table>
+<h4>EStructuralFeatures</h4>
+<table class="">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Multiplicity</th>
+			<th>Tags</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>source</td>
+		<td>EString</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>details</td>
+		<td>EStringToStringMapEntry</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">composes</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eModelElement</td>
+		<td>EModelElement</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>contents</td>
+		<td>EObject</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">composes</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>references</td>
+		<td>EObject</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><b>EClassifier</b> EClass</h3>
+     </div>
+<div class="panel-body">
+<h4>Description</h4>
+<p>To be defined.</p>
+<h4>Invariants</h4>
+<table>
+	<tbody>
+	<tr><td>InterfaceIsAbstract</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>AtMostOneID</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>UniqueFeatureNames</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>UniqueOperationSignatures</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>NoCircularSuperTypes</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>WellFormedMapEntryClass</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>ConsistentSuperTypes</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>DisjointFeatureAndOperationSignatures</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	</tbody>
+</table>
+<h4>EStructuralFeatures</h4>
+<table class="">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Multiplicity</th>
+			<th>Tags</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>abstract</td>
+		<td>EBoolean</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>interface</td>
+		<td>EBoolean</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eSuperTypes</td>
+		<td>EClass</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">unsettable</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eOperations</td>
+		<td>EOperation</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">composes</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eAllAttributes</td>
+		<td>EAttribute</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">derived</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">volatile</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eAllReferences</td>
+		<td>EReference</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">derived</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">volatile</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eReferences</td>
+		<td>EReference</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">derived</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">volatile</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eAttributes</td>
+		<td>EAttribute</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">derived</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">volatile</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eAllContainments</td>
+		<td>EReference</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">derived</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">volatile</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eAllOperations</td>
+		<td>EOperation</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">derived</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">volatile</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eAllStructuralFeatures</td>
+		<td>EStructuralFeature</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">derived</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">volatile</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eAllSuperTypes</td>
+		<td>EClass</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">derived</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">volatile</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eIDAttribute</td>
+		<td>EAttribute</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">derived</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">volatile</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eStructuralFeatures</td>
+		<td>EStructuralFeature</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">composes</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eGenericSuperTypes</td>
+		<td>EGenericType</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">unsettable</span>
+			<span class="label label-primary">composes</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eAllGenericSuperTypes</td>
+		<td>EGenericType</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">derived</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">volatile</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><b>EClassifier</b> EClassifier</h3>
+     </div>
+<div class="panel-body">
+<h4>Description</h4>
+<p>To be defined.</p>
+<h4>Invariants</h4>
+<table>
+	<tbody>
+	<tr><td>WellFormedInstanceTypeName</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>UniqueTypeParameterNames</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	</tbody>
+</table>
+<h4>EStructuralFeatures</h4>
+<table class="">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Multiplicity</th>
+			<th>Tags</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>instanceClassName</td>
+		<td>EString</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">unsettable</span>
+			<span class="label label-primary">volatile</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>instanceClass</td>
+		<td>EJavaClass</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">derived</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">volatile</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>defaultValue</td>
+		<td>EJavaObject</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">derived</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">volatile</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>instanceTypeName</td>
+		<td>EString</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">unsettable</span>
+			<span class="label label-primary">volatile</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>ePackage</td>
+		<td>EPackage</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eTypeParameters</td>
+		<td>ETypeParameter</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">composes</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><b>EClassifier</b> EDataType</h3>
+     </div>
+<div class="panel-body">
+<h4>Description</h4>
+<p>To be defined.</p>
+<h4>EStructuralFeatures</h4>
+<table class="">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Multiplicity</th>
+			<th>Tags</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>serializable</td>
+		<td>EBoolean</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><b>EClassifier</b> EEnum</h3>
+     </div>
+<div class="panel-body">
+<h4>Description</h4>
+<p>To be defined.</p>
+<h4>Invariants</h4>
+<table>
+	<tbody>
+	<tr><td>UniqueEnumeratorNames</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>UniqueEnumeratorLiterals</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	</tbody>
+</table>
+<h4>EStructuralFeatures</h4>
+<table class="">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Multiplicity</th>
+			<th>Tags</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>eLiterals</td>
+		<td>EEnumLiteral</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">composes</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><b>EClassifier</b> EEnumLiteral</h3>
+     </div>
+<div class="panel-body">
+<h4>Description</h4>
+<p>To be defined.</p>
+<h4>EStructuralFeatures</h4>
+<table class="">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Multiplicity</th>
+			<th>Tags</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>value</td>
+		<td>EInt</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>instance</td>
+		<td>EEnumerator</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>literal</td>
+		<td>EString</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eEnum</td>
+		<td>EEnum</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><b>EClassifier</b> EFactory</h3>
+     </div>
+<div class="panel-body">
+<h4>Description</h4>
+<p>To be defined.</p>
+<h4>EStructuralFeatures</h4>
+<table class="">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Multiplicity</th>
+			<th>Tags</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>ePackage</td>
+		<td>EPackage</td>
+		<td>1..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><b>EClassifier</b> EModelElement</h3>
+     </div>
+<div class="panel-body">
+<h4>Description</h4>
+<p>To be defined.</p>
+<h4>EStructuralFeatures</h4>
+<table class="">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Multiplicity</th>
+			<th>Tags</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>eAnnotations</td>
+		<td>EAnnotation</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">composes</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><b>EClassifier</b> ENamedElement</h3>
+     </div>
+<div class="panel-body">
+<h4>Description</h4>
+<p>To be defined.</p>
+<h4>Invariants</h4>
+<table>
+	<tbody>
+	<tr><td>WellFormedName</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	</tbody>
+</table>
+<h4>EStructuralFeatures</h4>
+<table class="">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Multiplicity</th>
+			<th>Tags</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>name</td>
+		<td>EString</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><b>EClassifier</b> EObject</h3>
+     </div>
+<div class="panel-body">
+<h4>Description</h4>
+<p>To be defined.</p>
+<h4>EStructuralFeatures</h4>
+<table class="">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Multiplicity</th>
+			<th>Tags</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><b>EClassifier</b> EOperation</h3>
+     </div>
+<div class="panel-body">
+<h4>Description</h4>
+<p>To be defined.</p>
+<h4>Invariants</h4>
+<table>
+	<tbody>
+	<tr><td>UniqueParameterNames</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>UniqueTypeParameterNames</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>NoRepeatingVoid</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	</tbody>
+</table>
+<h4>EStructuralFeatures</h4>
+<table class="">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Multiplicity</th>
+			<th>Tags</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>eContainingClass</td>
+		<td>EClass</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eTypeParameters</td>
+		<td>ETypeParameter</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">composes</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eParameters</td>
+		<td>EParameter</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">composes</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eExceptions</td>
+		<td>EClassifier</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">unsettable</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eGenericExceptions</td>
+		<td>EGenericType</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">unsettable</span>
+			<span class="label label-primary">composes</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><b>EClassifier</b> EPackage</h3>
+     </div>
+<div class="panel-body">
+<h4>Description</h4>
+<p>To be defined.</p>
+<h4>Invariants</h4>
+<table>
+	<tbody>
+	<tr><td>WellFormedNsURI</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>WellFormedNsPrefix</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>UniqueSubpackageNames</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>UniqueClassifierNames</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>UniqueNsURIs</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	</tbody>
+</table>
+<h4>EStructuralFeatures</h4>
+<table class="">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Multiplicity</th>
+			<th>Tags</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>nsURI</td>
+		<td>EString</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>nsPrefix</td>
+		<td>EString</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eFactoryInstance</td>
+		<td>EFactory</td>
+		<td>1..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eClassifiers</td>
+		<td>EClassifier</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">composes</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eSubpackages</td>
+		<td>EPackage</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">composes</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eSuperPackage</td>
+		<td>EPackage</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><b>EClassifier</b> EParameter</h3>
+     </div>
+<div class="panel-body">
+<h4>Description</h4>
+<p>To be defined.</p>
+<h4>EStructuralFeatures</h4>
+<table class="">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Multiplicity</th>
+			<th>Tags</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>eOperation</td>
+		<td>EOperation</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><b>EClassifier</b> EReference</h3>
+     </div>
+<div class="panel-body">
+<h4>Description</h4>
+<p>To be defined.</p>
+<h4>Invariants</h4>
+<table>
+	<tbody>
+	<tr><td>ConsistentOpposite</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>SingleContainer</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>ConsistentKeys</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>ConsistentUnique</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>ConsistentContainer</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	</tbody>
+</table>
+<h4>EStructuralFeatures</h4>
+<table class="">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Multiplicity</th>
+			<th>Tags</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>containment</td>
+		<td>EBoolean</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>container</td>
+		<td>EBoolean</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">derived</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">volatile</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>resolveProxies</td>
+		<td>EBoolean</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eOpposite</td>
+		<td>EReference</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eReferenceType</td>
+		<td>EClass</td>
+		<td>1..1</td>
+		<td>
+			<span class="label label-primary">derived</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">volatile</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eKeys</td>
+		<td>EAttribute</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><b>EClassifier</b> EStructuralFeature</h3>
+     </div>
+<div class="panel-body">
+<h4>Description</h4>
+<p>To be defined.</p>
+<h4>Invariants</h4>
+<table>
+	<tbody>
+	<tr><td>ValidDefaultValueLiteral</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	</tbody>
+</table>
+<h4>EStructuralFeatures</h4>
+<table class="">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Multiplicity</th>
+			<th>Tags</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>changeable</td>
+		<td>EBoolean</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>volatile</td>
+		<td>EBoolean</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>transient</td>
+		<td>EBoolean</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>defaultValueLiteral</td>
+		<td>EString</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>defaultValue</td>
+		<td>EJavaObject</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">derived</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">volatile</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>unsettable</td>
+		<td>EBoolean</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>derived</td>
+		<td>EBoolean</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eContainingClass</td>
+		<td>EClass</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><b>EClassifier</b> ETypedElement</h3>
+     </div>
+<div class="panel-body">
+<h4>Description</h4>
+<p>To be defined.</p>
+<h4>Invariants</h4>
+<table>
+	<tbody>
+	<tr><td>ValidLowerBound</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>ValidUpperBound</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>ConsistentBounds</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>ValidType</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	</tbody>
+</table>
+<h4>EStructuralFeatures</h4>
+<table class="">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Multiplicity</th>
+			<th>Tags</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>ordered</td>
+		<td>EBoolean</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>unique</td>
+		<td>EBoolean</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>lowerBound</td>
+		<td>EInt</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>upperBound</td>
+		<td>EInt</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>many</td>
+		<td>EBoolean</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">derived</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">volatile</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>required</td>
+		<td>EBoolean</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">derived</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">volatile</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eType</td>
+		<td>EClassifier</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">unsettable</span>
+			<span class="label label-primary">volatile</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eGenericType</td>
+		<td>EGenericType</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">unsettable</span>
+			<span class="label label-primary">volatile</span>
+			<span class="label label-primary">composes</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><b>EClassifier</b> EStringToStringMapEntry</h3>
+     </div>
+<div class="panel-body">
+<h4>Description</h4>
+<p>To be defined.</p>
+<h4>EStructuralFeatures</h4>
+<table class="">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Multiplicity</th>
+			<th>Tags</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>key</td>
+		<td>EString</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>value</td>
+		<td>EString</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><b>EClassifier</b> EGenericType</h3>
+     </div>
+<div class="panel-body">
+<h4>Description</h4>
+<p>To be defined.</p>
+<h4>Invariants</h4>
+<table>
+	<tbody>
+	<tr><td>ConsistentType</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>ConsistentBounds</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	<tr><td>ConsistentArguments</td></tr>
+	<tr><td>
+	<pre><code class="cs hljs"></code></pre>
+	</td></tr>
+	</tbody>
+</table>
+<h4>EStructuralFeatures</h4>
+<table class="">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Multiplicity</th>
+			<th>Tags</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>eUpperBound</td>
+		<td>EGenericType</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">composes</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eTypeArguments</td>
+		<td>EGenericType</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">composes</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eRawType</td>
+		<td>EClassifier</td>
+		<td>1..1</td>
+		<td>
+			<span class="label label-primary">derived</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">transient</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eLowerBound</td>
+		<td>EGenericType</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">composes</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eTypeParameter</td>
+		<td>ETypeParameter</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>eClassifier</td>
+		<td>EClassifier</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><b>EClassifier</b> ETypeParameter</h3>
+     </div>
+<div class="panel-body">
+<h4>Description</h4>
+<p>To be defined.</p>
+<h4>EStructuralFeatures</h4>
+<table class="">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Multiplicity</th>
+			<th>Tags</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>eBounds</td>
+		<td>EGenericType</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">composes</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+		</table>
+	</div>
+</div>
+
+              
+            </div>        
+          </div>
+        </div>  
+      </body>
+ </html>
