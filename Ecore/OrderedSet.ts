@@ -24,5 +24,36 @@ export class OrderedSet<T> extends AbstractCollection<T>{
 
         return result;
     }
+    
+    public collect = <T2>(lambda: (element:T)=>T2):OrderedSet<T2> => {
+
+        var result = new OrderedSet<T2>();
+        for (let element in this)
+        {
+            result.add(lambda.call(element));
+        }
+
+        return result;
+
+    }
+
+    public collect2 = <T2>(lambda: (element:T)=>T2):OrderedSet<T2> => {
+
+        var result = new OrderedSet<T2>();
+
+        for (let element in this)
+        {
+            var e:Collection<T2> = lambda.call(element);
+
+            for(var i=0;i<e.size();i++) {
+
+                var ee: T2 = e[i];
+                result.add(ee);
+            }
+        }
+
+        return result;
+
+    }    
 }
 
