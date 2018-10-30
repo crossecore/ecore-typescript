@@ -15,6 +15,7 @@ import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
 import {EStructuralFeature} from "ecore/EStructuralFeature";
 import {EReference} from "ecore/EReference";
 import {Notification} from "ecore/Notification";
+import {ENotificationImpl} from 'ecore/ENotificationImpl';
 
 export class AbstractCollection<T> extends ArrayList<T> implements EcoreEList<T>, Collection<T>
     {
@@ -43,6 +44,12 @@ export class AbstractCollection<T> extends ArrayList<T> implements EcoreEList<T>
             this.featureId = featureId!==undefined ? featureId : AbstractCollection.NO_FEATURE;
             this.oppositeFeatureId = oppositeFeatureId!==undefined ? oppositeFeatureId : AbstractCollection.NO_FEATURE;
             //this.internalCollection = new ArrayList<T>();
+
+        }
+
+        protected createNotification = (eventType:number, oldValue:any, newValue:any, index:number, wasSet:boolean):NotificationImpl => {
+
+          return new ENotificationImpl(this.owner, eventType, this.featureId, oldValue, newValue);
 
         }
 
@@ -109,8 +116,8 @@ export class AbstractCollection<T> extends ArrayList<T> implements EcoreEList<T>
                 var oldObject = element;
                 //TODO determine index if possible
                 var index = 1000;
-                //NotificationImpl notification = createNotification(NotificationImpl.REMOVE, oldObject, null, index, oldIsSet);
-                var notification:NotificationImpl = new NotificationImpl(NotificationImpl.REMOVE, oldObject, null, index, oldIsSet);
+
+                var notification:NotificationImpl = this.createNotification(NotificationImpl.REMOVE, oldObject, null, index, oldIsSet);
                 if (this.hasInverse() && oldObject != null)
                 {
                     notifications = this.inverseRemove(oldObject, notifications);
@@ -173,8 +180,8 @@ export class AbstractCollection<T> extends ArrayList<T> implements EcoreEList<T>
                 let oldIsSet:boolean = this.length > 0;// isSet();
                 //doAddUnique(index, object);
                 this.push(element);
-                //NotificationImpl notification = createNotification(Notification.ADD, null, object, index, oldIsSet);
-                let notification:NotificationImpl = new NotificationImpl(NotificationImpl.ADD, null, element, index, oldIsSet);
+
+                let notification:NotificationImpl = this.createNotification(NotificationImpl.ADD, null, element, index, oldIsSet);
                 if (notifications == null)
                 {
                     notifications = notification;
@@ -206,8 +213,8 @@ export class AbstractCollection<T> extends ArrayList<T> implements EcoreEList<T>
                     //TODO fix me:
                     var index = 1000;
                     this.removeX(element);
-                    //NotificationImpl notification = createNotification(Notification.REMOVE, oldObject, null, index, oldIsSet);
-                    var notification:NotificationImpl = new NotificationImpl(NotificationImpl.REMOVE, oldObject, null, index, oldIsSet);
+
+                    var notification:NotificationImpl = this.createNotification(NotificationImpl.REMOVE, oldObject, null, index, oldIsSet);
                     if (notifications == null)
                     {
                         notifications = notification;
@@ -376,9 +383,9 @@ export class AbstractCollection<T> extends ArrayList<T> implements EcoreEList<T>
 
             //doAddUnique(object);
             this.addX(element);
-            //NotificationImpl notification = createNotification(NotificationImpl.ADD, null, element, index, oldIsSet);
 
-            var notification:NotificationImpl = new NotificationImpl(NotificationImpl.ADD, null, element, index, oldIsSet);
+
+            var notification:NotificationImpl = this.createNotification(NotificationImpl.ADD, null, element, index, oldIsSet);
 
             if (this.hasInverse())
             {
@@ -482,8 +489,8 @@ export class AbstractCollection<T> extends ArrayList<T> implements EcoreEList<T>
          return this.indexOf(element)!==-1;
          }
          */
-
-        public includes = (element:T):boolean=>{
+        //FIXME
+        public includes___ = (element:T):boolean=>{
 
             return this.containsX(element);
         }
@@ -508,11 +515,11 @@ export class AbstractCollection<T> extends ArrayList<T> implements EcoreEList<T>
         }
 
         public isEmpty = ():boolean=>{
-            return this.isEmpty();
+            return this.length===0;
         }
 
         public notEmpty = ():boolean=>{
-            return !this.isEmpty();
+            return this.length>0;
         }
 
         public max = ():T=>{
