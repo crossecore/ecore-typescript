@@ -14,27 +14,42 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define(["require", "exports", "ecore/AbstractCollection"], function (require, exports, AbstractCollection_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var OrderedSet = (function (_super) {
-        __extends(OrderedSet, _super);
-        function OrderedSet() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.isUnique = function () {
-                return true;
-            };
-            _this.at = function (index) {
-                return _this[index];
-            };
-            _this.select = function (lambda) {
-                var result = new OrderedSet();
-                _this.filter(lambda).forEach(function (element) { result.add(element); });
-                return result;
-            };
-            return _this;
-        }
-        return OrderedSet;
-    }(AbstractCollection_1.AbstractCollection));
-    exports.OrderedSet = OrderedSet;
-});
+import { AbstractCollection } from "ecore/AbstractCollection";
+var OrderedSet = (function (_super) {
+    __extends(OrderedSet, _super);
+    function OrderedSet() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.isUnique = function () {
+            return true;
+        };
+        _this.at = function (index) {
+            return _this[index];
+        };
+        _this.select = function (lambda) {
+            var result = new OrderedSet();
+            _this.filter(lambda).forEach(function (element) { result.add(element); });
+            return result;
+        };
+        _this.collect = function (lambda) {
+            var result = new OrderedSet();
+            for (var element in _this) {
+                result.add(lambda.call(element));
+            }
+            return result;
+        };
+        _this.collect2 = function (lambda) {
+            var result = new OrderedSet();
+            for (var element in _this) {
+                var e = lambda.call(element);
+                for (var i = 0; i < e.size(); i++) {
+                    var ee = e[i];
+                    result.add(ee);
+                }
+            }
+            return result;
+        };
+        return _this;
+    }
+    return OrderedSet;
+}(AbstractCollection));
+export { OrderedSet };

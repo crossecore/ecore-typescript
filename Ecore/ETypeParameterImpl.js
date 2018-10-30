@@ -14,16 +14,13 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define(["require", "exports", "ecore/ETypeParameterBase"], function (require, exports, ETypeParameterBase_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    ///<summary>This class was generated.</summary>
-    var ETypeParameterImpl = (function (_super) {
-        __extends(ETypeParameterImpl, _super);
-        function ETypeParameterImpl() {
-            return _super !== null && _super.apply(this, arguments) || this;
-        }
-        return ETypeParameterImpl;
-    }(ETypeParameterBase_1.ETypeParameterBase));
-    exports.ETypeParameterImpl = ETypeParameterImpl;
-});
+import { ETypeParameterBase } from "ecore/ETypeParameterBase";
+///<summary>This class was generated.</summary>
+var ETypeParameterImpl = (function (_super) {
+    __extends(ETypeParameterImpl, _super);
+    function ETypeParameterImpl() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return ETypeParameterImpl;
+}(ETypeParameterBase));
+export { ETypeParameterImpl };

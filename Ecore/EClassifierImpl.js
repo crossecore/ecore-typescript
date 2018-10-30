@@ -14,45 +14,53 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define(["require", "exports", "ecore/EClassifierBase"], function (require, exports, EClassifierBase_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    ///<summary>This class was generated.</summary>
-    var EClassifierImpl = (function (_super) {
-        __extends(EClassifierImpl, _super);
-        function EClassifierImpl() {
-            //implement your generated class here
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.metaObjectID = -1;
-            _this.setClassifierID = function (id) {
-                _this.metaObjectID = id;
-            };
-            _this.setGeneratedInstanceClass = function (isGenerated) {
-                if (isGenerated) {
-                    if (_this.generatedInstanceClassName == null) {
-                        _this.generatedInstanceClassName = _this.instanceClassName;
-                        _this.instanceClassName = null;
-                    }
+import { EClassifierBase } from "ecore/EClassifierBase";
+///<summary>This class was generated.</summary>
+var EClassifierImpl = (function (_super) {
+    __extends(EClassifierImpl, _super);
+    function EClassifierImpl() {
+        //implement your generated class here
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.metaObjectID = -1;
+        _this.setClassifierID = function (id) {
+            _this.metaObjectID = id;
+        };
+        _this.setGeneratedInstanceClass = function (isGenerated) {
+            if (isGenerated) {
+                if (_this.generatedInstanceClassName == null) {
+                    _this.generatedInstanceClassName = _this.instanceClassName;
+                    _this.instanceClassName = null;
                 }
-                else if (_this.generatedInstanceClassName != null) {
-                    _this.instanceClassName = _this.generatedInstanceClassName;
-                    _this.generatedInstanceClassName = null;
-                }
-            };
-            _this.basicSetInstanceTypeName = function (newInstanceTypeName) {
-                var oldInstanceTypeName = _this.instanceTypeName;
-                _this.instanceTypeName = newInstanceTypeName;
-                /*
-                 if (eNotificationRequired())
-                 {
-                 eNotify
-                 (new ENotificationImpl(this, Notification.SET, EcorePackage.ECLASSIFIER__INSTANCE_TYPE_NAME, oldInstanceTypeName, newInstanceTypeName));
-                 }
-                 */
-            };
-            return _this;
+            }
+            else if (_this.generatedInstanceClassName != null) {
+                _this.instanceClassName = _this.generatedInstanceClassName;
+                _this.generatedInstanceClassName = null;
+            }
+        };
+        _this.basicSetInstanceTypeName = function (newInstanceTypeName) {
+            var oldInstanceTypeName = _this.instanceTypeName;
+            _this.instanceTypeName = newInstanceTypeName;
+            /*
+             if (eNotificationRequired())
+             {
+             eNotify
+             (new ENotificationImpl(this, Notification.SET, EcorePackage.ECLASSIFIER__INSTANCE_TYPE_NAME, oldInstanceTypeName, newInstanceTypeName));
+             }
+             */
+        };
+        return _this;
+    }
+    EClassifierImpl.prototype.getClassifierID = function () {
+        if (this.metaObjectID == -1) {
+            this.metaObjectID = this.computeClassifierID();
         }
-        return EClassifierImpl;
-    }(EClassifierBase_1.EClassifierBase));
-    exports.EClassifierImpl = EClassifierImpl;
-});
+        return this.metaObjectID;
+    };
+    EClassifierImpl.prototype.computeClassifierID = function () {
+        return this.ePackage != null ?
+            this.ePackage.eClassifiers.indexOf(this) :
+            -1;
+    };
+    return EClassifierImpl;
+}(EClassifierBase));
+export { EClassifierImpl };

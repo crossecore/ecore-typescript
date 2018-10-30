@@ -14,16 +14,18 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define(["require", "exports", "ecore/EAttributeBase"], function (require, exports, EAttributeBase_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    ///<summary>This class was generated.</summary>
-    var EAttributeImpl = (function (_super) {
-        __extends(EAttributeImpl, _super);
-        function EAttributeImpl() {
-            return _super !== null && _super.apply(this, arguments) || this;
-        }
-        return EAttributeImpl;
-    }(EAttributeBase_1.EAttributeBase));
-    exports.EAttributeImpl = EAttributeImpl;
-});
+import { EAttributeBase } from "ecore/EAttributeBase";
+///<summary>This class was generated.</summary>
+var EAttributeImpl = (function (_super) {
+    __extends(EAttributeImpl, _super);
+    function EAttributeImpl() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    //implement your generated class here
+    EAttributeImpl.prototype.getFeatureID = function () {
+        return this.featureID;
+    };
+    ;
+    return EAttributeImpl;
+}(EAttributeBase));
+export { EAttributeImpl };

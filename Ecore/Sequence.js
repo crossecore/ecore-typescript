@@ -8,19 +8,22 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define(["require", "exports", "ecore/AbstractCollection"], function (require, exports, AbstractCollection_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var Sequence = (function (_super) {
-        __extends(Sequence, _super);
-        function Sequence() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.isUnique = function () {
-                return false;
-            };
-            return _this;
-        }
-        return Sequence;
-    }(AbstractCollection_1.AbstractCollection));
-    exports.Sequence = Sequence;
-});
+/* CrossEcore is a cross-platform modeling framework that generates C#, TypeScript,
+ * JavaScript, Swift code from Ecore models with embedded OCL (http://www.crossecore.org/).
+ * The original Eclipse Modeling Framework is available at https://www.eclipse.org/modeling/emf/.
+ *
+ * contributor: Simon Schwichtenberg
+ */
+import { AbstractCollection } from "ecore/AbstractCollection";
+var Sequence = (function (_super) {
+    __extends(Sequence, _super);
+    function Sequence() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.isUnique = function () {
+            return false;
+        };
+        return _this;
+    }
+    return Sequence;
+}(AbstractCollection));
+export { Sequence };

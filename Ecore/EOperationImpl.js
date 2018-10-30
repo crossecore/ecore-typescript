@@ -14,21 +14,18 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define(["require", "exports", "ecore/EOperationBase"], function (require, exports, EOperationBase_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    ///<summary>This class was generated.</summary>
-    var EOperationImpl = (function (_super) {
-        __extends(EOperationImpl, _super);
-        function EOperationImpl() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.operationID = -1;
-            _this.setOperationID = function (id) {
-                _this.operationID = id;
-            };
-            return _this;
-        }
-        return EOperationImpl;
-    }(EOperationBase_1.EOperationBase));
-    exports.EOperationImpl = EOperationImpl;
-});
+import { EOperationBase } from "ecore/EOperationBase";
+///<summary>This class was generated.</summary>
+var EOperationImpl = (function (_super) {
+    __extends(EOperationImpl, _super);
+    function EOperationImpl() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.operationID = -1;
+        _this.setOperationID = function (id) {
+            _this.operationID = id;
+        };
+        return _this;
+    }
+    return EOperationImpl;
+}(EOperationBase));
+export { EOperationImpl };

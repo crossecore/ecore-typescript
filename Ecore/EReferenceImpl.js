@@ -14,16 +14,17 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define(["require", "exports", "ecore/EReferenceBase"], function (require, exports, EReferenceBase_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    ///<summary>This class was generated.</summary>
-    var EReferenceImpl = (function (_super) {
-        __extends(EReferenceImpl, _super);
-        function EReferenceImpl() {
-            return _super !== null && _super.apply(this, arguments) || this;
-        }
-        return EReferenceImpl;
-    }(EReferenceBase_1.EReferenceBase));
-    exports.EReferenceImpl = EReferenceImpl;
-});
+import { EReferenceBase } from "ecore/EReferenceBase";
+///<summary>This class was generated.</summary>
+var EReferenceImpl = (function (_super) {
+    __extends(EReferenceImpl, _super);
+    function EReferenceImpl() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    EReferenceImpl.prototype.getFeatureID = function () {
+        return this.featureID;
+    };
+    ;
+    return EReferenceImpl;
+}(EReferenceBase));
+export { EReferenceImpl };

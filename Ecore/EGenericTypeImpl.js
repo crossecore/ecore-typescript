@@ -14,16 +14,13 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define(["require", "exports", "ecore/EGenericTypeBase"], function (require, exports, EGenericTypeBase_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    ///<summary>This class was generated.</summary>
-    var EGenericTypeImpl = (function (_super) {
-        __extends(EGenericTypeImpl, _super);
-        function EGenericTypeImpl() {
-            return _super !== null && _super.apply(this, arguments) || this;
-        }
-        return EGenericTypeImpl;
-    }(EGenericTypeBase_1.EGenericTypeBase));
-    exports.EGenericTypeImpl = EGenericTypeImpl;
-});
+import { EGenericTypeBase } from "ecore/EGenericTypeBase";
+///<summary>This class was generated.</summary>
+var EGenericTypeImpl = (function (_super) {
+    __extends(EGenericTypeImpl, _super);
+    function EGenericTypeImpl() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return EGenericTypeImpl;
+}(EGenericTypeBase));
+export { EGenericTypeImpl };

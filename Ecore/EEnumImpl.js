@@ -14,16 +14,13 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define(["require", "exports", "ecore/EEnumBase"], function (require, exports, EEnumBase_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    ///<summary>This class was generated.</summary>
-    var EEnumImpl = (function (_super) {
-        __extends(EEnumImpl, _super);
-        function EEnumImpl() {
-            return _super !== null && _super.apply(this, arguments) || this;
-        }
-        return EEnumImpl;
-    }(EEnumBase_1.EEnumBase));
-    exports.EEnumImpl = EEnumImpl;
-});
+import { EEnumBase } from "ecore/EEnumBase";
+///<summary>This class was generated.</summary>
+var EEnumImpl = (function (_super) {
+    __extends(EEnumImpl, _super);
+    function EEnumImpl() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return EEnumImpl;
+}(EEnumBase));
+export { EEnumImpl };

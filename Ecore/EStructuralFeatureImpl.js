@@ -14,28 +14,25 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define(["require", "exports", "ecore/EStructuralFeatureBase"], function (require, exports, EStructuralFeatureBase_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    ///<summary>This class was generated.</summary>
-    var EStructuralFeatureImpl = (function (_super) {
-        __extends(EStructuralFeatureImpl, _super);
-        function EStructuralFeatureImpl() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.featureID = -1;
-            _this.setContainerClass = function (f) {
-                _this.containerClass_ = f;
-            };
-            return _this;
-        }
-        EStructuralFeatureImpl.prototype.setFeatureID = function (id) {
-            this.featureID = id;
+import { EStructuralFeatureBase } from "ecore/EStructuralFeatureBase";
+///<summary>This class was generated.</summary>
+var EStructuralFeatureImpl = (function (_super) {
+    __extends(EStructuralFeatureImpl, _super);
+    function EStructuralFeatureImpl() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.featureID = -1;
+        _this.setContainerClass = function (f) {
+            _this.containerClass_ = f;
         };
-        EStructuralFeatureImpl.prototype.getFeatureID = function () {
-            return this.featureID;
-        };
-        ;
-        return EStructuralFeatureImpl;
-    }(EStructuralFeatureBase_1.EStructuralFeatureBase));
-    exports.EStructuralFeatureImpl = EStructuralFeatureImpl;
-});
+        return _this;
+    }
+    EStructuralFeatureImpl.prototype.setFeatureID = function (id) {
+        this.featureID = id;
+    };
+    EStructuralFeatureImpl.prototype.getFeatureID = function () {
+        return this.featureID;
+    };
+    ;
+    return EStructuralFeatureImpl;
+}(EStructuralFeatureBase));
+export { EStructuralFeatureImpl };

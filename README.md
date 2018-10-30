@@ -25,6 +25,13 @@ For web applications, you can use the Asynchronous Module Format (AMD).
 If you are using AMD, you need a module loader like requireJs or systemJs.
 The module loader lazily loads modules and their dependencies on demand and automatically.
 
+# Build TypeScript
+Install tsc globally...
+
+```bash
+tsc -p Ecore
+```
+
 ## Browser Tutorial
 
 Let's say you want to generate TypeScript from MyPackage.ecore.

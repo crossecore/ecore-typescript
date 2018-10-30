@@ -14,80 +14,114 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define(["require", "exports", "ecore/EClassBase", "ecore/OrderedSet", "ecore/EAttributeBase", "ecore/EReferenceBase"], function (require, exports, EClassBase_1, OrderedSet_1, EAttributeBase_1, EReferenceBase_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    ///<summary>This class was generated.</summary>
-    var EClassImpl = (function (_super) {
-        __extends(EClassImpl, _super);
-        function EClassImpl() {
-            return _super !== null && _super.apply(this, arguments) || this;
-        }
-        Object.defineProperty(EClassImpl.prototype, "eAttributes", {
-            get: function () {
-                //TODO use ocl select/collect
-                var result = new OrderedSet_1.OrderedSet();
-                this.eStructuralFeatures.forEach(function (f) {
-                    if (f instanceof EAttributeBase_1.EAttributeBase) {
-                        result.add(f);
-                    }
-                });
-                return result;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        Object.defineProperty(EClassImpl.prototype, "eReferences", {
-            get: function () {
-                //TODO use ocl select/collect
-                var result = new OrderedSet_1.OrderedSet();
-                this.eStructuralFeatures.forEach(function (f) {
-                    if (f instanceof EReferenceBase_1.EReferenceBase) {
-                        result.add(f);
-                    }
-                });
-                return result;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        Object.defineProperty(EClassImpl.prototype, "eAllSuperTypes", {
-            get: function () {
-                var result = new OrderedSet_1.OrderedSet();
-                var queue = new Array();
-                this.eSuperTypes.forEach(function (parent) {
+import { EClassBase } from "ecore/EClassBase";
+import { OrderedSet } from "ecore/OrderedSet";
+import { EAttributeBase } from "ecore/EAttributeBase";
+import { EReferenceBase } from "ecore/EReferenceBase";
+///<summary>This class was generated.</summary>
+var EClassImpl = (function (_super) {
+    __extends(EClassImpl, _super);
+    function EClassImpl() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(EClassImpl.prototype, "eAttributes", {
+        get: function () {
+            //TODO use ocl select/collect
+            var result = new OrderedSet();
+            this.eStructuralFeatures.forEach(function (f) {
+                if (f instanceof EAttributeBase) {
+                    result.add(f);
+                }
+            });
+            return result;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(EClassImpl.prototype, "eReferences", {
+        get: function () {
+            //TODO use ocl select/collect
+            var result = new OrderedSet();
+            this.eStructuralFeatures.forEach(function (f) {
+                if (f instanceof EReferenceBase) {
+                    result.add(f);
+                }
+            });
+            return result;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(EClassImpl.prototype, "eAllSuperTypes", {
+        get: function () {
+            var result = new OrderedSet();
+            var queue = new Array();
+            this.eSuperTypes.forEach(function (parent) {
+                queue.push(parent);
+                result.add(parent);
+            });
+            while (queue.length > 0) {
+                var next = queue.shift();
+                next.eSuperTypes.forEach(function (parent) {
                     queue.push(parent);
                     result.add(parent);
                 });
-                while (queue.length > 0) {
-                    var next = queue.shift();
-                    next.eSuperTypes.forEach(function (parent) {
-                        queue.push(parent);
-                        result.add(parent);
-                    });
-                }
-                return result;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        Object.defineProperty(EClassImpl.prototype, "eAllAttributes", {
-            get: function () {
-                var result = new OrderedSet_1.OrderedSet();
-                this.eAttributes.forEach(function (a) {
+            }
+            return result;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(EClassImpl.prototype, "eAllAttributes", {
+        get: function () {
+            var result = new OrderedSet();
+            this.eAttributes.forEach(function (a) {
+                result.add(a);
+            });
+            this.eAllSuperTypes.forEach(function (t) {
+                t.eAttributes.forEach(function (a) {
                     result.add(a);
                 });
-                this.eAllSuperTypes.forEach(function (t) {
-                    t.eAttributes.forEach(function (a) {
-                        result.add(a);
-                    });
+            });
+            return result;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(EClassImpl.prototype, "eAllReferences", {
+        get: function () {
+            var result = new OrderedSet();
+            this.eReferences.forEach(function (a) {
+                result.add(a);
+            });
+            this.eAllSuperTypes.forEach(function (t) {
+                t.eReferences.forEach(function (a) {
+                    result.add(a);
                 });
-                return result;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        return EClassImpl;
-    }(EClassBase_1.EClassBase));
-    exports.EClassImpl = EClassImpl;
-});
+            });
+            return result;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(EClassImpl.prototype, "eAllStructuralFeatures", {
+        get: function () {
+            var result = new OrderedSet();
+            var eclassifiers = this.eAllSuperTypes;
+            eclassifiers.add(this);
+            for (var _i = 0, eclassifiers_1 = eclassifiers; _i < eclassifiers_1.length; _i++) {
+                var eclassifier = eclassifiers_1[_i];
+                for (var _a = 0, _b = eclassifier.eStructuralFeatures; _a < _b.length; _a++) {
+                    var feature = _b[_a];
+                    result.add(feature);
+                }
+            }
+            //return this.eAllSuperTypes.collect2(e => e.eStructuralFeatures);
+            return result;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return EClassImpl;
+}(EClassBase));
+export { EClassImpl };

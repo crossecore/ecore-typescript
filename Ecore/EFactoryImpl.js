@@ -14,16 +14,13 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define(["require", "exports", "ecore/EFactoryBase"], function (require, exports, EFactoryBase_1) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    ///<summary>This class was generated.</summary>
-    var EFactoryImpl = (function (_super) {
-        __extends(EFactoryImpl, _super);
-        function EFactoryImpl() {
-            return _super !== null && _super.apply(this, arguments) || this;
-        }
-        return EFactoryImpl;
-    }(EFactoryBase_1.EFactoryBase));
-    exports.EFactoryImpl = EFactoryImpl;
-});
+import { EFactoryBase } from "ecore/EFactoryBase";
+///<summary>This class was generated.</summary>
+var EFactoryImpl = (function (_super) {
+    __extends(EFactoryImpl, _super);
+    function EFactoryImpl() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return EFactoryImpl;
+}(EFactoryBase));
+export { EFactoryImpl };
