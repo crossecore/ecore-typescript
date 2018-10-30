@@ -12,7 +12,7 @@ export interface Collection<T>
     equals(c:Collection<T>):boolean;
     notEquals(c:Collection<T>):boolean;
     size():number;
-    includes(element:T):boolean;
+    //includes(element:T):boolean;
     excludes(element:T):boolean;
     count(element:T):number;
     includesAll(c:Collection<T>):boolean;
