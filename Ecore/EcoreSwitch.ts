@@ -4,7 +4,29 @@
  *
  * contributor: Simon Schwichtenberg
  */
-
+import {EFactory} from "ecore/EFactory";
+import {EModelElement} from "ecore/EModelElement";
+import {EAttribute} from "ecore/EAttribute";
+import {EAnnotation} from "ecore/EAnnotation";
+import {EPackage} from "ecore/EPackage";
+import {EDataType} from "ecore/EDataType";
+import {ETypeParameter} from "ecore/ETypeParameter";
+import {EEnum} from "ecore/EEnum";
+import {EStringToStringMapEntry} from "ecore/EStringToStringMapEntry";
+import {EReference} from "ecore/EReference";
+import {EGenericType} from "ecore/EGenericType";
+import {EClassifier} from "ecore/EClassifier";
+import {EEnumLiteral} from "ecore/EEnumLiteral";
+import {ETypedElement} from "ecore/ETypedElement";
+import {EStructuralFeature} from "ecore/EStructuralFeature";
+import {EParameter} from "ecore/EParameter";
+import {EcorePackage} from "ecore/EcorePackage";
+import {EOperation} from "ecore/EOperation";
+import {EObject} from "ecore/EObject";
+import {ENamedElement} from "ecore/ENamedElement";
+import {EClass} from "ecore/EClass";
+import {Switch} from "ecore/Switch";
+import {EcorePackageImpl} from "ecore/EcorePackageImpl";
 export class EcoreSwitch<T> extends Switch<T> {
 	protected static modelPackage:EcorePackage;
 	
@@ -248,26 +270,4 @@ export class EcoreSwitch<T> extends Switch<T> {
 	}
 	
 }
-import {EFactory} from "ecore/EFactory";
-import {EModelElement} from "ecore/EModelElement";
-import {EAttribute} from "ecore/EAttribute";
-import {EAnnotation} from "ecore/EAnnotation";
-import {EPackage} from "ecore/EPackage";
-import {EDataType} from "ecore/EDataType";
-import {ETypeParameter} from "ecore/ETypeParameter";
-import {EEnum} from "ecore/EEnum";
-import {EStringToStringMapEntry} from "ecore/EStringToStringMapEntry";
-import {EReference} from "ecore/EReference";
-import {EGenericType} from "ecore/EGenericType";
-import {EClassifier} from "ecore/EClassifier";
-import {EEnumLiteral} from "ecore/EEnumLiteral";
-import {ETypedElement} from "ecore/ETypedElement";
-import {EStructuralFeature} from "ecore/EStructuralFeature";
-import {EParameter} from "ecore/EParameter";
-import {EcorePackage} from "ecore/EcorePackage";
-import {EOperation} from "ecore/EOperation";
-import {EObject} from "ecore/EObject";
-import {ENamedElement} from "ecore/ENamedElement";
-import {EClass} from "ecore/EClass";
-import {Switch} from "ecore/Switch";
-import {EcorePackageImpl} from "ecore/EcorePackageImpl";
+

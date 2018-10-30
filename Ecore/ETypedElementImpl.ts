@@ -13,7 +13,9 @@ import {ETypedElementBase} from "ecore/ETypedElementBase";
 	extends ETypedElementBase
 	
 	{
-		//implement your generated class here
+    get many():boolean{
+      return this.upperBound == -1 || this.upperBound >1;
+    }
 	}
 	
 

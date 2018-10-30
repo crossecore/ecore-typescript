@@ -6,7 +6,8 @@
  */
 
 ///<summary>This class was generated.</summary>
-
+import {OrderedSet} from "ecore/OrderedSet";
+import {EClassifier} from "ecore/EClassifier";
 export interface EDataType
 extends EClassifier
 
@@ -17,5 +18,4 @@ extends EClassifier
 
 }
 
-import {OrderedSet} from "ecore/OrderedSet";
-import {EClassifier} from "ecore/EClassifier";
+

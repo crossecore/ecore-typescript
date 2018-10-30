@@ -12,6 +12,7 @@ import {EAttributeBase} from "ecore/EAttributeBase";
 import {EReferenceBase} from "ecore/EReferenceBase";
 import {EReference} from "ecore/EReference";
 import {EClass} from "ecore/EClass";
+import {EStructuralFeature} from './EStructuralFeature';
 
 ///<summary>This class was generated.</summary>
 
@@ -92,6 +93,44 @@ import {EClass} from "ecore/EClass";
 
 			return result;
 		}
+
+    get eAllReferences():OrderedSet<EReference>{
+
+      var result = new OrderedSet<EReference>();
+      this.eReferences.forEach((a)=>{
+        result.add(a);
+      });
+
+      this.eAllSuperTypes.forEach((t)=>{
+
+        t.eReferences.forEach((a)=>{
+          result.add(a);
+        })
+      });
+
+      return result;
+    }
+
+    get eAllStructuralFeatures():OrderedSet<EStructuralFeature>{
+
+		  let result = new OrderedSet<EStructuralFeature>();
+
+		  let eclassifiers = this.eAllSuperTypes;
+		  eclassifiers.add(this);
+
+		  for(let eclassifier of eclassifiers){
+
+		    for(let feature of eclassifier.eStructuralFeatures){
+          result.add(feature);
+        }
+
+      }
+
+      //return this.eAllSuperTypes.collect2(e => e.eStructuralFeatures);
+
+      return result;
+
+    }
 	}
 	
 

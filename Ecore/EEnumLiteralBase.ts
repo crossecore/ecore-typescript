@@ -4,7 +4,19 @@
  *
  * contributor: Simon Schwichtenberg
  */
-
+import {EAnnotation} from "ecore/EAnnotation";
+import {EEnum} from "ecore/EEnum";
+import {EEnumLiteral} from "ecore/EEnumLiteral";
+import {InternalEObject} from "ecore/InternalEObject";
+import {ENamedElementImpl} from "ecore/ENamedElementImpl";
+import {ENotificationImpl} from "ecore/ENotificationImpl";
+import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
+import {OrderedSet} from "ecore/OrderedSet";
+import {NotificationChain} from "ecore/NotificationChain";
+import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
+import {Enumerator} from "ecore/Enumerator";
+import {EClass} from "ecore/EClass";
+import {NotificationImpl} from "ecore/NotificationImpl";
 ///<summary>This class was generated.</summary>
 export class EEnumLiteralBase
 extends ENamedElementImpl
@@ -100,16 +112,4 @@ implements EEnumLiteral
 	//public eGetFromEEnumLiteral = this.eGet;
 }
 
-import {EAnnotation} from "ecore/EAnnotation";
-import {EEnum} from "ecore/EEnum";
-import {EEnumLiteral} from "ecore/EEnumLiteral";
-import {InternalEObject} from "ecore/InternalEObject";
-import {ENamedElementImpl} from "ecore/ENamedElementImpl";
-import {ENotificationImpl} from "ecore/ENotificationImpl";
-import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
-import {OrderedSet} from "ecore/OrderedSet";
-import {NotificationChain} from "ecore/NotificationChain";
-import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
-import {Enumerator} from "ecore/Enumerator";
-import {EClass} from "ecore/EClass";
-import {NotificationImpl} from "ecore/NotificationImpl";
+

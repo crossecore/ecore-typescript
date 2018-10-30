@@ -4,7 +4,21 @@
  *
  * contributor: Simon Schwichtenberg
  */
-
+import {EAnnotation} from "ecore/EAnnotation";
+import {ETypeParameter} from "ecore/ETypeParameter";
+import {EGenericType} from "ecore/EGenericType";
+import {EClassifier} from "ecore/EClassifier";
+import {ETypedElementImpl} from "ecore/ETypedElementImpl";
+import {InternalEObject} from "ecore/InternalEObject";
+import {EParameter} from "ecore/EParameter";
+import {EOperation} from "ecore/EOperation";
+import {ENotificationImpl} from "ecore/ENotificationImpl";
+import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
+import {OrderedSet} from "ecore/OrderedSet";
+import {NotificationChain} from "ecore/NotificationChain";
+import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
+import {EClass} from "ecore/EClass";
+import {NotificationImpl} from "ecore/NotificationImpl";
 ///<summary>This class was generated.</summary>
 export class EOperationBase
 extends ETypedElementImpl
@@ -155,18 +169,4 @@ implements EOperation
 	//public eGetFromEOperation = this.eGet;
 }
 
-import {EAnnotation} from "ecore/EAnnotation";
-import {ETypeParameter} from "ecore/ETypeParameter";
-import {EGenericType} from "ecore/EGenericType";
-import {EClassifier} from "ecore/EClassifier";
-import {ETypedElementImpl} from "ecore/ETypedElementImpl";
-import {InternalEObject} from "ecore/InternalEObject";
-import {EParameter} from "ecore/EParameter";
-import {EOperation} from "ecore/EOperation";
-import {ENotificationImpl} from "ecore/ENotificationImpl";
-import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
-import {OrderedSet} from "ecore/OrderedSet";
-import {NotificationChain} from "ecore/NotificationChain";
-import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
-import {EClass} from "ecore/EClass";
-import {NotificationImpl} from "ecore/NotificationImpl";
+

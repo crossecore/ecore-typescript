@@ -15,6 +15,10 @@ import {EAttributeBase} from "ecore/EAttributeBase";
 	
 	{
 		//implement your generated class here
+
+    public getFeatureID(): number {
+      return this.featureID;
+    };
 	}
 	
 

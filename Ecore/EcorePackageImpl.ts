@@ -4,7 +4,15 @@
  *
  * contributor: Simon Schwichtenberg
  */
-
+import {EFactory} from "ecore/EFactory";
+import {EcorePackage} from "ecore/EcorePackage";
+import {EAttribute} from "ecore/EAttribute";
+import {EOperation} from "ecore/EOperation";
+import {EPackageImpl} from "ecore/EPackageImpl";
+import {EcoreFactoryImpl} from "ecore/EcoreFactoryImpl";
+import {EDataType} from "ecore/EDataType";
+import {EReference} from "ecore/EReference";
+import {EClass} from "ecore/EClass";
 export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 		public static eNAME:string = "ecore";
 		
@@ -2921,12 +2929,4 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 
  
 }
-import {EFactory} from "ecore/EFactory";
-import {EcorePackage} from "ecore/EcorePackage";
-import {EAttribute} from "ecore/EAttribute";
-import {EOperation} from "ecore/EOperation";
-import {EPackageImpl} from "ecore/EPackageImpl";
-import {EcoreFactoryImpl} from "ecore/EcoreFactoryImpl";
-import {EDataType} from "ecore/EDataType";
-import {EReference} from "ecore/EReference";
-import {EClass} from "ecore/EClass";
+

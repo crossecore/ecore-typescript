@@ -4,7 +4,20 @@
  *
  * contributor: Simon Schwichtenberg
  */
-
+import {EFactory} from "ecore/EFactory";
+import {EAnnotation} from "ecore/EAnnotation";
+import {EPackage} from "ecore/EPackage";
+import {EDataType} from "ecore/EDataType";
+import {InternalEObject} from "ecore/InternalEObject";
+import {ENotificationImpl} from "ecore/ENotificationImpl";
+import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
+import {OrderedSet} from "ecore/OrderedSet";
+import {EObject} from "ecore/EObject";
+import {EModelElementImpl} from "ecore/EModelElementImpl";
+import {NotificationChain} from "ecore/NotificationChain";
+import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
+import {EClass} from "ecore/EClass";
+import {NotificationImpl} from "ecore/NotificationImpl";
 ///<summary>This class was generated.</summary>
 export class EFactoryBase
 extends EModelElementImpl
@@ -114,17 +127,4 @@ implements EFactory
 	//public eGetFromEFactory = this.eGet;
 }
 
-import {EFactory} from "ecore/EFactory";
-import {EAnnotation} from "ecore/EAnnotation";
-import {EPackage} from "ecore/EPackage";
-import {EDataType} from "ecore/EDataType";
-import {InternalEObject} from "ecore/InternalEObject";
-import {ENotificationImpl} from "ecore/ENotificationImpl";
-import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
-import {OrderedSet} from "ecore/OrderedSet";
-import {EObject} from "ecore/EObject";
-import {EModelElementImpl} from "ecore/EModelElementImpl";
-import {NotificationChain} from "ecore/NotificationChain";
-import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
-import {EClass} from "ecore/EClass";
-import {NotificationImpl} from "ecore/NotificationImpl";
+

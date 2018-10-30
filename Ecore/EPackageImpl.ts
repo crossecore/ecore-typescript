@@ -84,7 +84,18 @@ import {EClassImpl} from "ecore/EClassImpl";
 		 */
 
 
+    public getEClassifier(name:string): EClassifier {
+      for (let eclassifier of this.eClassifiers)
+      {
 
+        if (eclassifier.name===name)
+        {
+          return eclassifier;
+        }
+      }
+
+      return null;
+    };
 
 
 		protected createEClass = (id:number):EClass =>
@@ -549,35 +560,35 @@ import {EClassImpl} from "ecore/EClassImpl";
 				return r;
 			}
 
-		protected addEOperation_1 = (owner:EClass, type:EClassifier, name:String):EOperation =>{
+		protected addEOperation_1 = (owner:EClass, type:EClassifier, name:string):EOperation =>{
 			var o:EOperation = this.ecoreFactory.createEOperation();
 			this.initEOperation_1(o, type, name);
 			owner.eOperations.add(o);
 			return o;
 		}
 
-		protected addEOperation_2 = (owner:EClass, type:EClassifier, name:String, lowerBound:number, upperBound:number):EOperation =>{
+		protected addEOperation_2 = (owner:EClass, type:EClassifier, name:string, lowerBound:number, upperBound:number):EOperation =>{
 			var o:EOperation = this.ecoreFactory.createEOperation();
 			this.initEOperation_2(o, type, name, lowerBound, upperBound);
 			owner.eOperations.add(o);
 			return o;
 		}
 
-		protected addEOperation_3 = (owner:EClass, type:EClassifier, name:String, lowerBound:number, upperBound:number, isUnique:boolean, isOrdered:boolean):EOperation =>{
+		protected addEOperation_3 = (owner:EClass, type:EClassifier, name:string, lowerBound:number, upperBound:number, isUnique:boolean, isOrdered:boolean):EOperation =>{
 			var o:EOperation = this.ecoreFactory.createEOperation();
 			this.initEOperation_3(o, type, name, lowerBound, upperBound, isUnique, isOrdered);
 			owner.eOperations.add(o);
 			return o;
 		}
 
-		protected initEOperation_1 = (eOperation:EOperation, type:EClassifier, name:String):EOperation =>{
+		protected initEOperation_1 = (eOperation:EOperation, type:EClassifier, name:string):EOperation =>{
 
 			eOperation.eType = type;
 			eOperation.name = name;
 			return eOperation;
 		}
 
-		protected initEOperation_2 = (eOperation:EOperation, type:EClassifier, name:String, lowerBound:number, upperBound:number):EOperation =>{
+		protected initEOperation_2 = (eOperation:EOperation, type:EClassifier, name:string, lowerBound:number, upperBound:number):EOperation =>{
 
 			this.initEOperation_1(eOperation, type, name);
 			eOperation.lowerBound = lowerBound;
@@ -585,7 +596,7 @@ import {EClassImpl} from "ecore/EClassImpl";
 			return eOperation;
 		}
 
-		protected initEOperation_3 = (eOperation:EOperation, type:EClassifier, name:String, lowerBound:number, upperBound:number, isUnique:boolean, isOrdered:boolean):EOperation =>{
+		protected initEOperation_3 = (eOperation:EOperation, type:EClassifier, name:string, lowerBound:number, upperBound:number, isUnique:boolean, isOrdered:boolean):EOperation =>{
 
 			this.initEOperation_2(eOperation, type, name, lowerBound, upperBound)
 			eOperation.unique = isUnique;

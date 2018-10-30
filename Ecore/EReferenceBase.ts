@@ -4,7 +4,18 @@
  *
  * contributor: Simon Schwichtenberg
  */
-
+import {EAttribute} from "ecore/EAttribute";
+import {EAnnotation} from "ecore/EAnnotation";
+import {EReference} from "ecore/EReference";
+import {InternalEObject} from "ecore/InternalEObject";
+import {ENotificationImpl} from "ecore/ENotificationImpl";
+import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
+import {OrderedSet} from "ecore/OrderedSet";
+import {NotificationChain} from "ecore/NotificationChain";
+import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
+import {EStructuralFeatureImpl} from "ecore/EStructuralFeatureImpl";
+import {EClass} from "ecore/EClass";
+import {NotificationImpl} from "ecore/NotificationImpl";
 ///<summary>This class was generated.</summary>
 export class EReferenceBase
 extends EStructuralFeatureImpl
@@ -153,15 +164,4 @@ implements EReference
 	//public eGetFromEReference = this.eGet;
 }
 
-import {EAttribute} from "ecore/EAttribute";
-import {EAnnotation} from "ecore/EAnnotation";
-import {EReference} from "ecore/EReference";
-import {InternalEObject} from "ecore/InternalEObject";
-import {ENotificationImpl} from "ecore/ENotificationImpl";
-import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
-import {OrderedSet} from "ecore/OrderedSet";
-import {NotificationChain} from "ecore/NotificationChain";
-import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
-import {EStructuralFeatureImpl} from "ecore/EStructuralFeatureImpl";
-import {EClass} from "ecore/EClass";
-import {NotificationImpl} from "ecore/NotificationImpl";
+

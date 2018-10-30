@@ -4,13 +4,27 @@
  *
  * contributor: Simon Schwichtenberg
  */
-
+import {TreeIterator} from "ecore/TreeIterator";
+import {EReference} from "ecore/EReference";
+import {EStructuralFeature} from "ecore/EStructuralFeature";
+import {InternalEObject} from "ecore/InternalEObject";
+import {EOperation} from "ecore/EOperation";
+import {ENotificationImpl} from "ecore/ENotificationImpl";
+import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
+import {EObject} from "ecore/EObject";
+import {List} from "ecore/List";
+import {NotificationChain} from "ecore/NotificationChain";
+import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
+import {Resource} from "ecore/Resource";
+import {EClass} from "ecore/EClass";
+import {NotificationImpl} from "ecore/NotificationImpl";
 ///<summary>This class was generated.</summary>
 export class EObjectBase
 extends BasicEObjectImpl
 implements EObject
 
 {
+
 
 	
 	public eIsSet(feature:EStructuralFeature): boolean {
@@ -97,31 +111,14 @@ implements EObject
 		return null;
 	};
 
-	protected eStaticClass():EClass{
-		//return EcorePackageLiterals.EOBJECT;
-		return null;
-	}
 
 
 
-	public eGet(featureID:number, resolve:boolean, coreType:boolean):any{
-		//return this.eGetFromBasicEObjectImpl(featureID, resolve, coreType);
-		return super.eGet(featureID, resolve, coreType);
-	}
+
+
+
+
 	//public eGetFromEObject = this.eGet;
 }
 
-import {TreeIterator} from "ecore/TreeIterator";
-import {EReference} from "ecore/EReference";
-import {EStructuralFeature} from "ecore/EStructuralFeature";
-import {InternalEObject} from "ecore/InternalEObject";
-import {EOperation} from "ecore/EOperation";
-import {ENotificationImpl} from "ecore/ENotificationImpl";
-import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
-import {EObject} from "ecore/EObject";
-import {List} from "ecore/List";
-import {NotificationChain} from "ecore/NotificationChain";
-import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
-import {Resource} from "ecore/Resource";
-import {EClass} from "ecore/EClass";
-import {NotificationImpl} from "ecore/NotificationImpl";
+

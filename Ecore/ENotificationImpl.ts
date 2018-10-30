@@ -40,6 +40,13 @@ export class ENotificationImpl extends NotificationImpl
             }
             return this.feature;
         }
+
+
+        public getNotifier():any
+        {
+          return this.notifier;
+
+        }
     }
 
 

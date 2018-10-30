@@ -5,7 +5,9 @@
  * contributor: Simon Schwichtenberg
  */
 ///<summary>This class was generated.</summary>
-
+import {OrderedSet} from "ecore/OrderedSet";
+import {ETypedElement} from "ecore/ETypedElement";
+import {EClass} from "ecore/EClass";
 export interface EStructuralFeature
 extends ETypedElement
 
@@ -27,6 +29,4 @@ extends ETypedElement
 
 }
 
-import {OrderedSet} from "ecore/OrderedSet";
-import {ETypedElement} from "ecore/ETypedElement";
-import {EClass} from "ecore/EClass";
+

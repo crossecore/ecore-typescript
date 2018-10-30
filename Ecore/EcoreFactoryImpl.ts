@@ -4,6 +4,47 @@
  *
  * contributor: Simon Schwichtenberg
  */
+import {EAnnotation} from "ecore/EAnnotation";
+import {ETypeParameterImpl} from "ecore/ETypeParameterImpl";
+import {EDataType} from "ecore/EDataType";
+import {EEnum} from "ecore/EEnum";
+import {EGenericTypeImpl} from "ecore/EGenericTypeImpl";
+import {EReference} from "ecore/EReference";
+import {EClassifier} from "ecore/EClassifier";
+import {ETypedElement} from "ecore/ETypedElement";
+import {EStructuralFeature} from "ecore/EStructuralFeature";
+import {EAnnotationImpl} from "ecore/EAnnotationImpl";
+import {ENamedElementImpl} from "ecore/ENamedElementImpl";
+import {EParameter} from "ecore/EParameter";
+import {EObject} from "ecore/EObject";
+import {EModelElementImpl} from "ecore/EModelElementImpl";
+import {EObjectImpl} from "ecore/EObjectImpl";
+import {ENamedElement} from "ecore/ENamedElement";
+import {EReferenceImpl} from "ecore/EReferenceImpl";
+import {EClassImpl} from "ecore/EClassImpl";
+import {EAttributeImpl} from "ecore/EAttributeImpl";
+import {EStructuralFeatureImpl} from "ecore/EStructuralFeatureImpl";
+import {EClass} from "ecore/EClass";
+import {EEnumImpl} from "ecore/EEnumImpl";
+import {EFactory} from "ecore/EFactory";
+import {EStringToStringMapEntryImpl} from "ecore/EStringToStringMapEntryImpl";
+import {EDataTypeImpl} from "ecore/EDataTypeImpl";
+import {EModelElement} from "ecore/EModelElement";
+import {EAttribute} from "ecore/EAttribute";
+import {EPackage} from "ecore/EPackage";
+import {ETypeParameter} from "ecore/ETypeParameter";
+import {EStringToStringMapEntry} from "ecore/EStringToStringMapEntry";
+import {EGenericType} from "ecore/EGenericType";
+import {EEnumLiteral} from "ecore/EEnumLiteral";
+import {EParameterImpl} from "ecore/EParameterImpl";
+import {ETypedElementImpl} from "ecore/ETypedElementImpl";
+import {EEnumLiteralImpl} from "ecore/EEnumLiteralImpl";
+import {EOperation} from "ecore/EOperation";
+import {EcoreFactory} from "ecore/EcoreFactory";
+import {EPackageImpl} from "ecore/EPackageImpl";
+import {EClassifierImpl} from "ecore/EClassifierImpl";
+import {EOperationImpl} from "ecore/EOperationImpl";
+import {EFactoryImpl} from "ecore/EFactoryImpl";
 export class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory{
 	public static eINSTANCE : EcoreFactory = EcoreFactoryImpl.init();
 	public static init() : EcoreFactory 
@@ -93,44 +134,4 @@ export class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory{
 	}
 }
 
-import {EAnnotation} from "ecore/EAnnotation";
-import {ETypeParameterImpl} from "ecore/ETypeParameterImpl";
-import {EDataType} from "ecore/EDataType";
-import {EEnum} from "ecore/EEnum";
-import {EGenericTypeImpl} from "ecore/EGenericTypeImpl";
-import {EReference} from "ecore/EReference";
-import {EClassifier} from "ecore/EClassifier";
-import {ETypedElement} from "ecore/ETypedElement";
-import {EStructuralFeature} from "ecore/EStructuralFeature";
-import {EAnnotationImpl} from "ecore/EAnnotationImpl";
-import {ENamedElementImpl} from "ecore/ENamedElementImpl";
-import {EParameter} from "ecore/EParameter";
-import {EObject} from "ecore/EObject";
-import {EModelElementImpl} from "ecore/EModelElementImpl";
-import {EObjectImpl} from "ecore/EObjectImpl";
-import {ENamedElement} from "ecore/ENamedElement";
-import {EReferenceImpl} from "ecore/EReferenceImpl";
-import {EClassImpl} from "ecore/EClassImpl";
-import {EAttributeImpl} from "ecore/EAttributeImpl";
-import {EStructuralFeatureImpl} from "ecore/EStructuralFeatureImpl";
-import {EClass} from "ecore/EClass";
-import {EEnumImpl} from "ecore/EEnumImpl";
-import {EFactory} from "ecore/EFactory";
-import {EStringToStringMapEntryImpl} from "ecore/EStringToStringMapEntryImpl";
-import {EDataTypeImpl} from "ecore/EDataTypeImpl";
-import {EModelElement} from "ecore/EModelElement";
-import {EAttribute} from "ecore/EAttribute";
-import {EPackage} from "ecore/EPackage";
-import {ETypeParameter} from "ecore/ETypeParameter";
-import {EStringToStringMapEntry} from "ecore/EStringToStringMapEntry";
-import {EGenericType} from "ecore/EGenericType";
-import {EEnumLiteral} from "ecore/EEnumLiteral";
-import {EParameterImpl} from "ecore/EParameterImpl";
-import {ETypedElementImpl} from "ecore/ETypedElementImpl";
-import {EEnumLiteralImpl} from "ecore/EEnumLiteralImpl";
-import {EOperation} from "ecore/EOperation";
-import {EcoreFactory} from "ecore/EcoreFactory";
-import {EPackageImpl} from "ecore/EPackageImpl";
-import {EClassifierImpl} from "ecore/EClassifierImpl";
-import {EOperationImpl} from "ecore/EOperationImpl";
-import {EFactoryImpl} from "ecore/EFactoryImpl";
+

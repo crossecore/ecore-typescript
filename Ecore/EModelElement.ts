@@ -6,7 +6,9 @@
  */
 
 ///<summary>This class was generated.</summary>
-
+import {InternalEObject} from "ecore/InternalEObject";
+import {EAnnotation} from "ecore/EAnnotation";
+import {OrderedSet} from "ecore/OrderedSet";
 export interface EModelElement
 extends InternalEObject
 
@@ -19,6 +21,4 @@ extends InternalEObject
 
 }
 
-import {InternalEObject} from "ecore/InternalEObject";
-import {EAnnotation} from "ecore/EAnnotation";
-import {OrderedSet} from "ecore/OrderedSet";
+

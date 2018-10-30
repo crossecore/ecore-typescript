@@ -4,7 +4,19 @@
  *
  * contributor: Simon Schwichtenberg
  */
-
+import {EAnnotation} from "ecore/EAnnotation";
+import {EGenericType} from "ecore/EGenericType";
+import {ETypedElement} from "ecore/ETypedElement";
+import {EClassifier} from "ecore/EClassifier";
+import {InternalEObject} from "ecore/InternalEObject";
+import {ENamedElementImpl} from "ecore/ENamedElementImpl";
+import {ENotificationImpl} from "ecore/ENotificationImpl";
+import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
+import {OrderedSet} from "ecore/OrderedSet";
+import {NotificationChain} from "ecore/NotificationChain";
+import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
+import {EClass} from "ecore/EClass";
+import {NotificationImpl} from "ecore/NotificationImpl";
 ///<summary>This class was generated.</summary>
 export class ETypedElementBase
 extends ENamedElementImpl
@@ -154,16 +166,4 @@ implements ETypedElement
 	//public eGetFromETypedElement = this.eGet;
 }
 
-import {EAnnotation} from "ecore/EAnnotation";
-import {EGenericType} from "ecore/EGenericType";
-import {ETypedElement} from "ecore/ETypedElement";
-import {EClassifier} from "ecore/EClassifier";
-import {InternalEObject} from "ecore/InternalEObject";
-import {ENamedElementImpl} from "ecore/ENamedElementImpl";
-import {ENotificationImpl} from "ecore/ENotificationImpl";
-import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
-import {OrderedSet} from "ecore/OrderedSet";
-import {NotificationChain} from "ecore/NotificationChain";
-import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
-import {EClass} from "ecore/EClass";
-import {NotificationImpl} from "ecore/NotificationImpl";
+

@@ -14,6 +14,10 @@ import {EReferenceBase} from "ecore/EReferenceBase";
 	
 	{
 
+    public getFeatureID(): number {
+      return this.featureID;
+    };
+
 	}
 	
 

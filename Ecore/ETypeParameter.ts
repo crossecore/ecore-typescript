@@ -6,7 +6,9 @@
  */
 
 ///<summary>This class was generated.</summary>
-
+import {OrderedSet} from "ecore/OrderedSet";
+import {ENamedElement} from "ecore/ENamedElement";
+import {EGenericType} from "ecore/EGenericType";
 export interface ETypeParameter
 extends ENamedElement
 
@@ -17,6 +19,4 @@ extends ENamedElement
 
 }
 
-import {OrderedSet} from "ecore/OrderedSet";
-import {ENamedElement} from "ecore/ENamedElement";
-import {EGenericType} from "ecore/EGenericType";
+

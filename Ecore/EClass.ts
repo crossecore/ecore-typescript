@@ -6,7 +6,14 @@
  */
 
 ///<summary>This class was generated.</summary>
-
+import {EOperation} from "ecore/EOperation";
+import {EAttribute} from "ecore/EAttribute";
+import {OrderedSet} from "ecore/OrderedSet";
+import {EReference} from "ecore/EReference";
+import {EGenericType} from "ecore/EGenericType";
+import {EClassifier} from "ecore/EClassifier";
+import {EClass} from "ecore/EClass";
+import {EStructuralFeature} from "ecore/EStructuralFeature";
 export interface EClass
 extends EClassifier
 
@@ -52,11 +59,4 @@ extends EClassifier
 
 }
 
-import {EOperation} from "ecore/EOperation";
-import {EAttribute} from "ecore/EAttribute";
-import {OrderedSet} from "ecore/OrderedSet";
-import {EReference} from "ecore/EReference";
-import {EGenericType} from "ecore/EGenericType";
-import {EClassifier} from "ecore/EClassifier";
-import {EClass} from "ecore/EClass";
-import {EStructuralFeature} from "ecore/EStructuralFeature";
+

@@ -6,7 +6,11 @@
  */
 
 ///<summary>This class was generated.</summary>
-
+import {InternalEObject} from "ecore/InternalEObject";
+import {OrderedSet} from "ecore/OrderedSet";
+import {ETypeParameter} from "ecore/ETypeParameter";
+import {EGenericType} from "ecore/EGenericType";
+import {EClassifier} from "ecore/EClassifier";
 export interface EGenericType
 extends InternalEObject
 
@@ -24,8 +28,4 @@ extends InternalEObject
 
 }
 
-import {InternalEObject} from "ecore/InternalEObject";
-import {OrderedSet} from "ecore/OrderedSet";
-import {ETypeParameter} from "ecore/ETypeParameter";
-import {EGenericType} from "ecore/EGenericType";
-import {EClassifier} from "ecore/EClassifier";
+

@@ -4,13 +4,25 @@
  *
  * contributor: Simon Schwichtenberg
  */
-import {AbstractCollection} from "ecore/AbstractCollection";
-export class Set<T> extends AbstractCollection<T>{
+import {AbstractCollection} from 'ecore/AbstractCollection';
+
+export class Set<T> extends AbstractCollection<T> {
 
 
-    protected isUnique =():boolean =>{
-        return true;
-    }
+  protected isUnique = (): boolean => {
+    return true;
+  };
+
+  public select = (lambda: (element: T) => boolean): Set<T> => {
+
+    var result: Set<T> = new Set<T>();
+
+    this.filter(lambda).forEach((element: T) => {
+      result.add(element);
+    });
+
+    return result;
+  };
 
 
 }

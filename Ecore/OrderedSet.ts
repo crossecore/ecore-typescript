@@ -43,7 +43,7 @@ export class OrderedSet<T> extends AbstractCollection<T>{
 
         for (let element in this)
         {
-            var e:Collection<T2> = lambda.call(element);
+            var e:AbstractCollection<T2> = lambda.call(element);
 
             for(var i=0;i<e.size();i++) {
 

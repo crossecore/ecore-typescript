@@ -5,7 +5,15 @@
  * contributor: Simon Schwichtenberg
  */
 ///<summary>This class was generated.</summary>
-
+import {TreeIterator} from "ecore/TreeIterator";
+import {EOperation} from "ecore/EOperation";
+import {Notifier} from "ecore/Notifier";
+import {EObject} from "ecore/EObject";
+import {List} from "ecore/List";
+import {Resource} from "ecore/Resource";
+import {EReference} from "ecore/EReference";
+import {EStructuralFeature} from "ecore/EStructuralFeature";
+import {EClass} from "ecore/EClass";
 export interface EObject
 extends Notifier
 
@@ -45,12 +53,4 @@ extends Notifier
 
 }
 
-import {TreeIterator} from "ecore/TreeIterator";
-import {EOperation} from "ecore/EOperation";
-import {Notifier} from "ecore/Notifier";
-import {EObject} from "ecore/EObject";
-import {List} from "ecore/List";
-import {Resource} from "ecore/Resource";
-import {EReference} from "ecore/EReference";
-import {EStructuralFeature} from "ecore/EStructuralFeature";
-import {EClass} from "ecore/EClass";
+
