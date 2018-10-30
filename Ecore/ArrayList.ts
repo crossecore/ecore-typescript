@@ -60,4 +60,9 @@ export class ArrayList<T> extends Array<T> {
     public isEmptyX = ():boolean=>{
         return this.length===0;
     }
+
+
+    public clear = ():void=>{
+      this.splice(0, this.length);
+    }
 }
