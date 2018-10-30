@@ -4,7 +4,7 @@
  *
  * contributor: Simon Schwichtenberg
  */
-export interface EcoreFactory{
+export interface EcoreFactory extends EFactory{
 	createEAttribute():EAttribute;
 	createEAnnotation():EAnnotation;
 	createEClass():EClass;
