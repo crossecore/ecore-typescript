@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true,
+    "baseUrl": ".", // This must be specified if "paths" is.
+    "paths": {
+      "java_/*": ["java_/*"],
+      "ecore_/*": ["ecore/*"],
+      "jasmine": ["node_modules/jasmine/bin/jasmine.js"]
+    }
+    ,
+    "lib": [
+      "es2017",
+      "dom"
+    ]
+
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

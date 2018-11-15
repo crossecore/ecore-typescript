@@ -25,56 +25,14 @@ For web applications, you can use the Asynchronous Module Format (AMD).
 If you are using AMD, you need a module loader like requireJs or systemJs.
 The module loader lazily loads modules and their dependencies on demand and automatically.
 
-# Build TypeScript
-Install tsc globally...
+# Build from source
+Install TypeScript compiler via npm:
 
 ```bash
+npm install typescript -g
+```
+
+Run the compiler on the whole project:
+```bash
 tsc -p Ecore
-```
-
-## Browser Tutorial
-
-Let's say you want to generate TypeScript from MyPackage.ecore.
-The code generator creates a package folder with your TypeScript files.
-This package has a dependency to the TypeScript ecore package and is required for the reflection API and base class implementations, e.g., BasicEObjectImpl.ts.
-This means you need to include both mypackage and ecore in your TypeScript application.
-You can install the ecore package via npm: ``npm install --save crossecore``
-
-```json
-{
-  "compilerOptions": {
-    "module": "amd",
-    "target": "es5",
-    "sourceMap": false,
-    "baseUrl": ".",
-    "paths": {
-      "Ecore": ["node_modules/crossecore/dist"]
-    }
-  },
-  "exclude": [
-    "node_modules"
-  ]
-}
-```
-
-### Requirejs
-
-Install requirejs via npm: ``npm install --save requirejs``.  
-Also install the requirejs TypeScript definitions: ``npm install --save @types/requirejs``
-
-```typescript
-requirejs.config({
-
-    baseUrl: '.',
-    paths: {
-        ecore: '../node_modules/crossecore/dist'
-    }
-});
-```
-
-```typescript
-requirejs(["uml/UmlFactoryImpl"], function(UmlFactoryImpl) {
-
-    var c = UmlFactoryImpl.eINSTANCE.createClass();
-});
 ```
