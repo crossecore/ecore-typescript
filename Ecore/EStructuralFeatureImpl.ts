@@ -33,6 +33,11 @@ import {EStructuralFeatureBase} from "ecore/EStructuralFeatureBase";
 		}
 
 
+        public getContainerClass(): Function {
+			return this.containerClass_;
+        };
+
+
 	}
 	
 

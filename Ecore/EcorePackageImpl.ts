@@ -5,11 +5,12 @@
  * contributor: Simon Schwichtenberg
  */
 import {EFactory} from "ecore/EFactory";
+import {EcoreFactoryImpl} from "ecore/EcoreFactoryImpl";
 import {EcorePackage} from "ecore/EcorePackage";
 import {EAttribute} from "ecore/EAttribute";
 import {EOperation} from "ecore/EOperation";
 import {EPackageImpl} from "ecore/EPackageImpl";
-import {EcoreFactoryImpl} from "ecore/EcoreFactoryImpl";
+
 import {EDataType} from "ecore/EDataType";
 import {EReference} from "ecore/EReference";
 import {EClass} from "ecore/EClass";
@@ -235,9 +236,9 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
             if (this.isInitialized) return;
             this.isInitialized = true;
             // Initialize package
-            let name = EcorePackageImpl.eNAME;
-            let nsPrefix = EcorePackageImpl.eNS_PREFIX;
-            let nsURI = EcorePackageImpl.eNS_URI;
+            this.name = EcorePackageImpl.eNAME;
+            this.nsPrefix = EcorePackageImpl.eNS_PREFIX;
+            this.nsURI = EcorePackageImpl.eNS_URI;
 
 			
 			this.EAttributeEClass.eSuperTypes.add(this.getEStructuralFeature());

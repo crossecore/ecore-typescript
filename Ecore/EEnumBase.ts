@@ -69,10 +69,8 @@ implements EEnum
 		return null;
 	};
 	
-	public getClassifierID(): number {
-		/*TODO implement function*/ 
-		return null;
-	};
+
+
 
 	protected eStaticClass():EClass{
 		//return EcorePackageLiterals.EENUM;

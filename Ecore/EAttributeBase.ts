@@ -13,7 +13,6 @@ import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
 import {OrderedSet} from "ecore/OrderedSet";
 import {NotificationChain} from "ecore/NotificationChain";
 import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
-import {EcorePackageImpl} from "ecore/EcorePackageImpl";
 import {EStructuralFeatureImpl} from "ecore/EStructuralFeatureImpl";
 import {EClass} from "ecore/EClass";
 import {NotificationImpl} from "ecore/NotificationImpl";
@@ -37,10 +36,7 @@ implements EAttribute
 	}
 
 	
-	public getContainerClass(): Function {
-		/*TODO implement function*/ 
-		return null;
-	};
+
 	
 	public getFeatureID(): number {
 		/*TODO implement function*/ 

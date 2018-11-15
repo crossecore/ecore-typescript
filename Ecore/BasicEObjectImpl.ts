@@ -136,7 +136,7 @@ export class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
         public eDerivedStructuralFeatureID_EStructuralFeature(eStructuralFeature:EStructuralFeature):number
         {
 
-            let containerClass = null;
+            let containerClass = eStructuralFeature.getContainerClass();
             /*
              Class <?> containerClass = eStructuralFeature.getContainerClass();
              if (containerClass == null)
@@ -154,6 +154,16 @@ export class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
         public eDerivedStructuralFeatureID_number_Function(baseFeatureID:number, baseClass:Function):number
         {
             return baseFeatureID;
+        }
+
+        public eDerivedStructuralFeatureID(...args:Array<any>):number
+        {
+            if(args.length===1){
+                return this.eDerivedStructuralFeatureID_EStructuralFeature(args[0]);
+            }
+            else if(args.length===2){
+                return this.eDerivedStructuralFeatureID_number_Function(args[0],args[1]);
+            }
         }
 
         public eClass():EClass

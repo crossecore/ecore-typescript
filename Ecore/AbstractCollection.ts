@@ -82,6 +82,15 @@ export class AbstractCollection<T> extends ArrayList<T> implements EcoreEList<T>
                 return true;
             }
 
+        }
+
+        public addAll = (collection:Array<T>) :boolean =>{
+
+            for(let item of collection){
+                this.push(item); //TODO push or add?
+            }
+
+            return true;//TODO
 
         }
 

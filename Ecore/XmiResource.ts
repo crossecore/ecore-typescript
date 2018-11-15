@@ -5,87 +5,115 @@
  * contributor: Simon Schwichtenberg
  */
 
+
+
 import {EPackage} from "ecore/EPackage";
 import {EcorePackageImpl} from "ecore/EcorePackageImpl";
 import {EcoreFactoryImpl} from "ecore/EcoreFactoryImpl";
-import {EClassBase} from "ecore/EClassBase";
+
 import {EClass} from "ecore/EClass";
 import {EObject} from "ecore/EObject";
 import {EFactory} from "ecore/EFactory";
-import {EAttributeBase} from "ecore/EAttributeBase";
-import {EReferenceBase} from "ecore/EReferenceBase";
-import {EReference} from "ecore/EReference";
-import {ENamedElementBase} from "ecore/ENamedElementBase";
-import {ENamedElement} from "ecore/ENamedElement";
 
+import {EReference} from "ecore/EReference";
+
+import {ENamedElement} from "ecore/ENamedElement";
+import {EReferenceImpl} from "ecore/EReferenceImpl";
+import {EClassImpl} from "ecore/EClassImpl";
+import {ENamedElementImpl} from "ecore/ENamedElementImpl";
+import {EAttributeImpl} from "ecore/EAttributeImpl";
+import {EStructuralFeature} from "ecore/EStructuralFeature";
+import {AbstractCollection} from "ecore/AbstractCollection";
+import {EDataType} from "ecore/EDataType";
+import {EDataTypeImpl} from "ecore/EDataTypeImpl";
+
+
+interface EObjectRegistry{
+    [index:string]:EObject;
+}
+
+interface ResolveJobRegistry{
+    [index:string]:Array<ResolveJob>;
+}
+
+interface ResolveJob{
+    eObject:EObject;
+    eStructuralFeature:EStructuralFeature;
+    value:string;
+}
 
 export class XmiResource{
 
     private factory:EFactory = EcoreFactoryImpl.eINSTANCE;
     private epackage:EPackage = EcorePackageImpl.eINSTANCE; //TODO make dynamic
+    private domParser:DOMParser;
 
 
     private root:EObject;
 
     private resolveJobs:any = []; //TODO define type
+    private eobjectRegistry:EObjectRegistry;
 
-    public load =() =>{
+    constructor(epackage:EPackage, efactory:EFactory, domParser:DOMParser){
+        this.factory = efactory;
+        this.epackage = epackage;
 
-        var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-            "<ecore:EPackage xmi:version=\"2.0\" xmlns:xmi=\"http://www.omg.org/XMI\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n" +
-            "    xmlns:ecore=\"http://www.eclipse.org/emf/2002/Ecore\" name=\"ecore\" nsURI=\"http://www.eclipse.org/emf/2002/Ecore\" nsPrefix=\"ecore\">\n" +
-            "  <eClassifiers xsi:type=\"ecore:EClass\" name=\"EAttribute\" eSuperTypes=\"#//EStructuralFeature\">\n" +
-            "    <eAnnotations source=\"http://www.eclipse.org/emf/2002/Ecore\">\n" +
-            "      <details key=\"constraints\" value=\"ConsistentTransient\"/>\n" +
-            "    </eAnnotations>\n" +
-            "    <eStructuralFeatures xsi:type=\"ecore:EAttribute\" name=\"iD\" eType=\"#//EBoolean\"/>\n" +
-            "    <eStructuralFeatures xsi:type=\"ecore:EReference\" name=\"eAttributeType\" lowerBound=\"1\"\n" +
-            "        eType=\"#//EDataType\" changeable=\"false\" volatile=\"true\" transient=\"true\" derived=\"true\"/>\n" +
-            "  </eClassifiers>" +
-            "</ecore>";
+        this.domParser = domParser;
 
-
-        var parser = new DOMParser();
-        var xmlDoc = parser.parseFromString(text,"text/xml");
-
-        this.rootnode(xmlDoc.childNodes[0]);
-
+        this.resolveJobs = {};
+        this.eobjectRegistry = {};
     }
 
-    public rootnode = (node:Node) => {
 
-        var classifierId = node.nodeName.split(':')[1];
 
-        var eclassifier = this.epackage.getEClassifier(classifierId);
 
-        if(eclassifier instanceof EClassBase){
+    public load = (xml:string):EObject =>{
 
-            var eclass = eclassifier as EClass;
+        let parser = this.domParser;
+        let xmlDoc = parser.parseFromString(xml,"text/xml");
+
+        this.rootnode(xmlDoc.childNodes[2] as Element);
+
+        return this.root;
+    }
+
+    public rootnode = (node:Element) => {
+
+
+        let classifierId = node.nodeName.split(':')[1];
+
+        let eclassifier = this.epackage.getEClassifier(classifierId);
+
+        if(eclassifier instanceof EClassImpl){
+
+            let eclass = eclassifier as EClass;
 
             this.root = this.factory.create(eclass);
 
             this.addEStructuralFeatures(this.root, node)
+
+            this.lateResolve();
         }
 
-        this.addEStructuralFeatures(null, node);
+
     }
 
     protected resolveEList = (specification:string)=>{
 
 
 
-        var result = new Array<EObject>();
-        var supertypes = specification.split(' ');
+        let result = new Array<EObject>();
+        let supertypes = specification.split(' ');
 
         if (supertypes != null)
         {
 
-            for(var i=0;i<supertypes.length;i++){
-            //for (string s in supertypes)
+            for(let i=0;i<supertypes.length;i++){
+                //for (string s in supertypes)
 
-                var s = supertypes[i];
+                let s = supertypes[i];
 
-                var supertype = this.resolveEObject(s) as EClass;
+                let supertype = this.resolveEObject(s) as EClass;
                 //TODO assure it is eclass
                 result.push(supertype);
             }
@@ -95,20 +123,20 @@ export class XmiResource{
 
     }
 
-    protected resolveEObject(specification:string){
+    protected resolveEObject = (specification:string) => {
         if(specification===null){
             return null;
         }
         else if(specification.lastIndexOf("#//")===0){
 
-            var name = specification.replace("#//", "");
-            var segments = name.split("/");
+            let name = specification.replace("#//", "");
+            let segments = name.split("/");
 
-            var queue = new Array<string>();
+            let queue = new Array<string>();
 
 
-            for(var i=0;i<segments.length;i++){
-                var segment = segments[i];
+            for(let i=0;i<segments.length;i++){
+                let segment = segments[i];
 
                 queue.push(segment);
             }
@@ -126,16 +154,16 @@ export class XmiResource{
 
         }
 
-        var segment = path.shift();
+        let segment = path.shift();
 
         //FIXME: eContents needs to return Array
-        var econtents = new Array<EObject>();//current.eContents();
+        let econtents = new Array<EObject>();//current.eContents();
 
-        for(var i=0; i<econtents.length;i++){
+        for(let i=0; i<econtents.length;i++){
 
-            var content = econtents[i] as EObject;
+            let content = econtents[i] as EObject;
 
-            if(content instanceof ENamedElementBase){
+            if(content instanceof ENamedElementImpl){
 
                 if((content as ENamedElement).name===segment){
                     return this.resolveRecurr(path, content)
@@ -148,82 +176,295 @@ export class XmiResource{
 
     }
 
-    public addEStructuralFeatures = (eobject:EObject, node:Node)=>{
+    public addEStructuralFeatures = (eobject:EObject, node:Element)=>{
+
+        console.log(node.nodeName);
+
+        for (let i = 0; i < node.attributes.length; i++) {
 
 
-        for (var i = 0; i < node.attributes.length; i++) {
 
-            var attribute = node.attributes[i];
-            var name = node.attributes[i].name;
+            let attribute = node.attributes[i];
 
-            var estructuralfeature = eobject.eClass().getEStructuralFeature(name);
 
-            if (estructuralfeature instanceof EAttributeBase){
 
-                var etype = estructuralfeature.eType;
-                var value = attribute.value;
+            let name = attribute.name;
+
+
+            let estructuralfeature = eobject.eClass().getEStructuralFeature(name);
+
+            if (estructuralfeature instanceof EAttributeImpl){
+
+                let etype = estructuralfeature.eType;
+                let value = attribute.value;
 
                 if(etype.ePackage.nsURI==="http://www.eclipse.org/emf/2002/Ecore"){
 
-                    if (etype.name === "EBoolean")
+                    if (etype.name == "EBigDecimal")
+                    {
+                        throw new Error('not implemented');
+                    }
+                    else if (etype.name == "EBigInteger")
+                    {
+                        throw new Error('not implemented');
+                    }
+                    else if (etype.name == "EBoolean")
                     {
                         eobject.eSet(estructuralfeature, value == "true" ? true : false);
                     }
-                    else if (etype.name === "EInt")
+                    else if (etype.name == "EBooleanObject")
                     {
-                        eobject.eSet(estructuralfeature, parseInt(value));
+                        throw new Error('not implemented');
                     }
-                    else if (etype.name === "EString")
+                    else if (etype.name == "EByteArray")
+                    {
+                        throw new Error('not implemented');
+                    }
+                    else if (etype.name == "EByteObject")
+                    {
+                        throw new Error('not implemented');
+                    }
+                    else if (etype.name == "EChar")
                     {
                         eobject.eSet(estructuralfeature, value);
                     }
+                    else if (etype.name == "ECharacterObject")
+                    {
+                        throw new Error('not implemented');
+                    }
+                    else if (etype.name == "EDate")
+                    {
+                        eobject.eSet(estructuralfeature, Date.parse(value));
+                    }
+                    else if (etype.name == "EDateEDiagnosticChain")
+                    {
+                        throw new Error('not implemented');
+                    }
+                    else if (etype.name == "EDiagnosticChain")
+                    {
+                        throw new Error('not implemented');
+                    }
+                    else if (etype.name == "EDouble")
+                    {
+                        eobject.eSet(estructuralfeature, +value);
+                    }
+                    else if (etype.name == "EDoubleObject")
+                    {
+                        throw new Error('not implemented');
+                    }
+                    //EEList
+                    //EEnumerator
+                    //EFeatureMap
+                    //EFeatureMapEntry
+                    else if (etype.name == "EFloat")
+                    {
+                        eobject.eSet(estructuralfeature, +value);
+                    }
+                    else if (etype.name == "EFloatObject")
+                    {
+                        throw new Error('not implemented');
+                    }
+                    else if (etype.name == "EInt")
+                    {
+                        eobject.eSet(estructuralfeature, +value);
+                    }
+                    else if (etype.name == "EIntegerObject")
+                    {
+                        throw new Error('not implemented');
+                    }
+                    //EJavaClass
+                    //EJavaObject
+                    else if (etype.name == "ELong")
+                    {
+                        eobject.eSet(estructuralfeature, +value);
+                    }
+                    else if (etype.name == "ELongObject")
+                    {
+                        throw new Error('not implemented');
+                    }
+                    //EMap
+                    //EResource
+                    //EResourceSet
+                    else if (etype.name == "EShort")
+                    {
+                        eobject.eSet(estructuralfeature, +value);
+                    }
+                    else if (etype.name == "EShortObject")
+                    {
+                        throw new Error('not implemented');
+                    }
+                    else if (etype.name == "EString")
+                    {
+                        eobject.eSet(estructuralfeature, value);
+                    }
+                    //ETreeIterator
+                    //EInvocationTargetException
+
+
+
                 }
-                else if (estructuralfeature.many)
-                {
+                else if(etype instanceof EDataTypeImpl){
+
+                    //TODO use namespace-factory map
+                    let literalvalue = this.factory.createFromString(etype as EDataType, value);
+
+                    eobject.eSet(estructuralfeature, literalvalue);
+                }
+            }
+            else if(estructuralfeature instanceof EReferenceImpl){
+
+                if(estructuralfeature.many){
+
+                    var values = attribute.value;
+
+
+                    for(let value of values){
+
+                        this.resolve(eobject, estructuralfeature,value);
+                    }
+
+                }
+                else{
+
+                    this.resolve(eobject, estructuralfeature, attribute.value);
 
                 }
             }
-            else if (estructuralfeature instanceof EReferenceBase)
-            {
-                //TODO
-                //this.resolveJobs.push({eobject, estructuralfeature, attribute.value});
 
-            }
+
 
         }
 
-        for (var i = 0; i < node.childNodes.length; i++) {
-            var child = node.childNodes[i];
-
-            var containment_name = child.localName;
-            var containment = eobject.eClass().getEStructuralFeature(containment_name);
+        for (let i = 0; i < node.childNodes.length; i++) {
+            let child = node.childNodes[i];
 
 
-            if(containment instanceof EReferenceBase){
+            if(child.nodeType === child.ELEMENT_NODE){
 
-                var containment_er = containment as EReference;
+                let element = child as Element;
+                let containment_name = child.localName;
 
-                if(containment_er.containment){
+                let containment = eobject.eClass().getEStructuralFeature(containment_name);
 
-                    var classifierId2 = containment.eType.name;
+                if(containment instanceof EReferenceImpl){
 
-                    if(child.attributes.getNamedItem("xsi:type")){//TODO check if that works with namespace
+                    let containment_er = containment as EReferenceImpl;
 
-                        classifierId2 = child.attributes.getNamedItem("xsi:type").value.split(':')[1];
 
+                    if(containment_er.containment){
+
+                        let classifierId2 = containment.eType.name;
+
+                        for(let i=0; i< element.attributes.length;i++){
+                            if(element.attributes[i].name==='xsi:type'){
+                                classifierId2 = element.attributes[i].value.split(':')[1];
+                            }
+                        }
+
+                        let eclassifier2 = this.epackage.getEClassifier(classifierId2);
+
+
+                        if (eclassifier2 instanceof EClassImpl)
+                        {
+
+                            if (containment_er.eType.name === "EStringToStringMapEntry")
+                            {
+
+                                //TODO
+                                console.log("EStringToStringMapEntry");
+                            }
+                            else
+                            {
+                                var eclass2 = eclassifier2 as EClass;
+                                var eobject2 = this.factory.create(eclass2);
+
+                                if (containment_er.many)
+                                {
+                                    this.addEStructuralFeatures(eobject2, element);//TODO is Element cast safe here?
+
+                                    let items = eobject.eGet(containment_er) as AbstractCollection<EObject>;
+                                    items.push(eobject2);
+
+
+                                }
+                                else
+                                {
+                                    this.addEStructuralFeatures(eobject2, element);//TODO is Element cast safe here?
+
+                                    eobject.eSet(containment_er, eobject2);
+                                }
+
+                            }
+
+                        }
+                        else{
+                            console.log("else");
+                        }
 
                     }
-
-                    var eclassifier2 = this.epackage.getEClassifier(classifierId2);
-
-
-
                 }
             }
 
         }
     }
 
+    private resolve(eobject:EObject, estructuralfeature:EStructuralFeature, value:string){
+
+        if(this.eobjectRegistry[value]!==undefined){
+
+            if(estructuralfeature.many){
+
+                //TODO eGet is call by reference
+                let items = eobject.eGet(estructuralfeature) as AbstractCollection<EObject>;
+                items.add(this.eobjectRegistry[value]);
+
+            }
+            else{
+                eobject.eSet(estructuralfeature, this.eobjectRegistry[value]);
+            }
+
+
+        }
+        else{
+
+            let resolveJob: ResolveJob = {
+                "eObject": eobject,
+                "eStructuralFeature": estructuralfeature,
+                "value": value
+            };
+
+            if(this.resolveJobs[value]===undefined){
+                this.resolveJobs[value] = new Array<ResolveJob>();
+            }
+
+            this.resolveJobs[value].push(resolveJob);
+        }
+    }
+
+
+    public lateResolve = () =>
+    {
+        for (let job of this.resolveJobs)
+        {
+
+
+            var eobject = job.eObject;
+            var feature = job.eStructuralFeature;
+            var path = job.value;
+
+
+            if (!feature.many)
+            {
+                eobject.eSet(feature, this.resolveEObject(path));
+            }
+            else if (feature.many)
+            {
+                eobject.eSet(feature, this.resolveEList(path));
+            }
+
+
+        }
+    }
 
 
 }

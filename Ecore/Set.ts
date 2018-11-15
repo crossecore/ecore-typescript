@@ -24,5 +24,15 @@ export class Set<T> extends AbstractCollection<T> {
     return result;
   };
 
+  public asSequence = ():Set<T> =>{
+
+    let result = new Set<T>();
+    for(let item of this){
+      result.push(item);
+    }
+    return result;
+
+  }
+
 
 }

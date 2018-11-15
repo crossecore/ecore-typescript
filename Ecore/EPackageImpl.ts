@@ -11,7 +11,7 @@ import {EPackageBase} from "ecore/EPackageBase";
 import {EcoreFactory} from "ecore/EcoreFactory";
 import {EcorePackage} from "ecore/EcorePackage";
 import {EFactory} from "ecore/EFactory";
-import {EcoreFactoryImpl} from "ecore/EcoreFactoryImpl";
+//import {EcoreFactoryImpl} from "ecore/EcoreFactoryImpl";
 //import {EcorePackageImpl} from "EcorePackageImpl";
 import {EOperation} from "ecore/EOperation";
 
