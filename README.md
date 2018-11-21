@@ -25,56 +25,10 @@ For web applications, you can use the Asynchronous Module Format (AMD).
 If you are using AMD, you need a module loader like requireJs or systemJs.
 The module loader lazily loads modules and their dependencies on demand and automatically.
 
-# Build TypeScript
-Install tsc globally...
+# Tutorial
+An example how CrossEcore TypeScript can be used in an Angular app for web browsers and in a Tabris (Cordova) app for Android can be seen in the [EclipseCon Europe 2018 tutorial](https://github.com/crossecore/examples-eclipsecon2018) which is also available on [YouTube](https://www.youtube.com/watch?v=T7-ExsSzSWw).
 
-```bash
-tsc -p Ecore
-```
+## Publications
+S. Schwichtenberg, I. Jovanovikj, C. Gerth, and G. Engels, "Poster: CrossEcore: An Extendible Framework to Use Ecore and OCL across Platforms," in Proceedings of the 40th International Conference on Software Engineering, ICSE 2018 - Companion Volume, Gothenburg, Sweden.
 
-## Browser Tutorial
-
-Let's say you want to generate TypeScript from MyPackage.ecore.
-The code generator creates a package folder with your TypeScript files.
-This package has a dependency to the TypeScript ecore package and is required for the reflection API and base class implementations, e.g., BasicEObjectImpl.ts.
-This means you need to include both mypackage and ecore in your TypeScript application.
-You can install the ecore package via npm: ``npm install --save crossecore``
-
-```json
-{
-  "compilerOptions": {
-    "module": "amd",
-    "target": "es5",
-    "sourceMap": false,
-    "baseUrl": ".",
-    "paths": {
-      "Ecore": ["node_modules/crossecore/dist"]
-    }
-  },
-  "exclude": [
-    "node_modules"
-  ]
-}
-```
-
-### Requirejs
-
-Install requirejs via npm: ``npm install --save requirejs``.  
-Also install the requirejs TypeScript definitions: ``npm install --save @types/requirejs``
-
-```typescript
-requirejs.config({
-
-    baseUrl: '.',
-    paths: {
-        ecore: '../node_modules/crossecore/dist'
-    }
-});
-```
-
-```typescript
-requirejs(["uml/UmlFactoryImpl"], function(UmlFactoryImpl) {
-
-    var c = UmlFactoryImpl.eINSTANCE.createClass();
-});
-```
+Accepted Talk "CrossEcore: The best parts of the Eclipe Modeling Framework for C#, TypeScript and Swift" at the EclipseCon Europe 2018 in terms of the Modeling Symposium. Available on [YouTube](https://www.youtube.com/watch?v=T7-ExsSzSWw).
