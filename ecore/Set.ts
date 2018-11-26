@@ -4,7 +4,7 @@
  *
  * contributor: Simon Schwichtenberg
  */
-import {AbstractCollection} from 'ecore/AbstractCollection';
+import {AbstractCollection} from "./AbstractCollection";
 
 export class Set<T> extends AbstractCollection<T> {
 

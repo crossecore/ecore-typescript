@@ -7,31 +7,31 @@
 
 
 ///<summary>This class was generated.</summary>
-import {EPackageBase} from "ecore/EPackageBase";
-import {EcoreFactory} from "ecore/EcoreFactory";
-import {EcorePackage} from "ecore/EcorePackage";
-import {EFactory} from "ecore/EFactory";
-//import {EcoreFactoryImpl} from "ecore/EcoreFactoryImpl";
+import {EPackageBase} from "./EPackageBase";
+import {EcoreFactory} from "./EcoreFactory";
+import {EcorePackage} from "./EcorePackage";
+import {EFactory} from "./EFactory";
+//import {EcoreFactoryImpl} from "./EcoreFactoryImpl";
 //import {EcorePackageImpl} from "EcorePackageImpl";
-import {EOperation} from "ecore/EOperation";
+import {EOperation} from "./EOperation";
 
 
-import {EEnum} from "ecore/EEnum";
-import {EEnumImpl} from "ecore/EEnumImpl";
-import {EDataType} from "ecore/EDataType";
-import {EClassifier} from "ecore/EClassifier";
-import {EClassifierImpl} from "ecore/EClassifierImpl";
-import {EAttribute} from "ecore/EAttribute";
-import {EGenericType} from "ecore/EGenericType";
-import {EStructuralFeatureImpl} from "ecore/EStructuralFeatureImpl";
-import {EStructuralFeature} from "ecore/EStructuralFeature";
-import {EReference} from "ecore/EReference";
-import {EReferenceImpl} from "ecore/EReferenceImpl";
-import {EAttributeImpl} from "ecore/EAttributeImpl";
-import {EOperationImpl} from "ecore/EOperationImpl";
-import {EDataTypeImpl} from "ecore/EDataTypeImpl";
-import {EClass} from "ecore/EClass";
-import {EClassImpl} from "ecore/EClassImpl";
+import {EEnum} from "./EEnum";
+import {EEnumImpl} from "./EEnumImpl";
+import {EDataType} from "./EDataType";
+import {EClassifier} from "./EClassifier";
+import {EClassifierImpl} from "./EClassifierImpl";
+import {EAttribute} from "./EAttribute";
+import {EGenericType} from "./EGenericType";
+import {EStructuralFeatureImpl} from "./EStructuralFeatureImpl";
+import {EStructuralFeature} from "./EStructuralFeature";
+import {EReference} from "./EReference";
+import {EReferenceImpl} from "./EReferenceImpl";
+import {EAttributeImpl} from "./EAttributeImpl";
+import {EOperationImpl} from "./EOperationImpl";
+import {EDataTypeImpl} from "./EDataTypeImpl";
+import {EClass} from "./EClass";
+import {EClassImpl} from "./EClassImpl";
 
 
 	export class EPackageImpl

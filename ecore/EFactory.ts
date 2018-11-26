@@ -1,17 +1,10 @@
-/* CrossEcore is a cross-platform modeling framework that generates C#, TypeScript,
- * JavaScript, Swift code from Ecore models with embedded OCL (http://www.crossecore.org/).
- * The original Eclipse Modeling Framework is available at https://www.eclipse.org/modeling/emf/.
- *
- * contributor: Simon Schwichtenberg
- */
+import {OrderedSet} from "./OrderedSet";
+import {EClass} from "./EClass";
+import {EDataType} from "./EDataType";
+import {EObject} from "./EObject";
+import {EModelElement} from "./EModelElement";
+import {EPackage} from "./EPackage";
 
-///<summary>This class was generated.</summary>
-import {EModelElement} from "ecore/EModelElement";
-import {OrderedSet} from "ecore/OrderedSet";
-import {EObject} from "ecore/EObject";
-import {EPackage} from "ecore/EPackage";
-import {EDataType} from "ecore/EDataType";
-import {EClass} from "ecore/EClass";
 export interface EFactory
 extends EModelElement
 
@@ -27,5 +20,4 @@ extends EModelElement
 	convertToString(eDataType:EDataType, instanceValue:any): string ;
 
 }
-
 

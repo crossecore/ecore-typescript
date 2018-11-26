@@ -1,0 +1,32 @@
+{
+  "name": "ecore-typescript",
+  "version": "0.0.0",
+  "description": "CrossEcore",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest",
+    "madge": "madge --circular ecore/EcorePackageImpl.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crossecore/ecore-typescript.git"
+  },
+  "keywords": [
+    "modeling"
+  ],
+  "author": "Simon Schwichtenberg",
+  "bugs": {
+    "url": "https://github.com/crossecore/ecore-typescript/issues"
+  },
+  "homepage": "https://github.com/crossecore/ecore-typescript#readme",
+  "devDependencies": {
+    "@types/jest": "^23.3.9",
+    "jest": "^23.6.0",
+    "madge": "^3.3.0",
+    "ts-jest": "^23.10.5"
+  },
+  "dependencies": {}
+}

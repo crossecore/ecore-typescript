@@ -5,7 +5,7 @@
  * contributor: Simon Schwichtenberg
  */
 
-import {EClassifierBase} from "ecore/EClassifierBase";
+import {EClassifierBase} from "./EClassifierBase";
 
 ///<summary>This class was generated.</summary>
 

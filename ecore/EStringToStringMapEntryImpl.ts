@@ -5,7 +5,7 @@
  * contributor: Simon Schwichtenberg
  */
 
-import {EStringToStringMapEntryBase} from "ecore/EStringToStringMapEntryBase";
+import {EStringToStringMapEntryBase} from "./EStringToStringMapEntryBase";
 
 ///<summary>This class was generated.</summary>
 

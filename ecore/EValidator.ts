@@ -1,7 +1,7 @@
-import {DiagnosticChain} from 'ecore/DiagnosticChain';
-import {EObject} from 'ecore/EObject';
-import {EClass} from 'ecore/EClass';
-import {EDataType} from 'ecore/EDataType';
+import {DiagnosticChain} from "./DiagnosticChain";
+import {EObject} from "./EObject";
+import {EClass} from "./EClass";
+import {EDataType} from "./EDataType";
 
 export interface EValidator
 {

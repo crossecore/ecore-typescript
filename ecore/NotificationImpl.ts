@@ -6,9 +6,9 @@
  */
 
 
-import {Notification} from "ecore/Notification";
-import {NotificationChain} from "ecore/NotificationChain";
-import {Notifier} from "ecore/Notifier";
+import {Notification} from "./Notification";
+import {NotificationChain} from "./NotificationChain";
+import {Notifier} from "./Notifier";
 
 
 

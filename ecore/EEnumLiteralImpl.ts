@@ -5,7 +5,7 @@
  * contributor: Simon Schwichtenberg
  */
 
-import {EEnumLiteralBase} from "ecore/EEnumLiteralBase";
+import {EEnumLiteralBase} from "./EEnumLiteralBase";
 
 ///<summary>This class was generated.</summary>
 

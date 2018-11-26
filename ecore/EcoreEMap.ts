@@ -1,6 +1,12 @@
-import {InternalEObject} from "ecore/InternalEObject";
-import {EClass} from "ecore/EClass";
-import {EMap} from "ecore/EMap";
+/* CrossEcore is a cross-platform modeling framework that generates C#, TypeScript,
+ * JavaScript, Swift code from Ecore models with embedded OCL (http://www.crossecore.org/).
+ * The original Eclipse Modeling Framework is available at https://www.eclipse.org/modeling/emf/.
+ *
+ * contributor: Simon Schwichtenberg
+ */
+import {InternalEObject} from "./InternalEObject";
+import {EClass} from "./EClass";
+import {EMap} from "./EMap";
 
 
 export class EcoreEMap<K, V> implements EMap<K,V>{
@@ -32,18 +38,18 @@ export class EcoreEMap<K, V> implements EMap<K,V>{
     }
 
 
-    public set(value:any){
+    public set(value:any):void{
         this.hashmap = {};
 
         this.putAll(value);
     }
 
-    public containsKey(key:K){
+    public containsKey(key:any):boolean{
 
-        this.hashmap[key]!==undefined;
+        return this.hashmap[key]!==undefined;
     }
 
-    public putAll(map:any){
+    public putAll(map:any):void{
         for(let prop in map) {
             if (map.hasOwnProperty(prop)) {
                 this.hashmap.put(prop, map[prop]);
@@ -52,7 +58,7 @@ export class EcoreEMap<K, V> implements EMap<K,V>{
         }
     }
 
-    public isEmpty(){
+    public isEmpty():boolean{
         for(let prop in this.hashmap) {
             if (this.hashmap.hasOwnProperty(prop)) {
                 return false;

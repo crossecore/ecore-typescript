@@ -1,12 +1,18 @@
-import {EObject} from 'ecore/EObject';
-import {DiagnosticChain} from 'ecore/DiagnosticChain';
-import {EValidator} from 'ecore/EValidator';
-import {OrderedSet} from 'ecore/OrderedSet';
-import {EClass} from 'ecore/EClass';
-import {EPackage} from 'ecore/EPackage';
-import {EDataType} from 'ecore/EDataType';
-import {List} from 'ecore/List';
-import {EObjectValidator} from 'ecore/EObjectValidator';
+/* CrossEcore is a cross-platform modeling framework that generates C#, TypeScript,
+ * JavaScript, Swift code from Ecore models with embedded OCL (http://www.crossecore.org/).
+ * The original Eclipse Modeling Framework is available at https://www.eclipse.org/modeling/emf/.
+ *
+ * contributor: Simon Schwichtenberg
+ */
+import {EObject} from "./EObject";
+import {DiagnosticChain} from "./DiagnosticChain";
+import {EValidator} from "./EValidator";
+import {OrderedSet} from "./OrderedSet";
+import {EClass} from "./EClass";
+import {EPackage} from "./EPackage";
+import {EDataType} from "./EDataType";
+import {List} from "./List";
+import {EObjectValidator} from "./EObjectValidator";
 
 export class Diagnostician implements EValidator {
   protected eValidatorRegistry: any;//TODO Dictionary<EPackage, object>

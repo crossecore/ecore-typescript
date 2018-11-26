@@ -5,7 +5,7 @@
  * contributor: Simon Schwichtenberg
  */
 
-import {EDataTypeBase} from "ecore/EDataTypeBase";
+import {EDataTypeBase} from "./EDataTypeBase";
 
 ///<summary>This class was generated.</summary>
 

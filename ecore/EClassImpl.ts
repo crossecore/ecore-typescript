@@ -5,14 +5,14 @@
  * contributor: Simon Schwichtenberg
  */
 
-import {EClassBase} from "ecore/EClassBase";
-import {OrderedSet} from "ecore/OrderedSet";
-import {EAttribute} from "ecore/EAttribute";
-import {EAttributeBase} from "ecore/EAttributeBase";
-import {EReferenceBase} from "ecore/EReferenceBase";
-import {EReference} from "ecore/EReference";
-import {EClass} from "ecore/EClass";
-import {EStructuralFeature} from './EStructuralFeature';
+import {EClassBase} from "./EClassBase";
+import {OrderedSet} from "./OrderedSet";
+import {EAttribute} from "./EAttribute";
+import {EAttributeBase} from "./EAttributeBase";
+import {EReferenceBase} from "./EReferenceBase";
+import {EReference} from "./EReference";
+import {EClass} from "./EClass";
+import {EStructuralFeature} from "./EStructuralFeature";
 
 ///<summary>This class was generated.</summary>
 

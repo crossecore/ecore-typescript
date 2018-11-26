@@ -5,7 +5,7 @@
  * contributor: Simon Schwichtenberg
  */
 
-import {Notification} from "ecore/Notification";
+import {Notification} from "./Notification";
 export interface Adapter
 {
 

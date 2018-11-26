@@ -5,7 +5,7 @@
  * contributor: Simon Schwichtenberg
  */
 
-import {ETypedElementBase} from "ecore/ETypedElementBase";
+import {ETypedElementBase} from "./ETypedElementBase";
 
 ///<summary>This class was generated.</summary>
 

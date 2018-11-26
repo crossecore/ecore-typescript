@@ -5,7 +5,7 @@
  * contributor: Simon Schwichtenberg
  */
 
-import {AbstractCollection} from "ecore/AbstractCollection";
+import {AbstractCollection} from "./AbstractCollection";
 export class OrderedSet<T> extends AbstractCollection<T>{
 
     protected isUnique =():boolean =>{

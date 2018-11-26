@@ -6,10 +6,10 @@
  */
 
 
-import {NotificationImpl} from "ecore/NotificationImpl";
-import {InternalEObject} from "ecore/InternalEObject";
-import {EStructuralFeature} from "ecore/EStructuralFeature";
-import {EClass} from "ecore/EClass";
+import {NotificationImpl} from "./NotificationImpl";
+import {InternalEObject} from "./InternalEObject";
+import {EStructuralFeature} from "./EStructuralFeature";
+import {EClass} from "./EClass";
 export class ENotificationImpl extends NotificationImpl
     {
 

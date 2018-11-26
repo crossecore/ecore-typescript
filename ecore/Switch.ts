@@ -6,9 +6,9 @@
  */
 
 
-    import {EPackage} from "ecore/EPackage";
-import {EObject} from "ecore/EObject";
-import {EClass} from "ecore/EClass";
+    import {EPackage} from "./EPackage";
+import {EObject} from "./EObject";
+import {EClass} from "./EClass";
 export abstract class Switch<T>{
 
 

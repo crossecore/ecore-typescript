@@ -6,10 +6,10 @@
  */
 
 
-import {EStructuralFeature} from "ecore/EStructuralFeature";
-import {EObject} from "ecore/EObject";
-import {EClass} from "ecore/EClass";
-import {NotificationChain} from "ecore/NotificationChain";
+import {EStructuralFeature} from "./EStructuralFeature";
+import {EObject} from "./EObject";
+import {EClass} from "./EClass";
+import {NotificationChain} from "./NotificationChain";
 export interface InternalEObject extends EObject
     {
 

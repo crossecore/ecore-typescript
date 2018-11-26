@@ -1,17 +1,24 @@
+/* CrossEcore is a cross-platform modeling framework that generates C#, TypeScript,
+ * JavaScript, Swift code from Ecore models with embedded OCL (http://www.crossecore.org/).
+ * The original Eclipse Modeling Framework is available at https://www.eclipse.org/modeling/emf/.
+ *
+ * contributor: Simon Schwichtenberg
+ */
+
 import {EObject} from "./EObject";
 import {OrderedSet} from "./OrderedSet";
 import {EAttribute} from "./EAttribute";
 import {EReference} from "./EReference";
 import {Collection} from "./Collection";
-import {BasicEObjectImpl} from './BasicEObjectImpl';
-import {EClassImpl} from './EClassImpl';
-import {EClass} from './EClass';
-import {AbstractCollection} from './AbstractCollection';
-import {EAttributeImpl} from './EAttributeImpl';
-import {EReferenceImpl} from './EReferenceImpl';
-import {EStructuralFeature} from './EStructuralFeature';
-import {EPackage} from './EPackage';
-import {EFactory} from './EFactory';
+import {BasicEObjectImpl} from "./BasicEObjectImpl";
+import {EClassImpl} from "./EClassImpl";
+import {EClass} from "./EClass";
+import {AbstractCollection} from "./AbstractCollection";
+import {EAttributeImpl} from "./EAttributeImpl";
+import {EReferenceImpl} from "./EReferenceImpl";
+import {EStructuralFeature} from "./EStructuralFeature";
+import {EPackage} from "./EPackage";
+import {EFactory} from "./EFactory";
 
 
 interface EObjectRegistry{

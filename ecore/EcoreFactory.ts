@@ -1,30 +1,23 @@
-/* CrossEcore is a cross-platform modeling framework that generates C#, TypeScript,
- * JavaScript, Swift code from Ecore models with embedded OCL (http://www.crossecore.org/).
- * The original Eclipse Modeling Framework is available at https://www.eclipse.org/modeling/emf/.
- *
- * contributor: Simon Schwichtenberg
- */
-
-import {EFactory} from "ecore/EFactory";
-import {EModelElement} from "ecore/EModelElement";
-import {EAttribute} from "ecore/EAttribute";
-import {EAnnotation} from "ecore/EAnnotation";
-import {EPackage} from "ecore/EPackage";
-import {EDataType} from "ecore/EDataType";
-import {ETypeParameter} from "ecore/ETypeParameter";
-import {EEnum} from "ecore/EEnum";
-import {EStringToStringMapEntry} from "ecore/EStringToStringMapEntry";
-import {EReference} from "ecore/EReference";
-import {EGenericType} from "ecore/EGenericType";
-import {EClassifier} from "ecore/EClassifier";
-import {EEnumLiteral} from "ecore/EEnumLiteral";
-import {ETypedElement} from "ecore/ETypedElement";
-import {EStructuralFeature} from "ecore/EStructuralFeature";
-import {EParameter} from "ecore/EParameter";
-import {EOperation} from "ecore/EOperation";
-import {EObject} from "ecore/EObject";
-import {ENamedElement} from "ecore/ENamedElement";
-import {EClass} from "ecore/EClass";
+import {EAttribute} from "./EAttribute";
+import {EAnnotation} from "./EAnnotation";
+import {EGenericType} from "./EGenericType";
+import {EEnumLiteral} from "./EEnumLiteral";
+import {ETypedElement} from "./ETypedElement";
+import {EReference} from "./EReference";
+import {EClassifier} from "./EClassifier";
+import {ENamedElement} from "./ENamedElement";
+import {EClass} from "./EClass";
+import {EStringToStringMapEntry} from "./EStringToStringMapEntry";
+import {EPackage} from "./EPackage";
+import {EEnum} from "./EEnum";
+import {EObject} from "./EObject";
+import {EModelElement} from "./EModelElement";
+import {EParameter} from "./EParameter";
+import {EOperation} from "./EOperation";
+import {ETypeParameter} from "./ETypeParameter";
+import {EDataType} from "./EDataType";
+import {EFactory} from "./EFactory";
+import {EStructuralFeature} from "./EStructuralFeature";
 export interface EcoreFactory extends EFactory{
 	createEAttribute():EAttribute;
 	createEAnnotation():EAnnotation;
@@ -47,4 +40,3 @@ export interface EcoreFactory extends EFactory{
 	createEGenericType():EGenericType;
 	createETypeParameter():ETypeParameter;
 }
-

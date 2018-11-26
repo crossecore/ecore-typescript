@@ -4,20 +4,11 @@
  *
  * contributor: Simon Schwichtenberg
  */
+export interface EList<E>
+{
 
-import {EReferenceBase} from "./EReferenceBase";
 
-///<summary>This class was generated.</summary>
+    //move(newPosition:number, object:E):void;
 
-	export class EReferenceImpl
-	extends EReferenceBase
-	
-	{
-
-    public getFeatureID(): number {
-      return this.featureID;
-    };
-
-	}
-	
-
+    //move(newPosition:number, oldPosition:number):E;
+}

@@ -5,17 +5,17 @@
  * contributor: Simon Schwichtenberg
  */
 
-import {EcoreEList} from "ecore/EcoreEList";
-import {Collection} from "ecore/Collection";
-import {InternalEObject} from "ecore/InternalEObject";
-import {ArrayList} from "ecore/ArrayList";
-import {NotificationChain} from "ecore/NotificationChain";
-import {NotificationImpl} from "ecore/NotificationImpl";
-import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
-import {EStructuralFeature} from "ecore/EStructuralFeature";
-import {EReference} from "ecore/EReference";
-import {Notification} from "ecore/Notification";
-import {ENotificationImpl} from 'ecore/ENotificationImpl';
+import {EcoreEList} from "./EcoreEList";
+import {Collection} from "./Collection";
+import {InternalEObject} from "./InternalEObject";
+import {ArrayList} from "./ArrayList";
+import {NotificationChain} from "./NotificationChain";
+import {NotificationImpl} from "./NotificationImpl";
+import {BasicEObjectImpl} from "./BasicEObjectImpl";
+import {EStructuralFeature} from "./EStructuralFeature";
+import {EReference} from "./EReference";
+import {Notification} from "./Notification";
+import {ENotificationImpl} from "./ENotificationImpl";
 
 export class AbstractCollection<T> extends ArrayList<T> implements EcoreEList<T>, Collection<T>
     {

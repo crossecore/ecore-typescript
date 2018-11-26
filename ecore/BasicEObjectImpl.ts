@@ -6,20 +6,20 @@
  */
 
 
-import {InternalEObject} from "ecore/InternalEObject";
-import {BasicNotifierImpl} from "ecore/BasicNotifierImpl";
-import {NotificationChain} from "ecore/NotificationChain";
-import {EObject} from "ecore/EObject";
-import {EClass} from "ecore/EClass";
-import {EStructuralFeature} from "ecore/EStructuralFeature";
+import {InternalEObject} from "./InternalEObject";
+import {BasicNotifierImpl} from "./BasicNotifierImpl";
+import {NotificationChain} from "./NotificationChain";
+import {EObject} from "./EObject";
+import {EClass} from "./EClass";
+import {EStructuralFeature} from "./EStructuralFeature";
 //import {EcorePackageImpl} from "./EcorePackageImpl";
 //import {EcorePackageImpl} from "./EcorePackageImpl";
-import {EReference} from "ecore/EReference";
-import {List} from "ecore/List";
-import {EOperation} from "ecore/EOperation";
-import {Resource} from "ecore/Resource";
-import {TreeIterator} from "ecore/TreeIterator";
-import {OrderedSet} from './OrderedSet';
+import {EReference} from "./EReference";
+import {EList} from "./EList";
+import {EOperation} from "./EOperation";
+import {Resource} from "./Resource";
+import {TreeIterator} from "./TreeIterator";
+import {OrderedSet} from "./OrderedSet";
 
 export class BasicEObjectImpl extends BasicNotifierImpl implements EObject, InternalEObject
     {
@@ -275,7 +275,7 @@ export class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
             return null;
         };
 
-        public eInvoke(operation:EOperation, args:List<any>): any{
+        public eInvoke(operation:EOperation, args:EList<any>): any{
             /*TODO implement function*/
             return null;
         };
@@ -305,7 +305,7 @@ export class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
             return null;
         };
 
-      public eContents(): List<EObject> {
+      public eContents(): EList<EObject> {
 
         var result = new OrderedSet<EObject>();
 
@@ -335,7 +335,7 @@ export class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
         return result;
       };
 
-        public eCrossReferences(): List<EObject>{
+        public eCrossReferences(): EList<EObject>{
             /*TODO implement function*/
             return null;
         };

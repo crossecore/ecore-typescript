@@ -5,7 +5,7 @@
  * contributor: Simon Schwichtenberg
  */
 
-import {EAttributeBase} from "ecore/EAttributeBase";
+import {EAttributeBase} from "./EAttributeBase";
 
 
 ///<summary>This class was generated.</summary>

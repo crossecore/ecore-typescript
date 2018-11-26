@@ -5,9 +5,9 @@
  * contributor: Simon Schwichtenberg
  */
 
-import {Notifier} from "ecore/Notifier";
-import {Adapter} from "ecore/Adapter";
-import {Notification} from "ecore/Notification";
+import {Notifier} from "./Notifier";
+import {Adapter} from "./Adapter";
+import {Notification} from "./Notification";
 export class BasicNotifierImpl implements Notifier
     {
 

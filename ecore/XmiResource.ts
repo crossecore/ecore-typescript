@@ -7,25 +7,25 @@
 
 
 
-import {EPackage} from "ecore/EPackage";
-import {EcorePackageImpl} from "ecore/EcorePackageImpl";
-import {EcoreFactoryImpl} from "ecore/EcoreFactoryImpl";
+import {EPackage} from "./EPackage";
+import {EcorePackageImpl} from "./EcorePackageImpl";
+import {EcoreFactoryImpl} from "./EcoreFactoryImpl";
 
-import {EClass} from "ecore/EClass";
-import {EObject} from "ecore/EObject";
-import {EFactory} from "ecore/EFactory";
+import {EClass} from "./EClass";
+import {EObject} from "./EObject";
+import {EFactory} from "./EFactory";
 
-import {EReference} from "ecore/EReference";
+import {EReference} from "./EReference";
 
-import {ENamedElement} from "ecore/ENamedElement";
-import {EReferenceImpl} from "ecore/EReferenceImpl";
-import {EClassImpl} from "ecore/EClassImpl";
-import {ENamedElementImpl} from "ecore/ENamedElementImpl";
-import {EAttributeImpl} from "ecore/EAttributeImpl";
-import {EStructuralFeature} from "ecore/EStructuralFeature";
-import {AbstractCollection} from "ecore/AbstractCollection";
-import {EDataType} from "ecore/EDataType";
-import {EDataTypeImpl} from "ecore/EDataTypeImpl";
+import {ENamedElement} from "./ENamedElement";
+import {EReferenceImpl} from "./EReferenceImpl";
+import {EClassImpl} from "./EClassImpl";
+import {ENamedElementImpl} from "./ENamedElementImpl";
+import {EAttributeImpl} from "./EAttributeImpl";
+import {EStructuralFeature} from "./EStructuralFeature";
+import {AbstractCollection} from "./AbstractCollection";
+import {EDataType} from "./EDataType";
+import {EDataTypeImpl} from "./EDataTypeImpl";
 
 
 interface EObjectRegistry{

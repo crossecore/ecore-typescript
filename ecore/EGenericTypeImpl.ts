@@ -5,7 +5,7 @@
  * contributor: Simon Schwichtenberg
  */
 
-import {EGenericTypeBase} from "ecore/EGenericTypeBase";
+import {EGenericTypeBase} from "./EGenericTypeBase";
 
 ///<summary>This class was generated.</summary>
 

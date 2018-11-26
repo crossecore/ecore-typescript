@@ -5,7 +5,7 @@
  * contributor: Simon Schwichtenberg
  */
 
-import {EAnnotationBase} from "ecore/EAnnotationBase";
+import {EAnnotationBase} from "./EAnnotationBase";
 
 
 ///<summary>This class was generated.</summary>
