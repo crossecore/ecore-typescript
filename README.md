@@ -25,14 +25,10 @@ For web applications, you can use the Asynchronous Module Format (AMD).
 If you are using AMD, you need a module loader like requireJs or systemJs.
 The module loader lazily loads modules and their dependencies on demand and automatically.
 
-# Build from source
-Install TypeScript compiler via npm:
+# Tutorial
+An example how CrossEcore TypeScript can be used in an Angular app for web browsers and in a Tabris (Cordova) app for Android can be seen in the [EclipseCon Europe 2018 tutorial](https://github.com/crossecore/examples-eclipsecon2018) which is also available on [YouTube](https://www.youtube.com/watch?v=T7-ExsSzSWw).
 
-```bash
-npm install typescript -g
-```
+## Publications
+S. Schwichtenberg, I. Jovanovikj, C. Gerth, and G. Engels, "Poster: CrossEcore: An Extendible Framework to Use Ecore and OCL across Platforms," in Proceedings of the 40th International Conference on Software Engineering, ICSE 2018 - Companion Volume, Gothenburg, Sweden.
 
-Run the compiler on the whole project:
-```bash
-tsc -p Ecore
-```
+Accepted Talk "CrossEcore: The best parts of the Eclipe Modeling Framework for C#, TypeScript and Swift" at the EclipseCon Europe 2018 in terms of the Modeling Symposium. Available on [YouTube](https://www.youtube.com/watch?v=T7-ExsSzSWw).
