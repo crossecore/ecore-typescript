@@ -307,7 +307,7 @@ export class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
 
       public eContents(): EList<EObject> {
 
-        var result = new OrderedSet<EObject>();
+        let result = new OrderedSet<EObject>();
 
 
         for(let feature of this.eClass().eAllReferences){
@@ -315,7 +315,7 @@ export class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
 
             if(feature.many){
 
-              var list = this.eGet(feature) as Array<EObject>;
+              let list = this.eGet(feature) as Array<EObject>;
 
               for(let item of list){
                 //TODO could be addAll

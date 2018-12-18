@@ -131,6 +131,18 @@ import {EStructuralFeature} from "./EStructuralFeature";
       return result;
 
     }
+
+	public getEStructuralFeature_string(featureName:string): EStructuralFeature {
+
+		for(let feature of this.eAllStructuralFeatures){
+			if(feature.name === featureName){
+				return feature;
+			}
+		}
+
+		return null;
+
+	};
 	}
 	
 
