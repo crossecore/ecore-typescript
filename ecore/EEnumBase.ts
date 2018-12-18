@@ -29,12 +29,16 @@ import {BasicEObjectImpl} from "./BasicEObjectImpl";
 				
 
 				public getEEnumLiteral(...args:Array<any>):any {
-					if(args.length === 1){
-						
+					if(
+						typeof args[0] === "string"
+					)
+					{
 						return this.getEEnumLiteral_string(args[0]);
 					}
-					if(args.length === 1){
-						
+					if(
+						typeof args[0] === "number"
+					)
+					{
 						return this.getEEnumLiteral_number(args[0]);
 					}
 				};

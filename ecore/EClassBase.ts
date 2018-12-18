@@ -194,12 +194,16 @@ import {EReference} from "./EReference";
 					return null;
 				};
 				public getEStructuralFeature(...args:Array<any>):any {
-					if(args.length === 1){
-						
+					if(
+						typeof args[0] === "number"
+					)
+					{
 						return this.getEStructuralFeature_number(args[0]);
 					}
-					if(args.length === 1){
-						
+					if(
+						typeof args[0] === "string"
+					)
+					{
 						return this.getEStructuralFeature_string(args[0]);
 					}
 				};
