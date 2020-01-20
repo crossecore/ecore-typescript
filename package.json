@@ -1,8 +1,8 @@
 {
-  "name": "ecore-typescript",
-  "version": "0.0.0",
-  "description": "CrossEcore",
-  "main": "index.js",
+  "name": "crossecore",
+  "version": "1.0.0",
+  "description": "Ecore and OCL runtime API for TypeScript",
+  "license": "EPL-2.0",
   "directories": {
     "test": "test"
   },
@@ -21,12 +21,12 @@
   "bugs": {
     "url": "https://github.com/crossecore/ecore-typescript/issues"
   },
-  "homepage": "https://github.com/crossecore/ecore-typescript#readme",
+  "homepage": "http://www.crossecore.org",
   "devDependencies": {
-    "@types/jest": "^23.3.9",
-    "jest": "^23.6.0",
-    "madge": "^3.3.0",
-    "ts-jest": "^23.10.5"
+    "@types/jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "madge": "^3.6.0",
+    "ts-jest": "^24.3.0"
   },
   "dependencies": {}
 }
