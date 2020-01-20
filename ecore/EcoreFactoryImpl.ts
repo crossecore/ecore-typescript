@@ -11,7 +11,6 @@ import {EFactory} from "./EFactory";
 import {EAttribute} from "./EAttribute";
 import {EAnnotationImpl} from "./EAnnotationImpl";
 import {EClass} from "./EClass";
-import {EcorePackageImpl} from "./EcorePackageImpl";
 import {EAttributeImpl} from "./EAttributeImpl";
 import {EClassImpl} from "./EClassImpl";
 import {EObject} from "./EObject";
@@ -191,21 +190,21 @@ export class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory{
 	
 	public create(eClass:EClass):EObject {
 		switch (eClass.getClassifierID()) {
-			case EcorePackageImpl.EATTRIBUTE: return this.createEAttribute();
-			case EcorePackageImpl.EANNOTATION: return this.createEAnnotation();
-			case EcorePackageImpl.ECLASS: return this.createEClass();
-			case EcorePackageImpl.EDATATYPE: return this.createEDataType();
-			case EcorePackageImpl.EENUM: return this.createEEnum();
-			case EcorePackageImpl.EENUMLITERAL: return this.createEEnumLiteral();
-			case EcorePackageImpl.EFACTORY: return this.createEFactory();
-			case EcorePackageImpl.EOBJECT: return this.createEObject();
-			case EcorePackageImpl.EOPERATION: return this.createEOperation();
-			case EcorePackageImpl.EPACKAGE: return this.createEPackage();
-			case EcorePackageImpl.EPARAMETER: return this.createEParameter();
-			case EcorePackageImpl.EREFERENCE: return this.createEReference();
-			case EcorePackageImpl.ESTRINGTOSTRINGMAPENTRY: return this.createEStringToStringMapEntry();
-			case EcorePackageImpl.EGENERICTYPE: return this.createEGenericType();
-			case EcorePackageImpl.ETYPEPARAMETER: return this.createETypeParameter();
+			case 0: return this.createEAttribute();
+			case 1: return this.createEAnnotation();
+			case 2: return this.createEClass();
+			case 4: return this.createEDataType();
+			case 5: return this.createEEnum();
+			case 6: return this.createEEnumLiteral();
+			case 7: return this.createEFactory();
+			case 10: return this.createEObject();
+			case 11: return this.createEOperation();
+			case 12: return this.createEPackage();
+			case 13: return this.createEParameter();
+			case 14: return this.createEReference();
+			case 48: return this.createEStringToStringMapEntry();
+			case 50: return this.createEGenericType();
+			case 51: return this.createETypeParameter();
 			default:
 				throw new Error("The class '" + eClass.name + "' is not a valid classifier");
 		}
@@ -214,52 +213,52 @@ export class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory{
 	
 	public createFromString(eDataType:EDataType, initialValue:string):any {
 		switch (eDataType.getClassifierID()) {
-		case EcorePackageImpl.EBIGDECIMAL:
-			return this.createEBigDecimalFromString(eDataType, initialValue);
-		case EcorePackageImpl.EBIGINTEGER:
-			return this.createEBigIntegerFromString(eDataType, initialValue);
-		case EcorePackageImpl.EBOOLEAN:
-			return this.createEBooleanFromString(eDataType, initialValue);
-		case EcorePackageImpl.EBOOLEANOBJECT:
-			return this.createEBooleanObjectFromString(eDataType, initialValue);
-		case EcorePackageImpl.EBYTE:
-			return this.createEByteFromString(eDataType, initialValue);
-		case EcorePackageImpl.EBYTEARRAY:
-			return this.createEByteArrayFromString(eDataType, initialValue);
-		case EcorePackageImpl.EBYTEOBJECT:
-			return this.createEByteObjectFromString(eDataType, initialValue);
-		case EcorePackageImpl.ECHAR:
-			return this.createECharFromString(eDataType, initialValue);
-		case EcorePackageImpl.ECHARACTEROBJECT:
-			return this.createECharacterObjectFromString(eDataType, initialValue);
-		case EcorePackageImpl.EDATE:
-			return this.createEDateFromString(eDataType, initialValue);
-		case EcorePackageImpl.EDOUBLE:
-			return this.createEDoubleFromString(eDataType, initialValue);
-		case EcorePackageImpl.EDOUBLEOBJECT:
-			return this.createEDoubleObjectFromString(eDataType, initialValue);
-		case EcorePackageImpl.EFLOAT:
-			return this.createEFloatFromString(eDataType, initialValue);
-		case EcorePackageImpl.EFLOATOBJECT:
-			return this.createEFloatObjectFromString(eDataType, initialValue);
-		case EcorePackageImpl.EINT:
-			return this.createEIntFromString(eDataType, initialValue);
-		case EcorePackageImpl.EINTEGEROBJECT:
-			return this.createEIntegerObjectFromString(eDataType, initialValue);
-		case EcorePackageImpl.EJAVACLASS:
-			return this.createEJavaClassFromString(eDataType, initialValue);
-		case EcorePackageImpl.EJAVAOBJECT:
-			return this.createEJavaObjectFromString(eDataType, initialValue);
-		case EcorePackageImpl.ELONG:
-			return this.createELongFromString(eDataType, initialValue);
-		case EcorePackageImpl.ELONGOBJECT:
-			return this.createELongObjectFromString(eDataType, initialValue);
-		case EcorePackageImpl.ESHORT:
-			return this.createEShortFromString(eDataType, initialValue);
-		case EcorePackageImpl.ESHORTOBJECT:
-			return this.createEShortObjectFromString(eDataType, initialValue);
-		case EcorePackageImpl.ESTRING:
-			return this.createEStringFromString(eDataType, initialValue);
+		case 17: //EcorePackageImpl.EBIGDECIMAL
+			return this.createEBigDecimalFromString(eDataType, initialValue);				
+		case 18: //EcorePackageImpl.EBIGINTEGER
+			return this.createEBigIntegerFromString(eDataType, initialValue);				
+		case 19: //EcorePackageImpl.EBOOLEAN
+			return this.createEBooleanFromString(eDataType, initialValue);				
+		case 20: //EcorePackageImpl.EBOOLEANOBJECT
+			return this.createEBooleanObjectFromString(eDataType, initialValue);				
+		case 21: //EcorePackageImpl.EBYTE
+			return this.createEByteFromString(eDataType, initialValue);				
+		case 22: //EcorePackageImpl.EBYTEARRAY
+			return this.createEByteArrayFromString(eDataType, initialValue);				
+		case 23: //EcorePackageImpl.EBYTEOBJECT
+			return this.createEByteObjectFromString(eDataType, initialValue);				
+		case 24: //EcorePackageImpl.ECHAR
+			return this.createECharFromString(eDataType, initialValue);				
+		case 25: //EcorePackageImpl.ECHARACTEROBJECT
+			return this.createECharacterObjectFromString(eDataType, initialValue);				
+		case 26: //EcorePackageImpl.EDATE
+			return this.createEDateFromString(eDataType, initialValue);				
+		case 28: //EcorePackageImpl.EDOUBLE
+			return this.createEDoubleFromString(eDataType, initialValue);				
+		case 29: //EcorePackageImpl.EDOUBLEOBJECT
+			return this.createEDoubleObjectFromString(eDataType, initialValue);				
+		case 34: //EcorePackageImpl.EFLOAT
+			return this.createEFloatFromString(eDataType, initialValue);				
+		case 35: //EcorePackageImpl.EFLOATOBJECT
+			return this.createEFloatObjectFromString(eDataType, initialValue);				
+		case 36: //EcorePackageImpl.EINT
+			return this.createEIntFromString(eDataType, initialValue);				
+		case 37: //EcorePackageImpl.EINTEGEROBJECT
+			return this.createEIntegerObjectFromString(eDataType, initialValue);				
+		case 38: //EcorePackageImpl.EJAVACLASS
+			return this.createEJavaClassFromString(eDataType, initialValue);				
+		case 39: //EcorePackageImpl.EJAVAOBJECT
+			return this.createEJavaObjectFromString(eDataType, initialValue);				
+		case 40: //EcorePackageImpl.ELONG
+			return this.createELongFromString(eDataType, initialValue);				
+		case 41: //EcorePackageImpl.ELONGOBJECT
+			return this.createELongObjectFromString(eDataType, initialValue);				
+		case 45: //EcorePackageImpl.ESHORT
+			return this.createEShortFromString(eDataType, initialValue);				
+		case 46: //EcorePackageImpl.ESHORTOBJECT
+			return this.createEShortObjectFromString(eDataType, initialValue);				
+		case 47: //EcorePackageImpl.ESTRING
+			return this.createEStringFromString(eDataType, initialValue);				
 		default:
 			throw new Error("The datatype '" + eDataType.name + "' is not a valid classifier");
 		}
@@ -267,52 +266,52 @@ export class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory{
 	
 	public convertToString(eDataType:EDataType, instanceValue:any):string {
 		switch (eDataType.getClassifierID()) {
-		case EcorePackageImpl.EBIGDECIMAL:
-			return this.convertEBigDecimalToString(eDataType, instanceValue);
-		case EcorePackageImpl.EBIGINTEGER:
-			return this.convertEBigIntegerToString(eDataType, instanceValue);
-		case EcorePackageImpl.EBOOLEAN:
-			return this.convertEBooleanToString(eDataType, instanceValue);
-		case EcorePackageImpl.EBOOLEANOBJECT:
-			return this.convertEBooleanObjectToString(eDataType, instanceValue);
-		case EcorePackageImpl.EBYTE:
-			return this.convertEByteToString(eDataType, instanceValue);
-		case EcorePackageImpl.EBYTEARRAY:
-			return this.convertEByteArrayToString(eDataType, instanceValue);
-		case EcorePackageImpl.EBYTEOBJECT:
-			return this.convertEByteObjectToString(eDataType, instanceValue);
-		case EcorePackageImpl.ECHAR:
-			return this.convertECharToString(eDataType, instanceValue);
-		case EcorePackageImpl.ECHARACTEROBJECT:
-			return this.convertECharacterObjectToString(eDataType, instanceValue);
-		case EcorePackageImpl.EDATE:
-			return this.convertEDateToString(eDataType, instanceValue);
-		case EcorePackageImpl.EDOUBLE:
-			return this.convertEDoubleToString(eDataType, instanceValue);
-		case EcorePackageImpl.EDOUBLEOBJECT:
-			return this.convertEDoubleObjectToString(eDataType, instanceValue);
-		case EcorePackageImpl.EFLOAT:
-			return this.convertEFloatToString(eDataType, instanceValue);
-		case EcorePackageImpl.EFLOATOBJECT:
-			return this.convertEFloatObjectToString(eDataType, instanceValue);
-		case EcorePackageImpl.EINT:
-			return this.convertEIntToString(eDataType, instanceValue);
-		case EcorePackageImpl.EINTEGEROBJECT:
-			return this.convertEIntegerObjectToString(eDataType, instanceValue);
-		case EcorePackageImpl.EJAVACLASS:
-			return this.convertEJavaClassToString(eDataType, instanceValue);
-		case EcorePackageImpl.EJAVAOBJECT:
-			return this.convertEJavaObjectToString(eDataType, instanceValue);
-		case EcorePackageImpl.ELONG:
-			return this.convertELongToString(eDataType, instanceValue);
-		case EcorePackageImpl.ELONGOBJECT:
-			return this.convertELongObjectToString(eDataType, instanceValue);
-		case EcorePackageImpl.ESHORT:
-			return this.convertEShortToString(eDataType, instanceValue);
-		case EcorePackageImpl.ESHORTOBJECT:
-			return this.convertEShortObjectToString(eDataType, instanceValue);
-		case EcorePackageImpl.ESTRING:
-			return this.convertEStringToString(eDataType, instanceValue);
+		case 17: //EcorePackageImpl.EBIGDECIMAL
+			return this.convertEBigDecimalToString(eDataType, instanceValue);				
+		case 18: //EcorePackageImpl.EBIGINTEGER
+			return this.convertEBigIntegerToString(eDataType, instanceValue);				
+		case 19: //EcorePackageImpl.EBOOLEAN
+			return this.convertEBooleanToString(eDataType, instanceValue);				
+		case 20: //EcorePackageImpl.EBOOLEANOBJECT
+			return this.convertEBooleanObjectToString(eDataType, instanceValue);				
+		case 21: //EcorePackageImpl.EBYTE
+			return this.convertEByteToString(eDataType, instanceValue);				
+		case 22: //EcorePackageImpl.EBYTEARRAY
+			return this.convertEByteArrayToString(eDataType, instanceValue);				
+		case 23: //EcorePackageImpl.EBYTEOBJECT
+			return this.convertEByteObjectToString(eDataType, instanceValue);				
+		case 24: //EcorePackageImpl.ECHAR
+			return this.convertECharToString(eDataType, instanceValue);				
+		case 25: //EcorePackageImpl.ECHARACTEROBJECT
+			return this.convertECharacterObjectToString(eDataType, instanceValue);				
+		case 26: //EcorePackageImpl.EDATE
+			return this.convertEDateToString(eDataType, instanceValue);				
+		case 28: //EcorePackageImpl.EDOUBLE
+			return this.convertEDoubleToString(eDataType, instanceValue);				
+		case 29: //EcorePackageImpl.EDOUBLEOBJECT
+			return this.convertEDoubleObjectToString(eDataType, instanceValue);				
+		case 34: //EcorePackageImpl.EFLOAT
+			return this.convertEFloatToString(eDataType, instanceValue);				
+		case 35: //EcorePackageImpl.EFLOATOBJECT
+			return this.convertEFloatObjectToString(eDataType, instanceValue);				
+		case 36: //EcorePackageImpl.EINT
+			return this.convertEIntToString(eDataType, instanceValue);				
+		case 37: //EcorePackageImpl.EINTEGEROBJECT
+			return this.convertEIntegerObjectToString(eDataType, instanceValue);				
+		case 38: //EcorePackageImpl.EJAVACLASS
+			return this.convertEJavaClassToString(eDataType, instanceValue);				
+		case 39: //EcorePackageImpl.EJAVAOBJECT
+			return this.convertEJavaObjectToString(eDataType, instanceValue);				
+		case 40: //EcorePackageImpl.ELONG
+			return this.convertELongToString(eDataType, instanceValue);				
+		case 41: //EcorePackageImpl.ELONGOBJECT
+			return this.convertELongObjectToString(eDataType, instanceValue);				
+		case 45: //EcorePackageImpl.ESHORT
+			return this.convertEShortToString(eDataType, instanceValue);				
+		case 46: //EcorePackageImpl.ESHORTOBJECT
+			return this.convertEShortObjectToString(eDataType, instanceValue);				
+		case 47: //EcorePackageImpl.ESTRING
+			return this.convertEStringToString(eDataType, instanceValue);				
 		default:
 			throw new Error("The datatype '" + eDataType.name + "' is not a valid classifier");
 		}
