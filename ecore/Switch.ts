@@ -53,7 +53,8 @@ export abstract class Switch<T>{
             return this.doSwitch1(eObject.eClass(), eObject);
         }
 
-        private doSwitch3(classifierID:number,  eObject:EObject):T
+
+        protected doSwitch3(classifierID:number,  eObject:EObject):T
         {
             return null;
         }
