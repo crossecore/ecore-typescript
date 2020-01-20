@@ -324,7 +324,13 @@ export class BasicEObjectImpl extends BasicNotifierImpl implements EObject, Inte
               }
             }
             else{
-              result.add(this.eGet(feature));
+
+              let other = this.eGet(feature);
+
+              if(other!==null){
+                result.add(other);
+              }
+
             }
 
 
