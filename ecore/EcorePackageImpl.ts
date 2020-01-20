@@ -331,7 +331,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			var op:EOperation = null;
 			
 			this.initEClass(
-			this.EAttributeEClass, 
+			this.EAttributeEClass,
 			EAttributeImpl, 
 			"EAttribute", 
 			!EPackageImpl.IS_ABSTRACT, 
@@ -377,7 +377,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			
 			this.initEClass(
-			this.EAnnotationEClass, 
+			this.EAnnotationEClass,
 			EAnnotationImpl, 
 			"EAnnotation", 
 			!EPackageImpl.IS_ABSTRACT, 
@@ -477,7 +477,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			
 			this.initEClass(
-			this.EClassEClass, 
+			this.EClassEClass,
 			EClassImpl, 
 			"EClass", 
 			!EPackageImpl.IS_ABSTRACT, 
@@ -771,45 +771,45 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClass__IsSuperTypeOf__SomeClass(), this.getEBoolean(), "isSuperTypeOf", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClass__IsSuperTypeOf__SomeClass(), this.ecorePackage.getEBoolean(), "isSuperTypeOf", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEClass(), "someClass", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClass__GetFeatureCount__(), this.getEBoolean(), "getFeatureCount", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClass__GetFeatureCount__(), this.ecorePackage.getEInt(), "getFeatureCount", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClass__GetEStructuralFeature__FeatureID(), this.getEBoolean(), "getEStructuralFeature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClass__GetEStructuralFeature__FeatureID(), this.ecorePackage.getEStructuralFeature(), "getEStructuralFeature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEClass(), "featureID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClass__GetFeatureID__Feature(), this.getEBoolean(), "getFeatureID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClass__GetFeatureID__Feature(), this.ecorePackage.getEInt(), "getFeatureID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEClass(), "feature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClass__GetEStructuralFeature__FeatureName(), this.getEBoolean(), "getEStructuralFeature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClass__GetEStructuralFeature__FeatureName(), this.ecorePackage.getEStructuralFeature(), "getEStructuralFeature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEClass(), "featureName", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClass__GetOperationCount__(), this.getEBoolean(), "getOperationCount", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClass__GetOperationCount__(), this.ecorePackage.getEInt(), "getOperationCount", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClass__GetEOperation__OperationID(), this.getEBoolean(), "getEOperation", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClass__GetEOperation__OperationID(), this.ecorePackage.getEOperation(), "getEOperation", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEClass(), "operationID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClass__GetOperationID__Operation(), this.getEBoolean(), "getOperationID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClass__GetOperationID__Operation(), this.ecorePackage.getEInt(), "getOperationID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEClass(), "operation", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClass__GetOverride__Operation(), this.getEBoolean(), "getOverride", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClass__GetOverride__Operation(), this.ecorePackage.getEOperation(), "getOverride", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEClass(), "operation", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClass__GetFeatureType__Feature(), this.getEBoolean(), "getFeatureType", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClass__GetFeatureType__Feature(), this.ecorePackage.getEGenericType(), "getFeatureType", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEClass(), "feature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			
 			
 			this.initEClass(
-			this.EClassifierEClass, 
+			this.EClassifierEClass,
 			EClassifierImpl, 
 			"EClassifier", 
 			EPackageImpl.IS_ABSTRACT, 
@@ -919,15 +919,15 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClassifier__IsInstance__Object(), this.getEBoolean(), "isInstance", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClassifier__IsInstance__Object(), this.ecorePackage.getEBoolean(), "isInstance", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEClassifier_(), "object", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClassifier__GetClassifierID__(), this.getEBoolean(), "getClassifierID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClassifier__GetClassifierID__(), this.ecorePackage.getEInt(), "getClassifierID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			
 			
 			this.initEClass(
-			this.EDataTypeEClass, 
+			this.EDataTypeEClass,
 			EDataTypeImpl, 
 			"EDataType", 
 			!EPackageImpl.IS_ABSTRACT, 
@@ -955,7 +955,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			
 			this.initEClass(
-			this.EEnumEClass, 
+			this.EEnumEClass,
 			EEnumImpl, 
 			"EEnum", 
 			!EPackageImpl.IS_ABSTRACT, 
@@ -983,21 +983,21 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEEnum__GetEEnumLiteral__Name(), this.getEBoolean(), "getEEnumLiteral", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEEnum__GetEEnumLiteral__Name(), this.ecorePackage.getEEnumLiteral(), "getEEnumLiteral", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEEnum(), "name", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEEnum__GetEEnumLiteral__Value(), this.getEBoolean(), "getEEnumLiteral", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEEnum__GetEEnumLiteral__Value(), this.ecorePackage.getEEnumLiteral(), "getEEnumLiteral", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEEnum(), "value", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEEnum__GetEEnumLiteralByLiteral__Literal(), this.getEBoolean(), "getEEnumLiteralByLiteral", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEEnum__GetEEnumLiteralByLiteral__Literal(), this.ecorePackage.getEEnumLiteral(), "getEEnumLiteralByLiteral", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEEnum(), "literal", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			
 			
 			this.initEClass(
-			this.EEnumLiteralEClass, 
+			this.EEnumLiteralEClass,
 			EEnumLiteralImpl, 
 			"EEnumLiteral", 
 			!EPackageImpl.IS_ABSTRACT, 
@@ -1075,7 +1075,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			
 			this.initEClass(
-			this.EFactoryEClass, 
+			this.EFactoryEClass,
 			EFactoryImpl, 
 			"EFactory", 
 			!EPackageImpl.IS_ABSTRACT, 
@@ -1103,17 +1103,17 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEFactory__Create__EClass(), this.getEBoolean(), "create", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEFactory__Create__EClass(), this.ecorePackage.getEObject(), "create", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEFactory(), "eClass", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEFactory__CreateFromString__EDataType__LiteralValue(), this.getEBoolean(), "createFromString", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEFactory__CreateFromString__EDataType__LiteralValue(), this.ecorePackage.getEJavaObject(), "createFromString", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEFactory(), "eDataType", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEFactory(), "literalValue", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEFactory__ConvertToString__EDataType__InstanceValue(), this.getEBoolean(), "convertToString", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEFactory__ConvertToString__EDataType__InstanceValue(), this.ecorePackage.getEString(), "convertToString", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEFactory(), "eDataType", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
@@ -1121,7 +1121,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			
 			this.initEClass(
-			this.EModelElementEClass, 
+			this.EModelElementEClass,
 			EModelElementImpl, 
 			"EModelElement", 
 			EPackageImpl.IS_ABSTRACT, 
@@ -1149,13 +1149,13 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEModelElement__GetEAnnotation__Source(), this.getEBoolean(), "getEAnnotation", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEModelElement__GetEAnnotation__Source(), this.ecorePackage.getEAnnotation_(), "getEAnnotation", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEModelElement(), "source", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			
 			
 			this.initEClass(
-			this.ENamedElementEClass, 
+			this.ENamedElementEClass,
 			ENamedElementImpl, 
 			"ENamedElement", 
 			EPackageImpl.IS_ABSTRACT, 
@@ -1183,7 +1183,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			
 			this.initEClass(
-			this.EObjectEClass, 
+			this.EObjectEClass,
 			EObjectImpl, 
 			"EObject", 
 			!EPackageImpl.IS_ABSTRACT, 
@@ -1193,49 +1193,49 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EClass__(), this.getEBoolean(), "eClass", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EClass__(), this.ecorePackage.getEClass(), "eClass", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EIsProxy__(), this.getEBoolean(), "eIsProxy", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EIsProxy__(), this.ecorePackage.getEBoolean(), "eIsProxy", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EResource__(), this.getEBoolean(), "eResource", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EResource__(), this.ecorePackage.getEResource(), "eResource", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EContainer__(), this.getEBoolean(), "eContainer", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EContainer__(), this.ecorePackage.getEObject(), "eContainer", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EContainingFeature__(), this.getEBoolean(), "eContainingFeature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EContainingFeature__(), this.ecorePackage.getEStructuralFeature(), "eContainingFeature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EContainmentFeature__(), this.getEBoolean(), "eContainmentFeature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EContainmentFeature__(), this.ecorePackage.getEReference(), "eContainmentFeature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EContents__(), this.getEBoolean(), "eContents", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EContents__(), this.ecorePackage.getEEList(), "eContents", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EAllContents__(), this.getEBoolean(), "eAllContents", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EAllContents__(), this.ecorePackage.getETreeIterator(), "eAllContents", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__ECrossReferences__(), this.getEBoolean(), "eCrossReferences", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__ECrossReferences__(), this.ecorePackage.getEEList(), "eCrossReferences", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EGet__Feature(), this.getEBoolean(), "eGet", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EGet__Feature(), this.ecorePackage.getEJavaObject(), "eGet", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEObject(), "feature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EGet__Feature__Resolve(), this.getEBoolean(), "eGet", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EGet__Feature__Resolve(), this.ecorePackage.getEJavaObject(), "eGet", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEObject(), "feature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEObject(), "resolve", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__ESet__Feature__NewValue(), this.getEBoolean(), "eSet", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__ESet__Feature__NewValue(), null, "eSet", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEObject(), "feature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEObject(), "newValue", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EIsSet__Feature(), this.getEBoolean(), "eIsSet", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EIsSet__Feature(), this.ecorePackage.getEBoolean(), "eIsSet", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEObject(), "feature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EUnset__Feature(), this.getEBoolean(), "eUnset", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EUnset__Feature(), null, "eUnset", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEObject(), "feature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EInvoke__Operation__Arguments(), this.getEBoolean(), "eInvoke", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EInvoke__Operation__Arguments(), this.ecorePackage.getEJavaObject(), "eInvoke", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEObject(), "operation", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
@@ -1243,7 +1243,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			
 			this.initEClass(
-			this.EOperationEClass, 
+			this.EOperationEClass,
 			EOperationImpl, 
 			"EOperation", 
 			!EPackageImpl.IS_ABSTRACT, 
@@ -1343,15 +1343,15 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEOperation__GetOperationID__(), this.getEBoolean(), "getOperationID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEOperation__GetOperationID__(), this.ecorePackage.getEInt(), "getOperationID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEOperation__IsOverrideOf__SomeOperation(), this.getEBoolean(), "isOverrideOf", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEOperation__IsOverrideOf__SomeOperation(), this.ecorePackage.getEBoolean(), "isOverrideOf", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEOperation(), "someOperation", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			
 			
 			this.initEClass(
-			this.EPackageEClass, 
+			this.EPackageEClass,
 			EPackageImpl, 
 			"EPackage", 
 			!EPackageImpl.IS_ABSTRACT, 
@@ -1465,13 +1465,13 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEPackage__GetEClassifier__Name(), this.getEBoolean(), "getEClassifier", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEPackage__GetEClassifier__Name(), this.ecorePackage.getEClassifier_(), "getEClassifier", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEPackage(), "name", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			
 			
 			this.initEClass(
-			this.EParameterEClass, 
+			this.EParameterEClass,
 			EParameterImpl, 
 			"EParameter", 
 			!EPackageImpl.IS_ABSTRACT, 
@@ -1501,7 +1501,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			
 			this.initEClass(
-			this.EReferenceEClass, 
+			this.EReferenceEClass,
 			EReferenceImpl, 
 			"EReference", 
 			!EPackageImpl.IS_ABSTRACT, 
@@ -1615,7 +1615,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			
 			this.initEClass(
-			this.EStructuralFeatureEClass, 
+			this.EStructuralFeatureEClass,
 			EStructuralFeatureImpl, 
 			"EStructuralFeature", 
 			EPackageImpl.IS_ABSTRACT, 
@@ -1755,13 +1755,13 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEStructuralFeature__GetFeatureID__(), this.getEBoolean(), "getFeatureID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEStructuralFeature__GetFeatureID__(), this.ecorePackage.getEInt(), "getFeatureID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEStructuralFeature__GetContainerClass__(), this.getEBoolean(), "getContainerClass", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEStructuralFeature__GetContainerClass__(), this.ecorePackage.getEJavaClass(), "getContainerClass", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			
 			
 			this.initEClass(
-			this.ETypedElementEClass, 
+			this.ETypedElementEClass,
 			ETypedElementImpl, 
 			"ETypedElement", 
 			EPackageImpl.IS_ABSTRACT, 
@@ -1905,7 +1905,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			
 			this.initEClass(
-			this.EStringToStringMapEntryEClass, 
+			this.EStringToStringMapEntryEClass,
 			EStringToStringMapEntryImpl, 
 			"EStringToStringMapEntry", 
 			!EPackageImpl.IS_ABSTRACT, 
@@ -1949,7 +1949,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			
 			this.initEClass(
-			this.EGenericTypeEClass, 
+			this.EGenericTypeEClass,
 			EGenericTypeImpl, 
 			"EGenericType", 
 			!EPackageImpl.IS_ABSTRACT, 
@@ -2067,13 +2067,13 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEGenericType__IsInstance__Object(), this.getEBoolean(), "isInstance", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEGenericType__IsInstance__Object(), this.ecorePackage.getEBoolean(), "isInstance", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add addEParameter to EPackageImpl
 			//this.addEParameter_3(op, this.getEGenericType(), "object", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			
 			
 			this.initEClass(
-			this.ETypeParameterEClass, 
+			this.ETypeParameterEClass,
 			ETypeParameterImpl, 
 			"ETypeParameter", 
 			!EPackageImpl.IS_ABSTRACT, 
@@ -2102,72 +2102,39 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			
 			
-			
-			//this.initEDataType(this.EBigDecimalEDataType, null, "EBigDecimal", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EBigIntegerEDataType, null, "EBigInteger", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EBooleanEDataType, null, "EBoolean", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EBooleanObjectEDataType, null, "EBooleanObject", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EByteEDataType, null, "EByte", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EByteArrayEDataType, null, "EByteArray", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EByteObjectEDataType, null, "EByteObject", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.ECharEDataType, null, "EChar", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.ECharacterObjectEDataType, null, "ECharacterObject", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EDateEDataType, null, "EDate", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EDiagnosticChainEDataType, null, "EDiagnosticChain", !EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EDoubleEDataType, null, "EDouble", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EDoubleObjectEDataType, null, "EDoubleObject", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EEListEDataType, null, "EEList", !EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EEnumeratorEDataType, null, "EEnumerator", !EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EFeatureMapEDataType, null, "EFeatureMap", !EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EFeatureMapEntryEDataType, null, "EFeatureMapEntry", !EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EFloatEDataType, null, "EFloat", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EFloatObjectEDataType, null, "EFloatObject", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EIntEDataType, null, "EInt", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EIntegerObjectEDataType, null, "EIntegerObject", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EJavaClassEDataType, null, "EJavaClass", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EJavaObjectEDataType, null, "EJavaObject", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.ELongEDataType, null, "ELong", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.ELongObjectEDataType, null, "ELongObject", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EMapEDataType, null, "EMap", !EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EResourceEDataType, null, "EResource", !EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EResourceSetEDataType, null, "EResourceSet", !EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EShortEDataType, null, "EShort", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EShortObjectEDataType, null, "EShortObject", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EStringEDataType, null, "EString", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.ETreeIteratorEDataType, null, "ETreeIterator", !EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
-			
-			//this.initEDataType(this.EInvocationTargetExceptionEDataType, null, "EInvocationTargetException", !EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EBigDecimalEDataType, null, "EBigDecimal", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EBigIntegerEDataType, null, "EBigInteger", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EBooleanEDataType, null, "EBoolean", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EBooleanObjectEDataType, null, "EBooleanObject", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EByteEDataType, null, "EByte", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EByteArrayEDataType, null, "EByteArray", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EByteObjectEDataType, null, "EByteObject", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.ECharEDataType, null, "EChar", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.ECharacterObjectEDataType, null, "ECharacterObject", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EDateEDataType, null, "EDate", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EDiagnosticChainEDataType, null, "EDiagnosticChain", !EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EDoubleEDataType, null, "EDouble", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EDoubleObjectEDataType, null, "EDoubleObject", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EEListEDataType, null, "EEList", !EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EEnumeratorEDataType, null, "EEnumerator", !EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EFeatureMapEDataType, null, "EFeatureMap", !EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EFeatureMapEntryEDataType, null, "EFeatureMapEntry", !EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EFloatEDataType, null, "EFloat", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EFloatObjectEDataType, null, "EFloatObject", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EIntEDataType, null, "EInt", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EIntegerObjectEDataType, null, "EIntegerObject", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EJavaClassEDataType, null, "EJavaClass", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EJavaObjectEDataType, null, "EJavaObject", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.ELongEDataType, null, "ELong", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.ELongObjectEDataType, null, "ELongObject", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EMapEDataType, null, "EMap", !EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EResourceEDataType, null, "EResource", !EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EResourceSetEDataType, null, "EResourceSet", !EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EShortEDataType, null, "EShort", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EShortObjectEDataType, null, "EShortObject", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EStringEDataType, null, "EString", EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.ETreeIteratorEDataType, null, "ETreeIterator", !EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+			this.initEDataType(this.EInvocationTargetExceptionEDataType, null, "EInvocationTargetException", !EPackageImpl.IS_SERIALIZABLE, !EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
 			
         }
 		
