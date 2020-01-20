@@ -51,7 +51,7 @@ export class XmiResource{
 
     private root:EObject;
 
-    private resolveJobs:any = []; //TODO define type
+    private resolveJobs:Array<ResolveJob> = []; //TODO define type
     private eobjectRegistry:EObjectRegistry;
 
     constructor(epackage:EPackage, efactory:EFactory, domParser:DOMParser){
@@ -60,7 +60,7 @@ export class XmiResource{
 
         this.domParser = domParser;
 
-        this.resolveJobs = {};
+        this.resolveJobs = [];
         this.eobjectRegistry = {};
     }
 
@@ -72,7 +72,7 @@ export class XmiResource{
         let parser = this.domParser;
         let xmlDoc = parser.parseFromString(xml,"text/xml");
 
-        this.rootnode(xmlDoc.childNodes[2] as Element);
+        this.rootnode(xmlDoc.childNodes[0] as Element);
 
         return this.root;
     }
@@ -141,8 +141,25 @@ export class XmiResource{
                 queue.push(segment);
             }
 
-            this.resolveRecurr(queue, this.root);
+            return this.resolveRecurr(queue, this.root);
+        }
+        else if(specification.indexOf("http://www.eclipse.org/emf/2002/Ecore#")!==-1){
+          //ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString
 
+          let index = specification.indexOf("http://www.eclipse.org/emf/2002/Ecore#//");
+          let name = specification.substring(index+40, specification.length);
+          let segments = name.split("/");
+
+          let queue = new Array<string>();
+
+
+          for(let i=0;i<segments.length;i++){
+            let segment = segments[i];
+
+            queue.push(segment);
+          }
+
+          return this.resolveRecurr(queue, EcorePackageImpl.eINSTANCE);
 
         }
     }
@@ -157,7 +174,7 @@ export class XmiResource{
         let segment = path.shift();
 
         //FIXME: eContents needs to return Array
-        let econtents = new Array<EObject>();//current.eContents();
+        let econtents = current.eContents() as Array<EObject>;
 
         for(let i=0; i<econtents.length;i++){
 
@@ -197,6 +214,7 @@ export class XmiResource{
 
                 let etype = estructuralfeature.eType;
                 let value = attribute.value;
+
 
                 if(etype.ePackage.nsURI==="http://www.eclipse.org/emf/2002/Ecore"){
 
@@ -315,13 +333,12 @@ export class XmiResource{
 
                 if(estructuralfeature.many){
 
-                    var values = attribute.value;
 
 
-                    for(let value of values){
 
-                        this.resolve(eobject, estructuralfeature,value);
-                    }
+
+                    this.resolve(eobject, estructuralfeature,attribute.value);
+
 
                 }
                 else{
@@ -342,7 +359,8 @@ export class XmiResource{
             if(child.nodeType === child.ELEMENT_NODE){
 
                 let element = child as Element;
-                let containment_name = child.localName;
+
+                let containment_name = element.localName;
 
                 let containment = eobject.eClass().getEStructuralFeature(containment_name);
 
@@ -433,11 +451,8 @@ export class XmiResource{
                 "value": value
             };
 
-            if(this.resolveJobs[value]===undefined){
-                this.resolveJobs[value] = new Array<ResolveJob>();
-            }
 
-            this.resolveJobs[value].push(resolveJob);
+            this.resolveJobs.push(resolveJob);
         }
     }
 
