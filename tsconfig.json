@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
+    "module": "AMD",
+    "target": "ES5",
     "sourceMap": true,
-    "baseUrl": ".", // This must be specified if "paths" is.
+    "declaration": true,
+    "baseUrl": "./", // This must be specified if "paths" is.
+    "outDir": "./lib",
+    //"outFile": "./dist/crossecore.js",
     "paths": {
-      "ecore/*": ["../ecore/*"]
+      "ecore/*": ["./src/*"]
     }
     ,
     "lib": [
@@ -15,6 +18,7 @@
 
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "test"
   ]
 }

@@ -1,14 +1,15 @@
 {
   "name": "crossecore",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Ecore and OCL runtime API for TypeScript",
   "license": "EPL-2.0",
   "directories": {
     "test": "test"
   },
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest",
-    "madge": "madge --circular ecore/EcorePackageImpl.ts"
+    "madge": "madge --circular src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -24,9 +25,11 @@
   "homepage": "http://www.crossecore.org",
   "devDependencies": {
     "@types/jest": "^24.9.0",
-    "jest": "^24.9.0",
+    "create-ts-index": "^1.12.0",
+    "jest": "^25.1.0",
     "madge": "^3.6.0",
-    "ts-jest": "^24.3.0"
+    "ts-jest": "^24.3.0",
+    "typescript": "^3.8.2"
   },
   "dependencies": {}
 }

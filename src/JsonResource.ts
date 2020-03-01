@@ -40,8 +40,8 @@ export class JsonResource{
   epackage:EPackage;
   efactory:EFactory;
 
-  resolveJobs:ResolveJobRegistry;
-  eobjectRegistry:EObjectRegistry;
+  private resolveJobs:ResolveJobRegistry;
+  private eobjectRegistry:EObjectRegistry;
 
   constructor(p:EPackage, f:EFactory){
     this.epackage = p;
