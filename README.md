@@ -1,3 +1,5 @@
+![Node.js CI](https://github.com/crossecore/ecore-typescript/workflows/Node.js%20CI/badge.svg?branch=master)
+
 # ecore-typescript
 
 CrossEcore is a framework for model-based software engineering targeting multiple platforms.
