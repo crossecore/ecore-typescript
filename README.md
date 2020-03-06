@@ -1,4 +1,5 @@
 ![Node.js CI](https://github.com/crossecore/ecore-typescript/workflows/Node.js%20CI/badge.svg?branch=master)
+[![NPM](https://img.shields.io/npm/v/crossecore.svg)](https://www.npmjs.com/package/crossecore)
 
 # ecore-typescript
 
