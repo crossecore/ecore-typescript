@@ -195,7 +195,6 @@ export class XmiResource{
 
     public addEStructuralFeatures = (eobject:EObject, node:Element)=>{
 
-        console.log(node.nodeName);
 
         for (let i = 0; i < node.attributes.length; i++) {
 
@@ -365,9 +364,9 @@ export class XmiResource{
                 let containment = eobject.eClass().getEStructuralFeature(containment_name);
 
                 if(containment instanceof EReferenceImpl){
-
+                    
                     let containment_er = containment as EReferenceImpl;
-
+                    
 
                     if(containment_er.containment){
 
@@ -378,7 +377,6 @@ export class XmiResource{
                                 classifierId2 = element.attributes[i].value.split(':')[1];
                             }
                         }
-
                         let eclassifier2 = this.epackage.getEClassifier(classifierId2);
 
 
@@ -395,20 +393,22 @@ export class XmiResource{
                             {
                                 var eclass2 = eclassifier2 as EClass;
                                 var eobject2 = this.factory.create(eclass2);
-
+                                
+                               
                                 if (containment_er.many)
                                 {
                                     this.addEStructuralFeatures(eobject2, element);//TODO is Element cast safe here?
 
                                     let items = eobject.eGet(containment_er) as AbstractCollection<EObject>;
-                                    items.push(eobject2);
-
+                                    const copy = items.slice()
+                                    copy.push(eobject2);
+                                    eobject.eSet(containment_er, copy);
 
                                 }
                                 else
                                 {
                                     this.addEStructuralFeatures(eobject2, element);//TODO is Element cast safe here?
-
+                                    (eobject2)
                                     eobject.eSet(containment_er, eobject2);
                                 }
 
@@ -416,7 +416,7 @@ export class XmiResource{
 
                         }
                         else{
-                            console.log("else");
+                            
                         }
 
                     }
