@@ -2,7 +2,6 @@ import {OrderedSet} from "./OrderedSet";
 import {EFactory} from "./EFactory";
 import {ENamedElement} from "./ENamedElement";
 import {EClassifier} from "./EClassifier";
-import {EPackage} from "./EPackage";
 
 export interface EPackage
 extends ENamedElement

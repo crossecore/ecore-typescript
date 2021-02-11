@@ -1,5 +1,4 @@
 import {OrderedSet} from "./OrderedSet";
-import {EGenericType} from "./EGenericType";
 import {EClassifier} from "./EClassifier";
 import {InternalEObject} from "./InternalEObject";
 import {ETypeParameter} from "./ETypeParameter";
