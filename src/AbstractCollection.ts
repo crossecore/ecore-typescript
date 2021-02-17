@@ -526,10 +526,7 @@ export class AbstractCollection<T> extends ArrayList<T> implements EcoreEList<T>
          }
          */
         //FIXME
-        public includes___ = (element:T):boolean=>{
 
-            return this.containsX(element);
-        }
 
         public excludes = (element:T):boolean=>{
 
