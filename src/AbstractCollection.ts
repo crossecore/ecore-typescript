@@ -21,7 +21,7 @@ export class AbstractCollection<T> extends ArrayList<T> implements EcoreEList<T>
     {
         public static EOPPOSITE_FEATURE_BASE:number = -1;
 
-        protected static NO_FEATURE:number = Number.MIN_VALUE;
+        protected static NO_FEATURE:number = -1;
 
         private owner:InternalEObject;
         private featureId:number = AbstractCollection.NO_FEATURE;
@@ -83,6 +83,8 @@ export class AbstractCollection<T> extends ArrayList<T> implements EcoreEList<T>
             }
 
         }
+        
+        
 
         public addAll = (collection:Array<T>) :boolean =>{
 
@@ -210,8 +212,9 @@ export class AbstractCollection<T> extends ArrayList<T> implements EcoreEList<T>
         public basicRemove = (element:T, notifications:NotificationChain) =>
         {
             //int index = indexOf(object);
-            //if (index != -1)
-            if(this.containsX(element))
+            const index = this.indexOf(element)
+            if (index != -1)
+            //if(this.containsX(element))
             {
                 if (this.isNotificationRequired())
                 {
@@ -220,7 +223,7 @@ export class AbstractCollection<T> extends ArrayList<T> implements EcoreEList<T>
                     //Object oldObject = doRemove(index);
                     var oldObject = element;
                     //TODO fix me:
-                    var index = 1000;
+                    //var index = 1000;
                     this.removeX(element);
 
                     var notification:NotificationImpl = this.createNotification(NotificationImpl.REMOVE, oldObject, null, index, oldIsSet);
@@ -441,9 +444,33 @@ export class AbstractCollection<T> extends ArrayList<T> implements EcoreEList<T>
 
 
     //OCL START
-    public sortedBy = <T2>(lambda:(T)=> T2) =>
+    public sortedBy = <T2>(lambda:(T) => T2) =>
     {
-        new Error("NotImplemented");
+        const copy = this.slice(0, this.length)
+        const wrapper = (a:T, b:T)=>{
+            const a_ = lambda(a)
+            const b_ = lambda(b)
+            
+            if(typeof a_ === "number" && typeof b_ === "number"){
+                const castA = a_ as number
+                const castB = b_ as number
+                return castA - castB
+            }
+            else if(typeof a_ === "string" && typeof b_ === "string"){
+                const castA = a_ as string
+                const castB = b_ as string
+                return castA.localeCompare(castB)
+            }
+            else if(typeof a_ === "boolean" && typeof b_ === "boolean"){
+                const castA = a_ as boolean
+                const castB = b_ as boolean
+                return !castA && castB? -1 : 0 
+            }
+            new Error("Only lambda function allowed that evaluates to number, string, boolean")
+
+            
+        }
+        return copy.sort(wrapper)
     }
 
     /*
@@ -545,9 +572,10 @@ export class AbstractCollection<T> extends ArrayList<T> implements EcoreEList<T>
 
         public any = (lambda: (element:T) => boolean):T=>{
 
-            //TODO nullpointer
-            return this.filter(lambda)[0];
+            const result = this.filter(lambda)
+            return result[0] || null
 
+            
         }
 
         public exists = (lambda: (element:T) => boolean):boolean=>{
