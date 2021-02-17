@@ -15,7 +15,7 @@ export class ENotificationImpl extends NotificationImpl
 
         protected notifier:InternalEObject;
         protected featureID:number = NotificationImpl.NO_FEATURE_ID;
-        protected feature:EStructuralFeature;
+        protected feature:EStructuralFeature= null;
 
         /*
         public constructor( notifier:InternalEObject, eventType:number , featureID:number, oldValue:any, newValue:any){
@@ -33,7 +33,7 @@ export class ENotificationImpl extends NotificationImpl
 
         public getFeature = ():any =>
         {
-            if (this.feature == null && this.featureID != NotificationImpl.NO_FEATURE_ID)
+            if (this.feature === null && this.featureID !== NotificationImpl.NO_FEATURE_ID)
             {
                 let eClass:EClass = this.notifier.eClass();
                 this.feature = eClass.getEStructuralFeature(this.featureID);
