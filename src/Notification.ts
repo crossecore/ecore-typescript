@@ -14,6 +14,11 @@
         getEventType():number;
 
         getNewValue():any;
+        getOldValue():any;
+        //TODO expectedClass is a class descriptor
+        getFeatureID(expectedClass:Function):number
+        getPosition():number
+        merge(notification:Notification):boolean;
     }
 
 
