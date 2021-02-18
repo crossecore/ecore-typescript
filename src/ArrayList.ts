@@ -61,6 +61,30 @@ export class ArrayList<T> extends Array<T> {
         return this.length===0;
     }
 
+    public removeAll(collection:ArrayList<T>):boolean{
+
+        let result = false
+        for(let item of collection){
+            let index = this.indexOf(item)
+            if(index>0){
+                this.splice(index, 1)
+                result = true
+            }    
+        }
+        return result
+    }
+    public addAllX(collection:ArrayList<T>) :boolean {
+
+        let result = false
+        for(let item of collection){
+            this.push(item);
+            result = true
+        }
+
+        return result
+
+    }
+
 
     public clear = ():void=>{
       this.splice(0, this.length);
