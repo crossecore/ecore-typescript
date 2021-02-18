@@ -534,7 +534,23 @@ export class AbstractCollection<T> extends ArrayList<T> implements EcoreEList<T>
         }
 
         public count = (element:T):number=>{
-            throw new Error("operation not implemented");
+            let c = 0
+            const values = this.values()
+            let done = false
+            do{
+                let next = values.next()
+                //console.log(next.value)
+
+                if(next.value === element){
+                    c++
+                }
+                done = next.done
+
+            }while(!done)
+            
+            
+            return c
+            
         }
 
         public includesAll = (c:Collection<T>):boolean=>{

@@ -391,8 +391,36 @@ describe("AbstractCollection", () => {
         //assert
         expect(result).toEqual(30)
         expect(result2).toBeNull()
-    
+    });
+    it("excludes", () => {
+      
+        //arrange
+        const collection = new AbstractCollection<number>()
+        collection.add(10)
+        collection.add(20)
+        collection.add(30)
+                
+
+        //action
+        const result = collection.excludes(22)
         
+        //assert
+        expect(result).toBeTruthy()
+    });
+    it("count", () => {
+      
+        //arrange
+        const collection = new AbstractCollection<number>()
+        collection.add(10)
+        collection.add(20)
+        collection.add(10)
+        
+
+        //action
+        const result = collection.count(10)
+        
+        //assert
+        expect(result).toEqual(2)
     });
 
   });
