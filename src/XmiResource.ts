@@ -26,6 +26,8 @@ import {EStructuralFeature} from "./EStructuralFeature";
 import {AbstractCollection} from "./AbstractCollection";
 import {EDataType} from "./EDataType";
 import {EDataTypeImpl} from "./EDataTypeImpl";
+import { BasicEObjectImpl } from "./BasicEObjectImpl";
+import { OrderedSet } from "./index";
 
 
 interface EObjectRegistry{
@@ -462,7 +464,6 @@ export class XmiResource{
         for (let job of this.resolveJobs)
         {
 
-
             var eobject = job.eObject;
             var feature = job.eStructuralFeature;
             var path = job.value;
@@ -477,8 +478,108 @@ export class XmiResource{
                 eobject.eSet(feature, this.resolveEList(path));
             }
 
-
         }
+    }
+
+    public save(root:EObject){
+
+        return this.doSave(root, null)
+    }
+
+    protected doSave(eobject: EObject, containment:EReference):string{
+        const result = new Array<String>()
+        
+        const attributes = eobject.eClass().eAllAttributes as OrderedSet<EStructuralFeature>
+        const containments = eobject.eClass().eAllContainments
+        const references = eobject.eClass().eAllReferences as OrderedSet<EStructuralFeature>
+        references.removeAll(containments)
+        const features = attributes.concat(references)
+        const nsPrefix = eobject.eClass().ePackage.nsPrefix
+        let tag:string;
+        if(containment){
+
+            
+            const nsURI = eobject.eClass().ePackage.nsURI
+            tag = `${nsPrefix}:${eobject.eClass().name}`
+
+            result.push(`<?xml version="1.0" encoding="UTF-8"?>`)
+            result.push("\n")
+            result.push(`<${tag}`)
+            result.push("\n") 
+            result.push(`xmi:version="2.0"`)
+            result.push("\n")
+            result.push(`xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"`)
+            result.push("\n")
+            result.push(`xmlns:${nsPrefix}="${nsURI}"`)
+            result.push("\n")
+            
+        }
+        else{
+            tag = containment.name
+            result.push(`<${tag} `)
+            result.push(`xmi:id="${(eobject as BasicEObjectImpl)._uuid}"`)
+            if(eobject.eClass() !== containment.eType){
+                result.push(`xmi:type="${nsPrefix}:${eobject.eClass().name}"`)
+            }
+            
+        }
+
+        for(let i=0; i<features.length; i++){
+            let feature = features[i]
+            let value = feature.eGet(feature)
+            if(!feature.transient && !feature.volatile){
+
+                if(feature instanceof EAttributeImpl){
+                    if(feature.many){
+                    
+                    }
+                    else{
+                        result.push(`${feature.name}="${value}"`)
+                    }
+                    
+                }
+                else if(feature instanceof EReferenceImpl){
+                   let ereference = feature as EReference
+                   if(ereference.many){
+                    
+                   }
+                   else{
+                    result.push(`${ereference.name}="${(value as BasicEObjectImpl)._uuid}"`)
+                   }
+                }
+
+                if(i<features.length){
+                    result.push(" ")
+                }
+            }
+        }
+
+        if(containments.length>0){
+
+            for(let i=0; i<containments.length; i++){
+                let c = containments[i]
+
+                if(c.many){
+
+                }
+                else{
+                    let value = eobject.eGet(c)
+                    result.push(this.doSave(value, c))
+                }
+
+                if(i<containments.length){
+                    result.push("\n")
+                }
+                
+            }
+            result.push(`</${tag}>`) 
+        }
+        else{
+            result.push("/>") 
+        }
+
+        return result.join("")
+        
     }
 
 
