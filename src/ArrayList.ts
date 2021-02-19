@@ -61,7 +61,7 @@ export class ArrayList<T> extends Array<T> {
         return this.length===0;
     }
 
-    public removeAll(collection:ArrayList<T>):boolean{
+    public removeAll = (collection:ArrayList<T>):boolean=>{
 
         let result = false
         for(let item of collection){
