@@ -2,10 +2,11 @@ import {EcoreFactoryImpl} from '../src/EcoreFactoryImpl'
 import {EcorePackageImpl} from '../src/EcorePackageImpl'
 import { XmiResource } from '../src/XmiResource';
 import { EPackage } from '../src/EPackage';
+import * as fs from 'fs'
+import { EcorePackageLiterals } from '../src';
 
 describe("XmiResource", () => {
     test("it should set eInternalContainer", () => {
-      
         //arrange
         const resource = new XmiResource(EcorePackageImpl.eINSTANCE, EcoreFactoryImpl.eINSTANCE, new DOMParser())
         const epackage = resource.load(`<?xml version="1.0" encoding="UTF-8"?>
@@ -22,12 +23,29 @@ describe("XmiResource", () => {
           </eClassifiers>
         </ecore:EPackage>
         `) as EPackage
-        console.log(epackage.eClassifiers.length)
-        const eclass = epackage.eClassifiers[0]
-        
-        
+        const eclass = epackage.eClassifiers[0]  
 
         //assert
         expect(eclass.eInternalContainer()).not.toBeNull()
+    });
+
+    test("save", () => {
+        //arrange
+        
+        const resource = new XmiResource(EcorePackageImpl.eINSTANCE, EcoreFactoryImpl.eINSTANCE, new DOMParser())
+
+        //action
+        const xmi = resource.save(EcorePackageImpl.eINSTANCE)
+        //console.log(xmi)
+
+        //assert
+        const epackage = resource.load(xmi) as EPackage
+
+        fs.writeFile("Ecore.ecore", xmi, function (err) {
+          if (err) return console.log(err);
+          console.log('Hello World > helloworld.txt');
+        });
+
+        expect(epackage).not.toBeNull()
     });
   });
