@@ -7,56 +7,56 @@
 
 
 
-import {EPackage} from "./EPackage";
-import {EcorePackageImpl} from "./EcorePackageImpl";
-import {EcoreFactoryImpl} from "./EcoreFactoryImpl";
+import { EPackage } from "./EPackage";
+import { EcorePackageImpl } from "./EcorePackageImpl";
+import { EcoreFactoryImpl } from "./EcoreFactoryImpl";
 
-import {EClass} from "./EClass";
-import {EObject} from "./EObject";
-import {EFactory} from "./EFactory";
+import { EClass } from "./EClass";
+import { EObject } from "./EObject";
+import { EFactory } from "./EFactory";
 
-import {EReference} from "./EReference";
+import { EReference } from "./EReference";
 
-import {ENamedElement} from "./ENamedElement";
-import {EReferenceImpl} from "./EReferenceImpl";
-import {EClassImpl} from "./EClassImpl";
-import {ENamedElementImpl} from "./ENamedElementImpl";
-import {EAttributeImpl} from "./EAttributeImpl";
-import {EStructuralFeature} from "./EStructuralFeature";
-import {AbstractCollection} from "./AbstractCollection";
-import {EDataType} from "./EDataType";
-import {EDataTypeImpl} from "./EDataTypeImpl";
+import { ENamedElement } from "./ENamedElement";
+import { EReferenceImpl } from "./EReferenceImpl";
+import { EClassImpl } from "./EClassImpl";
+import { ENamedElementImpl } from "./ENamedElementImpl";
+import { EAttributeImpl } from "./EAttributeImpl";
+import { EStructuralFeature } from "./EStructuralFeature";
+import { AbstractCollection } from "./AbstractCollection";
+import { EDataType } from "./EDataType";
+import { EDataTypeImpl } from "./EDataTypeImpl";
 import { BasicEObjectImpl } from "./BasicEObjectImpl";
 import { OrderedSet } from "./index";
 
 
-interface EObjectRegistry{
-    [index:string]:EObject;
+interface EObjectRegistry {
+    [index: string]: EObject;
 }
 
-interface ResolveJobRegistry{
-    [index:string]:Array<ResolveJob>;
+interface ResolveJobRegistry {
+    [index: string]: Array<ResolveJob>;
 }
 
-interface ResolveJob{
-    eObject:EObject;
-    eStructuralFeature:EStructuralFeature;
-    value:string;
+interface ResolveJob {
+    eObject: EObject;
+    eStructuralFeature: EStructuralFeature;
+    value: string;
 }
 
-export class XmiResource{
+export class XmiResource {
 
-    private factory:EFactory = EcoreFactoryImpl.eINSTANCE;
-    private epackage:EPackage = EcorePackageImpl.eINSTANCE; //TODO make dynamic
-    private domParser:DOMParser;
+    private factory: EFactory = EcoreFactoryImpl.eINSTANCE;
+    private epackage: EPackage = EcorePackageImpl.eINSTANCE; //TODO make dynamic
+    private domParser: DOMParser;
 
 
-    private root:EObject;
+    private root: EObject;
 
-    private resolveJobs:Array<ResolveJob> = []; //TODO define type
-    private eobjectRegistry:EObjectRegistry;
+    private resolveJobs: Array<ResolveJob> = []; //TODO define type
+    private eobjectRegistry: EObjectRegistry;
 
-    constructor(epackage:EPackage, efactory:EFactory, domParser:DOMParser){
+    constructor(epackage: EPackage, efactory: EFactory, domParser: DOMParser) {
         this.factory = efactory;
         this.epackage = epackage;
 
@@ -69,24 +69,24 @@ export class XmiResource{
 
 
 
-    public load = (xml:string):EObject =>{
+    public load = (xml: string): EObject => {
 
         let parser = this.domParser;
-        let xmlDoc = parser.parseFromString(xml,"text/xml");
+        let xmlDoc = parser.parseFromString(xml, "text/xml");
 
         this.rootnode(xmlDoc.childNodes[0] as Element);
 
         return this.root;
     }
 
-    public rootnode = (node:Element) => {
+    public rootnode = (node: Element) => {
 
 
         let classifierId = node.nodeName.split(':')[1];
 
         let eclassifier = this.epackage.getEClassifier(classifierId);
 
-        if(eclassifier instanceof EClassImpl){
+        if (eclassifier instanceof EClassImpl) {
 
             let eclass = eclassifier as EClass;
 
@@ -100,17 +100,16 @@ export class XmiResource{
 
     }
 
-    protected resolveEList = (specification:string)=>{
+    protected resolveEList = (specification: string) => {
 
 
 
         let result = new Array<EObject>();
         let supertypes = specification.split(' ');
 
-        if (supertypes != null)
-        {
+        if (supertypes != null) {
 
-            for(let i=0;i<supertypes.length;i++){
+            for (let i = 0; i < supertypes.length; i++) {
                 //for (string s in supertypes)
 
                 let s = supertypes[i];
@@ -125,11 +124,11 @@ export class XmiResource{
 
     }
 
-    protected resolveEObject = (specification:string) => {
-        if(specification===null){
+    protected resolveEObject = (specification: string) => {
+        if (specification === null) {
             return null;
         }
-        else if(specification.lastIndexOf("#//")===0){
+        else if (specification.lastIndexOf("#//") === 0) {
 
             let name = specification.replace("#//", "");
             let segments = name.split("/");
@@ -137,7 +136,7 @@ export class XmiResource{
             let queue = new Array<string>();
 
 
-            for(let i=0;i<segments.length;i++){
+            for (let i = 0; i < segments.length; i++) {
                 let segment = segments[i];
 
                 queue.push(segment);
@@ -145,30 +144,30 @@ export class XmiResource{
 
             return this.resolveRecurr(queue, this.root);
         }
-        else if(specification.indexOf("http://www.eclipse.org/emf/2002/Ecore#")!==-1){
-          //ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString
+        else if (specification.indexOf("http://www.eclipse.org/emf/2002/Ecore#") !== -1) {
+            //ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString
 
-          let index = specification.indexOf("http://www.eclipse.org/emf/2002/Ecore#//");
-          let name = specification.substring(index+40, specification.length);
-          let segments = name.split("/");
+            let index = specification.indexOf("http://www.eclipse.org/emf/2002/Ecore#//");
+            let name = specification.substring(index + 40, specification.length);
+            let segments = name.split("/");
 
-          let queue = new Array<string>();
+            let queue = new Array<string>();
 
 
-          for(let i=0;i<segments.length;i++){
-            let segment = segments[i];
+            for (let i = 0; i < segments.length; i++) {
+                let segment = segments[i];
 
-            queue.push(segment);
-          }
+                queue.push(segment);
+            }
 
-          return this.resolveRecurr(queue, EcorePackageImpl.eINSTANCE);
+            return this.resolveRecurr(queue, EcorePackageImpl.eINSTANCE);
 
         }
     }
 
-    private resolveRecurr = (path:Array<string>, current:EObject )=>{
+    private resolveRecurr = (path: Array<string>, current: EObject) => {
 
-        if(path.length===0){
+        if (path.length === 0) {
             return current;
 
         }
@@ -178,13 +177,13 @@ export class XmiResource{
         //FIXME: eContents needs to return Array
         let econtents = current.eContents() as Array<EObject>;
 
-        for(let i=0; i<econtents.length;i++){
+        for (let i = 0; i < econtents.length; i++) {
 
             let content = econtents[i] as EObject;
 
-            if(content instanceof ENamedElementImpl){
+            if (content instanceof ENamedElementImpl) {
 
-                if((content as ENamedElement).name===segment){
+                if ((content as ENamedElement).name === segment) {
                     return this.resolveRecurr(path, content)
                 }
             }
@@ -195,7 +194,7 @@ export class XmiResource{
 
     }
 
-    public addEStructuralFeatures = (eobject:EObject, node:Element)=>{
+    public addEStructuralFeatures = (eobject: EObject, node: Element) => {
 
 
         for (let i = 0; i < node.attributes.length; i++) {
@@ -211,109 +210,87 @@ export class XmiResource{
 
             let estructuralfeature = eobject.eClass().getEStructuralFeature(name);
 
-            if (estructuralfeature instanceof EAttributeImpl){
+            if (estructuralfeature instanceof EAttributeImpl) {
 
                 let etype = estructuralfeature.eType;
                 let value = attribute.value;
 
 
-                if(etype.ePackage.nsURI==="http://www.eclipse.org/emf/2002/Ecore"){
+                if (etype.ePackage.nsURI === "http://www.eclipse.org/emf/2002/Ecore") {
 
-                    if (etype.name == "EBigDecimal")
-                    {
+                    if (etype.name == "EBigDecimal") {
                         throw new Error('not implemented');
                     }
-                    else if (etype.name == "EBigInteger")
-                    {
+                    else if (etype.name == "EBigInteger") {
                         throw new Error('not implemented');
                     }
-                    else if (etype.name == "EBoolean")
-                    {
+                    else if (etype.name == "EBoolean") {
                         eobject.eSet(estructuralfeature, value == "true" ? true : false);
                     }
-                    else if (etype.name == "EBooleanObject")
-                    {
+                    else if (etype.name == "EBooleanObject") {
                         throw new Error('not implemented');
                     }
-                    else if (etype.name == "EByteArray")
-                    {
+                    else if (etype.name == "EByteArray") {
                         throw new Error('not implemented');
                     }
-                    else if (etype.name == "EByteObject")
-                    {
+                    else if (etype.name == "EByteObject") {
                         throw new Error('not implemented');
                     }
-                    else if (etype.name == "EChar")
-                    {
+                    else if (etype.name == "EChar") {
                         eobject.eSet(estructuralfeature, value);
                     }
-                    else if (etype.name == "ECharacterObject")
-                    {
+                    else if (etype.name == "ECharacterObject") {
                         throw new Error('not implemented');
                     }
-                    else if (etype.name == "EDate")
-                    {
+                    else if (etype.name == "EDate") {
                         eobject.eSet(estructuralfeature, Date.parse(value));
                     }
-                    else if (etype.name == "EDateEDiagnosticChain")
-                    {
+                    else if (etype.name == "EDateEDiagnosticChain") {
                         throw new Error('not implemented');
                     }
-                    else if (etype.name == "EDiagnosticChain")
-                    {
+                    else if (etype.name == "EDiagnosticChain") {
                         throw new Error('not implemented');
                     }
-                    else if (etype.name == "EDouble")
-                    {
+                    else if (etype.name == "EDouble") {
                         eobject.eSet(estructuralfeature, +value);
                     }
-                    else if (etype.name == "EDoubleObject")
-                    {
+                    else if (etype.name == "EDoubleObject") {
                         throw new Error('not implemented');
                     }
                     //EEList
                     //EEnumerator
                     //EFeatureMap
                     //EFeatureMapEntry
-                    else if (etype.name == "EFloat")
-                    {
+                    else if (etype.name == "EFloat") {
                         eobject.eSet(estructuralfeature, +value);
                     }
-                    else if (etype.name == "EFloatObject")
-                    {
+                    else if (etype.name == "EFloatObject") {
                         throw new Error('not implemented');
                     }
-                    else if (etype.name == "EInt")
-                    {
+                    else if (etype.name == "EInt") {
                         eobject.eSet(estructuralfeature, +value);
                     }
-                    else if (etype.name == "EIntegerObject")
-                    {
+                    else if (etype.name == "EIntegerObject") {
                         throw new Error('not implemented');
                     }
                     //EJavaClass
                     //EJavaObject
-                    else if (etype.name == "ELong")
-                    {
+                    else if (etype.name == "ELong") {
                         eobject.eSet(estructuralfeature, +value);
                     }
-                    else if (etype.name == "ELongObject")
-                    {
+                    else if (etype.name == "ELongObject") {
                         throw new Error('not implemented');
                     }
                     //EMap
                     //EResource
                     //EResourceSet
-                    else if (etype.name == "EShort")
-                    {
+                    else if (etype.name == "EShort") {
                         eobject.eSet(estructuralfeature, +value);
                     }
-                    else if (etype.name == "EShortObject")
-                    {
+                    else if (etype.name == "EShortObject") {
                         throw new Error('not implemented');
                     }
-                    else if (etype.name == "EString")
-                    {
+                    else if (etype.name == "EString") {
                         eobject.eSet(estructuralfeature, value);
                     }
                     //ETreeIterator
@@ -322,7 +299,7 @@ export class XmiResource{
 
 
                 }
-                else if(etype instanceof EDataTypeImpl){
+                else if (etype instanceof EDataTypeImpl) {
 
                     //TODO use namespace-factory map
                     let literalvalue = this.factory.createFromString(etype as EDataType, value);
@@ -330,19 +307,19 @@ export class XmiResource{
                     eobject.eSet(estructuralfeature, literalvalue);
                 }
             }
-            else if(estructuralfeature instanceof EReferenceImpl){
+            else if (estructuralfeature instanceof EReferenceImpl) {
 
-                if(estructuralfeature.many){
-
-
+                if (estructuralfeature.many) {
 
 
 
-                    this.resolve(eobject, estructuralfeature,attribute.value);
+
+
+                    this.resolve(eobject, estructuralfeature, attribute.value);
 
 
                 }
-                else{
+                else {
 
                     this.resolve(eobject, estructuralfeature, attribute.value);
 
@@ -357,7 +334,7 @@ export class XmiResource{
             let child = node.childNodes[i];
 
 
-            if(child.nodeType === child.ELEMENT_NODE){
+            if (child.nodeType === child.ELEMENT_NODE) {
 
                 let element = child as Element;
 
@@ -365,40 +342,36 @@ export class XmiResource{
 
                 let containment = eobject.eClass().getEStructuralFeature(containment_name);
 
-                if(containment instanceof EReferenceImpl){
-                    
-                    let containment_er = containment as EReferenceImpl;
-                    
+                if (containment instanceof EReferenceImpl) {
 
-                    if(containment_er.containment){
+                    let containment_er = containment as EReferenceImpl;
+
+
+                    if (containment_er.containment) {
 
                         let classifierId2 = containment.eType.name;
 
-                        for(let i=0; i< element.attributes.length;i++){
-                            if(element.attributes[i].name==='xsi:type'){
+                        for (let i = 0; i < element.attributes.length; i++) {
+                            if (element.attributes[i].name === 'xsi:type') {
                                 classifierId2 = element.attributes[i].value.split(':')[1];
                             }
                         }
                         let eclassifier2 = this.epackage.getEClassifier(classifierId2);
 
 
-                        if (eclassifier2 instanceof EClassImpl)
-                        {
+                        if (eclassifier2 instanceof EClassImpl) {
 
-                            if (containment_er.eType.name === "EStringToStringMapEntry")
-                            {
+                            if (containment_er.eType.name === "EStringToStringMapEntry") {
 
                                 //TODO
                                 console.log("EStringToStringMapEntry");
                             }
-                            else
-                            {
+                            else {
                                 var eclass2 = eclassifier2 as EClass;
                                 var eobject2 = this.factory.create(eclass2);
-                                
-                               
-                                if (containment_er.many)
-                                {
+
+
+                                if (containment_er.many) {
                                     this.addEStructuralFeatures(eobject2, element);//TODO is Element cast safe here?
 
                                     let items = eobject.eGet(containment_er) as AbstractCollection<EObject>;
@@ -407,8 +380,7 @@ export class XmiResource{
                                     eobject.eSet(containment_er, copy);
 
                                 }
-                                else
-                                {
+                                else {
                                     this.addEStructuralFeatures(eobject2, element);//TODO is Element cast safe here?
                                     (eobject2)
                                     eobject.eSet(containment_er, eobject2);
@@ -417,8 +389,8 @@ export class XmiResource{
                             }
 
                         }
-                        else{
-                            
+                        else {
+
                         }
 
                     }
@@ -428,24 +400,24 @@ export class XmiResource{
         }
     }
 
-    private resolve(eobject:EObject, estructuralfeature:EStructuralFeature, value:string){
+    private resolve(eobject: EObject, estructuralfeature: EStructuralFeature, value: string) {
 
-        if(this.eobjectRegistry[value]!==undefined){
+        if (this.eobjectRegistry[value] !== undefined) {
 
-            if(estructuralfeature.many){
+            if (estructuralfeature.many) {
 
                 //TODO eGet is call by reference
                 let items = eobject.eGet(estructuralfeature) as AbstractCollection<EObject>;
                 items.add(this.eobjectRegistry[value]);
 
             }
-            else{
+            else {
                 eobject.eSet(estructuralfeature, this.eobjectRegistry[value]);
             }
 
 
         }
-        else{
+        else {
 
             let resolveJob: ResolveJob = {
                 "eObject": eobject,
@@ -459,127 +431,170 @@ export class XmiResource{
     }
 
 
-    public lateResolve = () =>
-    {
-        for (let job of this.resolveJobs)
-        {
+    public lateResolve = () => {
+        for (let job of this.resolveJobs) {
 
             var eobject = job.eObject;
             var feature = job.eStructuralFeature;
             var path = job.value;
 
 
-            if (!feature.many)
-            {
+            if (!feature.many) {
                 eobject.eSet(feature, this.resolveEObject(path));
             }
-            else if (feature.many)
-            {
+            else if (feature.many) {
                 eobject.eSet(feature, this.resolveEList(path));
             }
 
         }
     }
 
-    public save(root:EObject){
+    public save(root: EObject) {
 
         return this.doSave(root, null)
     }
 
-    protected doSave(eobject: EObject, containment:EReference):string{
+    protected doSave(eobject: EObject, containment: EReference): string {
+
+
         const result = new Array<String>()
-        
+
         const attributes = eobject.eClass().eAllAttributes as OrderedSet<EStructuralFeature>
         const containments = eobject.eClass().eAllContainments
         const references = eobject.eClass().eAllReferences as OrderedSet<EStructuralFeature>
         references.removeAll(containments)
+
         const features = attributes.concat(references)
         const nsPrefix = eobject.eClass().ePackage.nsPrefix
-        let tag:string;
-        if(containment){
+        let tag: string;
+        if (containment) {
 
-            
+            tag = containment.name
+            result.push(`<${tag}`)
+            result.push(" ")
+            result.push(`xmi:id="${(eobject as BasicEObjectImpl)._uuid}"`)
+            if (eobject.eClass() !== containment.eType) {
+                result.push(" ")
+                result.push(`xmi:type="${nsPrefix}:${eobject.eClass().name}"`)
+            }
+
+        }
+        else {
             const nsURI = eobject.eClass().ePackage.nsURI
             tag = `${nsPrefix}:${eobject.eClass().name}`
 
             result.push(`<?xml version="1.0" encoding="UTF-8"?>`)
             result.push("\n")
             result.push(`<${tag}`)
-            result.push("\n") 
+            result.push(" ")
             result.push(`xmi:version="2.0"`)
-            result.push("\n")
+            result.push(" ")
             result.push(`xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"`)
-            result.push("\n")
+            result.push(" ")
             result.push(`xmlns:${nsPrefix}="${nsURI}"`)
-            result.push("\n")
-            
-        }
-        else{
-            tag = containment.name
-            result.push(`<${tag} `)
+            result.push(" ")
             result.push(`xmi:id="${(eobject as BasicEObjectImpl)._uuid}"`)
-            if(eobject.eClass() !== containment.eType){
-                result.push(`xmi:type="${nsPrefix}:${eobject.eClass().name}"`)
-            }
-            
+
+
         }
 
-        for(let i=0; i<features.length; i++){
+        for (let i = 0; i < features.length; i++) {
             let feature = features[i]
-            let value = feature.eGet(feature)
-            if(!feature.transient && !feature.volatile){
+            //TODO filter out transient
+            if (!feature.transient) {
 
-                if(feature instanceof EAttributeImpl){
-                    if(feature.many){
-                    
+                if (feature instanceof EAttributeImpl) {
+
+                    //TODO are there default values for arrays?
+                    if (feature.many) {
+
+                        const values = eobject.eGet(feature) as AbstractCollection<any>
+                        if (values.notEmpty()) {
+                            for (let value of values) {
+                                result.push(`<${feature.name}>${value}</${feature.name}>`)
+                            }
+                        }
+
                     }
-                    else{
-                        result.push(`${feature.name}="${value}"`)
+                    else {
+                        const value = eobject.eGet(feature)
+                        if (value !== null && value + "" !== feature.defaultValueLiteral) {
+                            result.push(" ")
+                            result.push(`${feature.name}="${value}"`)
+                        }
+
                     }
-                    
+
                 }
-                else if(feature instanceof EReferenceImpl){
-                   let ereference = feature as EReference
-                   if(ereference.many){
-                    
-                   }
-                   else{
-                    result.push(`${ereference.name}="${(value as BasicEObjectImpl)._uuid}"`)
-                   }
+                else if (feature instanceof EReferenceImpl) {
+                    let ereference = feature as EReference
+                    if (ereference.many) {
+                        const values = eobject.eGet(feature) as AbstractCollection<any>
+
+                        if (values.notEmpty()) {
+                            result.push(" ")
+                            result.push(`${ereference.name}=`)
+                            result.push(`"`)
+                            result.push(values.map(v => (v as BasicEObjectImpl)._uuid).join(" "))
+                            result.push(`"`)
+                        }
+
+
+                    }
+                    else {
+
+                        const value = eobject.eGet(feature)
+
+                        if (value !== null) {
+                            result.push(" ")
+                            result.push(`${ereference.name}="${(value as BasicEObjectImpl)._uuid}"`)
+                        }
+
+                    }
                 }
 
-                if(i<features.length){
-                    result.push(" ")
-                }
+
             }
         }
+        result.push(`>`)
 
-        if(containments.length>0){
+        if (containments.length > 0) {
 
-            for(let i=0; i<containments.length; i++){
+            for (let i = 0; i < containments.length; i++) {
                 let c = containments[i]
 
-                if(c.many){
+                if (c.many) {
+                    const values = eobject.eGet(c) as AbstractCollection<any>
+                    for (let value of values) {
+                        if (value !== null) {
+                            result.push(this.doSave(value, c))
+                        }
+
+                    }
+                }
+                else {
+                    const value = eobject.eGet(c)
+                    if (value !== null) {
+                        result.push(this.doSave(value, c))
+                    }
 
                 }
-                else{
-                    let value = eobject.eGet(c)
-                    result.push(this.doSave(value, c))
-                }
 
-                if(i<containments.length){
+                if (i < containments.length) {
                     result.push("\n")
                 }
-                
+
             }
-            result.push(`</${tag}>`) 
+            result.push(`</${tag}>`)
+            result.push("\n")
         }
-        else{
-            result.push("/>") 
+        else {
+            result.push("/>")
+            result.push("\n")
         }
 
         return result.join("")
-        
+
     }
 
 
