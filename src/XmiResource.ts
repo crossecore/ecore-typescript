@@ -27,7 +27,9 @@ import { AbstractCollection } from "./AbstractCollection";
 import { EDataType } from "./EDataType";
 import { EDataTypeImpl } from "./EDataTypeImpl";
 import { BasicEObjectImpl } from "./BasicEObjectImpl";
-import { OrderedSet } from "./index";
+import { OrderedSet } from "./OrderedSet";
+import { EAttribute } from "./EAttribute";
+//import { EPackageRegistryImpl } from "./EPackageRegistryImpl";
 
 
 interface EObjectRegistry {
@@ -451,29 +453,46 @@ export class XmiResource {
 
     public save(root: EObject) {
 
-        return this.doSave(root, null)
+        return this.doSave(root, null, 0)
     }
 
-    protected doSave(eobject: EObject, containment: EReference): string {
+    /*
+    private serialize(feature:EStructuralFeature, value:any):string{
+        const epackage = feature.eInternalContainer().eClass().ePackage
+        const efactory = EPackageRegistryImpl.INSTANCE.get(epackage.nsURI)
+        return efactory.convertToString(feature.eType as EDataType, value)
+    }
+    */
+    protected doSave(eobject: EObject, containment: EReference, level: number): string {
 
 
-        const result = new Array<String>()
+        const result = new Array<string>()
+        const indent = new Array<string>(level)
+        indent.fill("\t")
+        const indent2 = indent.join("")
+        console.log(`|${indent2}|`)
+        console.log(level)
 
         const attributes = eobject.eClass().eAllAttributes as OrderedSet<EStructuralFeature>
+        const attributesMany = attributes.select(a => a.many)
+        const attributesSingle = attributes.select(a => !a.many)
         const containments = eobject.eClass().eAllContainments
         const references = eobject.eClass().eAllReferences as OrderedSet<EStructuralFeature>
         references.removeAll(containments)
 
-        const features = attributes.concat(references)
+        const xmiattributes = attributesSingle.concat(references)
+        const childnodes = attributesMany.concat(containments)
         const nsPrefix = eobject.eClass().ePackage.nsPrefix
         let tag: string;
         if (containment) {
 
             tag = containment.name
+            result.push(indent2)
             result.push(`<${tag}`)
             result.push(" ")
             result.push(`xmi:id="${(eobject as BasicEObjectImpl)._uuid}"`)
             if (eobject.eClass() !== containment.eType) {
+                result.push(indent2)
                 result.push(" ")
                 result.push(`xmi:type="${nsPrefix}:${eobject.eClass().name}"`)
             }
@@ -495,30 +514,19 @@ export class XmiResource {
             result.push(" ")
             result.push(`xmi:id="${(eobject as BasicEObjectImpl)._uuid}"`)
 
-
         }
 
-        for (let i = 0; i < features.length; i++) {
-            let feature = features[i]
-            //TODO filter out transient
+        for (let i = 0; i < xmiattributes.length; i++) {
+            let feature = xmiattributes[i]
             if (!feature.transient) {
 
                 if (feature instanceof EAttributeImpl) {
 
-                    //TODO are there default values for arrays?
-                    if (feature.many) {
+                    if (!feature.many) {
 
-                        const values = eobject.eGet(feature) as AbstractCollection<any>
-                        if (values.notEmpty()) {
-                            for (let value of values) {
-                                result.push(`<${feature.name}>${value}</${feature.name}>`)
-                            }
-                        }
-
-                    }
-                    else {
                         const value = eobject.eGet(feature)
                         if (value !== null && value + "" !== feature.defaultValueLiteral) {
+                            //const serializedValue = this.serialize(feature, value)
                             result.push(" ")
                             result.push(`${feature.name}="${value}"`)
                         }
@@ -552,46 +560,54 @@ export class XmiResource {
 
                     }
                 }
-
-
             }
         }
-        result.push(`>`)
 
-        if (containments.length > 0) {
+        if (childnodes.length > 0) {
+            result.push(">")
+            for (let i = 0; i < childnodes.length; i++) {
+                const feature = childnodes[i]
+                if (feature instanceof EAttributeImpl) {
+                    const values = eobject.eGet(feature) as AbstractCollection<any>
+                    if (values.notEmpty()) {
+                        for (let value of values) {
+                            //const serializedValue = this.serialize(feature, value)
+                            result.push("\n")
+                            result.push(indent2 + "\t")
+                            result.push(`<${feature.name}>${value}</${feature.name}>`)
 
-            for (let i = 0; i < containments.length; i++) {
-                let c = containments[i]
-
-                if (c.many) {
-                    const values = eobject.eGet(c) as AbstractCollection<any>
-                    for (let value of values) {
-                        if (value !== null) {
-                            result.push(this.doSave(value, c))
                         }
-
                     }
                 }
-                else {
-                    const value = eobject.eGet(c)
-                    if (value !== null) {
-                        result.push(this.doSave(value, c))
+                else if (feature instanceof EReferenceImpl) {
+                    if (feature.many) {
+                        const values = eobject.eGet(feature) as AbstractCollection<any>
+                        for (let value of values) {
+                            if (value !== null) {
+                                result.push("\n")
+                                result.push(this.doSave(value, feature, level + 1))
+                            }
+                        }
                     }
-
+                    else {
+                        const value = eobject.eGet(feature)
+                        if (value !== null) {
+                            result.push("\n")
+                            result.push(this.doSave(value, feature, level + 1))
+                        }
+                    }
                 }
-
-                if (i < containments.length) {
-                    result.push("\n")
-                }
-
             }
-            result.push(`</${tag}>`)
             result.push("\n")
+            result.push(indent2)
+            result.push(`</${tag}>`)
         }
         else {
+
             result.push("/>")
-            result.push("\n")
         }
+
+
 
         return result.join("")
 

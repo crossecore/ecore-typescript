@@ -3,7 +3,9 @@ import {EcorePackageImpl} from '../src/EcorePackageImpl'
 import { XmiResource } from '../src/XmiResource';
 import { EPackage } from '../src/EPackage';
 import * as fs from 'fs'
-import { EcorePackageLiterals } from '../src';
+
+import {XmiresourceFactoryImpl} from 'xmiresource/XmiresourceFactoryImpl'
+import { MyEnum } from 'xmiresource/MyEnum';
 
 describe("XmiResource", () => {
     test("it should set eInternalContainer", () => {
@@ -29,6 +31,7 @@ describe("XmiResource", () => {
         expect(eclass.eInternalContainer()).not.toBeNull()
     });
 
+    /*
     test("save", () => {
         //arrange
         
@@ -48,4 +51,34 @@ describe("XmiResource", () => {
 
         expect(epackage).not.toBeNull()
     });
+    */
+   test("save", () => {
+    //arrange
+    
+    const resource = new XmiResource(EcorePackageImpl.eINSTANCE, EcoreFactoryImpl.eINSTANCE, new DOMParser())
+    const root = XmiresourceFactoryImpl.eINSTANCE.createRoot()
+    root.singleAttribute = 1
+    root.manyAttribute.add(1)
+    root.manyAttribute.add(2)
+
+    const child = XmiresourceFactoryImpl.eINSTANCE.createChild()
+    root.singleChild = child
+    root.manyChildren.add(child)
+
+    root.enum = MyEnum.EINS
+
+    //action
+    const xmi = resource.save(root)
+    //console.log(xmi)
+
+    //assert
+    const epackage = resource.load(xmi) as EPackage
+
+    fs.writeFile("Xmiresource.xmi", xmi, function (err) {
+      if (err) return console.log(err);
+      console.log('Hello World > helloworld.txt');
+    });
+
+    expect(epackage).not.toBeNull()
+});
   });
