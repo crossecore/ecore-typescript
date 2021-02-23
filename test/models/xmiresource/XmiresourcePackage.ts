@@ -1,0 +1,19 @@
+import {EClass} from "ecore/EClass";
+import {EAttribute} from "ecore/EAttribute";
+import {EEnum} from "ecore/EEnum";
+import {EReference} from "ecore/EReference";
+import {EPackage} from "ecore/EPackage";
+export interface XmiresourcePackage extends EPackage {
+	getRoot():EClass;
+	getRoot_SingleReference():EReference;
+	getRoot_ManyReference():EReference;
+	getRoot_SingleChild():EReference;
+	getRoot_ManyChildren():EReference;
+	
+	getRoot_SingleAttribute():EAttribute;
+	getRoot_ManyAttribute():EAttribute;
+	getRoot_Enum():EAttribute;
+	getChild():EClass;
+	
+	getMyEnum():EEnum;
+}
