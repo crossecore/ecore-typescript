@@ -1,6 +1,5 @@
 import {EClass} from "./EClass";
 import {EList} from "./EList";
-import {EObject} from "./EObject";
 import {EStructuralFeature} from "./EStructuralFeature";
 import {Resource} from "./Resource";
 import {EOperation} from "./EOperation";
