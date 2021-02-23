@@ -14,4 +14,8 @@ module.exports = {
         "json",
         "node"
     ],
+    moduleNameMapper: {
+        "ecore": "<rootDir>/src/",
+        "xmiresource/(.*)": "<rootDir>/test/models/xmiresource/$1"
+      },
 }

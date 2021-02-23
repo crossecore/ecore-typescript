@@ -8,7 +8,8 @@
     "outDir": "./lib",
     //"outFile": "./dist/crossecore.js",
     "paths": {
-      "ecore/*": ["./src/*"]
+      "ecore/*": ["./src/*"],
+      "xmiresource/*": ["./test/models/xmiresource/*"]
     }
     ,
     "lib": [
@@ -18,7 +19,6 @@
 
   },
   "exclude": [
-    "node_modules",
-    "test"
+    "node_modules"
   ]
 }
