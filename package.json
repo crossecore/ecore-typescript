@@ -12,7 +12,7 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "madge": "madge --circular src/index.ts"
   },
   "repository": {
