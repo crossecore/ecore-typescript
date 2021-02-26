@@ -73,12 +73,6 @@ describe("XmiResource", () => {
 
     //assert
     const epackage = resource.load(xmi) as EPackage
-
-    fs.writeFile("Xmiresource.xmi", xmi, function (err) {
-      if (err) return console.log(err);
-      console.log('Hello World > helloworld.txt');
-    });
-
     expect(epackage).not.toBeNull()
 });
   });
