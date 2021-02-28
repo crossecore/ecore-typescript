@@ -42,12 +42,16 @@ describe("AbstractCollection", () => {
         collection.addAll(["eins", "zwei"])
 
         //action
-        collection.remove("eins")
+        const result = collection.remove("eins")
 
         //assert
         expect(collection.length).toBe(1)
+        expect(result).toBe(true)
         
     });
+
+    //TODO remove_
+
     it("isNotificationRequired", () => {
       
         //arrange
@@ -295,6 +299,12 @@ describe("AbstractCollection", () => {
         
     });
 
+//TODO equals
+
+//TODO not equals
+
+
+
     it("size", () => {
       
         //arrange
@@ -309,6 +319,8 @@ describe("AbstractCollection", () => {
         expect(result).toBe(2)
         
     });
+
+
     it("isEmpty", () => {
       
         //arrange
@@ -392,6 +404,27 @@ describe("AbstractCollection", () => {
         expect(result).toEqual(30)
         expect(result2).toBeNull()
     });
+
+    it("includesAll", () => {
+      
+        //arrange
+        const collection = new AbstractCollection<number>()
+        collection.add(10)
+        collection.add(20)
+        collection.add(30)
+
+        const collection2 = new AbstractCollection<number>()
+        collection2.add(10)
+        collection2.add(20)
+        collection2.add(30)
+                
+
+        //action
+        const result = collection.includesAll(collection2)
+        
+        //assert
+        expect(result).toBeTruthy()
+    });    
     it("excludes", () => {
       
         //arrange
@@ -407,6 +440,27 @@ describe("AbstractCollection", () => {
         //assert
         expect(result).toBeTruthy()
     });
+
+    it("excludesAll", () => {
+      
+        //arrange
+        const collection = new AbstractCollection<number>()
+        collection.add(10)
+        collection.add(20)
+        collection.add(30)
+
+        const collection2 = new AbstractCollection<number>()
+        collection2.add(11)
+        collection2.add(22)
+        collection2.add(33)
+                
+
+        //action
+        const result = collection.excludesAll(collection2)
+        
+        //assert
+        expect(result).toBeTruthy()
+    }); 
     it("count", () => {
       
         //arrange
