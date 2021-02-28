@@ -553,14 +553,24 @@ export class AbstractCollection<T> extends ArrayList<T> implements EcoreEList<T>
             
         }
 
-        public includesAll = (c:Collection<T>):boolean=>{
+        public includesAll = (c:AbstractCollection<T>):boolean=>{
 
-            throw new Error("operation not implemented");
+            for(let i of c){
+                if(!this.containsX(i)){
+                    return false
+                }
+            }
+            return true
         }
 
-        public excludesAll = (c:Collection<T>):boolean=>{
+        public excludesAll = (c:AbstractCollection<T>):boolean=>{
 
-            throw new Error("operation not implemented");
+            for(let i of c){
+                if(this.containsX(i)){
+                    return false
+                }
+            }
+            return true
         }
 
         public isEmpty = ():boolean=>{
