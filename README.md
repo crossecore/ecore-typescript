@@ -1,9 +1,9 @@
-![Node.js CI](https://github.com/crossecore/ecore-typescript/workflows/Node.js%20CI/badge.svg?branch=master)
+[![Node.js CI](https://github.com/crossecore/ecore-typescript/workflows/Node.js%20CI/badge.svg?branch=master)](https://github.com/crossecore/ecore-typescript/actions)
 [![NPM](https://img.shields.io/npm/v/crossecore.svg)](https://www.npmjs.com/package/crossecore)
-[![LOC](https://sonarcloud.io/api/project_badges/measure?project=crossecore_ecore-typescript&metric=ncloc)
-[![Maintainability](https://sonarcloud.io/api/project_badges/measure?project=crossecore_ecore-typescript&metric=sqale_rating)
-[![Security](https://sonarcloud.io/api/project_badges/measure?project=crossecore_ecore-typescript&metric=security_rating)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=crossecore_ecore-typescript&metric=vulnerabilities)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=crossecore_ecore-typescript&metric=ncloc)](https://sonarcloud.io/dashboard?id=crossecore_ecore-typescript)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=crossecore_ecore-typescript&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=crossecore_ecore-typescript)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=crossecore_ecore-typescript&metric=security_rating)](https://sonarcloud.io/dashboard?id=crossecore_ecore-typescript)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=crossecore_ecore-typescript&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=crossecore_ecore-typescript)
 
 
 # ecore-typescript
