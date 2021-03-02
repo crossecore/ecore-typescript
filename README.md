@@ -21,17 +21,6 @@ You need this package (1) when you have generated TypeScript/JavaScript code fro
 
 Java developers that are familiar with the Eclipse Modeling Framework will note that this package corresponds to the original Java package org.eclipse.emf.ecore.
 
-You can either use your TypeScript code to realize a web browser or node.js application.
-CrossEcore's code generator creates TypeScript classes.
-The typescript compiler translates the classes into JavaScript modules.
-Modules have their own namespace and scope and avoid the pollution of the global namespace.
-Many JavaScript build tools and packaging tools that require the use of modules.
-These build tools are integrated with optimizers and obfuscators.
-There are differnt kinds of module formats.
-Usually you use commonJs format for node.js applications.
-For web applications, you can use the Asynchronous Module Format (AMD).
-If you are using AMD, you need a module loader like requireJs or systemJs.
-The module loader lazily loads modules and their dependencies on demand and automatically.
 
 # Tutorial
 An example how CrossEcore TypeScript can be used in an Angular app for web browsers and in a Tabris (Cordova) app for Android can be seen in the [EclipseCon Europe 2018 tutorial](https://github.com/crossecore/examples-eclipsecon2018) which is also available on [YouTube](https://www.youtube.com/watch?v=T7-ExsSzSWw).
