@@ -22,7 +22,7 @@ describe("XmiResource", () => {
           </eClassifiers>
         </ecore:EPackage>
         `) as EPackage
-        console.log(epackage.eClassifiers.length)
+        
         const eclass = epackage.eClassifiers[0]
         
         
