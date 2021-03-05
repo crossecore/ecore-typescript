@@ -1,11 +1,10 @@
 {
   "compilerOptions": {
-    "module": "AMD",
+    "module": "ESNext",
     "target": "ES5",
     "sourceMap": true,
-    "declaration": true,
+    "skipLibCheck": true,
     "baseUrl": "./", // This must be specified if "paths" is.
-    "outDir": "./lib",
     //"outFile": "./dist/crossecore.js",
     "paths": {
       "ecore/*": ["./src/*"],
@@ -18,6 +17,7 @@
     ]
 
   },
+  "include": ["src"],
   "exclude": [
     "node_modules"
   ]

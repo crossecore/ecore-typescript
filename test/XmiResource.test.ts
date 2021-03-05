@@ -25,7 +25,10 @@ describe("XmiResource", () => {
           </eClassifiers>
         </ecore:EPackage>
         `) as EPackage
-        const eclass = epackage.eClassifiers[0]  
+        
+        const eclass = epackage.eClassifiers[0]
+        
+        
 
         //assert
         expect(eclass.eInternalContainer()).not.toBeNull()

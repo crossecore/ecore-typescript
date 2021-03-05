@@ -3,7 +3,6 @@ import {EFactory} from "./EFactory";
 import {ENamedElement} from "./ENamedElement";
 import {EClassifier} from "./EClassifier";
 
-
 export interface EPackage
 extends ENamedElement
 
