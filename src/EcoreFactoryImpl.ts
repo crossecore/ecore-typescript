@@ -336,8 +336,17 @@ export class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory{
 	}
 	public createEBooleanFromString(eDataType:EDataType, initialValue:string):boolean {
 
-		return initialValue == null ? null : JSON.parse(initialValue);
+		
+		switch(initialValue?.toLowerCase()){
+			case null: return null;
+			case "true": return true;
+			case "false": return false;
+			default: throw new Error("Expecting true or false")
+
+		}
+		
 	}
+	
 	
 	public convertEBooleanToString(eDataType:EDataType, instanceValue:any):string {
 		return instanceValue === null ? null : JSON.stringify(instanceValue);
@@ -376,7 +385,7 @@ export class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory{
 	}
 	public createECharFromString(eDataType:EDataType, initialValue:string):string {
 
-		return initialValue == null ? null : JSON.parse(initialValue);
+		return initialValue == null ? null : String.fromCharCode(Number.parseInt(initialValue))
 	}
 	
 	public convertECharToString(eDataType:EDataType, instanceValue:any):string {
@@ -392,7 +401,7 @@ export class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory{
 	}
 	public createEDateFromString(eDataType:EDataType, initialValue:string):Date {
 
-		return initialValue == null ? null : JSON.parse(initialValue);
+		return initialValue == null ? null : new Date(initialValue)
 	}
 	
 	public convertEDateToString(eDataType:EDataType, instanceValue:any):string {
@@ -400,7 +409,7 @@ export class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory{
 	}
 	public createEDoubleFromString(eDataType:EDataType, initialValue:string):number {
 
-		return initialValue == null ? null : JSON.parse(initialValue);
+		return initialValue == null ? null : Number.parseFloat(initialValue)
 	}
 	
 	public convertEDoubleToString(eDataType:EDataType, instanceValue:any):string {
@@ -416,7 +425,7 @@ export class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory{
 	}
 	public createEFloatFromString(eDataType:EDataType, initialValue:string):number {
 
-		return initialValue == null ? null : JSON.parse(initialValue);
+		return initialValue == null ? null : Number.parseFloat(initialValue)
 	}
 	
 	public convertEFloatToString(eDataType:EDataType, instanceValue:any):string {
@@ -432,11 +441,11 @@ export class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory{
 	}
 	public createEIntFromString(eDataType:EDataType, initialValue:string):number {
 
-		return initialValue == null ? null : JSON.parse(initialValue);
+		return initialValue == null ? null : Number.parseInt(initialValue)
 	}
 	
 	public convertEIntToString(eDataType:EDataType, instanceValue:any):string {
-		return instanceValue === null ? null : JSON.stringify(instanceValue);
+		return instanceValue === null ? null : instanceValue+""
 	}
 	public createEIntegerObjectFromString(eDataType:EDataType, initialValue:string):number {
 
@@ -496,10 +505,10 @@ export class EcoreFactoryImpl extends EFactoryImpl implements EcoreFactory{
 	}
 	public createEStringFromString(eDataType:EDataType, initialValue:string):string {
 
-		return initialValue == null ? null : JSON.parse(initialValue);
+		return initialValue;
 	}
 	
 	public convertEStringToString(eDataType:EDataType, instanceValue:any):string {
-		return instanceValue === null ? null : JSON.stringify(instanceValue);
+		return instanceValue;
 	}
 }
