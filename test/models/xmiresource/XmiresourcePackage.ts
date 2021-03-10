@@ -12,6 +12,15 @@ export interface XmiresourcePackage extends EPackage {
 	
 	getRoot_SingleAttribute():EAttribute;
 	getRoot_ManyAttribute():EAttribute;
+	getRoot_Boolean():EAttribute;
+	getRoot_Char():EAttribute;
+	getRoot_Date():EAttribute;
+	getRoot_Double():EAttribute;
+	getRoot_Float():EAttribute;
+	getRoot_Int():EAttribute;
+	getRoot_Long():EAttribute;
+	getRoot_Short():EAttribute;
+	getRoot_String():EAttribute;
 	getRoot_Enum():EAttribute;
 	getChild():EClass;
 	

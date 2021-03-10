@@ -6,33 +6,54 @@ import * as fs from 'fs'
 
 import {XmiresourceFactoryImpl} from 'xmiresource/XmiresourceFactoryImpl'
 import { MyEnum } from 'xmiresource/MyEnum';
+import { XmiresourcePackageImpl } from 'xmiresource/XmiresourcePackageImpl';
+import { Root } from 'xmiresource/Root';
 
 describe("XmiResource", () => {
-    test("it should set eInternalContainer", () => {
+    test("load", () => {
         //arrange
         const resource = new XmiResource(EcorePackageImpl.eINSTANCE, EcoreFactoryImpl.eINSTANCE, new DOMParser())
-        const epackage = resource.load(`<?xml version="1.0" encoding="UTF-8"?>
-        <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="keywords" nsURI="keywords" nsPrefix="keywords">
-          <eClassifiers xsi:type="ecore:EClass" name="Switch">
-            <eOperations name="operation">
-              <eParameters name="override" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-            </eOperations>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="readonly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="return" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//Switch"
-                containment="true"/>
-          </eClassifiers>
-        </ecore:EPackage>
-        `) as EPackage
+        const file = "./test/resources/Ecore.uuid.ecore"
+
+        const contents = fs.readFileSync(file)
         
-        const eclass = epackage.eClassifiers[0]
-        
+        //action
+        const epackage = resource.load(contents.toString()) as EPackage
         
 
         //assert
-        expect(eclass.eInternalContainer()).not.toBeNull()
+        expect(epackage).not.toBeNull()
     });
+
+    test("load2", () => {
+      //arrange
+      const resource = new XmiResource(XmiresourcePackageImpl.eINSTANCE, XmiresourceFactoryImpl.eINSTANCE, new DOMParser())
+      const file = "./test/resources/Root.xmi"
+
+      const contents = fs.readFileSync(file)
+      
+      //action
+      const root = resource.load(contents.toString()) as Root
+
+      //assert
+      expect(root).not.toBeNull()
+      expect(root.singleAttribute).toBe(2)
+      expect(root.manyAttribute).toContain(1)
+      expect(root.manyAttribute).toContain(2)
+      expect(root.manyAttribute).toContain(3)
+      expect(root.singleReference).toBe(root)
+      expect(root.manyReference).toContain(root)
+
+      expect(root.boolean).toBe(true)
+      expect(root.char).toBe("A")
+      expect(root.date.toUTCString()).toBe(new Date("2021-03-08T21:33:50.000+0100").toUTCString())
+      expect(root.double).toBe(1)
+      expect(root.float).toBe(1)
+      expect(root.int).toBe(1)
+      expect(root.long).toBe(1)
+      expect(root.short).toBe(1)
+      expect(root.string).toBe("string")
+  });
 
     /*
     test("save", () => {

@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ES5",
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "baseUrl": "./", // This must be specified if "paths" is.
+    //"outFile": "./dist/crossecore.js",
+    "paths": {
+      "ecore/*": ["../src/*"],
+      "xmiresource/*": ["./models/xmiresource/*"]
+    }
+    ,
+    "lib": [
+      "es2017",
+      "dom"
+    ]
+
+  },
+  "include": ["./"]
+}

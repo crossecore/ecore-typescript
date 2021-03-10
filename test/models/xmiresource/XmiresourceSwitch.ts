@@ -1,10 +1,10 @@
+import {Switch} from "ecore/Switch";
+import {EObject} from "ecore/EObject";
+import {EPackage} from "ecore/EPackage";
 import {XmiresourcePackageImpl} from "xmiresource/XmiresourcePackageImpl";
 import {Root} from "xmiresource/Root";
 import {Child} from "xmiresource/Child";
 import {XmiresourcePackage} from "xmiresource/XmiresourcePackage";
-import {Switch} from "ecore/Switch";
-import {EObject} from "ecore/EObject";
-import {EPackage} from "ecore/EPackage";
 export class XmiresourceSwitch<T> extends Switch<T> {
 	protected static modelPackage:XmiresourcePackage;
 	

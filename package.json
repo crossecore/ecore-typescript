@@ -13,7 +13,7 @@
   },
   "main": "dist/crossecore.cjs.min.js",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest",
     "madge": "madge --circular src/index.ts",
     "createindex": "cti create ./src",
     "build": "rollup --config rollup.config.js",

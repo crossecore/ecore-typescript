@@ -1,3 +1,7 @@
+import {EFactoryImpl} from "ecore/EFactoryImpl";
+import {EClass} from "ecore/EClass";
+import {EDataType} from "ecore/EDataType";
+import {EObject} from "ecore/EObject";
 import {XmiresourcePackageImpl} from "xmiresource/XmiresourcePackageImpl";
 import {RootImpl} from "xmiresource/RootImpl";
 import {MyEnum} from "xmiresource/MyEnum";
@@ -5,19 +9,10 @@ import {Root} from "xmiresource/Root";
 import {XmiresourceFactory} from "xmiresource/XmiresourceFactory";
 import {ChildImpl} from "xmiresource/ChildImpl";
 import {Child} from "xmiresource/Child";
-import {EFactoryImpl} from "ecore/EFactoryImpl";
-import {EClass} from "ecore/EClass";
-import {EDataType} from "ecore/EDataType";
-import {EObject} from "ecore/EObject";
-//import { EPackageRegistryImpl } from "ecore/EPackageRegistryImpl";
-import { EcoreFactoryImpl } from "ecore/EcoreFactoryImpl";
-
 export class XmiresourceFactoryImpl extends EFactoryImpl implements XmiresourceFactory{
 	public static eINSTANCE : XmiresourceFactory = XmiresourceFactoryImpl.init();
 	public static init() : XmiresourceFactory 
 	{
-
-
 		return new XmiresourceFactoryImpl();
 	}
 	

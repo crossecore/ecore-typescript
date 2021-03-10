@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmiresource:Root
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xmiresource="xmiresource"
+    xsi:schemaLocation="xmiresource XmiResource.ecore"
+    singleAttribute="2"
+    singleReference="/"
+    manyReference="/"
+    boolean="true"
+    char="65"
+    date="2021-03-08T21:33:50.000+0100"
+    double="1.0"
+    float="1.0"
+    int="1"
+    long="1"
+    short="1"
+    string="string">
+  <manyAttribute>1</manyAttribute>
+  <manyAttribute>2</manyAttribute>
+  <manyAttribute>3</manyAttribute>
+  <singleChild/>
+</xmiresource:Root>

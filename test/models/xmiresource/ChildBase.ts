@@ -1,11 +1,11 @@
-import {XmiresourcePackageLiterals} from "xmiresource/XmiresourcePackageLiterals";
-import {Child} from "xmiresource/Child";
 import {EClass} from "ecore/EClass";
 import {NotificationChain} from "ecore/NotificationChain";
 import {ENotificationImpl} from "ecore/ENotificationImpl";
 import {NotificationImpl} from "ecore/NotificationImpl";
 import {InternalEObject} from "ecore/InternalEObject";
 import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
+import {XmiresourcePackageLiterals} from "xmiresource/XmiresourcePackageLiterals";
+import {Child} from "xmiresource/Child";
 		
 			export class ChildBase
 			extends BasicEObjectImpl
