@@ -20,11 +20,11 @@ export class XmiresourcePackageLiterals{
 	public static ROOT__STRING:number = 14;
 	public static ROOT__ENUM:number = 15;
 	
-	public static CHILD:number = 2;
+	public static CHILD:number = 1;
 	public static CHILD_FEATURE_COUNT:number = 0;
 	public static CHILD_OPERATION_COUNT:number = 0;
 	
 	
-	public static MYENUM:number = 1;
+	public static MYENUM:number = 2;
 	
 }

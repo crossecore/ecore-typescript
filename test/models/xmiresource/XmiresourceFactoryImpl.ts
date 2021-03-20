@@ -2,10 +2,10 @@ import {EFactoryImpl} from "ecore/EFactoryImpl";
 import {EClass} from "ecore/EClass";
 import {EDataType} from "ecore/EDataType";
 import {EObject} from "ecore/EObject";
-import {XmiresourcePackageImpl} from "xmiresource/XmiresourcePackageImpl";
 import {RootImpl} from "xmiresource/RootImpl";
 import {MyEnum} from "xmiresource/MyEnum";
 import {Root} from "xmiresource/Root";
+import {XmiresourcePackageLiterals} from "xmiresource/XmiresourcePackageLiterals";
 import {XmiresourceFactory} from "xmiresource/XmiresourceFactory";
 import {ChildImpl} from "xmiresource/ChildImpl";
 import {Child} from "xmiresource/Child";
@@ -31,8 +31,8 @@ export class XmiresourceFactoryImpl extends EFactoryImpl implements XmiresourceF
 	
 	public create(eClass:EClass):EObject {
 		switch (eClass.getClassifierID()) {
-			case XmiresourcePackageImpl.ROOT: return this.createRoot();
-			case XmiresourcePackageImpl.CHILD: return this.createChild();
+			case XmiresourcePackageLiterals.ROOT: return this.createRoot();
+			case XmiresourcePackageLiterals.CHILD: return this.createChild();
 			default:
 				throw new Error("The class '" + eClass.name + "' is not a valid classifier");
 		}
@@ -41,7 +41,7 @@ export class XmiresourceFactoryImpl extends EFactoryImpl implements XmiresourceF
 	
 	public createFromString(eDataType:EDataType, initialValue:string):any {
 		switch (eDataType.getClassifierID()) {
-		case XmiresourcePackageImpl.MYENUM:
+		case XmiresourcePackageLiterals.MYENUM:
 			return this.createMyEnumFromString(eDataType, initialValue);
 		default:
 			throw new Error("The datatype '" + eDataType.name + "' is not a valid classifier");
@@ -49,7 +49,7 @@ export class XmiresourceFactoryImpl extends EFactoryImpl implements XmiresourceF
 	}
 	public convertToString(eDataType:EDataType, instanceValue:any):string {
 		switch (eDataType.getClassifierID()) {
-		case XmiresourcePackageImpl.MYENUM:
+		case XmiresourcePackageLiterals.MYENUM:
 			return this.convertMyEnumToString(eDataType, instanceValue);
 		default:
 			throw new Error("The datatype '" + eDataType.name + "' is not a valid classifier");
