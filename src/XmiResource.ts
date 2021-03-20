@@ -41,8 +41,8 @@ interface ResolveJob {
 
 export class XmiResource {
 
-    private factory: EFactory = EcoreFactoryImpl.eINSTANCE;
-    private epackage: EPackage = EcorePackageImpl.eINSTANCE; //TODO make dynamic
+    private factory: EFactory = null
+    private epackage: EPackage = null
     private domParser: DOMParser;
 
     private registry : Map<string, EObject>;
@@ -51,9 +51,8 @@ export class XmiResource {
     private resolveJobs: Array<ResolveJob> = []; //TODO define type
     
 
-    constructor(epackage: EPackage, efactory: EFactory, domParser: DOMParser) {
-        this.factory = efactory;
-        this.epackage = epackage;
+    constructor(domParser: DOMParser) {
+
 
         this.domParser = domParser;
 
@@ -61,9 +60,6 @@ export class XmiResource {
         this.registry = new Map<string, EObject>();
         
     }
-
-
-
 
     public load = (xml: string): EObject => {
 
@@ -77,9 +73,21 @@ export class XmiResource {
 
     protected rootnode = (node: Element) => {
 
+        const qualifiedClassifier = node.nodeName.split(':')
 
-        const classifierId = node.nodeName.split(':')[1];
+        const nsPrefix = qualifiedClassifier[0];
 
+        const nsUri = node.getAttribute(`xmlns:${nsPrefix}`)
+
+
+        console.log(nsUri)
+        this.epackage = EPackageRegistryImpl.INSTANCE.getEPackage(nsUri)
+        //console.log(EPackageRegistryImpl.INSTANCE)
+        console.log(this.epackage!==null)
+        this.factory = EPackageRegistryImpl.INSTANCE.getEFactory(nsUri)
+
+        const classifierId = qualifiedClassifier[1];
+        
         const eclassifier = this.epackage.getEClassifier(classifierId);
 
         if (eclassifier instanceof EClassImpl) {
@@ -92,8 +100,6 @@ export class XmiResource {
 
             this.lateResolve();
         }
-
-
     }
 
     protected resolveEList = (specification: string) => {
@@ -114,8 +120,6 @@ export class XmiResource {
             }
         }
         return result;
-
-
     }
 
     protected resolveEObject = (specification: string) => {
@@ -218,13 +222,8 @@ export class XmiResource {
                     let raw_value = value
 
                     let ns = estructuralfeature.eType.ePackage.nsURI
-                    let factory;
-                    if(ns===this.epackage.nsURI){
-                        factory = this.factory
-                    }
-                    else{
-                        factory = EcoreFactoryImpl.eINSTANCE
-                    }
+
+                    const factory = EPackageRegistryImpl.INSTANCE.getEFactory(ns)
                     
                     let value2 = factory.createFromString(estructuralfeature.eType as EDataType, raw_value)
 
@@ -308,13 +307,8 @@ export class XmiResource {
                     let raw_value = child.textContent
 
                     let ns = containment.eType.ePackage.nsURI
-                    let factory;
-                    if(ns===this.epackage.nsURI){
-                        factory = this.factory
-                    }
-                    else{
-                        factory = EcoreFactoryImpl.eINSTANCE
-                    }
+                    const factory = EPackageRegistryImpl.INSTANCE.getEFactory(ns);
+
                     
                     let value = factory.createFromString(containment.eType as EDataType, raw_value)
                     items.push(value)
@@ -413,6 +407,8 @@ export class XmiResource {
             result.push(`<${tag}`)
             result.push(" ")
             result.push(`xmi:version="2.0"`)
+            result.push(" ")
+            result.push(`xmlns:xmi="http://www.omg.org/XMI"`)
             result.push(" ")
             result.push(`xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"`)
             result.push(" ")
