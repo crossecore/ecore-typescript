@@ -12,7 +12,8 @@ import { Root } from 'xmiresource/Root';
 describe("XmiResource", () => {
     test("load", () => {
         //arrange
-        const resource = new XmiResource(EcorePackageImpl.eINSTANCE, EcoreFactoryImpl.eINSTANCE, new DOMParser())
+        EcorePackageImpl.eINSTANCE
+        const resource = new XmiResource(new DOMParser())
         const file = "./test/resources/Ecore.uuid.ecore"
 
         const contents = fs.readFileSync(file)
@@ -27,7 +28,9 @@ describe("XmiResource", () => {
 
     test("load2", () => {
       //arrange
-      const resource = new XmiResource(XmiresourcePackageImpl.eINSTANCE, XmiresourceFactoryImpl.eINSTANCE, new DOMParser())
+      EcorePackageImpl.eINSTANCE
+      XmiresourcePackageImpl.eINSTANCE
+      const resource = new XmiResource(new DOMParser())
       const file = "./test/resources/Root.xmi"
 
       const contents = fs.readFileSync(file)
@@ -78,8 +81,9 @@ describe("XmiResource", () => {
     */
    test("save", () => {
     //arrange
-    
-    const resource = new XmiResource(EcorePackageImpl.eINSTANCE, EcoreFactoryImpl.eINSTANCE, new DOMParser())
+    EcorePackageImpl.eINSTANCE
+    XmiresourcePackageImpl.eINSTANCE
+    const resource = new XmiResource(new DOMParser())
     const root = XmiresourceFactoryImpl.eINSTANCE.createRoot()
     root.singleAttribute = 1
     root.manyAttribute.add(1)
@@ -96,7 +100,7 @@ describe("XmiResource", () => {
     //console.log(xmi)
 
     //assert
-    const epackage = resource.load(xmi) as EPackage
+    const epackage = resource.load(xmi)
     expect(epackage).not.toBeNull()
 });
   });
