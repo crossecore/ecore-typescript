@@ -1,4 +1,4 @@
-import { EFactory } from "./EFactory";
+import { EPackage } from "./EPackage";
 
 export class EPackageRegistryImpl{
 
@@ -7,12 +7,12 @@ export class EPackageRegistryImpl{
         console.log("yes")
     }
 
-    protected registry = new Map<String, EFactory>()
+    protected registry = new Map<String, EPackage>()
 
     public static INSTANCE = new EPackageRegistryImpl()
 
-    public set(nsUri:string, efactory:EFactory){
-        this.registry.set(nsUri, efactory)
+    public set(nsUri:string, epackage:EPackage){
+        this.registry.set(nsUri, epackage)
     }
     
     public get(nsUri:string){
@@ -21,16 +21,16 @@ export class EPackageRegistryImpl{
 
     public getEFactory(nsUri:string){
         if(this.registry.has(nsUri)){
-            return this.registry.get(nsUri)
+            const epackage = this.registry.get(nsUri)
+            return epackage.eFactoryInstance
         }
         return null;
     }
 
     public getEPackage(nsUri:string){
 
-        const factory = this.getEFactory(nsUri)
-        if(factory!==null){
-            return factory.ePackage
+        if(this.registry.has(nsUri)){
+            return this.registry.get(nsUri)
         }
         return null;
     }

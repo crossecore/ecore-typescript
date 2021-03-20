@@ -32,6 +32,7 @@ import {EOperationImpl} from "./EOperationImpl";
 import {EDataTypeImpl} from "./EDataTypeImpl";
 import {EClass} from "./EClass";
 import {EClassImpl} from "./EClassImpl";
+import { EPackageRegistryImpl } from "./EPackageRegistryImpl";
 
 
 	export class EPackageImpl
@@ -42,17 +43,20 @@ import {EClassImpl} from "./EClassImpl";
 		protected ecoreFactory:EcoreFactory;
 		protected ecorePackage:EcorePackage;
 
-		/*
-		constructor(packageURI?:string, factory?:EcoreFactory)
+		
+		constructor(packageURI?:string, factory?:EFactory)
 		{
 			super();
-			this.ecoreFactory = factory;
-			this.ecorePackage = this as any as EcorePackage;
 
+			if(packageURI && factory){
 
+				this.eFactoryInstance = factory
+				EPackageRegistryImpl.INSTANCE.set(packageURI, this);
+	
+			}
 		}
 
-		*/
+		
 
 
 

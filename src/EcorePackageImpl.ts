@@ -55,12 +55,12 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 		
 		
 		
-		/*
+		
 		constructor(){
-			//no private constructors in TypeScript
-			super(EcorePackageImpl.eNS_URI, EcoreFactoryImpl.eINSTANCE as any as EFactory);
+
+			super(EcorePackageImpl.eNS_URI, EcoreFactoryImpl.eINSTANCE);
 		}
-		*/
+		
 		
 		public static init():EcorePackage
 		{
@@ -76,6 +76,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 	        // Initialize created meta-data
 	        theEcorePackage.initializePackageContents();
 
+			
 	        return theEcorePackage;
         }
         
