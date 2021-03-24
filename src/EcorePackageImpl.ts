@@ -46,6 +46,7 @@ import {ETypedElementImpl} from "./ETypedElementImpl";
 import {ENamedElementImpl} from "./ENamedElementImpl";
 import {EStringToStringMapEntryBase} from "./EStringToStringMapEntryBase";
 import {EClassImpl} from "./EClassImpl";
+import { EPackageRegistryImpl } from "./EPackageRegistryImpl";
 export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 		public static eNAME:string = "ecore";
 		
@@ -53,7 +54,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 		
 		public static eNS_PREFIX:string = "ecore";
 		
-		
+		private static isInited:boolean = false;
 		
 		
 		constructor(){
@@ -64,6 +65,9 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 		
 		public static init():EcorePackage
 		{
+			if(this.isInited) return EPackageRegistryImpl.INSTANCE.getEPackage(this.eNS_URI) as EcorePackage
+
+			this.isInited = true;
 
 	        // Obtain or create and register package
 	        let theEcorePackage = new EcorePackageImpl();
