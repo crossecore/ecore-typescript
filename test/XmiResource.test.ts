@@ -12,7 +12,7 @@ import { Root } from 'xmiresource/Root';
 describe("XmiResource", () => {
     test("load", () => {
         //arrange
-        EcorePackageImpl.eINSTANCE
+        EcorePackageImpl.init()
         const resource = new XmiResource(new DOMParser())
         const file = "./test/resources/Ecore.uuid.ecore"
 
@@ -28,8 +28,8 @@ describe("XmiResource", () => {
 
     test("load2", () => {
       //arrange
-      EcorePackageImpl.eINSTANCE
-      XmiresourcePackageImpl.eINSTANCE
+      EcorePackageImpl.init()
+      XmiresourcePackageImpl.init()
       const resource = new XmiResource(new DOMParser())
       const file = "./test/resources/Root.xmi"
 
@@ -81,8 +81,8 @@ describe("XmiResource", () => {
     */
    test("save", () => {
     //arrange
-    EcorePackageImpl.eINSTANCE
-    XmiresourcePackageImpl.eINSTANCE
+    EcorePackageImpl.init()
+    XmiresourcePackageImpl.init()
     const resource = new XmiResource(new DOMParser())
     const root = XmiresourceFactoryImpl.eINSTANCE.createRoot()
     root.singleAttribute = 1
