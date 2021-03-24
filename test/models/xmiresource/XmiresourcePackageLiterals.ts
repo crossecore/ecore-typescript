@@ -1,6 +1,6 @@
 export class XmiresourcePackageLiterals{
 	public static ROOT:number = 0;
-	public static ROOT_FEATURE_COUNT:number = 16;
+	public static ROOT_FEATURE_COUNT:number = 18;
 	public static ROOT_OPERATION_COUNT:number = 0;
 	
 	public static ROOT__SINGLE_ATTRIBUTE:number = 0;
@@ -19,6 +19,8 @@ export class XmiresourcePackageLiterals{
 	public static ROOT__SHORT:number = 13;
 	public static ROOT__STRING:number = 14;
 	public static ROOT__ENUM:number = 15;
+	public static ROOT__INTEGER_OBJECT:number = 16;
+	public static ROOT__BIGINT:number = 17;
 	
 	public static CHILD:number = 1;
 	public static CHILD_FEATURE_COUNT:number = 0;

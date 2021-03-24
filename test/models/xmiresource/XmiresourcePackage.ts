@@ -22,6 +22,8 @@ export interface XmiresourcePackage extends EPackage {
 	getRoot_Short():EAttribute;
 	getRoot_String():EAttribute;
 	getRoot_Enum():EAttribute;
+	getRoot_IntegerObject():EAttribute;
+	getRoot_Bigint():EAttribute;
 	getChild():EClass;
 	
 	getMyEnum():EEnum;

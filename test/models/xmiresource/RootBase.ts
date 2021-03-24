@@ -40,7 +40,7 @@ import {Child} from "xmiresource/Child";
 				set boolean(value:boolean){
 					this._boolean = value; 
 				}
-				private _char:string = "";
+				private _char:string = '';
 				get char():string{
 					return this._char;
 				}
@@ -102,6 +102,20 @@ import {Child} from "xmiresource/Child";
 				}
 				set enum(value:MyEnum){
 					this._enum = value; 
+				}
+				private _integerObject:number = 0;
+				get integerObject():number{
+					return this._integerObject;
+				}
+				set integerObject(value:number){
+					this._integerObject = value; 
+				}
+				private _bigint:number = 0;
+				get bigint():number{
+					return this._bigint;
+				}
+				set bigint(value:number){
+					this._bigint = value; 
 				}
 				private _singleReference:Root = null;
 				get singleReference():Root{
@@ -236,6 +250,10 @@ import {Child} from "xmiresource/Child";
 							return this.string;
 						case XmiresourcePackageLiterals.ROOT__ENUM:
 							return this.enum;
+						case XmiresourcePackageLiterals.ROOT__INTEGER_OBJECT:
+							return this.integerObject;
+						case XmiresourcePackageLiterals.ROOT__BIGINT:
+							return this.bigint;
 					}
 					//return this.eGetFromBasicEObjectImpl(featureID, resolve, coreType);
 					return super.eGet(featureID, resolve, coreType);
@@ -279,6 +297,12 @@ import {Child} from "xmiresource/Child";
 							return;
 						case XmiresourcePackageLiterals.ROOT__ENUM:
 							this.enum = <MyEnum> newValue;
+							return;
+						case XmiresourcePackageLiterals.ROOT__INTEGER_OBJECT:
+							this.integerObject = <number> newValue;
+							return;
+						case XmiresourcePackageLiterals.ROOT__BIGINT:
+							this.bigint = <number> newValue;
 							return;
 						case XmiresourcePackageLiterals.ROOT__SINGLE_REFERENCE:
 							this.singleReference = <Root> newValue;

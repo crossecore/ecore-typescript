@@ -1,6 +1,7 @@
 import {OrderedSet} from "ecore/OrderedSet";
 import {InternalEObject} from "ecore/InternalEObject";
 import {MyEnum} from "xmiresource/MyEnum";
+import {Root} from "xmiresource/Root";
 import {Child} from "xmiresource/Child";
 
 export interface Root
@@ -20,6 +21,8 @@ extends InternalEObject
 	short:number;
 	string:string;
 	enum:MyEnum;
+	integerObject:number;
+	bigint:number;
 	
 	singleReference:Root;
 	manyReference: OrderedSet<Root>;
