@@ -7,8 +7,8 @@
     "baseUrl": "./", // This must be specified if "paths" is.
     //"outFile": "./dist/crossecore.js",
     "paths": {
-      "ecore/*": ["./src/*"],
-      "xmiresource/*": ["./test/models/xmiresource/*"]
+      "ecore/*": ["../src/*"],
+      "xmiresource/*": ["./models/xmiresource/*"]
     }
     ,
     "lib": [
@@ -17,8 +17,5 @@
     ]
 
   },
-  "include": ["src"],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["./"]
 }

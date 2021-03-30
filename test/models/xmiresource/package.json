@@ -1,0 +1,17 @@
+{
+  "name": "xmiresource",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "jest"
+  },
+  "main": "lib/index.js",
+  "private": true,
+  "dependencies": {
+  	"crossecore": "^0.1.0"
+  },
+  "devDependencies": {
+    "typescript": "~3.5.2",
+  	"jest": "^24.8.0"
+  }
+}

@@ -111,6 +111,14 @@ import {EStructuralFeature} from "./EStructuralFeature";
       return result;
     }
 
+    get eAllContainments():OrderedSet<EReference>{
+
+		const result = this.eAllReferences
+
+		return result.select(i=>i.containment)
+  
+	  }
+
     get eAllStructuralFeatures():OrderedSet<EStructuralFeature>{
 
 		  let result = new OrderedSet<EStructuralFeature>();

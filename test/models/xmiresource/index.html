@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="de">  
+  <head>    
+    <meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Package Xmiresource
+    </title>    
+    <!-- Latest compiled and minified CSS -->    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">    
+    <!-- Optional theme -->    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">    
+    <!-- Latest compiled and minified JavaScript -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/9.5.0/styles/default.min.css">
+	<style>
+
+	.panel-body > h4{
+	    color: #31708f;
+	    background-color: #d9edf7;
+	    border: 1px solid #bce8f1;
+	    padding: 10px;
+	  
+	}
+	
+	.panel-body > table{
+	  width:100%;
+	  
+	}
+	
+	.panel-body > table td{
+	  padding: 10px;
+	}
+	
+	.panel-body > table th{
+	  padding: 0 10px;
+	}
+	</style>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    
+
+    <script src="https://cdn.jsdelivr.net/highlight.js/9.5.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+      </head>  
+      <body>  
+        <div class="container">
+        <div class="jumbotron">
+          <h1>Package Xmiresource</h1>
+          Version: <br />
+          Date:
+          </p>
+          </div>
+          <!-- METAMODEL -->  
+          <div class="bs-docs-section">        
+            <div class="page-header">          
+              <div class="row">            
+                <div class="col-lg-12">              
+                  <h1>Meta Model</h1>            
+                </div>          
+              </div>        
+            </div>        
+            <div class="row">
+            
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><b>EClassifier</b> Root</h3>
+     </div>
+<div class="panel-body">
+<h4>Description</h4>
+<p>To be defined.</p>
+<h4>EStructuralFeatures</h4>
+<table class="">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Multiplicity</th>
+			<th>Tags</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>singleAttribute</td>
+		<td>EInt</td>
+		<td>1..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>manyAttribute</td>
+		<td>EInt</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>singleReference</td>
+		<td>Root</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>manyReference</td>
+		<td>Root</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>singleChild</td>
+		<td>Child</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">composes</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>manyChildren</td>
+		<td>Child</td>
+		<td>0..*</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+			<span class="label label-primary">composes</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>boolean</td>
+		<td>EBoolean</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>char</td>
+		<td>EChar</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>date</td>
+		<td>EDate</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>double</td>
+		<td>EDouble</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>float</td>
+		<td>EFloat</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>int</td>
+		<td>EInt</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>long</td>
+		<td>ELong</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>short</td>
+		<td>EShort</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>string</td>
+		<td>EString</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>enum</td>
+		<td>MyEnum</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>integerObject</td>
+		<td>EIntegerObject</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+	<tr>
+		<td>bigint</td>
+		<td>EBigInteger</td>
+		<td>0..1</td>
+		<td>
+			<span class="label label-primary">changeable</span>
+			<span class="label label-primary">ordered</span>
+			<span class="label label-primary">unique</span>
+		</td>
+		<td>Some description</td>
+		</tr>
+	</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><b>EClassifier</b> Child</h3>
+     </div>
+<div class="panel-body">
+<h4>Description</h4>
+<p>To be defined.</p>
+<h4>EStructuralFeatures</h4>
+<table class="">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Multiplicity</th>
+			<th>Tags</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		</table>
+	</div>
+</div>
+
+              
+            </div>        
+          </div>
+        </div>  
+      </body>
+ </html>
