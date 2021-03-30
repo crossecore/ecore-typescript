@@ -79,11 +79,8 @@ export class XmiResource {
 
         const nsUri = node.getAttribute(`xmlns:${nsPrefix}`)
 
-
-        console.log(nsUri)
         this.epackage = EPackageRegistryImpl.INSTANCE.getEPackage(nsUri)
-        //console.log(EPackageRegistryImpl.INSTANCE)
-        console.log(this.epackage!==null)
+
         this.factory = EPackageRegistryImpl.INSTANCE.getEFactory(nsUri)
 
         const classifierId = qualifiedClassifier[1];

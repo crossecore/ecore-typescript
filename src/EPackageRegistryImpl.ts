@@ -4,7 +4,7 @@ export class EPackageRegistryImpl{
 
 
     constructor(){
-        console.log("yes")
+        
     }
 
     protected registry = new Map<String, EPackage>()

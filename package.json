@@ -1,6 +1,6 @@
 {
   "name": "crossecore",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Ecore and OCL runtime API for TypeScript",
   "license": "EPL-2.0",
   "directoriess": {
