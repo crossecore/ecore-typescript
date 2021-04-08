@@ -29,7 +29,7 @@ export class ContentTreeIterator implements TreeIterator<EObject>, IterableItera
 
 
 
-      for(var child of (eObject.eContents() as Array<EObject>) ){
+      for(let child of (eObject.eContents() as Array<EObject>) ){
         if(child!==null){
           this.queue.push(child);
         }
@@ -37,7 +37,7 @@ export class ContentTreeIterator implements TreeIterator<EObject>, IterableItera
 
       }
 
-      for(var child of (eObject.eContents() as Array<EObject>) ){
+      for(let child of (eObject.eContents() as Array<EObject>) ){
 
 
         this.addRecursively(child);
