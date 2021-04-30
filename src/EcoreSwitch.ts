@@ -35,7 +35,7 @@ export class EcoreSwitch<T> extends Switch<T> {
 		return ePackage === EcoreSwitch.modelPackage;
 	}
 	
-	public doSwitch(classifierID:number, theEObject:EObject):T {
+	public doSwitch3(classifierID:number, theEObject:EObject):T {
 		switch (classifierID) {
 			case EcorePackageImpl.EATTRIBUTE: {
 				let obj:EAttribute = <EAttribute>theEObject;

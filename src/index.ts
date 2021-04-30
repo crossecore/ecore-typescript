@@ -58,6 +58,7 @@ export * from './EOperationImpl';
 export * from './EPackage';
 export * from './EPackageBase';
 export * from './EPackageImpl';
+export * from './EPackageRegistryImpl';
 export * from './EParameter';
 export * from './EParameterBase';
 export * from './EParameterImpl';

@@ -1,13 +1,13 @@
 {
   "name": "crossecore",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Ecore and OCL runtime API for TypeScript",
   "license": "EPL-2.0",
   "directoriess": {
     "src": "src",
     "test": "test"
   },
-  "files": ["dist", "LICENSE", "README.md"],
+  "files": ["dist", "typings", "LICENSE", "README.md"],
   "jest": {
     "testEnvironment": "node"
   },
@@ -17,7 +17,8 @@
     "madge": "madge --circular src/index.ts",
     "createindex": "cti create ./src",
     "build": "rollup --config rollup.config.js",
-    "declaration": "tsc -p . --emitDeclarationOnly --declaration true --declarationDir ./typings"
+    "declaration": "tsc -p . --emitDeclarationOnly --declaration true --declarationDir ./typings",
+    "prepublish": "yarn run createindex && yarn run declaration && yarn run build"
   },
   "typings": "typings/index.d.ts",
   "repository": {
