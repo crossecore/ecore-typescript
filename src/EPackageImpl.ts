@@ -612,7 +612,24 @@ import { EPackageRegistryImpl } from "./EPackageRegistryImpl";
 			eOperation.eGenericType = eGenericType;
 		}
 
+		protected addEParameter = (owner:EOperation, type:EClassifier, name:string, lowerBound:number, upperBound:number, isUnique:boolean, isOrdered:boolean):EParameter=>
+		{
+		  const p = this.internalAddEParameter(owner, type, name);
+		  p.lowerBound = lowerBound;
+		  p.upperBound = upperBound;
+		  p.unique = isUnique;
+		  p.ordered = isOrdered;
+		  return p;
+		}
 
+		private internalAddEParameter=(owner:EOperation, type:EClassifier, name:string)=>
+		{
+			const p = this.ecoreFactory.createEParameter();
+			p.eType = type;
+			p.name = name;
+			owner.eParameters.add(p);
+			return p;
+		}
 
 
 
