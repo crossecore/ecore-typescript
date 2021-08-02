@@ -1,16 +1,16 @@
-import {OrderedSet} from "./OrderedSet";
-import {ENotificationImpl} from "./ENotificationImpl";
-import {NotificationImpl} from "./NotificationImpl";
-import {AbstractCollection} from "./AbstractCollection";
-import {EClassifier} from "./EClassifier";
-import {EcorePackageLiterals} from "./EcorePackageLiterals";
-import {BasicEObjectImpl} from "./BasicEObjectImpl";
-import {EPackage} from "./EPackage";
-import {EClass} from "./EClass";
-import {NotificationChain} from "./NotificationChain";
-import {ENamedElementImpl} from "./ENamedElementImpl";
-import {InternalEObject} from "./InternalEObject";
-import {ETypeParameter} from "./ETypeParameter";
+import {OrderedSet} from "ecore/OrderedSet";
+import {ENotificationImpl} from "ecore/ENotificationImpl";
+import {NotificationImpl} from "ecore/NotificationImpl";
+import {AbstractCollection} from "ecore/AbstractCollection";
+import {EClassifier} from "ecore/EClassifier";
+import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
+import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
+import {EPackage} from "ecore/EPackage";
+import {EClass} from "ecore/EClass";
+import {NotificationChain} from "ecore/NotificationChain";
+import {ENamedElementImpl} from "ecore/ENamedElementImpl";
+import {InternalEObject} from "ecore/InternalEObject";
+import {ETypeParameter} from "ecore/ETypeParameter";
 		
 			export class EClassifierBase
 			extends ENamedElementImpl
@@ -40,14 +40,14 @@ import {ETypeParameter} from "./ETypeParameter";
 				}
 				get ePackage():EPackage{
 				
-					if (this.eContainerFeatureID() != EcorePackageLiterals.ECLASSIFIER_EPACKAGE) return null;
+					if (this.eContainerFeatureID() != EcorePackageLiterals.ECLASSIFIER__E_PACKAGE) return null;
 					return this.eInternalContainer() as EPackage;
 				}
 				private _eTypeParameters:OrderedSet<ETypeParameter> = null;
 				
 				get eTypeParameters():OrderedSet<ETypeParameter>{
 					if(this._eTypeParameters===null){
-						this._eTypeParameters = new OrderedSet<ETypeParameter>(this, EcorePackageLiterals.ECLASSIFIER_ETYPEPARAMETERS, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.ECLASSIFIER_ETYPEPARAMETERS);
+						this._eTypeParameters = new OrderedSet<ETypeParameter>(this, EcorePackageLiterals.ECLASSIFIER__E_TYPE_PARAMETERS, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.ECLASSIFIER__E_TYPE_PARAMETERS);
 							
 					}
 					return this._eTypeParameters;
@@ -76,51 +76,42 @@ import {ETypeParameter} from "./ETypeParameter";
 			
 				public eInverseAdd(otherEnd:InternalEObject, featureID:number, msgs:NotificationChain): NotificationChain{
 					switch (featureID) {
-						case EcorePackageLiterals.ECLASSIFIER_EPACKAGE:
+						case EcorePackageLiterals.ECLASSIFIER__E_PACKAGE:
 							if (this.eInternalContainer() != null) {
 								msgs = this.eBasicRemoveFromContainer(msgs);
 							}
 							return this.basicSetEPackage(otherEnd as EPackage, msgs);
 					}
-					//return this.eInverseAddFromENamedElement(otherEnd, featureID, msgs);
 					return super.eInverseAdd(otherEnd, featureID, msgs);
 				}
-				//public eInverseAddFromEClassifier = this.eInverseAdd;
 				
 				public eInverseRemove(otherEnd:InternalEObject, featureID:number, msgs:NotificationChain):NotificationChain{
 					switch (featureID) {
-						case EcorePackageLiterals.ECLASSIFIER_EPACKAGE:
+						case EcorePackageLiterals.ECLASSIFIER__E_PACKAGE:
 							return this.basicSetEPackage(null, msgs);
 					}
-					//return this.eInverseRemoveFromENamedElement(otherEnd, featureID, msgs);
 					return super.eInverseRemove(otherEnd, featureID, msgs);
 				}
 				
-				//public eInverseRemoveFromEClassifier = this.eInverseRemove;
 			
-				public basicSetEPackage(newobj:EPackage, msgs:NotificationChain):NotificationChain {
-						msgs = this.eBasicSetContainer(newobj, EcorePackageLiterals.ECLASSIFIER_EPACKAGE, msgs);
-						return msgs;
-				}
-				
 			
 				public eGet_number_boolean_boolean(featureID:number, resolve:boolean, coreType:boolean):any{
 					switch (featureID) {
-						case EcorePackageLiterals.ECLASSIFIER_EANNOTATIONS:
+						case EcorePackageLiterals.ECLASSIFIER__E_ANNOTATIONS:
 							return this.eAnnotations;
-						case EcorePackageLiterals.ECLASSIFIER_NAME:
+						case EcorePackageLiterals.ECLASSIFIER__NAME:
 							return this.name;
-						case EcorePackageLiterals.ECLASSIFIER_INSTANCECLASSNAME:
+						case EcorePackageLiterals.ECLASSIFIER__INSTANCE_CLASS_NAME:
 							return this.instanceClassName;
-						case EcorePackageLiterals.ECLASSIFIER_INSTANCECLASS:
+						case EcorePackageLiterals.ECLASSIFIER__INSTANCE_CLASS:
 							return this.instanceClass;
-						case EcorePackageLiterals.ECLASSIFIER_DEFAULTVALUE:
+						case EcorePackageLiterals.ECLASSIFIER__DEFAULT_VALUE:
 							return this.defaultValue;
-						case EcorePackageLiterals.ECLASSIFIER_INSTANCETYPENAME:
+						case EcorePackageLiterals.ECLASSIFIER__INSTANCE_TYPE_NAME:
 							return this.instanceTypeName;
-						case EcorePackageLiterals.ECLASSIFIER_EPACKAGE:
+						case EcorePackageLiterals.ECLASSIFIER__E_PACKAGE:
 							return this.ePackage;
-						case EcorePackageLiterals.ECLASSIFIER_ETYPEPARAMETERS:
+						case EcorePackageLiterals.ECLASSIFIER__E_TYPE_PARAMETERS:
 							return this.eTypeParameters;
 					}
 					//return this.eGetFromENamedElement(featureID, resolve, coreType);
@@ -129,13 +120,13 @@ import {ETypeParameter} from "./ETypeParameter";
 				
 				public eSet_number_any(featureID:number, newValue:any):void {
 					switch (featureID) {
-						case EcorePackageLiterals.ECLASSIFIER_INSTANCECLASSNAME:
+						case EcorePackageLiterals.ECLASSIFIER__INSTANCE_CLASS_NAME:
 							this.instanceClassName = <string> newValue;
 							return;
-						case EcorePackageLiterals.ECLASSIFIER_INSTANCETYPENAME:
+						case EcorePackageLiterals.ECLASSIFIER__INSTANCE_TYPE_NAME:
 							this.instanceTypeName = <string> newValue;
 							return;
-						case EcorePackageLiterals.ECLASSIFIER_ETYPEPARAMETERS:
+						case EcorePackageLiterals.ECLASSIFIER__E_TYPE_PARAMETERS:
 							this.eTypeParameters.clear();
 							this.eTypeParameters.addAll(newValue);
 							return;

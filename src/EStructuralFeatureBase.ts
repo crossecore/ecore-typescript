@@ -1,13 +1,13 @@
-import {OrderedSet} from "./OrderedSet";
-import {EClass} from "./EClass";
-import {NotificationChain} from "./NotificationChain";
-import {ENotificationImpl} from "./ENotificationImpl";
-import {NotificationImpl} from "./NotificationImpl";
-import {EStructuralFeature} from "./EStructuralFeature";
-import {EcorePackageLiterals} from "./EcorePackageLiterals";
-import {InternalEObject} from "./InternalEObject";
-import {BasicEObjectImpl} from "./BasicEObjectImpl";
-import {ETypedElementImpl} from "./ETypedElementImpl";
+import {OrderedSet} from "ecore/OrderedSet";
+import {EClass} from "ecore/EClass";
+import {NotificationChain} from "ecore/NotificationChain";
+import {ENotificationImpl} from "ecore/ENotificationImpl";
+import {NotificationImpl} from "ecore/NotificationImpl";
+import {EStructuralFeature} from "ecore/EStructuralFeature";
+import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
+import {InternalEObject} from "ecore/InternalEObject";
+import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
+import {ETypedElementImpl} from "ecore/ETypedElementImpl";
 		
 			export class EStructuralFeatureBase
 			extends ETypedElementImpl
@@ -61,7 +61,7 @@ import {ETypedElementImpl} from "./ETypedElementImpl";
 				}
 				get eContainingClass():EClass{
 				
-					if (this.eContainerFeatureID() != EcorePackageLiterals.ESTRUCTURALFEATURE_ECONTAININGCLASS) return null;
+					if (this.eContainerFeatureID() != EcorePackageLiterals.ESTRUCTURAL_FEATURE__E_CONTAINING_CLASS) return null;
 					return this.eInternalContainer() as EClass;
 				}
 
@@ -85,71 +85,62 @@ import {ETypedElementImpl} from "./ETypedElementImpl";
 			
 				public eInverseAdd(otherEnd:InternalEObject, featureID:number, msgs:NotificationChain): NotificationChain{
 					switch (featureID) {
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_ECONTAININGCLASS:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__E_CONTAINING_CLASS:
 							if (this.eInternalContainer() != null) {
 								msgs = this.eBasicRemoveFromContainer(msgs);
 							}
 							return this.basicSetEContainingClass(otherEnd as EClass, msgs);
 					}
-					//return this.eInverseAddFromETypedElement(otherEnd, featureID, msgs);
 					return super.eInverseAdd(otherEnd, featureID, msgs);
 				}
-				//public eInverseAddFromEStructuralFeature = this.eInverseAdd;
 				
 				public eInverseRemove(otherEnd:InternalEObject, featureID:number, msgs:NotificationChain):NotificationChain{
 					switch (featureID) {
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_ECONTAININGCLASS:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__E_CONTAINING_CLASS:
 							return this.basicSetEContainingClass(null, msgs);
 					}
-					//return this.eInverseRemoveFromETypedElement(otherEnd, featureID, msgs);
 					return super.eInverseRemove(otherEnd, featureID, msgs);
 				}
 				
-				//public eInverseRemoveFromEStructuralFeature = this.eInverseRemove;
 			
-				public basicSetEContainingClass(newobj:EClass, msgs:NotificationChain):NotificationChain {
-						msgs = this.eBasicSetContainer(newobj, EcorePackageLiterals.ESTRUCTURALFEATURE_ECONTAININGCLASS, msgs);
-						return msgs;
-				}
-				
 			
 				public eGet_number_boolean_boolean(featureID:number, resolve:boolean, coreType:boolean):any{
 					switch (featureID) {
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_EANNOTATIONS:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__E_ANNOTATIONS:
 							return this.eAnnotations;
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_NAME:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__NAME:
 							return this.name;
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_ORDERED:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__ORDERED:
 							return this.ordered;
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_UNIQUE:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__UNIQUE:
 							return this.unique;
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_LOWERBOUND:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__LOWER_BOUND:
 							return this.lowerBound;
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_UPPERBOUND:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__UPPER_BOUND:
 							return this.upperBound;
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_MANY:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__MANY:
 							return this.many;
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_REQUIRED:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__REQUIRED:
 							return this.required;
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_ETYPE:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__E_TYPE:
 							return this.eType;
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_EGENERICTYPE:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__E_GENERIC_TYPE:
 							return this.eGenericType;
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_CHANGEABLE:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__CHANGEABLE:
 							return this.changeable;
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_VOLATILE:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__VOLATILE:
 							return this.volatile;
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_TRANSIENT:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__TRANSIENT:
 							return this.transient;
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_DEFAULTVALUELITERAL:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__DEFAULT_VALUE_LITERAL:
 							return this.defaultValueLiteral;
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_DEFAULTVALUE:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__DEFAULT_VALUE:
 							return this.defaultValue;
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_UNSETTABLE:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__UNSETTABLE:
 							return this.unsettable;
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_DERIVED:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__DERIVED:
 							return this.derived;
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_ECONTAININGCLASS:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__E_CONTAINING_CLASS:
 							return this.eContainingClass;
 					}
 					//return this.eGetFromETypedElement(featureID, resolve, coreType);
@@ -158,22 +149,22 @@ import {ETypedElementImpl} from "./ETypedElementImpl";
 				
 				public eSet_number_any(featureID:number, newValue:any):void {
 					switch (featureID) {
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_CHANGEABLE:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__CHANGEABLE:
 							this.changeable = <boolean> newValue;
 							return;
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_VOLATILE:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__VOLATILE:
 							this.volatile = <boolean> newValue;
 							return;
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_TRANSIENT:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__TRANSIENT:
 							this.transient = <boolean> newValue;
 							return;
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_DEFAULTVALUELITERAL:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__DEFAULT_VALUE_LITERAL:
 							this.defaultValueLiteral = <string> newValue;
 							return;
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_UNSETTABLE:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__UNSETTABLE:
 							this.unsettable = <boolean> newValue;
 							return;
-						case EcorePackageLiterals.ESTRUCTURALFEATURE_DERIVED:
+						case EcorePackageLiterals.ESTRUCTURAL_FEATURE__DERIVED:
 							this.derived = <boolean> newValue;
 							return;
 					}

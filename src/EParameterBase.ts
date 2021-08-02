@@ -1,14 +1,14 @@
-import {OrderedSet} from "./OrderedSet";
-import {EClass} from "./EClass";
-import {NotificationChain} from "./NotificationChain";
-import {ENotificationImpl} from "./ENotificationImpl";
-import {NotificationImpl} from "./NotificationImpl";
-import {EParameter} from "./EParameter";
-import {EOperation} from "./EOperation";
-import {EcorePackageLiterals} from "./EcorePackageLiterals";
-import {InternalEObject} from "./InternalEObject";
-import {BasicEObjectImpl} from "./BasicEObjectImpl";
-import {ETypedElementImpl} from "./ETypedElementImpl";
+import {OrderedSet} from "ecore/OrderedSet";
+import {EClass} from "ecore/EClass";
+import {NotificationChain} from "ecore/NotificationChain";
+import {ENotificationImpl} from "ecore/ENotificationImpl";
+import {NotificationImpl} from "ecore/NotificationImpl";
+import {EParameter} from "ecore/EParameter";
+import {EOperation} from "ecore/EOperation";
+import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
+import {InternalEObject} from "ecore/InternalEObject";
+import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
+import {ETypedElementImpl} from "ecore/ETypedElementImpl";
 		
 			export class EParameterBase
 			extends ETypedElementImpl
@@ -16,7 +16,7 @@ import {ETypedElementImpl} from "./ETypedElementImpl";
 			{
 				get eOperation():EOperation{
 				
-					if (this.eContainerFeatureID() != EcorePackageLiterals.EPARAMETER_EOPERATION) return null;
+					if (this.eContainerFeatureID() != EcorePackageLiterals.EPARAMETER__E_OPERATION) return null;
 					return this.eInternalContainer() as EOperation;
 				}
 
@@ -30,57 +30,48 @@ import {ETypedElementImpl} from "./ETypedElementImpl";
 			
 				public eInverseAdd(otherEnd:InternalEObject, featureID:number, msgs:NotificationChain): NotificationChain{
 					switch (featureID) {
-						case EcorePackageLiterals.EPARAMETER_EOPERATION:
+						case EcorePackageLiterals.EPARAMETER__E_OPERATION:
 							if (this.eInternalContainer() != null) {
 								msgs = this.eBasicRemoveFromContainer(msgs);
 							}
 							return this.basicSetEOperation(otherEnd as EOperation, msgs);
 					}
-					//return this.eInverseAddFromETypedElement(otherEnd, featureID, msgs);
 					return super.eInverseAdd(otherEnd, featureID, msgs);
 				}
-				//public eInverseAddFromEParameter = this.eInverseAdd;
 				
 				public eInverseRemove(otherEnd:InternalEObject, featureID:number, msgs:NotificationChain):NotificationChain{
 					switch (featureID) {
-						case EcorePackageLiterals.EPARAMETER_EOPERATION:
+						case EcorePackageLiterals.EPARAMETER__E_OPERATION:
 							return this.basicSetEOperation(null, msgs);
 					}
-					//return this.eInverseRemoveFromETypedElement(otherEnd, featureID, msgs);
 					return super.eInverseRemove(otherEnd, featureID, msgs);
 				}
 				
-				//public eInverseRemoveFromEParameter = this.eInverseRemove;
 			
-				public basicSetEOperation(newobj:EOperation, msgs:NotificationChain):NotificationChain {
-						msgs = this.eBasicSetContainer(newobj, EcorePackageLiterals.EPARAMETER_EOPERATION, msgs);
-						return msgs;
-				}
-				
 			
 				public eGet_number_boolean_boolean(featureID:number, resolve:boolean, coreType:boolean):any{
 					switch (featureID) {
-						case EcorePackageLiterals.EPARAMETER_EANNOTATIONS:
+						case EcorePackageLiterals.EPARAMETER__E_ANNOTATIONS:
 							return this.eAnnotations;
-						case EcorePackageLiterals.EPARAMETER_NAME:
+						case EcorePackageLiterals.EPARAMETER__NAME:
 							return this.name;
-						case EcorePackageLiterals.EPARAMETER_ORDERED:
+						case EcorePackageLiterals.EPARAMETER__ORDERED:
 							return this.ordered;
-						case EcorePackageLiterals.EPARAMETER_UNIQUE:
+						case EcorePackageLiterals.EPARAMETER__UNIQUE:
 							return this.unique;
-						case EcorePackageLiterals.EPARAMETER_LOWERBOUND:
+						case EcorePackageLiterals.EPARAMETER__LOWER_BOUND:
 							return this.lowerBound;
-						case EcorePackageLiterals.EPARAMETER_UPPERBOUND:
+						case EcorePackageLiterals.EPARAMETER__UPPER_BOUND:
 							return this.upperBound;
-						case EcorePackageLiterals.EPARAMETER_MANY:
+						case EcorePackageLiterals.EPARAMETER__MANY:
 							return this.many;
-						case EcorePackageLiterals.EPARAMETER_REQUIRED:
+						case EcorePackageLiterals.EPARAMETER__REQUIRED:
 							return this.required;
-						case EcorePackageLiterals.EPARAMETER_ETYPE:
+						case EcorePackageLiterals.EPARAMETER__E_TYPE:
 							return this.eType;
-						case EcorePackageLiterals.EPARAMETER_EGENERICTYPE:
+						case EcorePackageLiterals.EPARAMETER__E_GENERIC_TYPE:
 							return this.eGenericType;
-						case EcorePackageLiterals.EPARAMETER_EOPERATION:
+						case EcorePackageLiterals.EPARAMETER__E_OPERATION:
 							return this.eOperation;
 					}
 					//return this.eGetFromETypedElement(featureID, resolve, coreType);

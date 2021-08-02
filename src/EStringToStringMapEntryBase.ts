@@ -1,12 +1,12 @@
-import {OrderedSet} from "./OrderedSet";
-import {EClass} from "./EClass";
-import {NotificationChain} from "./NotificationChain";
-import {ENotificationImpl} from "./ENotificationImpl";
-import {NotificationImpl} from "./NotificationImpl";
-import {EStringToStringMapEntry} from "./EStringToStringMapEntry";
-import {EcorePackageLiterals} from "./EcorePackageLiterals";
-import {InternalEObject} from "./InternalEObject";
-import {BasicEObjectImpl} from "./BasicEObjectImpl";
+import {OrderedSet} from "ecore/OrderedSet";
+import {EClass} from "ecore/EClass";
+import {NotificationChain} from "ecore/NotificationChain";
+import {ENotificationImpl} from "ecore/ENotificationImpl";
+import {NotificationImpl} from "ecore/NotificationImpl";
+import {EStringToStringMapEntry} from "ecore/EStringToStringMapEntry";
+import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
+import {InternalEObject} from "ecore/InternalEObject";
+import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
 		
 			export class EStringToStringMapEntryBase
 			extends BasicEObjectImpl
@@ -39,9 +39,9 @@ import {BasicEObjectImpl} from "./BasicEObjectImpl";
 			
 				public eGet_number_boolean_boolean(featureID:number, resolve:boolean, coreType:boolean):any{
 					switch (featureID) {
-						case EcorePackageLiterals.ESTRINGTOSTRINGMAPENTRY_KEY:
+						case EcorePackageLiterals.ESTRING_TO_STRING_MAP_ENTRY__KEY:
 							return this.key;
-						case EcorePackageLiterals.ESTRINGTOSTRINGMAPENTRY_VALUE:
+						case EcorePackageLiterals.ESTRING_TO_STRING_MAP_ENTRY__VALUE:
 							return this.value;
 					}
 					//return this.eGetFromBasicEObjectImpl(featureID, resolve, coreType);
@@ -50,10 +50,10 @@ import {BasicEObjectImpl} from "./BasicEObjectImpl";
 				
 				public eSet_number_any(featureID:number, newValue:any):void {
 					switch (featureID) {
-						case EcorePackageLiterals.ESTRINGTOSTRINGMAPENTRY_KEY:
+						case EcorePackageLiterals.ESTRING_TO_STRING_MAP_ENTRY__KEY:
 							this.key = <string> newValue;
 							return;
-						case EcorePackageLiterals.ESTRINGTOSTRINGMAPENTRY_VALUE:
+						case EcorePackageLiterals.ESTRING_TO_STRING_MAP_ENTRY__VALUE:
 							this.value = <string> newValue;
 							return;
 					}

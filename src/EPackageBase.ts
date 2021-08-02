@@ -1,16 +1,16 @@
-import {OrderedSet} from "./OrderedSet";
-import {ENotificationImpl} from "./ENotificationImpl";
-import {NotificationImpl} from "./NotificationImpl";
-import {AbstractCollection} from "./AbstractCollection";
-import {EClassifier} from "./EClassifier";
-import {EcorePackageLiterals} from "./EcorePackageLiterals";
-import {BasicEObjectImpl} from "./BasicEObjectImpl";
-import {EPackage} from "./EPackage";
-import {EFactory} from "./EFactory";
-import {EClass} from "./EClass";
-import {NotificationChain} from "./NotificationChain";
-import {ENamedElementImpl} from "./ENamedElementImpl";
-import {InternalEObject} from "./InternalEObject";
+import {OrderedSet} from "ecore/OrderedSet";
+import {ENotificationImpl} from "ecore/ENotificationImpl";
+import {NotificationImpl} from "ecore/NotificationImpl";
+import {AbstractCollection} from "ecore/AbstractCollection";
+import {EClassifier} from "ecore/EClassifier";
+import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
+import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
+import {EPackage} from "ecore/EPackage";
+import {EFactory} from "ecore/EFactory";
+import {EClass} from "ecore/EClass";
+import {NotificationChain} from "ecore/NotificationChain";
+import {ENamedElementImpl} from "ecore/ENamedElementImpl";
+import {InternalEObject} from "ecore/InternalEObject";
 		
 			export class EPackageBase
 			extends ENamedElementImpl
@@ -36,13 +36,13 @@ import {InternalEObject} from "./InternalEObject";
 					return this._eFactoryInstance;
 				}
 				set eFactoryInstance(value:EFactory) {
-					if (value != this._eFactoryInstance) {
+					if (value != this.eFactoryInstance) {
 						let msgs:NotificationChain = null;
-						if (this._eFactoryInstance != null){
-							msgs = (this._eFactoryInstance).eInverseRemove(this, EcorePackageLiterals.EFACTORY_EPACKAGE, /*EPackage*/ null , msgs);
+						if (this.eFactoryInstance != null){
+							msgs = (this.eFactoryInstance).eInverseRemove(this, EcorePackageLiterals.EFACTORY__E_PACKAGE, /*EPackage*/ null , msgs);
 						}
 						if (value != null){
-							msgs = value.eInverseAdd(this, EcorePackageLiterals.EFACTORY_EPACKAGE, /*EPackage*/ null, msgs);
+							msgs = value.eInverseAdd(this, EcorePackageLiterals.EFACTORY__E_PACKAGE, /*EPackage*/ null, msgs);
 						}
 						msgs = this.basicSetEFactoryInstance(value, msgs);
 						if (msgs != null) {
@@ -50,14 +50,14 @@ import {InternalEObject} from "./InternalEObject";
 						}
 					}
 					else if (this.eNotificationRequired()){
-						this.eNotify(new ENotificationImpl(this, NotificationImpl.SET,EcorePackageLiterals.EPACKAGE_EFACTORYINSTANCE , value, value));
+						this.eNotify(new ENotificationImpl(this, NotificationImpl.SET,EcorePackageLiterals.EPACKAGE__E_FACTORY_INSTANCE , value, value));
 					}
 				}
 				private _eClassifiers:OrderedSet<EClassifier> = null;
 				
 				get eClassifiers():OrderedSet<EClassifier>{
 					if(this._eClassifiers===null){
-						this._eClassifiers = new OrderedSet<EClassifier>(this, EcorePackageLiterals.EPACKAGE_ECLASSIFIERS, EcorePackageLiterals.ECLASSIFIER_EPACKAGE);
+						this._eClassifiers = new OrderedSet<EClassifier>(this, EcorePackageLiterals.EPACKAGE__E_CLASSIFIERS, EcorePackageLiterals.ECLASSIFIER__E_PACKAGE);
 							
 					}
 					return this._eClassifiers;
@@ -69,7 +69,7 @@ import {InternalEObject} from "./InternalEObject";
 				
 				get eSubpackages():OrderedSet<EPackage>{
 					if(this._eSubpackages===null){
-						this._eSubpackages = new OrderedSet<EPackage>(this, EcorePackageLiterals.EPACKAGE_ESUBPACKAGES, EcorePackageLiterals.EPACKAGE_ESUPERPACKAGE);
+						this._eSubpackages = new OrderedSet<EPackage>(this, EcorePackageLiterals.EPACKAGE__E_SUBPACKAGES, EcorePackageLiterals.EPACKAGE__E_SUPER_PACKAGE);
 							
 					}
 					return this._eSubpackages;
@@ -79,7 +79,7 @@ import {InternalEObject} from "./InternalEObject";
 				
 				get eSuperPackage():EPackage{
 				
-					if (this.eContainerFeatureID() != EcorePackageLiterals.EPACKAGE_ESUPERPACKAGE) return null;
+					if (this.eContainerFeatureID() != EcorePackageLiterals.EPACKAGE__E_SUPER_PACKAGE) return null;
 					return this.eInternalContainer() as EPackage;
 				}
 
@@ -98,48 +98,44 @@ import {InternalEObject} from "./InternalEObject";
 			
 				public eInverseAdd(otherEnd:InternalEObject, featureID:number, msgs:NotificationChain): NotificationChain{
 					switch (featureID) {
-						case EcorePackageLiterals.EPACKAGE_EFACTORYINSTANCE:
-							if (this._eFactoryInstance != null){
-								msgs = this._eFactoryInstance.eInverseRemove(this, EcorePackageLiterals.EPACKAGE_EFACTORYINSTANCE, /*EFactory*/ null, msgs);
-							}
-							return this.basicSetEFactoryInstance(otherEnd as EFactory, msgs);
-						case EcorePackageLiterals.EPACKAGE_ESUBPACKAGES:
-							return this.eSubpackages.basicAdd(otherEnd as EPackage, msgs);
-						case EcorePackageLiterals.EPACKAGE_ECLASSIFIERS:
-							return this.eClassifiers.basicAdd(otherEnd as EClassifier, msgs);
-						case EcorePackageLiterals.EPACKAGE_ESUPERPACKAGE:
+						case EcorePackageLiterals.EPACKAGE__E_SUPER_PACKAGE:
 							if (this.eInternalContainer() != null) {
 								msgs = this.eBasicRemoveFromContainer(msgs);
 							}
 							return this.basicSetESuperPackage(otherEnd as EPackage, msgs);
+						case EcorePackageLiterals.EPACKAGE__E_FACTORY_INSTANCE:
+							if (this.eFactoryInstance != null){
+								msgs = this.eFactoryInstance.eInverseRemove(this, EcorePackageLiterals.EPACKAGE__E_FACTORY_INSTANCE, /*EFactory*/ null, msgs);
+							}
+							return this.basicSetEFactoryInstance(otherEnd as EFactory, msgs);
+						case EcorePackageLiterals.EPACKAGE__E_CLASSIFIERS:
+							return this.eClassifiers.basicAdd(otherEnd as EClassifier, msgs);
+						case EcorePackageLiterals.EPACKAGE__E_SUBPACKAGES:
+							return this.eSubpackages.basicAdd(otherEnd as EPackage, msgs);
 					}
-					//return this.eInverseAddFromENamedElement(otherEnd, featureID, msgs);
 					return super.eInverseAdd(otherEnd, featureID, msgs);
 				}
-				//public eInverseAddFromEPackage = this.eInverseAdd;
 				
 				public eInverseRemove(otherEnd:InternalEObject, featureID:number, msgs:NotificationChain):NotificationChain{
 					switch (featureID) {
-						case EcorePackageLiterals.EPACKAGE_EFACTORYINSTANCE:
-							return this.basicSetEFactoryInstance(null, msgs);
-						case EcorePackageLiterals.EPACKAGE_ESUBPACKAGES:
-							return this.eSubpackages.basicRemove(otherEnd as EPackage, msgs);
-						case EcorePackageLiterals.EPACKAGE_ECLASSIFIERS:
-							return this.eClassifiers.basicRemove(otherEnd as EClassifier, msgs);
-						case EcorePackageLiterals.EPACKAGE_ESUPERPACKAGE:
+						case EcorePackageLiterals.EPACKAGE__E_SUPER_PACKAGE:
 							return this.basicSetESuperPackage(null, msgs);
+						case EcorePackageLiterals.EPACKAGE__E_FACTORY_INSTANCE:
+							return this.basicSetEFactoryInstance(null, msgs);
+						case EcorePackageLiterals.EPACKAGE__E_CLASSIFIERS:
+							return this.eClassifiers.basicRemove(otherEnd as EClassifier, msgs);
+						case EcorePackageLiterals.EPACKAGE__E_SUBPACKAGES:
+							return this.eSubpackages.basicRemove(otherEnd as EPackage, msgs);
 					}
-					//return this.eInverseRemoveFromENamedElement(otherEnd, featureID, msgs);
 					return super.eInverseRemove(otherEnd, featureID, msgs);
 				}
 				
-				//public eInverseRemoveFromEPackage = this.eInverseRemove;
 			
 				public basicSetEFactoryInstance(newobj:EFactory, msgs:NotificationChain):NotificationChain {
-					let oldobj = this._eFactoryInstance;
+					const oldobj = this._eFactoryInstance;
 					this._eFactoryInstance = newobj;
 					if (this.eNotificationRequired()) {
-						let notification = new ENotificationImpl(this, NotificationImpl.SET, EcorePackageLiterals.EPACKAGE_EFACTORYINSTANCE, oldobj, newobj);
+						let notification = new ENotificationImpl(this, NotificationImpl.SET, EcorePackageLiterals.EPACKAGE__E_FACTORY_INSTANCE, oldobj, newobj);
 						if (msgs == null){
 							msgs = notification;
 						}
@@ -149,29 +145,25 @@ import {InternalEObject} from "./InternalEObject";
 					}
 					return msgs;
 				}
-				public basicSetESuperPackage(newobj:EPackage, msgs:NotificationChain):NotificationChain {
-						msgs = this.eBasicSetContainer(newobj, EcorePackageLiterals.EPACKAGE_ESUPERPACKAGE, msgs);
-						return msgs;
-				}
 				
 			
 				public eGet_number_boolean_boolean(featureID:number, resolve:boolean, coreType:boolean):any{
 					switch (featureID) {
-						case EcorePackageLiterals.EPACKAGE_EANNOTATIONS:
+						case EcorePackageLiterals.EPACKAGE__E_ANNOTATIONS:
 							return this.eAnnotations;
-						case EcorePackageLiterals.EPACKAGE_NAME:
+						case EcorePackageLiterals.EPACKAGE__NAME:
 							return this.name;
-						case EcorePackageLiterals.EPACKAGE_NSURI:
+						case EcorePackageLiterals.EPACKAGE__NS_URI:
 							return this.nsURI;
-						case EcorePackageLiterals.EPACKAGE_NSPREFIX:
+						case EcorePackageLiterals.EPACKAGE__NS_PREFIX:
 							return this.nsPrefix;
-						case EcorePackageLiterals.EPACKAGE_EFACTORYINSTANCE:
+						case EcorePackageLiterals.EPACKAGE__E_FACTORY_INSTANCE:
 							return this.eFactoryInstance;
-						case EcorePackageLiterals.EPACKAGE_ECLASSIFIERS:
+						case EcorePackageLiterals.EPACKAGE__E_CLASSIFIERS:
 							return this.eClassifiers;
-						case EcorePackageLiterals.EPACKAGE_ESUBPACKAGES:
+						case EcorePackageLiterals.EPACKAGE__E_SUBPACKAGES:
 							return this.eSubpackages;
-						case EcorePackageLiterals.EPACKAGE_ESUPERPACKAGE:
+						case EcorePackageLiterals.EPACKAGE__E_SUPER_PACKAGE:
 							return this.eSuperPackage;
 					}
 					//return this.eGetFromENamedElement(featureID, resolve, coreType);
@@ -180,20 +172,20 @@ import {InternalEObject} from "./InternalEObject";
 				
 				public eSet_number_any(featureID:number, newValue:any):void {
 					switch (featureID) {
-						case EcorePackageLiterals.EPACKAGE_NSURI:
+						case EcorePackageLiterals.EPACKAGE__NS_URI:
 							this.nsURI = <string> newValue;
 							return;
-						case EcorePackageLiterals.EPACKAGE_NSPREFIX:
+						case EcorePackageLiterals.EPACKAGE__NS_PREFIX:
 							this.nsPrefix = <string> newValue;
 							return;
-						case EcorePackageLiterals.EPACKAGE_EFACTORYINSTANCE:
+						case EcorePackageLiterals.EPACKAGE__E_FACTORY_INSTANCE:
 							this.eFactoryInstance = <EFactory> newValue;
 							return;
-						case EcorePackageLiterals.EPACKAGE_ECLASSIFIERS:
+						case EcorePackageLiterals.EPACKAGE__E_CLASSIFIERS:
 							this.eClassifiers.clear();
 							this.eClassifiers.addAll(newValue);
 							return;
-						case EcorePackageLiterals.EPACKAGE_ESUBPACKAGES:
+						case EcorePackageLiterals.EPACKAGE__E_SUBPACKAGES:
 							this.eSubpackages.clear();
 							this.eSubpackages.addAll(newValue);
 							return;

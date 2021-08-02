@@ -1,7 +1,8 @@
-import {OrderedSet} from "./OrderedSet";
-import {EFactory} from "./EFactory";
-import {ENamedElement} from "./ENamedElement";
-import {EClassifier} from "./EClassifier";
+import {OrderedSet} from "ecore/OrderedSet";
+import {EFactory} from "ecore/EFactory";
+import {ENamedElement} from "ecore/ENamedElement";
+import {EClassifier} from "ecore/EClassifier";
+import {EPackage} from "ecore/EPackage";
 
 export interface EPackage
 extends ENamedElement

@@ -1,7 +1,7 @@
-import {OrderedSet} from "./OrderedSet";
-import {Enumerator} from "./Enumerator";
-import {ENamedElement} from "./ENamedElement";
-import {EEnum} from "./EEnum";
+import {OrderedSet} from "ecore/OrderedSet";
+import {Enumerator} from "ecore/Enumerator";
+import {ENamedElement} from "ecore/ENamedElement";
+import {EEnum} from "ecore/EEnum";
 
 export interface EEnumLiteral
 extends ENamedElement

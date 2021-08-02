@@ -1,6 +1,6 @@
-import {OrderedSet} from "./OrderedSet";
-import {EDataType} from "./EDataType";
-import {EEnumLiteral} from "./EEnumLiteral";
+import {OrderedSet} from "ecore/OrderedSet";
+import {EDataType} from "ecore/EDataType";
+import {EEnumLiteral} from "ecore/EEnumLiteral";
 
 export interface EEnum
 extends EDataType
@@ -11,8 +11,8 @@ extends EDataType
 	
 	getEEnumLiteral(...args:Array<any>):any;
 	
-	getEEnumLiteral_string(name:string): EEnumLiteral ;
-	getEEnumLiteral_number(value:number): EEnumLiteral ;
+	getEEnumLiteral_EString(name:string): EEnumLiteral ;
+	getEEnumLiteral_EInt(value:number): EEnumLiteral ;
 	
 	getEEnumLiteralByLiteral(literal:string): EEnumLiteral ;
 

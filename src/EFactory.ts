@@ -1,9 +1,9 @@
-import {OrderedSet} from "./OrderedSet";
-import {EClass} from "./EClass";
-import {EDataType} from "./EDataType";
-import {EObject} from "./EObject";
-import {EModelElement} from "./EModelElement";
-import {EPackage} from "./EPackage";
+import {OrderedSet} from "ecore/OrderedSet";
+import {EClass} from "ecore/EClass";
+import {EDataType} from "ecore/EDataType";
+import {EObject} from "ecore/EObject";
+import {EModelElement} from "ecore/EModelElement";
+import {EPackage} from "ecore/EPackage";
 
 export interface EFactory
 extends EModelElement

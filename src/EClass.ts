@@ -1,10 +1,11 @@
-import {OrderedSet} from "./OrderedSet";
-import {EAttribute} from "./EAttribute";
-import {EStructuralFeature} from "./EStructuralFeature";
-import {EClassifier} from "./EClassifier";
-import {EGenericType} from "./EGenericType";
-import {EOperation} from "./EOperation";
-import {EReference} from "./EReference";
+import {OrderedSet} from "ecore/OrderedSet";
+import {EClass} from "ecore/EClass";
+import {EAttribute} from "ecore/EAttribute";
+import {EStructuralFeature} from "ecore/EStructuralFeature";
+import {EClassifier} from "ecore/EClassifier";
+import {EGenericType} from "ecore/EGenericType";
+import {EOperation} from "ecore/EOperation";
+import {EReference} from "ecore/EReference";
 
 export interface EClass
 extends EClassifier
@@ -42,8 +43,8 @@ extends EClassifier
 	getOperationID(operation:EOperation): number ;
 	getEStructuralFeature(...args:Array<any>):any;
 	
-	getEStructuralFeature_number(featureID:number): EStructuralFeature ;
-	getEStructuralFeature_string(featureName:string): EStructuralFeature ;
+	getEStructuralFeature_EInt(featureID:number): EStructuralFeature ;
+	getEStructuralFeature_EString(featureName:string): EStructuralFeature ;
 	
 	getOperationCount(): number ;
 	

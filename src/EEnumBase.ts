@@ -1,15 +1,15 @@
-import {OrderedSet} from "./OrderedSet";
-import {EClass} from "./EClass";
-import {NotificationChain} from "./NotificationChain";
-import {ENotificationImpl} from "./ENotificationImpl";
-import {NotificationImpl} from "./NotificationImpl";
-import {AbstractCollection} from "./AbstractCollection";
-import {EDataTypeImpl} from "./EDataTypeImpl";
-import {EEnumLiteral} from "./EEnumLiteral";
-import {EcorePackageLiterals} from "./EcorePackageLiterals";
-import {EEnum} from "./EEnum";
-import {InternalEObject} from "./InternalEObject";
-import {BasicEObjectImpl} from "./BasicEObjectImpl";
+import {OrderedSet} from "ecore/OrderedSet";
+import {EClass} from "ecore/EClass";
+import {NotificationChain} from "ecore/NotificationChain";
+import {ENotificationImpl} from "ecore/ENotificationImpl";
+import {NotificationImpl} from "ecore/NotificationImpl";
+import {AbstractCollection} from "ecore/AbstractCollection";
+import {EDataTypeImpl} from "ecore/EDataTypeImpl";
+import {EEnumLiteral} from "ecore/EEnumLiteral";
+import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
+import {EEnum} from "ecore/EEnum";
+import {InternalEObject} from "ecore/InternalEObject";
+import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
 		
 			export class EEnumBase
 			extends EDataTypeImpl
@@ -19,7 +19,7 @@ import {BasicEObjectImpl} from "./BasicEObjectImpl";
 				
 				get eLiterals():OrderedSet<EEnumLiteral>{
 					if(this._eLiterals===null){
-						this._eLiterals = new OrderedSet<EEnumLiteral>(this, EcorePackageLiterals.EENUM_ELITERALS, EcorePackageLiterals.EENUMLITERAL_EENUM);
+						this._eLiterals = new OrderedSet<EEnumLiteral>(this, EcorePackageLiterals.EENUM__E_LITERALS, EcorePackageLiterals.EENUM_LITERAL__E_ENUM);
 							
 					}
 					return this._eLiterals;
@@ -30,24 +30,24 @@ import {BasicEObjectImpl} from "./BasicEObjectImpl";
 
 				public getEEnumLiteral(...args:Array<any>):any {
 					if(
-						typeof args[0] === "string"
-					)
-					{
-						return this.getEEnumLiteral_string(args[0]);
-					}
-					if(
 						typeof args[0] === "number"
 					)
 					{
-						return this.getEEnumLiteral_number(args[0]);
+						return this.getEEnumLiteral_EInt(args[0]);
+					}
+					if(
+						typeof args[0] === "string"
+					)
+					{
+						return this.getEEnumLiteral_EString(args[0]);
 					}
 				};
 				
-				public getEEnumLiteral_string(name:string): EEnumLiteral {
+				public getEEnumLiteral_EString(name:string): EEnumLiteral {
 					/*TODO implement function*/ 
 					return null;
 				};
-				public getEEnumLiteral_number(value:number): EEnumLiteral {
+				public getEEnumLiteral_EInt(value:number): EEnumLiteral {
 					/*TODO implement function*/ 
 					return null;
 				};
@@ -66,47 +66,43 @@ import {BasicEObjectImpl} from "./BasicEObjectImpl";
 			
 				public eInverseAdd(otherEnd:InternalEObject, featureID:number, msgs:NotificationChain): NotificationChain{
 					switch (featureID) {
-						case EcorePackageLiterals.EENUM_ELITERALS:
+						case EcorePackageLiterals.EENUM__E_LITERALS:
 							return this.eLiterals.basicAdd(otherEnd as EEnumLiteral, msgs);
 					}
-					//return this.eInverseAddFromEDataType(otherEnd, featureID, msgs);
 					return super.eInverseAdd(otherEnd, featureID, msgs);
 				}
-				//public eInverseAddFromEEnum = this.eInverseAdd;
 				
 				public eInverseRemove(otherEnd:InternalEObject, featureID:number, msgs:NotificationChain):NotificationChain{
 					switch (featureID) {
-						case EcorePackageLiterals.EENUM_ELITERALS:
+						case EcorePackageLiterals.EENUM__E_LITERALS:
 							return this.eLiterals.basicRemove(otherEnd as EEnumLiteral, msgs);
 					}
-					//return this.eInverseRemoveFromEDataType(otherEnd, featureID, msgs);
 					return super.eInverseRemove(otherEnd, featureID, msgs);
 				}
 				
-				//public eInverseRemoveFromEEnum = this.eInverseRemove;
 			
 			
 				public eGet_number_boolean_boolean(featureID:number, resolve:boolean, coreType:boolean):any{
 					switch (featureID) {
-						case EcorePackageLiterals.EENUM_EANNOTATIONS:
+						case EcorePackageLiterals.EENUM__E_ANNOTATIONS:
 							return this.eAnnotations;
-						case EcorePackageLiterals.EENUM_NAME:
+						case EcorePackageLiterals.EENUM__NAME:
 							return this.name;
-						case EcorePackageLiterals.EENUM_INSTANCECLASSNAME:
+						case EcorePackageLiterals.EENUM__INSTANCE_CLASS_NAME:
 							return this.instanceClassName;
-						case EcorePackageLiterals.EENUM_INSTANCECLASS:
+						case EcorePackageLiterals.EENUM__INSTANCE_CLASS:
 							return this.instanceClass;
-						case EcorePackageLiterals.EENUM_DEFAULTVALUE:
+						case EcorePackageLiterals.EENUM__DEFAULT_VALUE:
 							return this.defaultValue;
-						case EcorePackageLiterals.EENUM_INSTANCETYPENAME:
+						case EcorePackageLiterals.EENUM__INSTANCE_TYPE_NAME:
 							return this.instanceTypeName;
-						case EcorePackageLiterals.EENUM_EPACKAGE:
+						case EcorePackageLiterals.EENUM__E_PACKAGE:
 							return this.ePackage;
-						case EcorePackageLiterals.EENUM_ETYPEPARAMETERS:
+						case EcorePackageLiterals.EENUM__E_TYPE_PARAMETERS:
 							return this.eTypeParameters;
-						case EcorePackageLiterals.EENUM_SERIALIZABLE:
+						case EcorePackageLiterals.EENUM__SERIALIZABLE:
 							return this.serializable;
-						case EcorePackageLiterals.EENUM_ELITERALS:
+						case EcorePackageLiterals.EENUM__E_LITERALS:
 							return this.eLiterals;
 					}
 					//return this.eGetFromEDataType(featureID, resolve, coreType);
@@ -115,7 +111,7 @@ import {BasicEObjectImpl} from "./BasicEObjectImpl";
 				
 				public eSet_number_any(featureID:number, newValue:any):void {
 					switch (featureID) {
-						case EcorePackageLiterals.EENUM_ELITERALS:
+						case EcorePackageLiterals.EENUM__E_LITERALS:
 							this.eLiterals.clear();
 							this.eLiterals.addAll(newValue);
 							return;

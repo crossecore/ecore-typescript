@@ -1,15 +1,15 @@
-import {OrderedSet} from "./OrderedSet";
-import {EClass} from "./EClass";
-import {NotificationChain} from "./NotificationChain";
-import {ENotificationImpl} from "./ENotificationImpl";
-import {NotificationImpl} from "./NotificationImpl";
-import {AbstractCollection} from "./AbstractCollection";
-import {EGenericType} from "./EGenericType";
-import {EClassifier} from "./EClassifier";
-import {EcorePackageLiterals} from "./EcorePackageLiterals";
-import {InternalEObject} from "./InternalEObject";
-import {BasicEObjectImpl} from "./BasicEObjectImpl";
-import {ETypeParameter} from "./ETypeParameter";
+import {OrderedSet} from "ecore/OrderedSet";
+import {EClass} from "ecore/EClass";
+import {NotificationChain} from "ecore/NotificationChain";
+import {ENotificationImpl} from "ecore/ENotificationImpl";
+import {NotificationImpl} from "ecore/NotificationImpl";
+import {AbstractCollection} from "ecore/AbstractCollection";
+import {EGenericType} from "ecore/EGenericType";
+import {EClassifier} from "ecore/EClassifier";
+import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
+import {InternalEObject} from "ecore/InternalEObject";
+import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
+import {ETypeParameter} from "ecore/ETypeParameter";
 		
 			export class EGenericTypeBase
 			extends BasicEObjectImpl
@@ -21,13 +21,13 @@ import {ETypeParameter} from "./ETypeParameter";
 					return this._eUpperBound;
 				}
 				set eUpperBound(value:EGenericType) {
-					if (value != this._eUpperBound) {
+					if (value != this.eUpperBound) {
 						let msgs:NotificationChain = null;
-						if (this._eUpperBound != null){
-							msgs = (this._eUpperBound).eInverseRemove(this, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.EGENERICTYPE_EUPPERBOUND, /*null*/ null , msgs);
+						if (this.eUpperBound != null){
+							msgs = (this.eUpperBound).eInverseRemove(this, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.EGENERIC_TYPE__E_UPPER_BOUND, /*null*/ null , msgs);
 						}
 						if (value != null){
-							msgs = value.eInverseAdd(this, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.EGENERICTYPE_EUPPERBOUND, /*null*/ null, msgs);
+							msgs = value.eInverseAdd(this, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.EGENERIC_TYPE__E_UPPER_BOUND, /*null*/ null, msgs);
 						}
 						msgs = this.basicSetEUpperBound(value, msgs);
 						if (msgs != null) {
@@ -35,14 +35,14 @@ import {ETypeParameter} from "./ETypeParameter";
 						}
 					}
 					else if (this.eNotificationRequired()){
-						this.eNotify(new ENotificationImpl(this, NotificationImpl.SET,EcorePackageLiterals.EGENERICTYPE_EUPPERBOUND , value, value));
+						this.eNotify(new ENotificationImpl(this, NotificationImpl.SET,EcorePackageLiterals.EGENERIC_TYPE__E_UPPER_BOUND , value, value));
 					}
 				}
 				private _eTypeArguments:OrderedSet<EGenericType> = null;
 				
 				get eTypeArguments():OrderedSet<EGenericType>{
 					if(this._eTypeArguments===null){
-						this._eTypeArguments = new OrderedSet<EGenericType>(this, EcorePackageLiterals.EGENERICTYPE_ETYPEARGUMENTS, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.EGENERICTYPE_ETYPEARGUMENTS);
+						this._eTypeArguments = new OrderedSet<EGenericType>(this, EcorePackageLiterals.EGENERIC_TYPE__E_TYPE_ARGUMENTS, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.EGENERIC_TYPE__E_TYPE_ARGUMENTS);
 							
 					}
 					return this._eTypeArguments;
@@ -61,13 +61,13 @@ import {ETypeParameter} from "./ETypeParameter";
 					return this._eLowerBound;
 				}
 				set eLowerBound(value:EGenericType) {
-					if (value != this._eLowerBound) {
+					if (value != this.eLowerBound) {
 						let msgs:NotificationChain = null;
-						if (this._eLowerBound != null){
-							msgs = (this._eLowerBound).eInverseRemove(this, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.EGENERICTYPE_ELOWERBOUND, /*null*/ null , msgs);
+						if (this.eLowerBound != null){
+							msgs = (this.eLowerBound).eInverseRemove(this, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.EGENERIC_TYPE__E_LOWER_BOUND, /*null*/ null , msgs);
 						}
 						if (value != null){
-							msgs = value.eInverseAdd(this, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.EGENERICTYPE_ELOWERBOUND, /*null*/ null, msgs);
+							msgs = value.eInverseAdd(this, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.EGENERIC_TYPE__E_LOWER_BOUND, /*null*/ null, msgs);
 						}
 						msgs = this.basicSetELowerBound(value, msgs);
 						if (msgs != null) {
@@ -75,7 +75,7 @@ import {ETypeParameter} from "./ETypeParameter";
 						}
 					}
 					else if (this.eNotificationRequired()){
-						this.eNotify(new ENotificationImpl(this, NotificationImpl.SET,EcorePackageLiterals.EGENERICTYPE_ELOWERBOUND , value, value));
+						this.eNotify(new ENotificationImpl(this, NotificationImpl.SET,EcorePackageLiterals.EGENERIC_TYPE__E_LOWER_BOUND , value, value));
 					}
 				}
 				private _eTypeParameter:ETypeParameter = null;
@@ -87,7 +87,7 @@ import {ETypeParameter} from "./ETypeParameter";
 					let oldvalue = this._eTypeParameter;
 					this._eTypeParameter = value;
 					if (this.eNotificationRequired()){
-						this.eNotify(new ENotificationImpl(this, NotificationImpl.SET,EcorePackageLiterals.EGENERICTYPE_ETYPEPARAMETER , oldvalue, value));
+						this.eNotify(new ENotificationImpl(this, NotificationImpl.SET,EcorePackageLiterals.EGENERIC_TYPE__E_TYPE_PARAMETER , oldvalue, value));
 					}
 				}
 				private _eClassifier:EClassifier = null;
@@ -99,7 +99,7 @@ import {ETypeParameter} from "./ETypeParameter";
 					let oldvalue = this._eClassifier;
 					this._eClassifier = value;
 					if (this.eNotificationRequired()){
-						this.eNotify(new ENotificationImpl(this, NotificationImpl.SET,EcorePackageLiterals.EGENERICTYPE_ECLASSIFIER , oldvalue, value));
+						this.eNotify(new ENotificationImpl(this, NotificationImpl.SET,EcorePackageLiterals.EGENERIC_TYPE__E_CLASSIFIER , oldvalue, value));
 					}
 				}
 
@@ -117,11 +117,11 @@ import {ETypeParameter} from "./ETypeParameter";
 				}
 			
 			
-				public basicSetETypeParameter(newobj:ETypeParameter, msgs:NotificationChain):NotificationChain {
-					let oldobj = this._eTypeParameter;
-					this._eTypeParameter = newobj;
+				public basicSetEUpperBound(newobj:EGenericType, msgs:NotificationChain):NotificationChain {
+					const oldobj = this._eUpperBound;
+					this._eUpperBound = newobj;
 					if (this.eNotificationRequired()) {
-						let notification = new ENotificationImpl(this, NotificationImpl.SET, EcorePackageLiterals.EGENERICTYPE_ETYPEPARAMETER, oldobj, newobj);
+						let notification = new ENotificationImpl(this, NotificationImpl.SET, EcorePackageLiterals.EGENERIC_TYPE__E_UPPER_BOUND, oldobj, newobj);
 						if (msgs == null){
 							msgs = notification;
 						}
@@ -132,10 +132,10 @@ import {ETypeParameter} from "./ETypeParameter";
 					return msgs;
 				}
 				public basicSetELowerBound(newobj:EGenericType, msgs:NotificationChain):NotificationChain {
-					let oldobj = this._eLowerBound;
+					const oldobj = this._eLowerBound;
 					this._eLowerBound = newobj;
 					if (this.eNotificationRequired()) {
-						let notification = new ENotificationImpl(this, NotificationImpl.SET, EcorePackageLiterals.EGENERICTYPE_ELOWERBOUND, oldobj, newobj);
+						let notification = new ENotificationImpl(this, NotificationImpl.SET, EcorePackageLiterals.EGENERIC_TYPE__E_LOWER_BOUND, oldobj, newobj);
 						if (msgs == null){
 							msgs = notification;
 						}
@@ -146,10 +146,10 @@ import {ETypeParameter} from "./ETypeParameter";
 					return msgs;
 				}
 				public basicSetEClassifier(newobj:EClassifier, msgs:NotificationChain):NotificationChain {
-					let oldobj = this._eClassifier;
+					const oldobj = this._eClassifier;
 					this._eClassifier = newobj;
 					if (this.eNotificationRequired()) {
-						let notification = new ENotificationImpl(this, NotificationImpl.SET, EcorePackageLiterals.EGENERICTYPE_ECLASSIFIER, oldobj, newobj);
+						let notification = new ENotificationImpl(this, NotificationImpl.SET, EcorePackageLiterals.EGENERIC_TYPE__E_CLASSIFIER, oldobj, newobj);
 						if (msgs == null){
 							msgs = notification;
 						}
@@ -159,11 +159,11 @@ import {ETypeParameter} from "./ETypeParameter";
 					}
 					return msgs;
 				}
-				public basicSetEUpperBound(newobj:EGenericType, msgs:NotificationChain):NotificationChain {
-					let oldobj = this._eUpperBound;
-					this._eUpperBound = newobj;
+				public basicSetETypeParameter(newobj:ETypeParameter, msgs:NotificationChain):NotificationChain {
+					const oldobj = this._eTypeParameter;
+					this._eTypeParameter = newobj;
 					if (this.eNotificationRequired()) {
-						let notification = new ENotificationImpl(this, NotificationImpl.SET, EcorePackageLiterals.EGENERICTYPE_EUPPERBOUND, oldobj, newobj);
+						let notification = new ENotificationImpl(this, NotificationImpl.SET, EcorePackageLiterals.EGENERIC_TYPE__E_TYPE_PARAMETER, oldobj, newobj);
 						if (msgs == null){
 							msgs = notification;
 						}
@@ -177,17 +177,17 @@ import {ETypeParameter} from "./ETypeParameter";
 			
 				public eGet_number_boolean_boolean(featureID:number, resolve:boolean, coreType:boolean):any{
 					switch (featureID) {
-						case EcorePackageLiterals.EGENERICTYPE_EUPPERBOUND:
+						case EcorePackageLiterals.EGENERIC_TYPE__E_UPPER_BOUND:
 							return this.eUpperBound;
-						case EcorePackageLiterals.EGENERICTYPE_ETYPEARGUMENTS:
+						case EcorePackageLiterals.EGENERIC_TYPE__E_TYPE_ARGUMENTS:
 							return this.eTypeArguments;
-						case EcorePackageLiterals.EGENERICTYPE_ERAWTYPE:
+						case EcorePackageLiterals.EGENERIC_TYPE__E_RAW_TYPE:
 							return this.eRawType;
-						case EcorePackageLiterals.EGENERICTYPE_ELOWERBOUND:
+						case EcorePackageLiterals.EGENERIC_TYPE__E_LOWER_BOUND:
 							return this.eLowerBound;
-						case EcorePackageLiterals.EGENERICTYPE_ETYPEPARAMETER:
+						case EcorePackageLiterals.EGENERIC_TYPE__E_TYPE_PARAMETER:
 							return this.eTypeParameter;
-						case EcorePackageLiterals.EGENERICTYPE_ECLASSIFIER:
+						case EcorePackageLiterals.EGENERIC_TYPE__E_CLASSIFIER:
 							return this.eClassifier;
 					}
 					//return this.eGetFromBasicEObjectImpl(featureID, resolve, coreType);
@@ -196,20 +196,20 @@ import {ETypeParameter} from "./ETypeParameter";
 				
 				public eSet_number_any(featureID:number, newValue:any):void {
 					switch (featureID) {
-						case EcorePackageLiterals.EGENERICTYPE_EUPPERBOUND:
+						case EcorePackageLiterals.EGENERIC_TYPE__E_UPPER_BOUND:
 							this.eUpperBound = <EGenericType> newValue;
 							return;
-						case EcorePackageLiterals.EGENERICTYPE_ETYPEARGUMENTS:
+						case EcorePackageLiterals.EGENERIC_TYPE__E_TYPE_ARGUMENTS:
 							this.eTypeArguments.clear();
 							this.eTypeArguments.addAll(newValue);
 							return;
-						case EcorePackageLiterals.EGENERICTYPE_ELOWERBOUND:
+						case EcorePackageLiterals.EGENERIC_TYPE__E_LOWER_BOUND:
 							this.eLowerBound = <EGenericType> newValue;
 							return;
-						case EcorePackageLiterals.EGENERICTYPE_ETYPEPARAMETER:
+						case EcorePackageLiterals.EGENERIC_TYPE__E_TYPE_PARAMETER:
 							this.eTypeParameter = <ETypeParameter> newValue;
 							return;
-						case EcorePackageLiterals.EGENERICTYPE_ECLASSIFIER:
+						case EcorePackageLiterals.EGENERIC_TYPE__E_CLASSIFIER:
 							this.eClassifier = <EClassifier> newValue;
 							return;
 					}

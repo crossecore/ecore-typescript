@@ -1,52 +1,52 @@
-import {EAttribute} from "./EAttribute";
-import {EEnumBase} from "./EEnumBase";
-import {EAttributeBase} from "./EAttributeBase";
-import {EFactoryBase} from "./EFactoryBase";
-import {EStringToStringMapEntryImpl} from "./EStringToStringMapEntryImpl";
-import {EcoreFactoryImpl} from "./EcoreFactoryImpl";
-import {EEnumImpl} from "./EEnumImpl";
-import {EClass} from "./EClass";
-import {ETypedElementBase} from "./ETypedElementBase";
-import {EStructuralFeatureBase} from "./EStructuralFeatureBase";
-import {EClassBase} from "./EClassBase";
-import {EAnnotationImpl} from "./EAnnotationImpl";
-import {ENamedElementBase} from "./ENamedElementBase";
-import {EModelElementBase} from "./EModelElementBase";
-import {EFactoryImpl} from "./EFactoryImpl";
-import {EOperationImpl} from "./EOperationImpl";
-import {EOperation} from "./EOperation";
-import {EFactory} from "./EFactory";
-import {ETypeParameterBase} from "./ETypeParameterBase";
-import {EPackageImpl} from "./EPackageImpl";
-import {EStructuralFeatureImpl} from "./EStructuralFeatureImpl";
-import {EReferenceBase} from "./EReferenceBase";
-import {EModelElementImpl} from "./EModelElementImpl";
-import {EGenericTypeImpl} from "./EGenericTypeImpl";
-import {EReference} from "./EReference";
-import {EClassifierBase} from "./EClassifierBase";
-import {EDataTypeBase} from "./EDataTypeBase";
-import {EOperationBase} from "./EOperationBase";
-import {EEnumLiteralImpl} from "./EEnumLiteralImpl";
-import {EObjectBase} from "./EObjectBase";
-import {EAnnotationBase} from "./EAnnotationBase";
-import {EPackageBase} from "./EPackageBase";
-import {EEnumLiteralBase} from "./EEnumLiteralBase";
-import {EObjectImpl} from "./EObjectImpl";
-import {EParameterImpl} from "./EParameterImpl";
-import {EDataTypeImpl} from "./EDataTypeImpl";
-import {EcorePackage} from "./EcorePackage";
-import {EClassifierImpl} from "./EClassifierImpl";
-import {EReferenceImpl} from "./EReferenceImpl";
-import {ETypeParameterImpl} from "./ETypeParameterImpl";
-import {EAttributeImpl} from "./EAttributeImpl";
-import {EParameterBase} from "./EParameterBase";
-import {EDataType} from "./EDataType";
-import {EGenericTypeBase} from "./EGenericTypeBase";
-import {ETypedElementImpl} from "./ETypedElementImpl";
-import {ENamedElementImpl} from "./ENamedElementImpl";
-import {EStringToStringMapEntryBase} from "./EStringToStringMapEntryBase";
-import {EClassImpl} from "./EClassImpl";
-import { EPackageRegistryImpl } from "./EPackageRegistryImpl";
+import {EEnumBase} from "ecore/EEnumBase";
+import {EClassBase} from "ecore/EClassBase";
+import {EDataTypeBase} from "ecore/EDataTypeBase";
+import {EDataType} from "ecore/EDataType";
+import {EStructuralFeatureImpl} from "ecore/EStructuralFeatureImpl";
+import {EReferenceImpl} from "ecore/EReferenceImpl";
+import {ETypedElementBase} from "ecore/ETypedElementBase";
+import {EcoreFactoryImpl} from "ecore/EcoreFactoryImpl";
+import {EAnnotationImpl} from "ecore/EAnnotationImpl";
+import {EClass} from "ecore/EClass";
+import {EFactoryBase} from "ecore/EFactoryBase";
+import {EParameterBase} from "ecore/EParameterBase";
+import {EAttributeImpl} from "ecore/EAttributeImpl";
+import {EModelElementImpl} from "ecore/EModelElementImpl";
+import {EEnumLiteralBase} from "ecore/EEnumLiteralBase";
+import {EStringToStringMapEntryImpl} from "ecore/EStringToStringMapEntryImpl";
+import {EReference} from "ecore/EReference";
+import {EFactoryImpl} from "ecore/EFactoryImpl";
+import {EObjectImpl} from "ecore/EObjectImpl";
+import {EAttributeBase} from "ecore/EAttributeBase";
+import {ENamedElementBase} from "ecore/ENamedElementBase";
+import {EReferenceBase} from "ecore/EReferenceBase";
+import {EOperationImpl} from "ecore/EOperationImpl";
+import {EClassifierBase} from "ecore/EClassifierBase";
+import {EPackageBase} from "ecore/EPackageBase";
+import {ETypeParameterBase} from "ecore/ETypeParameterBase";
+import {EAnnotationBase} from "ecore/EAnnotationBase";
+import {EOperationBase} from "ecore/EOperationBase";
+import {EStringToStringMapEntryBase} from "ecore/EStringToStringMapEntryBase";
+import {EDataTypeImpl} from "ecore/EDataTypeImpl";
+import {EFactory} from "ecore/EFactory";
+import {EObjectBase} from "ecore/EObjectBase";
+import {EAttribute} from "ecore/EAttribute";
+import {EcorePackageImpl} from "ecore/EcorePackageImpl";
+import {EClassImpl} from "ecore/EClassImpl";
+import {EcorePackage} from "ecore/EcorePackage";
+import {ENamedElementImpl} from "ecore/ENamedElementImpl";
+import {EStructuralFeatureBase} from "ecore/EStructuralFeatureBase";
+import {ETypedElementImpl} from "ecore/ETypedElementImpl";
+import {EParameterImpl} from "ecore/EParameterImpl";
+import {EGenericTypeBase} from "ecore/EGenericTypeBase";
+import {EEnumLiteralImpl} from "ecore/EEnumLiteralImpl";
+import {EGenericTypeImpl} from "ecore/EGenericTypeImpl";
+import {EPackageImpl} from "ecore/EPackageImpl";
+import {ETypeParameterImpl} from "ecore/ETypeParameterImpl";
+import {EModelElementBase} from "ecore/EModelElementBase";
+import {EOperation} from "ecore/EOperation";
+import {EClassifierImpl} from "ecore/EClassifierImpl";
+import {EEnumImpl} from "ecore/EEnumImpl";
 export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 		public static eNAME:string = "ecore";
 		
@@ -54,24 +54,21 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 		
 		public static eNS_PREFIX:string = "ecore";
 		
-		private static isInited:boolean = false;
 		
 		
+		/*
 		constructor(){
-
-			super(EcorePackageImpl.eNS_URI, EcoreFactoryImpl.eINSTANCE);
+			//no private constructors in TypeScript
+			super(EcorePackageImpl.eNS_URI, EcoreFactoryImpl.eINSTANCE as any as EFactory);
 		}
-		
+		*/
 		
 		public static init():EcorePackage
 		{
-			if(this.isInited) return EPackageRegistryImpl.INSTANCE.getEPackage(this.eNS_URI) as EcorePackage
-
-			this.isInited = true;
 
 	        // Obtain or create and register package
 	        let theEcorePackage = new EcorePackageImpl();
-	        theEcorePackage.ecorePackage = theEcorePackage;
+	        theEcorePackage.ecorePackage = EcorePackageImpl.eINSTANCE;
 	        theEcorePackage.ecoreFactory = EcoreFactoryImpl.eINSTANCE;
 	
 	        // Create package meta-data objects
@@ -80,7 +77,6 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 	        // Initialize created meta-data
 	        theEcorePackage.initializePackageContents();
 
-			
 	        return theEcorePackage;
         }
         
@@ -92,33 +88,33 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
             this.isCreated = true;
 			this.EAttributeEClass = this.createEClass(EcorePackageImpl.EATTRIBUTE);
 			EAttributeBase.eStaticClass = this.EAttributeEClass;
-			this.createEAttribute(this.EAttributeEClass, EcorePackageImpl.EATTRIBUTE_ID);
-			this.createEReference(this.EAttributeEClass, EcorePackageImpl.EATTRIBUTE_EATTRIBUTETYPE);
+			this.createEAttribute(this.EAttributeEClass, EcorePackageImpl.EATTRIBUTE__I_D);
+			this.createEReference(this.EAttributeEClass, EcorePackageImpl.EATTRIBUTE__E_ATTRIBUTE_TYPE);
 			this.EAnnotationEClass = this.createEClass(EcorePackageImpl.EANNOTATION);
 			EAnnotationBase.eStaticClass = this.EAnnotationEClass;
-			this.createEAttribute(this.EAnnotationEClass, EcorePackageImpl.EANNOTATION_SOURCE);
-			this.createEReference(this.EAnnotationEClass, EcorePackageImpl.EANNOTATION_DETAILS);
-			this.createEReference(this.EAnnotationEClass, EcorePackageImpl.EANNOTATION_EMODELELEMENT);
-			this.createEReference(this.EAnnotationEClass, EcorePackageImpl.EANNOTATION_CONTENTS);
-			this.createEReference(this.EAnnotationEClass, EcorePackageImpl.EANNOTATION_REFERENCES);
+			this.createEAttribute(this.EAnnotationEClass, EcorePackageImpl.EANNOTATION__SOURCE);
+			this.createEReference(this.EAnnotationEClass, EcorePackageImpl.EANNOTATION__DETAILS);
+			this.createEReference(this.EAnnotationEClass, EcorePackageImpl.EANNOTATION__E_MODEL_ELEMENT);
+			this.createEReference(this.EAnnotationEClass, EcorePackageImpl.EANNOTATION__CONTENTS);
+			this.createEReference(this.EAnnotationEClass, EcorePackageImpl.EANNOTATION__REFERENCES);
 			this.EClassEClass = this.createEClass(EcorePackageImpl.ECLASS);
 			EClassBase.eStaticClass = this.EClassEClass;
-			this.createEAttribute(this.EClassEClass, EcorePackageImpl.ECLASS_ABSTRACT);
-			this.createEAttribute(this.EClassEClass, EcorePackageImpl.ECLASS_INTERFACE);
-			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS_ESUPERTYPES);
-			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS_EOPERATIONS);
-			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS_EALLATTRIBUTES);
-			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS_EALLREFERENCES);
-			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS_EREFERENCES);
-			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS_EATTRIBUTES);
-			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS_EALLCONTAINMENTS);
-			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS_EALLOPERATIONS);
-			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS_EALLSTRUCTURALFEATURES);
-			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS_EALLSUPERTYPES);
-			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS_EIDATTRIBUTE);
-			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS_ESTRUCTURALFEATURES);
-			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS_EGENERICSUPERTYPES);
-			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS_EALLGENERICSUPERTYPES);
+			this.createEAttribute(this.EClassEClass, EcorePackageImpl.ECLASS__ABSTRACT);
+			this.createEAttribute(this.EClassEClass, EcorePackageImpl.ECLASS__INTERFACE);
+			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS__E_SUPER_TYPES);
+			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS__E_OPERATIONS);
+			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS__E_ALL_ATTRIBUTES);
+			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS__E_ALL_REFERENCES);
+			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS__E_REFERENCES);
+			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS__E_ATTRIBUTES);
+			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS__E_ALL_CONTAINMENTS);
+			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS__E_ALL_OPERATIONS);
+			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS__E_ALL_STRUCTURAL_FEATURES);
+			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS__E_ALL_SUPER_TYPES);
+			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS__E_IDATTRIBUTE);
+			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS__E_STRUCTURAL_FEATURES);
+			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS__E_GENERIC_SUPER_TYPES);
+			this.createEReference(this.EClassEClass, EcorePackageImpl.ECLASS__E_ALL_GENERIC_SUPER_TYPES);
 			this.createEOperation(this.EClassEClass, EcorePackageImpl.ECLASS___ISSUPERTYPEOF__SOMECLASS);
 			this.createEOperation(this.EClassEClass, EcorePackageImpl.ECLASS___GETFEATURECOUNT);
 			this.createEOperation(this.EClassEClass, EcorePackageImpl.ECLASS___GETESTRUCTURALFEATURE__FEATUREID);
@@ -131,42 +127,42 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			this.createEOperation(this.EClassEClass, EcorePackageImpl.ECLASS___GETFEATURETYPE__FEATURE);
 			this.EClassifierEClass = this.createEClass(EcorePackageImpl.ECLASSIFIER);
 			EClassifierBase.eStaticClass = this.EClassifierEClass;
-			this.createEAttribute(this.EClassifierEClass, EcorePackageImpl.ECLASSIFIER_INSTANCECLASSNAME);
-			this.createEAttribute(this.EClassifierEClass, EcorePackageImpl.ECLASSIFIER_INSTANCECLASS);
-			this.createEAttribute(this.EClassifierEClass, EcorePackageImpl.ECLASSIFIER_DEFAULTVALUE);
-			this.createEAttribute(this.EClassifierEClass, EcorePackageImpl.ECLASSIFIER_INSTANCETYPENAME);
-			this.createEReference(this.EClassifierEClass, EcorePackageImpl.ECLASSIFIER_EPACKAGE);
-			this.createEReference(this.EClassifierEClass, EcorePackageImpl.ECLASSIFIER_ETYPEPARAMETERS);
+			this.createEAttribute(this.EClassifierEClass, EcorePackageImpl.ECLASSIFIER__INSTANCE_CLASS_NAME);
+			this.createEAttribute(this.EClassifierEClass, EcorePackageImpl.ECLASSIFIER__INSTANCE_CLASS);
+			this.createEAttribute(this.EClassifierEClass, EcorePackageImpl.ECLASSIFIER__DEFAULT_VALUE);
+			this.createEAttribute(this.EClassifierEClass, EcorePackageImpl.ECLASSIFIER__INSTANCE_TYPE_NAME);
+			this.createEReference(this.EClassifierEClass, EcorePackageImpl.ECLASSIFIER__E_PACKAGE);
+			this.createEReference(this.EClassifierEClass, EcorePackageImpl.ECLASSIFIER__E_TYPE_PARAMETERS);
 			this.createEOperation(this.EClassifierEClass, EcorePackageImpl.ECLASSIFIER___ISINSTANCE__OBJECT);
 			this.createEOperation(this.EClassifierEClass, EcorePackageImpl.ECLASSIFIER___GETCLASSIFIERID);
 			this.EDataTypeEClass = this.createEClass(EcorePackageImpl.EDATATYPE);
 			EDataTypeBase.eStaticClass = this.EDataTypeEClass;
-			this.createEAttribute(this.EDataTypeEClass, EcorePackageImpl.EDATATYPE_SERIALIZABLE);
+			this.createEAttribute(this.EDataTypeEClass, EcorePackageImpl.EDATA_TYPE__SERIALIZABLE);
 			this.EEnumEClass = this.createEClass(EcorePackageImpl.EENUM);
 			EEnumBase.eStaticClass = this.EEnumEClass;
-			this.createEReference(this.EEnumEClass, EcorePackageImpl.EENUM_ELITERALS);
+			this.createEReference(this.EEnumEClass, EcorePackageImpl.EENUM__E_LITERALS);
 			this.createEOperation(this.EEnumEClass, EcorePackageImpl.EENUM___GETEENUMLITERAL__NAME);
 			this.createEOperation(this.EEnumEClass, EcorePackageImpl.EENUM___GETEENUMLITERAL__VALUE);
 			this.createEOperation(this.EEnumEClass, EcorePackageImpl.EENUM___GETEENUMLITERALBYLITERAL__LITERAL);
 			this.EEnumLiteralEClass = this.createEClass(EcorePackageImpl.EENUMLITERAL);
 			EEnumLiteralBase.eStaticClass = this.EEnumLiteralEClass;
-			this.createEAttribute(this.EEnumLiteralEClass, EcorePackageImpl.EENUMLITERAL_VALUE);
-			this.createEAttribute(this.EEnumLiteralEClass, EcorePackageImpl.EENUMLITERAL_INSTANCE);
-			this.createEAttribute(this.EEnumLiteralEClass, EcorePackageImpl.EENUMLITERAL_LITERAL);
-			this.createEReference(this.EEnumLiteralEClass, EcorePackageImpl.EENUMLITERAL_EENUM);
+			this.createEAttribute(this.EEnumLiteralEClass, EcorePackageImpl.EENUM_LITERAL__VALUE);
+			this.createEAttribute(this.EEnumLiteralEClass, EcorePackageImpl.EENUM_LITERAL__INSTANCE);
+			this.createEAttribute(this.EEnumLiteralEClass, EcorePackageImpl.EENUM_LITERAL__LITERAL);
+			this.createEReference(this.EEnumLiteralEClass, EcorePackageImpl.EENUM_LITERAL__E_ENUM);
 			this.EFactoryEClass = this.createEClass(EcorePackageImpl.EFACTORY);
 			EFactoryBase.eStaticClass = this.EFactoryEClass;
-			this.createEReference(this.EFactoryEClass, EcorePackageImpl.EFACTORY_EPACKAGE);
+			this.createEReference(this.EFactoryEClass, EcorePackageImpl.EFACTORY__E_PACKAGE);
 			this.createEOperation(this.EFactoryEClass, EcorePackageImpl.EFACTORY___CREATE__ECLASS);
 			this.createEOperation(this.EFactoryEClass, EcorePackageImpl.EFACTORY___CREATEFROMSTRING__EDATATYPE__LITERALVALUE);
 			this.createEOperation(this.EFactoryEClass, EcorePackageImpl.EFACTORY___CONVERTTOSTRING__EDATATYPE__INSTANCEVALUE);
 			this.EModelElementEClass = this.createEClass(EcorePackageImpl.EMODELELEMENT);
 			EModelElementBase.eStaticClass = this.EModelElementEClass;
-			this.createEReference(this.EModelElementEClass, EcorePackageImpl.EMODELELEMENT_EANNOTATIONS);
+			this.createEReference(this.EModelElementEClass, EcorePackageImpl.EMODEL_ELEMENT__E_ANNOTATIONS);
 			this.createEOperation(this.EModelElementEClass, EcorePackageImpl.EMODELELEMENT___GETEANNOTATION__SOURCE);
 			this.ENamedElementEClass = this.createEClass(EcorePackageImpl.ENAMEDELEMENT);
 			ENamedElementBase.eStaticClass = this.ENamedElementEClass;
-			this.createEAttribute(this.ENamedElementEClass, EcorePackageImpl.ENAMEDELEMENT_NAME);
+			this.createEAttribute(this.ENamedElementEClass, EcorePackageImpl.ENAMED_ELEMENT__NAME);
 			this.EObjectEClass = this.createEClass(EcorePackageImpl.EOBJECT);
 			EObjectBase.eStaticClass = this.EObjectEClass;
 			this.createEOperation(this.EObjectEClass, EcorePackageImpl.EOBJECT___ECLASS);
@@ -186,71 +182,71 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			this.createEOperation(this.EObjectEClass, EcorePackageImpl.EOBJECT___EINVOKE__OPERATION__ARGUMENTS);
 			this.EOperationEClass = this.createEClass(EcorePackageImpl.EOPERATION);
 			EOperationBase.eStaticClass = this.EOperationEClass;
-			this.createEReference(this.EOperationEClass, EcorePackageImpl.EOPERATION_ECONTAININGCLASS);
-			this.createEReference(this.EOperationEClass, EcorePackageImpl.EOPERATION_ETYPEPARAMETERS);
-			this.createEReference(this.EOperationEClass, EcorePackageImpl.EOPERATION_EPARAMETERS);
-			this.createEReference(this.EOperationEClass, EcorePackageImpl.EOPERATION_EEXCEPTIONS);
-			this.createEReference(this.EOperationEClass, EcorePackageImpl.EOPERATION_EGENERICEXCEPTIONS);
+			this.createEReference(this.EOperationEClass, EcorePackageImpl.EOPERATION__E_CONTAINING_CLASS);
+			this.createEReference(this.EOperationEClass, EcorePackageImpl.EOPERATION__E_TYPE_PARAMETERS);
+			this.createEReference(this.EOperationEClass, EcorePackageImpl.EOPERATION__E_PARAMETERS);
+			this.createEReference(this.EOperationEClass, EcorePackageImpl.EOPERATION__E_EXCEPTIONS);
+			this.createEReference(this.EOperationEClass, EcorePackageImpl.EOPERATION__E_GENERIC_EXCEPTIONS);
 			this.createEOperation(this.EOperationEClass, EcorePackageImpl.EOPERATION___GETOPERATIONID);
 			this.createEOperation(this.EOperationEClass, EcorePackageImpl.EOPERATION___ISOVERRIDEOF__SOMEOPERATION);
 			this.EPackageEClass = this.createEClass(EcorePackageImpl.EPACKAGE);
 			EPackageBase.eStaticClass = this.EPackageEClass;
-			this.createEAttribute(this.EPackageEClass, EcorePackageImpl.EPACKAGE_NSURI);
-			this.createEAttribute(this.EPackageEClass, EcorePackageImpl.EPACKAGE_NSPREFIX);
-			this.createEReference(this.EPackageEClass, EcorePackageImpl.EPACKAGE_EFACTORYINSTANCE);
-			this.createEReference(this.EPackageEClass, EcorePackageImpl.EPACKAGE_ECLASSIFIERS);
-			this.createEReference(this.EPackageEClass, EcorePackageImpl.EPACKAGE_ESUBPACKAGES);
-			this.createEReference(this.EPackageEClass, EcorePackageImpl.EPACKAGE_ESUPERPACKAGE);
+			this.createEAttribute(this.EPackageEClass, EcorePackageImpl.EPACKAGE__NS_URI);
+			this.createEAttribute(this.EPackageEClass, EcorePackageImpl.EPACKAGE__NS_PREFIX);
+			this.createEReference(this.EPackageEClass, EcorePackageImpl.EPACKAGE__E_FACTORY_INSTANCE);
+			this.createEReference(this.EPackageEClass, EcorePackageImpl.EPACKAGE__E_CLASSIFIERS);
+			this.createEReference(this.EPackageEClass, EcorePackageImpl.EPACKAGE__E_SUBPACKAGES);
+			this.createEReference(this.EPackageEClass, EcorePackageImpl.EPACKAGE__E_SUPER_PACKAGE);
 			this.createEOperation(this.EPackageEClass, EcorePackageImpl.EPACKAGE___GETECLASSIFIER__NAME);
 			this.EParameterEClass = this.createEClass(EcorePackageImpl.EPARAMETER);
 			EParameterBase.eStaticClass = this.EParameterEClass;
-			this.createEReference(this.EParameterEClass, EcorePackageImpl.EPARAMETER_EOPERATION);
+			this.createEReference(this.EParameterEClass, EcorePackageImpl.EPARAMETER__E_OPERATION);
 			this.EReferenceEClass = this.createEClass(EcorePackageImpl.EREFERENCE);
 			EReferenceBase.eStaticClass = this.EReferenceEClass;
-			this.createEAttribute(this.EReferenceEClass, EcorePackageImpl.EREFERENCE_CONTAINMENT);
-			this.createEAttribute(this.EReferenceEClass, EcorePackageImpl.EREFERENCE_CONTAINER);
-			this.createEAttribute(this.EReferenceEClass, EcorePackageImpl.EREFERENCE_RESOLVEPROXIES);
-			this.createEReference(this.EReferenceEClass, EcorePackageImpl.EREFERENCE_EOPPOSITE);
-			this.createEReference(this.EReferenceEClass, EcorePackageImpl.EREFERENCE_EREFERENCETYPE);
-			this.createEReference(this.EReferenceEClass, EcorePackageImpl.EREFERENCE_EKEYS);
+			this.createEAttribute(this.EReferenceEClass, EcorePackageImpl.EREFERENCE__CONTAINMENT);
+			this.createEAttribute(this.EReferenceEClass, EcorePackageImpl.EREFERENCE__CONTAINER);
+			this.createEAttribute(this.EReferenceEClass, EcorePackageImpl.EREFERENCE__RESOLVE_PROXIES);
+			this.createEReference(this.EReferenceEClass, EcorePackageImpl.EREFERENCE__E_OPPOSITE);
+			this.createEReference(this.EReferenceEClass, EcorePackageImpl.EREFERENCE__E_REFERENCE_TYPE);
+			this.createEReference(this.EReferenceEClass, EcorePackageImpl.EREFERENCE__E_KEYS);
 			this.EStructuralFeatureEClass = this.createEClass(EcorePackageImpl.ESTRUCTURALFEATURE);
 			EStructuralFeatureBase.eStaticClass = this.EStructuralFeatureEClass;
-			this.createEAttribute(this.EStructuralFeatureEClass, EcorePackageImpl.ESTRUCTURALFEATURE_CHANGEABLE);
-			this.createEAttribute(this.EStructuralFeatureEClass, EcorePackageImpl.ESTRUCTURALFEATURE_VOLATILE);
-			this.createEAttribute(this.EStructuralFeatureEClass, EcorePackageImpl.ESTRUCTURALFEATURE_TRANSIENT);
-			this.createEAttribute(this.EStructuralFeatureEClass, EcorePackageImpl.ESTRUCTURALFEATURE_DEFAULTVALUELITERAL);
-			this.createEAttribute(this.EStructuralFeatureEClass, EcorePackageImpl.ESTRUCTURALFEATURE_DEFAULTVALUE);
-			this.createEAttribute(this.EStructuralFeatureEClass, EcorePackageImpl.ESTRUCTURALFEATURE_UNSETTABLE);
-			this.createEAttribute(this.EStructuralFeatureEClass, EcorePackageImpl.ESTRUCTURALFEATURE_DERIVED);
-			this.createEReference(this.EStructuralFeatureEClass, EcorePackageImpl.ESTRUCTURALFEATURE_ECONTAININGCLASS);
+			this.createEAttribute(this.EStructuralFeatureEClass, EcorePackageImpl.ESTRUCTURAL_FEATURE__CHANGEABLE);
+			this.createEAttribute(this.EStructuralFeatureEClass, EcorePackageImpl.ESTRUCTURAL_FEATURE__VOLATILE);
+			this.createEAttribute(this.EStructuralFeatureEClass, EcorePackageImpl.ESTRUCTURAL_FEATURE__TRANSIENT);
+			this.createEAttribute(this.EStructuralFeatureEClass, EcorePackageImpl.ESTRUCTURAL_FEATURE__DEFAULT_VALUE_LITERAL);
+			this.createEAttribute(this.EStructuralFeatureEClass, EcorePackageImpl.ESTRUCTURAL_FEATURE__DEFAULT_VALUE);
+			this.createEAttribute(this.EStructuralFeatureEClass, EcorePackageImpl.ESTRUCTURAL_FEATURE__UNSETTABLE);
+			this.createEAttribute(this.EStructuralFeatureEClass, EcorePackageImpl.ESTRUCTURAL_FEATURE__DERIVED);
+			this.createEReference(this.EStructuralFeatureEClass, EcorePackageImpl.ESTRUCTURAL_FEATURE__E_CONTAINING_CLASS);
 			this.createEOperation(this.EStructuralFeatureEClass, EcorePackageImpl.ESTRUCTURALFEATURE___GETFEATUREID);
 			this.createEOperation(this.EStructuralFeatureEClass, EcorePackageImpl.ESTRUCTURALFEATURE___GETCONTAINERCLASS);
 			this.ETypedElementEClass = this.createEClass(EcorePackageImpl.ETYPEDELEMENT);
 			ETypedElementBase.eStaticClass = this.ETypedElementEClass;
-			this.createEAttribute(this.ETypedElementEClass, EcorePackageImpl.ETYPEDELEMENT_ORDERED);
-			this.createEAttribute(this.ETypedElementEClass, EcorePackageImpl.ETYPEDELEMENT_UNIQUE);
-			this.createEAttribute(this.ETypedElementEClass, EcorePackageImpl.ETYPEDELEMENT_LOWERBOUND);
-			this.createEAttribute(this.ETypedElementEClass, EcorePackageImpl.ETYPEDELEMENT_UPPERBOUND);
-			this.createEAttribute(this.ETypedElementEClass, EcorePackageImpl.ETYPEDELEMENT_MANY);
-			this.createEAttribute(this.ETypedElementEClass, EcorePackageImpl.ETYPEDELEMENT_REQUIRED);
-			this.createEReference(this.ETypedElementEClass, EcorePackageImpl.ETYPEDELEMENT_ETYPE);
-			this.createEReference(this.ETypedElementEClass, EcorePackageImpl.ETYPEDELEMENT_EGENERICTYPE);
+			this.createEAttribute(this.ETypedElementEClass, EcorePackageImpl.ETYPED_ELEMENT__ORDERED);
+			this.createEAttribute(this.ETypedElementEClass, EcorePackageImpl.ETYPED_ELEMENT__UNIQUE);
+			this.createEAttribute(this.ETypedElementEClass, EcorePackageImpl.ETYPED_ELEMENT__LOWER_BOUND);
+			this.createEAttribute(this.ETypedElementEClass, EcorePackageImpl.ETYPED_ELEMENT__UPPER_BOUND);
+			this.createEAttribute(this.ETypedElementEClass, EcorePackageImpl.ETYPED_ELEMENT__MANY);
+			this.createEAttribute(this.ETypedElementEClass, EcorePackageImpl.ETYPED_ELEMENT__REQUIRED);
+			this.createEReference(this.ETypedElementEClass, EcorePackageImpl.ETYPED_ELEMENT__E_TYPE);
+			this.createEReference(this.ETypedElementEClass, EcorePackageImpl.ETYPED_ELEMENT__E_GENERIC_TYPE);
 			this.EStringToStringMapEntryEClass = this.createEClass(EcorePackageImpl.ESTRINGTOSTRINGMAPENTRY);
 			EStringToStringMapEntryBase.eStaticClass = this.EStringToStringMapEntryEClass;
-			this.createEAttribute(this.EStringToStringMapEntryEClass, EcorePackageImpl.ESTRINGTOSTRINGMAPENTRY_KEY);
-			this.createEAttribute(this.EStringToStringMapEntryEClass, EcorePackageImpl.ESTRINGTOSTRINGMAPENTRY_VALUE);
+			this.createEAttribute(this.EStringToStringMapEntryEClass, EcorePackageImpl.ESTRING_TO_STRING_MAP_ENTRY__KEY);
+			this.createEAttribute(this.EStringToStringMapEntryEClass, EcorePackageImpl.ESTRING_TO_STRING_MAP_ENTRY__VALUE);
 			this.EGenericTypeEClass = this.createEClass(EcorePackageImpl.EGENERICTYPE);
 			EGenericTypeBase.eStaticClass = this.EGenericTypeEClass;
-			this.createEReference(this.EGenericTypeEClass, EcorePackageImpl.EGENERICTYPE_EUPPERBOUND);
-			this.createEReference(this.EGenericTypeEClass, EcorePackageImpl.EGENERICTYPE_ETYPEARGUMENTS);
-			this.createEReference(this.EGenericTypeEClass, EcorePackageImpl.EGENERICTYPE_ERAWTYPE);
-			this.createEReference(this.EGenericTypeEClass, EcorePackageImpl.EGENERICTYPE_ELOWERBOUND);
-			this.createEReference(this.EGenericTypeEClass, EcorePackageImpl.EGENERICTYPE_ETYPEPARAMETER);
-			this.createEReference(this.EGenericTypeEClass, EcorePackageImpl.EGENERICTYPE_ECLASSIFIER);
+			this.createEReference(this.EGenericTypeEClass, EcorePackageImpl.EGENERIC_TYPE__E_UPPER_BOUND);
+			this.createEReference(this.EGenericTypeEClass, EcorePackageImpl.EGENERIC_TYPE__E_TYPE_ARGUMENTS);
+			this.createEReference(this.EGenericTypeEClass, EcorePackageImpl.EGENERIC_TYPE__E_RAW_TYPE);
+			this.createEReference(this.EGenericTypeEClass, EcorePackageImpl.EGENERIC_TYPE__E_LOWER_BOUND);
+			this.createEReference(this.EGenericTypeEClass, EcorePackageImpl.EGENERIC_TYPE__E_TYPE_PARAMETER);
+			this.createEReference(this.EGenericTypeEClass, EcorePackageImpl.EGENERIC_TYPE__E_CLASSIFIER);
 			this.createEOperation(this.EGenericTypeEClass, EcorePackageImpl.EGENERICTYPE___ISINSTANCE__OBJECT);
 			this.ETypeParameterEClass = this.createEClass(EcorePackageImpl.ETYPEPARAMETER);
 			ETypeParameterBase.eStaticClass = this.ETypeParameterEClass;
-			this.createEReference(this.ETypeParameterEClass, EcorePackageImpl.ETYPEPARAMETER_EBOUNDS);
+			this.createEReference(this.ETypeParameterEClass, EcorePackageImpl.ETYPE_PARAMETER__E_BOUNDS);
 			
 			
 			this.EBigDecimalEDataType = this.createEDataType(EcorePackageImpl.EBIGDECIMAL);
@@ -345,7 +341,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEAttribute_EClassifier(
 				this.getEAttribute_ID(), 
-				this.ecorePackage.getEBoolean(), 
+				this.getEBoolean(), 
 				"iD", 
 				"false", 
 				0, 
@@ -362,7 +358,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEReference(
 				this.getEAttribute_EAttributeType(),
-				this.ecorePackage.getEDataType(), 
+				this.getEDataType(), 
 				null, 
 				"eAttributeType", 
 				null, 
@@ -391,7 +387,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEAttribute_EClassifier(
 				this.getEAnnotation_Source(), 
-				this.ecorePackage.getEString(), 
+				this.getEString(), 
 				"source", 
 				null, 
 				0, 
@@ -408,7 +404,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEReference(
 				this.getEAnnotation_Details(),
-				this.ecorePackage.getEStringToStringMapEntry(), 
+				this.getEStringToStringMapEntry(), 
 				null, 
 				"details", 
 				null, 
@@ -426,7 +422,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEAnnotation_EModelElement(),
-				this.ecorePackage.getEModelElement(), 
+				this.getEModelElement(), 
 				this.getEModelElement_EAnnotations(), 
 				"eModelElement", 
 				null, 
@@ -444,7 +440,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEAnnotation_Contents(),
-				this.ecorePackage.getEObject(), 
+				this.getEObject(), 
 				null, 
 				"contents", 
 				null, 
@@ -462,7 +458,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEAnnotation_References(),
-				this.ecorePackage.getEObject(), 
+				this.getEObject(), 
 				null, 
 				"references", 
 				null, 
@@ -491,7 +487,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEAttribute_EClassifier(
 				this.getEClass_Abstract(), 
-				this.ecorePackage.getEBoolean(), 
+				this.getEBoolean(), 
 				"abstract", 
 				"false", 
 				0, 
@@ -507,7 +503,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEAttribute_EClassifier(
 				this.getEClass_Interface(), 
-				this.ecorePackage.getEBoolean(), 
+				this.getEBoolean(), 
 				"interface", 
 				"false", 
 				0, 
@@ -524,7 +520,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEReference(
 				this.getEClass_ESuperTypes(),
-				this.ecorePackage.getEClass(), 
+				this.getEClass(), 
 				null, 
 				"eSuperTypes", 
 				null, 
@@ -542,7 +538,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEClass_EOperations(),
-				this.ecorePackage.getEOperation(), 
+				this.getEOperation(), 
 				this.getEOperation_EContainingClass(), 
 				"eOperations", 
 				null, 
@@ -560,7 +556,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEClass_EAllAttributes(),
-				this.ecorePackage.getEAttribute(), 
+				this.getEAttribute(), 
 				null, 
 				"eAllAttributes", 
 				null, 
@@ -578,7 +574,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEClass_EAllReferences(),
-				this.ecorePackage.getEReference(), 
+				this.getEReference(), 
 				null, 
 				"eAllReferences", 
 				null, 
@@ -596,7 +592,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEClass_EReferences(),
-				this.ecorePackage.getEReference(), 
+				this.getEReference(), 
 				null, 
 				"eReferences", 
 				null, 
@@ -614,7 +610,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEClass_EAttributes(),
-				this.ecorePackage.getEAttribute(), 
+				this.getEAttribute(), 
 				null, 
 				"eAttributes", 
 				null, 
@@ -632,7 +628,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEClass_EAllContainments(),
-				this.ecorePackage.getEReference(), 
+				this.getEReference(), 
 				null, 
 				"eAllContainments", 
 				null, 
@@ -650,7 +646,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEClass_EAllOperations(),
-				this.ecorePackage.getEOperation(), 
+				this.getEOperation(), 
 				null, 
 				"eAllOperations", 
 				null, 
@@ -668,7 +664,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEClass_EAllStructuralFeatures(),
-				this.ecorePackage.getEStructuralFeature(), 
+				this.getEStructuralFeature(), 
 				null, 
 				"eAllStructuralFeatures", 
 				null, 
@@ -686,7 +682,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEClass_EAllSuperTypes(),
-				this.ecorePackage.getEClass(), 
+				this.getEClass(), 
 				null, 
 				"eAllSuperTypes", 
 				null, 
@@ -704,7 +700,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEClass_EIDAttribute(),
-				this.ecorePackage.getEAttribute(), 
+				this.getEAttribute(), 
 				null, 
 				"eIDAttribute", 
 				null, 
@@ -722,7 +718,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEClass_EStructuralFeatures(),
-				this.ecorePackage.getEStructuralFeature(), 
+				this.getEStructuralFeature(), 
 				this.getEStructuralFeature_EContainingClass(), 
 				"eStructuralFeatures", 
 				null, 
@@ -740,7 +736,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEClass_EGenericSuperTypes(),
-				this.ecorePackage.getEGenericType(), 
+				this.getEGenericType(), 
 				null, 
 				"eGenericSuperTypes", 
 				null, 
@@ -758,7 +754,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEClass_EAllGenericSuperTypes(),
-				this.ecorePackage.getEGenericType(), 
+				this.getEGenericType(), 
 				null, 
 				"eAllGenericSuperTypes", 
 				null, 
@@ -776,41 +772,33 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClass__IsSuperTypeOf__SomeClass(), this.ecorePackage.getEBoolean(), "isSuperTypeOf", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEClass(), "someClass", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClass__IsSuperTypeOf__SomeClass(), this.getEBoolean(), "isSuperTypeOf", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEClass(), "someClass", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClass__GetFeatureCount__(), this.ecorePackage.getEInt(), "getFeatureCount", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClass__GetFeatureCount__(), this.getEInt(), "getFeatureCount", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClass__GetEStructuralFeature__FeatureID(), this.ecorePackage.getEStructuralFeature(), "getEStructuralFeature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEClass(), "featureID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClass__GetEStructuralFeature__FeatureID(), this.getEStructuralFeature(), "getEStructuralFeature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEClass(), "featureID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClass__GetFeatureID__Feature(), this.ecorePackage.getEInt(), "getFeatureID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEClass(), "feature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClass__GetFeatureID__Feature(), this.getEInt(), "getFeatureID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEClass(), "feature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClass__GetEStructuralFeature__FeatureName(), this.ecorePackage.getEStructuralFeature(), "getEStructuralFeature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEClass(), "featureName", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClass__GetEStructuralFeature__FeatureName(), this.getEStructuralFeature(), "getEStructuralFeature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEClass(), "featureName", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClass__GetOperationCount__(), this.ecorePackage.getEInt(), "getOperationCount", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClass__GetOperationCount__(), this.getEInt(), "getOperationCount", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClass__GetEOperation__OperationID(), this.ecorePackage.getEOperation(), "getEOperation", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEClass(), "operationID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClass__GetEOperation__OperationID(), this.getEOperation(), "getEOperation", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEClass(), "operationID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClass__GetOperationID__Operation(), this.ecorePackage.getEInt(), "getOperationID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEClass(), "operation", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClass__GetOperationID__Operation(), this.getEInt(), "getOperationID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEClass(), "operation", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClass__GetOverride__Operation(), this.ecorePackage.getEOperation(), "getOverride", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEClass(), "operation", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClass__GetOverride__Operation(), this.getEOperation(), "getOverride", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEClass(), "operation", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClass__GetFeatureType__Feature(), this.ecorePackage.getEGenericType(), "getFeatureType", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEClass(), "feature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClass__GetFeatureType__Feature(), this.getEGenericType(), "getFeatureType", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEClass(), "feature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			
 			
 			this.initEClass(
@@ -823,7 +811,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEAttribute_EClassifier(
 				this.getEClassifier_InstanceClassName(), 
-				this.ecorePackage.getEString(), 
+				this.getEString(), 
 				"instanceClassName", 
 				null, 
 				0, 
@@ -839,7 +827,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEAttribute_EClassifier(
 				this.getEClassifier_InstanceClass(), 
-				this.ecorePackage.getEJavaClass(), 
+				this.getEJavaClass(), 
 				"instanceClass", 
 				null, 
 				0, 
@@ -855,7 +843,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEAttribute_EClassifier(
 				this.getEClassifier_DefaultValue(), 
-				this.ecorePackage.getEJavaObject(), 
+				this.getEJavaObject(), 
 				"defaultValue", 
 				null, 
 				0, 
@@ -871,7 +859,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEAttribute_EClassifier(
 				this.getEClassifier_InstanceTypeName(), 
-				this.ecorePackage.getEString(), 
+				this.getEString(), 
 				"instanceTypeName", 
 				null, 
 				0, 
@@ -888,7 +876,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEReference(
 				this.getEClassifier_EPackage(),
-				this.ecorePackage.getEPackage(), 
+				this.getEPackage(), 
 				this.getEPackage_EClassifiers(), 
 				"ePackage", 
 				null, 
@@ -906,7 +894,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEClassifier_ETypeParameters(),
-				this.ecorePackage.getETypeParameter(), 
+				this.getETypeParameter(), 
 				null, 
 				"eTypeParameters", 
 				null, 
@@ -924,11 +912,10 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClassifier__IsInstance__Object(), this.ecorePackage.getEBoolean(), "isInstance", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEClassifier_(), "object", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClassifier__IsInstance__Object(), this.getEBoolean(), "isInstance", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEClassifier_(), "object", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEClassifier__GetClassifierID__(), this.ecorePackage.getEInt(), "getClassifierID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEClassifier__GetClassifierID__(), this.getEInt(), "getClassifierID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			
 			
 			this.initEClass(
@@ -941,7 +928,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEAttribute_EClassifier(
 				this.getEDataType_Serializable(), 
-				this.ecorePackage.getEBoolean(), 
+				this.getEBoolean(), 
 				"serializable", 
 				"true", 
 				0, 
@@ -970,7 +957,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEReference(
 				this.getEEnum_ELiterals(),
-				this.ecorePackage.getEEnumLiteral(), 
+				this.getEEnumLiteral(), 
 				this.getEEnumLiteral_EEnum(), 
 				"eLiterals", 
 				null, 
@@ -988,17 +975,14 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEEnum__GetEEnumLiteral__Name(), this.ecorePackage.getEEnumLiteral(), "getEEnumLiteral", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEEnum(), "name", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEEnum__GetEEnumLiteral__Name(), this.getEEnumLiteral(), "getEEnumLiteral", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEEnum(), "name", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEEnum__GetEEnumLiteral__Value(), this.ecorePackage.getEEnumLiteral(), "getEEnumLiteral", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEEnum(), "value", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEEnum__GetEEnumLiteral__Value(), this.getEEnumLiteral(), "getEEnumLiteral", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEEnum(), "value", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEEnum__GetEEnumLiteralByLiteral__Literal(), this.ecorePackage.getEEnumLiteral(), "getEEnumLiteralByLiteral", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEEnum(), "literal", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEEnum__GetEEnumLiteralByLiteral__Literal(), this.getEEnumLiteral(), "getEEnumLiteralByLiteral", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEEnum(), "literal", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			
 			
 			this.initEClass(
@@ -1011,7 +995,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEAttribute_EClassifier(
 				this.getEEnumLiteral_Value(), 
-				this.ecorePackage.getEInt(), 
+				this.getEInt(), 
 				"value", 
 				"0", 
 				0, 
@@ -1027,7 +1011,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEAttribute_EClassifier(
 				this.getEEnumLiteral_Instance(), 
-				this.ecorePackage.getEEnumerator(), 
+				this.getEEnumerator(), 
 				"instance", 
 				null, 
 				0, 
@@ -1043,7 +1027,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEAttribute_EClassifier(
 				this.getEEnumLiteral_Literal(), 
-				this.ecorePackage.getEString(), 
+				this.getEString(), 
 				"literal", 
 				null, 
 				0, 
@@ -1060,7 +1044,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEReference(
 				this.getEEnumLiteral_EEnum(),
-				this.ecorePackage.getEEnum(), 
+				this.getEEnum(), 
 				this.getEEnum_ELiterals(), 
 				"eEnum", 
 				null, 
@@ -1090,7 +1074,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEReference(
 				this.getEFactory_EPackage(),
-				this.ecorePackage.getEPackage(), 
+				this.getEPackage(), 
 				this.getEPackage_EFactoryInstance(), 
 				"ePackage", 
 				null, 
@@ -1108,21 +1092,16 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEFactory__Create__EClass(), this.ecorePackage.getEObject(), "create", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEFactory(), "eClass", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEFactory__Create__EClass(), this.getEObject(), "create", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEFactory(), "eClass", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEFactory__CreateFromString__EDataType__LiteralValue(), this.ecorePackage.getEJavaObject(), "createFromString", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEFactory(), "eDataType", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEFactory(), "literalValue", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEFactory__CreateFromString__EDataType__LiteralValue(), this.getEJavaObject(), "createFromString", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEFactory(), "eDataType", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEFactory(), "literalValue", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEFactory__ConvertToString__EDataType__InstanceValue(), this.ecorePackage.getEString(), "convertToString", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEFactory(), "eDataType", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEFactory(), "instanceValue", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEFactory__ConvertToString__EDataType__InstanceValue(), this.getEString(), "convertToString", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEFactory(), "eDataType", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEFactory(), "instanceValue", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			
 			
 			this.initEClass(
@@ -1136,7 +1115,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEReference(
 				this.getEModelElement_EAnnotations(),
-				this.ecorePackage.getEAnnotation_(), 
+				this.getEAnnotation_(), 
 				this.getEAnnotation_EModelElement(), 
 				"eAnnotations", 
 				null, 
@@ -1154,9 +1133,8 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEModelElement__GetEAnnotation__Source(), this.ecorePackage.getEAnnotation_(), "getEAnnotation", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEModelElement(), "source", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEModelElement__GetEAnnotation__Source(), this.getEAnnotation_(), "getEAnnotation", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEModelElement(), "source", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			
 			
 			this.initEClass(
@@ -1169,7 +1147,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEAttribute_EClassifier(
 				this.getENamedElement_Name(), 
-				this.ecorePackage.getEString(), 
+				this.getEString(), 
 				"name", 
 				null, 
 				0, 
@@ -1198,53 +1176,44 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EClass__(), this.ecorePackage.getEClass(), "eClass", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EClass__(), this.getEClass(), "eClass", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EIsProxy__(), this.ecorePackage.getEBoolean(), "eIsProxy", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EIsProxy__(), this.getEBoolean(), "eIsProxy", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EResource__(), this.ecorePackage.getEResource(), "eResource", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EResource__(), this.getEResource(), "eResource", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EContainer__(), this.ecorePackage.getEObject(), "eContainer", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EContainer__(), this.getEObject(), "eContainer", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EContainingFeature__(), this.ecorePackage.getEStructuralFeature(), "eContainingFeature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EContainingFeature__(), this.getEStructuralFeature(), "eContainingFeature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EContainmentFeature__(), this.ecorePackage.getEReference(), "eContainmentFeature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EContainmentFeature__(), this.getEReference(), "eContainmentFeature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EContents__(), this.ecorePackage.getEEList(), "eContents", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EContents__(), this.getEEList(), "eContents", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EAllContents__(), this.ecorePackage.getETreeIterator(), "eAllContents", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EAllContents__(), this.getETreeIterator(), "eAllContents", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__ECrossReferences__(), this.ecorePackage.getEEList(), "eCrossReferences", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__ECrossReferences__(), this.getEEList(), "eCrossReferences", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EGet__Feature(), this.ecorePackage.getEJavaObject(), "eGet", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEObject(), "feature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EGet__Feature(), this.getEJavaObject(), "eGet", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEObject(), "feature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EGet__Feature__Resolve(), this.ecorePackage.getEJavaObject(), "eGet", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEObject(), "feature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEObject(), "resolve", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EGet__Feature__Resolve(), this.getEJavaObject(), "eGet", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEObject(), "feature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEObject(), "resolve", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
 			op = this.initEOperation_3(this.getEObject__ESet__Feature__NewValue(), null, "eSet", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEObject(), "feature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEObject(), "newValue", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEObject(), "feature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEObject(), "newValue", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EIsSet__Feature(), this.ecorePackage.getEBoolean(), "eIsSet", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEObject(), "feature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EIsSet__Feature(), this.getEBoolean(), "eIsSet", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEObject(), "feature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
 			op = this.initEOperation_3(this.getEObject__EUnset__Feature(), null, "eUnset", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEObject(), "feature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEObject(), "feature", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEObject__EInvoke__Operation__Arguments(), this.ecorePackage.getEJavaObject(), "eInvoke", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEObject(), "operation", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEObject(), "arguments", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEObject__EInvoke__Operation__Arguments(), this.getEJavaObject(), "eInvoke", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEObject(), "operation", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEObject(), "arguments", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			
 			
 			this.initEClass(
@@ -1258,7 +1227,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEReference(
 				this.getEOperation_EContainingClass(),
-				this.ecorePackage.getEClass(), 
+				this.getEClass(), 
 				this.getEClass_EOperations(), 
 				"eContainingClass", 
 				null, 
@@ -1276,7 +1245,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEOperation_ETypeParameters(),
-				this.ecorePackage.getETypeParameter(), 
+				this.getETypeParameter(), 
 				null, 
 				"eTypeParameters", 
 				null, 
@@ -1294,7 +1263,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEOperation_EParameters(),
-				this.ecorePackage.getEParameter(), 
+				this.getEParameter(), 
 				this.getEParameter_EOperation(), 
 				"eParameters", 
 				null, 
@@ -1312,7 +1281,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEOperation_EExceptions(),
-				this.ecorePackage.getEClassifier_(), 
+				this.getEClassifier_(), 
 				null, 
 				"eExceptions", 
 				null, 
@@ -1330,7 +1299,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEOperation_EGenericExceptions(),
-				this.ecorePackage.getEGenericType(), 
+				this.getEGenericType(), 
 				null, 
 				"eGenericExceptions", 
 				null, 
@@ -1348,11 +1317,10 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEOperation__GetOperationID__(), this.ecorePackage.getEInt(), "getOperationID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEOperation__GetOperationID__(), this.getEInt(), "getOperationID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEOperation__IsOverrideOf__SomeOperation(), this.ecorePackage.getEBoolean(), "isOverrideOf", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEOperation(), "someOperation", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEOperation__IsOverrideOf__SomeOperation(), this.getEBoolean(), "isOverrideOf", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEOperation(), "someOperation", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			
 			
 			this.initEClass(
@@ -1365,7 +1333,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEAttribute_EClassifier(
 				this.getEPackage_NsURI(), 
-				this.ecorePackage.getEString(), 
+				this.getEString(), 
 				"nsURI", 
 				null, 
 				0, 
@@ -1381,7 +1349,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEAttribute_EClassifier(
 				this.getEPackage_NsPrefix(), 
-				this.ecorePackage.getEString(), 
+				this.getEString(), 
 				"nsPrefix", 
 				null, 
 				0, 
@@ -1398,7 +1366,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEReference(
 				this.getEPackage_EFactoryInstance(),
-				this.ecorePackage.getEFactory(), 
+				this.getEFactory(), 
 				this.getEFactory_EPackage(), 
 				"eFactoryInstance", 
 				null, 
@@ -1416,7 +1384,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEPackage_EClassifiers(),
-				this.ecorePackage.getEClassifier_(), 
+				this.getEClassifier_(), 
 				this.getEClassifier_EPackage(), 
 				"eClassifiers", 
 				null, 
@@ -1434,7 +1402,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEPackage_ESubpackages(),
-				this.ecorePackage.getEPackage(), 
+				this.getEPackage(), 
 				this.getEPackage_ESuperPackage(), 
 				"eSubpackages", 
 				null, 
@@ -1452,7 +1420,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEPackage_ESuperPackage(),
-				this.ecorePackage.getEPackage(), 
+				this.getEPackage(), 
 				this.getEPackage_ESubpackages(), 
 				"eSuperPackage", 
 				null, 
@@ -1470,9 +1438,8 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEPackage__GetEClassifier__Name(), this.ecorePackage.getEClassifier_(), "getEClassifier", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEPackage(), "name", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEPackage__GetEClassifier__Name(), this.getEClassifier_(), "getEClassifier", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEPackage(), "name", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			
 			
 			this.initEClass(
@@ -1486,7 +1453,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEReference(
 				this.getEParameter_EOperation(),
-				this.ecorePackage.getEOperation(), 
+				this.getEOperation(), 
 				this.getEOperation_EParameters(), 
 				"eOperation", 
 				null, 
@@ -1515,7 +1482,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEAttribute_EClassifier(
 				this.getEReference_Containment(), 
-				this.ecorePackage.getEBoolean(), 
+				this.getEBoolean(), 
 				"containment", 
 				"false", 
 				0, 
@@ -1531,7 +1498,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEAttribute_EClassifier(
 				this.getEReference_Container(), 
-				this.ecorePackage.getEBoolean(), 
+				this.getEBoolean(), 
 				"container", 
 				"false", 
 				0, 
@@ -1547,7 +1514,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEAttribute_EClassifier(
 				this.getEReference_ResolveProxies(), 
-				this.ecorePackage.getEBoolean(), 
+				this.getEBoolean(), 
 				"resolveProxies", 
 				"true", 
 				0, 
@@ -1564,7 +1531,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEReference(
 				this.getEReference_EOpposite(),
-				this.ecorePackage.getEReference(), 
+				this.getEReference(), 
 				null, 
 				"eOpposite", 
 				null, 
@@ -1582,7 +1549,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEReference_EReferenceType(),
-				this.ecorePackage.getEClass(), 
+				this.getEClass(), 
 				null, 
 				"eReferenceType", 
 				null, 
@@ -1600,7 +1567,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEReference_EKeys(),
-				this.ecorePackage.getEAttribute(), 
+				this.getEAttribute(), 
 				null, 
 				"eKeys", 
 				null, 
@@ -1629,7 +1596,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEAttribute_EClassifier(
 				this.getEStructuralFeature_Changeable(), 
-				this.ecorePackage.getEBoolean(), 
+				this.getEBoolean(), 
 				"changeable", 
 				"true", 
 				0, 
@@ -1645,7 +1612,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEAttribute_EClassifier(
 				this.getEStructuralFeature_Volatile(), 
-				this.ecorePackage.getEBoolean(), 
+				this.getEBoolean(), 
 				"volatile", 
 				"false", 
 				0, 
@@ -1661,7 +1628,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEAttribute_EClassifier(
 				this.getEStructuralFeature_Transient(), 
-				this.ecorePackage.getEBoolean(), 
+				this.getEBoolean(), 
 				"transient", 
 				"false", 
 				0, 
@@ -1677,7 +1644,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEAttribute_EClassifier(
 				this.getEStructuralFeature_DefaultValueLiteral(), 
-				this.ecorePackage.getEString(), 
+				this.getEString(), 
 				"defaultValueLiteral", 
 				null, 
 				0, 
@@ -1693,7 +1660,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEAttribute_EClassifier(
 				this.getEStructuralFeature_DefaultValue(), 
-				this.ecorePackage.getEJavaObject(), 
+				this.getEJavaObject(), 
 				"defaultValue", 
 				null, 
 				0, 
@@ -1709,7 +1676,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEAttribute_EClassifier(
 				this.getEStructuralFeature_Unsettable(), 
-				this.ecorePackage.getEBoolean(), 
+				this.getEBoolean(), 
 				"unsettable", 
 				"false", 
 				0, 
@@ -1725,7 +1692,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEAttribute_EClassifier(
 				this.getEStructuralFeature_Derived(), 
-				this.ecorePackage.getEBoolean(), 
+				this.getEBoolean(), 
 				"derived", 
 				"false", 
 				0, 
@@ -1742,7 +1709,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEReference(
 				this.getEStructuralFeature_EContainingClass(),
-				this.ecorePackage.getEClass(), 
+				this.getEClass(), 
 				this.getEClass_EStructuralFeatures(), 
 				"eContainingClass", 
 				null, 
@@ -1760,9 +1727,9 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEStructuralFeature__GetFeatureID__(), this.ecorePackage.getEInt(), "getFeatureID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEStructuralFeature__GetFeatureID__(), this.getEInt(), "getFeatureID", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEStructuralFeature__GetContainerClass__(), this.ecorePackage.getEJavaClass(), "getContainerClass", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEStructuralFeature__GetContainerClass__(), this.getEJavaClass(), "getContainerClass", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			
 			
 			this.initEClass(
@@ -1775,7 +1742,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEAttribute_EClassifier(
 				this.getETypedElement_Ordered(), 
-				this.ecorePackage.getEBoolean(), 
+				this.getEBoolean(), 
 				"ordered", 
 				"true", 
 				0, 
@@ -1791,7 +1758,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEAttribute_EClassifier(
 				this.getETypedElement_Unique(), 
-				this.ecorePackage.getEBoolean(), 
+				this.getEBoolean(), 
 				"unique", 
 				"true", 
 				0, 
@@ -1807,7 +1774,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEAttribute_EClassifier(
 				this.getETypedElement_LowerBound(), 
-				this.ecorePackage.getEInt(), 
+				this.getEInt(), 
 				"lowerBound", 
 				"0", 
 				0, 
@@ -1823,7 +1790,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEAttribute_EClassifier(
 				this.getETypedElement_UpperBound(), 
-				this.ecorePackage.getEInt(), 
+				this.getEInt(), 
 				"upperBound", 
 				"1", 
 				0, 
@@ -1839,7 +1806,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEAttribute_EClassifier(
 				this.getETypedElement_Many(), 
-				this.ecorePackage.getEBoolean(), 
+				this.getEBoolean(), 
 				"many", 
 				"false", 
 				0, 
@@ -1855,7 +1822,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEAttribute_EClassifier(
 				this.getETypedElement_Required(), 
-				this.ecorePackage.getEBoolean(), 
+				this.getEBoolean(), 
 				"required", 
 				"false", 
 				0, 
@@ -1872,7 +1839,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEReference(
 				this.getETypedElement_EType(),
-				this.ecorePackage.getEClassifier_(), 
+				this.getEClassifier_(), 
 				null, 
 				"eType", 
 				null, 
@@ -1890,7 +1857,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getETypedElement_EGenericType(),
-				this.ecorePackage.getEGenericType(), 
+				this.getEGenericType(), 
 				null, 
 				"eGenericType", 
 				null, 
@@ -1919,7 +1886,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEAttribute_EClassifier(
 				this.getEStringToStringMapEntry_Key(), 
-				this.ecorePackage.getEString(), 
+				this.getEString(), 
 				"key", 
 				null, 
 				0, 
@@ -1935,7 +1902,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEAttribute_EClassifier(
 				this.getEStringToStringMapEntry_Value(), 
-				this.ecorePackage.getEString(), 
+				this.getEString(), 
 				"value", 
 				null, 
 				0, 
@@ -1964,7 +1931,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEReference(
 				this.getEGenericType_EUpperBound(),
-				this.ecorePackage.getEGenericType(), 
+				this.getEGenericType(), 
 				null, 
 				"eUpperBound", 
 				null, 
@@ -1982,7 +1949,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEGenericType_ETypeArguments(),
-				this.ecorePackage.getEGenericType(), 
+				this.getEGenericType(), 
 				null, 
 				"eTypeArguments", 
 				null, 
@@ -2000,7 +1967,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEGenericType_ERawType(),
-				this.ecorePackage.getEClassifier_(), 
+				this.getEClassifier_(), 
 				null, 
 				"eRawType", 
 				null, 
@@ -2018,7 +1985,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEGenericType_ELowerBound(),
-				this.ecorePackage.getEGenericType(), 
+				this.getEGenericType(), 
 				null, 
 				"eLowerBound", 
 				null, 
@@ -2036,7 +2003,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEGenericType_ETypeParameter(),
-				this.ecorePackage.getETypeParameter(), 
+				this.getETypeParameter(), 
 				null, 
 				"eTypeParameter", 
 				null, 
@@ -2054,7 +2021,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			this.initEReference(
 				this.getEGenericType_EClassifier(),
-				this.ecorePackage.getEClassifier_(), 
+				this.getEClassifier_(), 
 				null, 
 				"eClassifier", 
 				null, 
@@ -2072,9 +2039,8 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 				EPackageImpl.IS_ORDERED);
 			
 			//TODO add initEOperation to EPackageImpl
-			op = this.initEOperation_3(this.getEGenericType__IsInstance__Object(), this.ecorePackage.getEBoolean(), "isInstance", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
-			//TODO add addEParameter to EPackageImpl
-			//this.addEParameter_3(op, this.getEGenericType(), "object", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			op = this.initEOperation_3(this.getEGenericType__IsInstance__Object(), this.getEBoolean(), "isInstance", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
+			this.addEParameter(op, this.getEGenericType(), "object", 0, 1, EPackageImpl.IS_UNIQUE, EPackageImpl.IS_ORDERED);
 			
 			
 			this.initEClass(
@@ -2088,7 +2054,7 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 			
 			this.initEReference(
 				this.getETypeParameter_EBounds(),
-				this.ecorePackage.getEGenericType(), 
+				this.getEGenericType(), 
 				null, 
 				"eBounds", 
 				null, 
@@ -2206,53 +2172,53 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 		public static EMODELELEMENT_FEATURE_COUNT:number = 1;
 		public static EMODELELEMENT_OPERATION_COUNT:number = 1;
 		
-		public static EMODELELEMENT_EANNOTATIONS:number = 0;
+		public static EMODEL_ELEMENT__E_ANNOTATIONS:number = 0;
 		public static EMODELELEMENT___GETEANNOTATION__SOURCE:number = 0; 
 		
 		public static ENAMEDELEMENT:number = 9;
 		public static ENAMEDELEMENT_FEATURE_COUNT:number = EcorePackageImpl.EMODELELEMENT_FEATURE_COUNT + 1;
 		public static ENAMEDELEMENT_OPERATION_COUNT:number = EcorePackageImpl.EMODELELEMENT_OPERATION_COUNT + 0;
 		
-		public static ENAMEDELEMENT_EANNOTATIONS:number = 0;
-		public static ENAMEDELEMENT_NAME:number = 1;
+		public static ENAMED_ELEMENT__E_ANNOTATIONS:number = 0;
+		public static ENAMED_ELEMENT__NAME:number = 1;
 		
 		public static ETYPEDELEMENT:number = 16;
 		public static ETYPEDELEMENT_FEATURE_COUNT:number = EcorePackageImpl.ENAMEDELEMENT_FEATURE_COUNT + 8;
 		public static ETYPEDELEMENT_OPERATION_COUNT:number = EcorePackageImpl.ENAMEDELEMENT_OPERATION_COUNT + 0;
 		
-		public static ETYPEDELEMENT_EANNOTATIONS:number = 0;
-		public static ETYPEDELEMENT_NAME:number = 1;
-		public static ETYPEDELEMENT_ORDERED:number = 2;
-		public static ETYPEDELEMENT_UNIQUE:number = 3;
-		public static ETYPEDELEMENT_LOWERBOUND:number = 4;
-		public static ETYPEDELEMENT_UPPERBOUND:number = 5;
-		public static ETYPEDELEMENT_MANY:number = 6;
-		public static ETYPEDELEMENT_REQUIRED:number = 7;
-		public static ETYPEDELEMENT_ETYPE:number = 8;
-		public static ETYPEDELEMENT_EGENERICTYPE:number = 9;
+		public static ETYPED_ELEMENT__E_ANNOTATIONS:number = 0;
+		public static ETYPED_ELEMENT__NAME:number = 1;
+		public static ETYPED_ELEMENT__ORDERED:number = 2;
+		public static ETYPED_ELEMENT__UNIQUE:number = 3;
+		public static ETYPED_ELEMENT__LOWER_BOUND:number = 4;
+		public static ETYPED_ELEMENT__UPPER_BOUND:number = 5;
+		public static ETYPED_ELEMENT__MANY:number = 6;
+		public static ETYPED_ELEMENT__REQUIRED:number = 7;
+		public static ETYPED_ELEMENT__E_TYPE:number = 8;
+		public static ETYPED_ELEMENT__E_GENERIC_TYPE:number = 9;
 		
 		public static ESTRUCTURALFEATURE:number = 15;
 		public static ESTRUCTURALFEATURE_FEATURE_COUNT:number = EcorePackageImpl.ETYPEDELEMENT_FEATURE_COUNT + 8;
 		public static ESTRUCTURALFEATURE_OPERATION_COUNT:number = EcorePackageImpl.ETYPEDELEMENT_OPERATION_COUNT + 2;
 		
-		public static ESTRUCTURALFEATURE_EANNOTATIONS:number = 0;
-		public static ESTRUCTURALFEATURE_NAME:number = 1;
-		public static ESTRUCTURALFEATURE_ORDERED:number = 2;
-		public static ESTRUCTURALFEATURE_UNIQUE:number = 3;
-		public static ESTRUCTURALFEATURE_LOWERBOUND:number = 4;
-		public static ESTRUCTURALFEATURE_UPPERBOUND:number = 5;
-		public static ESTRUCTURALFEATURE_MANY:number = 6;
-		public static ESTRUCTURALFEATURE_REQUIRED:number = 7;
-		public static ESTRUCTURALFEATURE_ETYPE:number = 8;
-		public static ESTRUCTURALFEATURE_EGENERICTYPE:number = 9;
-		public static ESTRUCTURALFEATURE_CHANGEABLE:number = 10;
-		public static ESTRUCTURALFEATURE_VOLATILE:number = 11;
-		public static ESTRUCTURALFEATURE_TRANSIENT:number = 12;
-		public static ESTRUCTURALFEATURE_DEFAULTVALUELITERAL:number = 13;
-		public static ESTRUCTURALFEATURE_DEFAULTVALUE:number = 14;
-		public static ESTRUCTURALFEATURE_UNSETTABLE:number = 15;
-		public static ESTRUCTURALFEATURE_DERIVED:number = 16;
-		public static ESTRUCTURALFEATURE_ECONTAININGCLASS:number = 17;
+		public static ESTRUCTURAL_FEATURE__E_ANNOTATIONS:number = 0;
+		public static ESTRUCTURAL_FEATURE__NAME:number = 1;
+		public static ESTRUCTURAL_FEATURE__ORDERED:number = 2;
+		public static ESTRUCTURAL_FEATURE__UNIQUE:number = 3;
+		public static ESTRUCTURAL_FEATURE__LOWER_BOUND:number = 4;
+		public static ESTRUCTURAL_FEATURE__UPPER_BOUND:number = 5;
+		public static ESTRUCTURAL_FEATURE__MANY:number = 6;
+		public static ESTRUCTURAL_FEATURE__REQUIRED:number = 7;
+		public static ESTRUCTURAL_FEATURE__E_TYPE:number = 8;
+		public static ESTRUCTURAL_FEATURE__E_GENERIC_TYPE:number = 9;
+		public static ESTRUCTURAL_FEATURE__CHANGEABLE:number = 10;
+		public static ESTRUCTURAL_FEATURE__VOLATILE:number = 11;
+		public static ESTRUCTURAL_FEATURE__TRANSIENT:number = 12;
+		public static ESTRUCTURAL_FEATURE__DEFAULT_VALUE_LITERAL:number = 13;
+		public static ESTRUCTURAL_FEATURE__DEFAULT_VALUE:number = 14;
+		public static ESTRUCTURAL_FEATURE__UNSETTABLE:number = 15;
+		public static ESTRUCTURAL_FEATURE__DERIVED:number = 16;
+		public static ESTRUCTURAL_FEATURE__E_CONTAINING_CLASS:number = 17;
 		public static ESTRUCTURALFEATURE___GETFEATUREID:number = 0; 
 		public static ESTRUCTURALFEATURE___GETCONTAINERCLASS:number = 1; 
 		
@@ -2260,50 +2226,50 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 		public static EATTRIBUTE_FEATURE_COUNT:number = EcorePackageImpl.ESTRUCTURALFEATURE_FEATURE_COUNT + 2;
 		public static EATTRIBUTE_OPERATION_COUNT:number = EcorePackageImpl.ESTRUCTURALFEATURE_OPERATION_COUNT + 0;
 		
-		public static EATTRIBUTE_EANNOTATIONS:number = 0;
-		public static EATTRIBUTE_NAME:number = 1;
-		public static EATTRIBUTE_ORDERED:number = 2;
-		public static EATTRIBUTE_UNIQUE:number = 3;
-		public static EATTRIBUTE_LOWERBOUND:number = 4;
-		public static EATTRIBUTE_UPPERBOUND:number = 5;
-		public static EATTRIBUTE_MANY:number = 6;
-		public static EATTRIBUTE_REQUIRED:number = 7;
-		public static EATTRIBUTE_ETYPE:number = 8;
-		public static EATTRIBUTE_EGENERICTYPE:number = 9;
-		public static EATTRIBUTE_CHANGEABLE:number = 10;
-		public static EATTRIBUTE_VOLATILE:number = 11;
-		public static EATTRIBUTE_TRANSIENT:number = 12;
-		public static EATTRIBUTE_DEFAULTVALUELITERAL:number = 13;
-		public static EATTRIBUTE_DEFAULTVALUE:number = 14;
-		public static EATTRIBUTE_UNSETTABLE:number = 15;
-		public static EATTRIBUTE_DERIVED:number = 16;
-		public static EATTRIBUTE_ECONTAININGCLASS:number = 17;
-		public static EATTRIBUTE_ID:number = 18;
-		public static EATTRIBUTE_EATTRIBUTETYPE:number = 19;
+		public static EATTRIBUTE__E_ANNOTATIONS:number = 0;
+		public static EATTRIBUTE__NAME:number = 1;
+		public static EATTRIBUTE__ORDERED:number = 2;
+		public static EATTRIBUTE__UNIQUE:number = 3;
+		public static EATTRIBUTE__LOWER_BOUND:number = 4;
+		public static EATTRIBUTE__UPPER_BOUND:number = 5;
+		public static EATTRIBUTE__MANY:number = 6;
+		public static EATTRIBUTE__REQUIRED:number = 7;
+		public static EATTRIBUTE__E_TYPE:number = 8;
+		public static EATTRIBUTE__E_GENERIC_TYPE:number = 9;
+		public static EATTRIBUTE__CHANGEABLE:number = 10;
+		public static EATTRIBUTE__VOLATILE:number = 11;
+		public static EATTRIBUTE__TRANSIENT:number = 12;
+		public static EATTRIBUTE__DEFAULT_VALUE_LITERAL:number = 13;
+		public static EATTRIBUTE__DEFAULT_VALUE:number = 14;
+		public static EATTRIBUTE__UNSETTABLE:number = 15;
+		public static EATTRIBUTE__DERIVED:number = 16;
+		public static EATTRIBUTE__E_CONTAINING_CLASS:number = 17;
+		public static EATTRIBUTE__I_D:number = 18;
+		public static EATTRIBUTE__E_ATTRIBUTE_TYPE:number = 19;
 		
 		public static EANNOTATION:number = 1;
 		public static EANNOTATION_FEATURE_COUNT:number = EcorePackageImpl.EMODELELEMENT_FEATURE_COUNT + 5;
 		public static EANNOTATION_OPERATION_COUNT:number = EcorePackageImpl.EMODELELEMENT_OPERATION_COUNT + 0;
 		
-		public static EANNOTATION_EANNOTATIONS:number = 0;
-		public static EANNOTATION_SOURCE:number = 1;
-		public static EANNOTATION_DETAILS:number = 2;
-		public static EANNOTATION_EMODELELEMENT:number = 3;
-		public static EANNOTATION_CONTENTS:number = 4;
-		public static EANNOTATION_REFERENCES:number = 5;
+		public static EANNOTATION__E_ANNOTATIONS:number = 0;
+		public static EANNOTATION__SOURCE:number = 1;
+		public static EANNOTATION__DETAILS:number = 2;
+		public static EANNOTATION__E_MODEL_ELEMENT:number = 3;
+		public static EANNOTATION__CONTENTS:number = 4;
+		public static EANNOTATION__REFERENCES:number = 5;
 		
 		public static ECLASSIFIER:number = 3;
 		public static ECLASSIFIER_FEATURE_COUNT:number = EcorePackageImpl.ENAMEDELEMENT_FEATURE_COUNT + 6;
 		public static ECLASSIFIER_OPERATION_COUNT:number = EcorePackageImpl.ENAMEDELEMENT_OPERATION_COUNT + 2;
 		
-		public static ECLASSIFIER_EANNOTATIONS:number = 0;
-		public static ECLASSIFIER_NAME:number = 1;
-		public static ECLASSIFIER_INSTANCECLASSNAME:number = 2;
-		public static ECLASSIFIER_INSTANCECLASS:number = 3;
-		public static ECLASSIFIER_DEFAULTVALUE:number = 4;
-		public static ECLASSIFIER_INSTANCETYPENAME:number = 5;
-		public static ECLASSIFIER_EPACKAGE:number = 6;
-		public static ECLASSIFIER_ETYPEPARAMETERS:number = 7;
+		public static ECLASSIFIER__E_ANNOTATIONS:number = 0;
+		public static ECLASSIFIER__NAME:number = 1;
+		public static ECLASSIFIER__INSTANCE_CLASS_NAME:number = 2;
+		public static ECLASSIFIER__INSTANCE_CLASS:number = 3;
+		public static ECLASSIFIER__DEFAULT_VALUE:number = 4;
+		public static ECLASSIFIER__INSTANCE_TYPE_NAME:number = 5;
+		public static ECLASSIFIER__E_PACKAGE:number = 6;
+		public static ECLASSIFIER__E_TYPE_PARAMETERS:number = 7;
 		public static ECLASSIFIER___ISINSTANCE__OBJECT:number = 0; 
 		public static ECLASSIFIER___GETCLASSIFIERID:number = 1; 
 		
@@ -2311,30 +2277,30 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 		public static ECLASS_FEATURE_COUNT:number = EcorePackageImpl.ECLASSIFIER_FEATURE_COUNT + 16;
 		public static ECLASS_OPERATION_COUNT:number = EcorePackageImpl.ECLASSIFIER_OPERATION_COUNT + 10;
 		
-		public static ECLASS_EANNOTATIONS:number = 0;
-		public static ECLASS_NAME:number = 1;
-		public static ECLASS_INSTANCECLASSNAME:number = 2;
-		public static ECLASS_INSTANCECLASS:number = 3;
-		public static ECLASS_DEFAULTVALUE:number = 4;
-		public static ECLASS_INSTANCETYPENAME:number = 5;
-		public static ECLASS_EPACKAGE:number = 6;
-		public static ECLASS_ETYPEPARAMETERS:number = 7;
-		public static ECLASS_ABSTRACT:number = 8;
-		public static ECLASS_INTERFACE:number = 9;
-		public static ECLASS_ESUPERTYPES:number = 10;
-		public static ECLASS_EOPERATIONS:number = 11;
-		public static ECLASS_EALLATTRIBUTES:number = 12;
-		public static ECLASS_EALLREFERENCES:number = 13;
-		public static ECLASS_EREFERENCES:number = 14;
-		public static ECLASS_EATTRIBUTES:number = 15;
-		public static ECLASS_EALLCONTAINMENTS:number = 16;
-		public static ECLASS_EALLOPERATIONS:number = 17;
-		public static ECLASS_EALLSTRUCTURALFEATURES:number = 18;
-		public static ECLASS_EALLSUPERTYPES:number = 19;
-		public static ECLASS_EIDATTRIBUTE:number = 20;
-		public static ECLASS_ESTRUCTURALFEATURES:number = 21;
-		public static ECLASS_EGENERICSUPERTYPES:number = 22;
-		public static ECLASS_EALLGENERICSUPERTYPES:number = 23;
+		public static ECLASS__E_ANNOTATIONS:number = 0;
+		public static ECLASS__NAME:number = 1;
+		public static ECLASS__INSTANCE_CLASS_NAME:number = 2;
+		public static ECLASS__INSTANCE_CLASS:number = 3;
+		public static ECLASS__DEFAULT_VALUE:number = 4;
+		public static ECLASS__INSTANCE_TYPE_NAME:number = 5;
+		public static ECLASS__E_PACKAGE:number = 6;
+		public static ECLASS__E_TYPE_PARAMETERS:number = 7;
+		public static ECLASS__ABSTRACT:number = 8;
+		public static ECLASS__INTERFACE:number = 9;
+		public static ECLASS__E_SUPER_TYPES:number = 10;
+		public static ECLASS__E_OPERATIONS:number = 11;
+		public static ECLASS__E_ALL_ATTRIBUTES:number = 12;
+		public static ECLASS__E_ALL_REFERENCES:number = 13;
+		public static ECLASS__E_REFERENCES:number = 14;
+		public static ECLASS__E_ATTRIBUTES:number = 15;
+		public static ECLASS__E_ALL_CONTAINMENTS:number = 16;
+		public static ECLASS__E_ALL_OPERATIONS:number = 17;
+		public static ECLASS__E_ALL_STRUCTURAL_FEATURES:number = 18;
+		public static ECLASS__E_ALL_SUPER_TYPES:number = 19;
+		public static ECLASS__E_IDATTRIBUTE:number = 20;
+		public static ECLASS__E_STRUCTURAL_FEATURES:number = 21;
+		public static ECLASS__E_GENERIC_SUPER_TYPES:number = 22;
+		public static ECLASS__E_ALL_GENERIC_SUPER_TYPES:number = 23;
 		public static ECLASS___ISSUPERTYPEOF__SOMECLASS:number = 0; 
 		public static ECLASS___GETFEATURECOUNT:number = 1; 
 		public static ECLASS___GETESTRUCTURALFEATURE__FEATUREID:number = 2; 
@@ -2350,30 +2316,30 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 		public static EDATATYPE_FEATURE_COUNT:number = EcorePackageImpl.ECLASSIFIER_FEATURE_COUNT + 1;
 		public static EDATATYPE_OPERATION_COUNT:number = EcorePackageImpl.ECLASSIFIER_OPERATION_COUNT + 0;
 		
-		public static EDATATYPE_EANNOTATIONS:number = 0;
-		public static EDATATYPE_NAME:number = 1;
-		public static EDATATYPE_INSTANCECLASSNAME:number = 2;
-		public static EDATATYPE_INSTANCECLASS:number = 3;
-		public static EDATATYPE_DEFAULTVALUE:number = 4;
-		public static EDATATYPE_INSTANCETYPENAME:number = 5;
-		public static EDATATYPE_EPACKAGE:number = 6;
-		public static EDATATYPE_ETYPEPARAMETERS:number = 7;
-		public static EDATATYPE_SERIALIZABLE:number = 8;
+		public static EDATA_TYPE__E_ANNOTATIONS:number = 0;
+		public static EDATA_TYPE__NAME:number = 1;
+		public static EDATA_TYPE__INSTANCE_CLASS_NAME:number = 2;
+		public static EDATA_TYPE__INSTANCE_CLASS:number = 3;
+		public static EDATA_TYPE__DEFAULT_VALUE:number = 4;
+		public static EDATA_TYPE__INSTANCE_TYPE_NAME:number = 5;
+		public static EDATA_TYPE__E_PACKAGE:number = 6;
+		public static EDATA_TYPE__E_TYPE_PARAMETERS:number = 7;
+		public static EDATA_TYPE__SERIALIZABLE:number = 8;
 		
 		public static EENUM:number = 5;
 		public static EENUM_FEATURE_COUNT:number = EcorePackageImpl.EDATATYPE_FEATURE_COUNT + 1;
 		public static EENUM_OPERATION_COUNT:number = EcorePackageImpl.EDATATYPE_OPERATION_COUNT + 3;
 		
-		public static EENUM_EANNOTATIONS:number = 0;
-		public static EENUM_NAME:number = 1;
-		public static EENUM_INSTANCECLASSNAME:number = 2;
-		public static EENUM_INSTANCECLASS:number = 3;
-		public static EENUM_DEFAULTVALUE:number = 4;
-		public static EENUM_INSTANCETYPENAME:number = 5;
-		public static EENUM_EPACKAGE:number = 6;
-		public static EENUM_ETYPEPARAMETERS:number = 7;
-		public static EENUM_SERIALIZABLE:number = 8;
-		public static EENUM_ELITERALS:number = 9;
+		public static EENUM__E_ANNOTATIONS:number = 0;
+		public static EENUM__NAME:number = 1;
+		public static EENUM__INSTANCE_CLASS_NAME:number = 2;
+		public static EENUM__INSTANCE_CLASS:number = 3;
+		public static EENUM__DEFAULT_VALUE:number = 4;
+		public static EENUM__INSTANCE_TYPE_NAME:number = 5;
+		public static EENUM__E_PACKAGE:number = 6;
+		public static EENUM__E_TYPE_PARAMETERS:number = 7;
+		public static EENUM__SERIALIZABLE:number = 8;
+		public static EENUM__E_LITERALS:number = 9;
 		public static EENUM___GETEENUMLITERAL__NAME:number = 0; 
 		public static EENUM___GETEENUMLITERAL__VALUE:number = 1; 
 		public static EENUM___GETEENUMLITERALBYLITERAL__LITERAL:number = 2; 
@@ -2382,19 +2348,19 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 		public static EENUMLITERAL_FEATURE_COUNT:number = EcorePackageImpl.ENAMEDELEMENT_FEATURE_COUNT + 4;
 		public static EENUMLITERAL_OPERATION_COUNT:number = EcorePackageImpl.ENAMEDELEMENT_OPERATION_COUNT + 0;
 		
-		public static EENUMLITERAL_EANNOTATIONS:number = 0;
-		public static EENUMLITERAL_NAME:number = 1;
-		public static EENUMLITERAL_VALUE:number = 2;
-		public static EENUMLITERAL_INSTANCE:number = 3;
-		public static EENUMLITERAL_LITERAL:number = 4;
-		public static EENUMLITERAL_EENUM:number = 5;
+		public static EENUM_LITERAL__E_ANNOTATIONS:number = 0;
+		public static EENUM_LITERAL__NAME:number = 1;
+		public static EENUM_LITERAL__VALUE:number = 2;
+		public static EENUM_LITERAL__INSTANCE:number = 3;
+		public static EENUM_LITERAL__LITERAL:number = 4;
+		public static EENUM_LITERAL__E_ENUM:number = 5;
 		
 		public static EFACTORY:number = 7;
 		public static EFACTORY_FEATURE_COUNT:number = EcorePackageImpl.EMODELELEMENT_FEATURE_COUNT + 1;
 		public static EFACTORY_OPERATION_COUNT:number = EcorePackageImpl.EMODELELEMENT_OPERATION_COUNT + 3;
 		
-		public static EFACTORY_EANNOTATIONS:number = 0;
-		public static EFACTORY_EPACKAGE:number = 1;
+		public static EFACTORY__E_ANNOTATIONS:number = 0;
+		public static EFACTORY__E_PACKAGE:number = 1;
 		public static EFACTORY___CREATE__ECLASS:number = 0; 
 		public static EFACTORY___CREATEFROMSTRING__EDATATYPE__LITERALVALUE:number = 1; 
 		public static EFACTORY___CONVERTTOSTRING__EDATATYPE__INSTANCEVALUE:number = 2; 
@@ -2423,21 +2389,21 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 		public static EOPERATION_FEATURE_COUNT:number = EcorePackageImpl.ETYPEDELEMENT_FEATURE_COUNT + 5;
 		public static EOPERATION_OPERATION_COUNT:number = EcorePackageImpl.ETYPEDELEMENT_OPERATION_COUNT + 2;
 		
-		public static EOPERATION_EANNOTATIONS:number = 0;
-		public static EOPERATION_NAME:number = 1;
-		public static EOPERATION_ORDERED:number = 2;
-		public static EOPERATION_UNIQUE:number = 3;
-		public static EOPERATION_LOWERBOUND:number = 4;
-		public static EOPERATION_UPPERBOUND:number = 5;
-		public static EOPERATION_MANY:number = 6;
-		public static EOPERATION_REQUIRED:number = 7;
-		public static EOPERATION_ETYPE:number = 8;
-		public static EOPERATION_EGENERICTYPE:number = 9;
-		public static EOPERATION_ECONTAININGCLASS:number = 10;
-		public static EOPERATION_ETYPEPARAMETERS:number = 11;
-		public static EOPERATION_EPARAMETERS:number = 12;
-		public static EOPERATION_EEXCEPTIONS:number = 13;
-		public static EOPERATION_EGENERICEXCEPTIONS:number = 14;
+		public static EOPERATION__E_ANNOTATIONS:number = 0;
+		public static EOPERATION__NAME:number = 1;
+		public static EOPERATION__ORDERED:number = 2;
+		public static EOPERATION__UNIQUE:number = 3;
+		public static EOPERATION__LOWER_BOUND:number = 4;
+		public static EOPERATION__UPPER_BOUND:number = 5;
+		public static EOPERATION__MANY:number = 6;
+		public static EOPERATION__REQUIRED:number = 7;
+		public static EOPERATION__E_TYPE:number = 8;
+		public static EOPERATION__E_GENERIC_TYPE:number = 9;
+		public static EOPERATION__E_CONTAINING_CLASS:number = 10;
+		public static EOPERATION__E_TYPE_PARAMETERS:number = 11;
+		public static EOPERATION__E_PARAMETERS:number = 12;
+		public static EOPERATION__E_EXCEPTIONS:number = 13;
+		public static EOPERATION__E_GENERIC_EXCEPTIONS:number = 14;
 		public static EOPERATION___GETOPERATIONID:number = 0; 
 		public static EOPERATION___ISOVERRIDEOF__SOMEOPERATION:number = 1; 
 		
@@ -2445,87 +2411,87 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 		public static EPACKAGE_FEATURE_COUNT:number = EcorePackageImpl.ENAMEDELEMENT_FEATURE_COUNT + 6;
 		public static EPACKAGE_OPERATION_COUNT:number = EcorePackageImpl.ENAMEDELEMENT_OPERATION_COUNT + 1;
 		
-		public static EPACKAGE_EANNOTATIONS:number = 0;
-		public static EPACKAGE_NAME:number = 1;
-		public static EPACKAGE_NSURI:number = 2;
-		public static EPACKAGE_NSPREFIX:number = 3;
-		public static EPACKAGE_EFACTORYINSTANCE:number = 4;
-		public static EPACKAGE_ECLASSIFIERS:number = 5;
-		public static EPACKAGE_ESUBPACKAGES:number = 6;
-		public static EPACKAGE_ESUPERPACKAGE:number = 7;
+		public static EPACKAGE__E_ANNOTATIONS:number = 0;
+		public static EPACKAGE__NAME:number = 1;
+		public static EPACKAGE__NS_URI:number = 2;
+		public static EPACKAGE__NS_PREFIX:number = 3;
+		public static EPACKAGE__E_FACTORY_INSTANCE:number = 4;
+		public static EPACKAGE__E_CLASSIFIERS:number = 5;
+		public static EPACKAGE__E_SUBPACKAGES:number = 6;
+		public static EPACKAGE__E_SUPER_PACKAGE:number = 7;
 		public static EPACKAGE___GETECLASSIFIER__NAME:number = 0; 
 		
 		public static EPARAMETER:number = 13;
 		public static EPARAMETER_FEATURE_COUNT:number = EcorePackageImpl.ETYPEDELEMENT_FEATURE_COUNT + 1;
 		public static EPARAMETER_OPERATION_COUNT:number = EcorePackageImpl.ETYPEDELEMENT_OPERATION_COUNT + 0;
 		
-		public static EPARAMETER_EANNOTATIONS:number = 0;
-		public static EPARAMETER_NAME:number = 1;
-		public static EPARAMETER_ORDERED:number = 2;
-		public static EPARAMETER_UNIQUE:number = 3;
-		public static EPARAMETER_LOWERBOUND:number = 4;
-		public static EPARAMETER_UPPERBOUND:number = 5;
-		public static EPARAMETER_MANY:number = 6;
-		public static EPARAMETER_REQUIRED:number = 7;
-		public static EPARAMETER_ETYPE:number = 8;
-		public static EPARAMETER_EGENERICTYPE:number = 9;
-		public static EPARAMETER_EOPERATION:number = 10;
+		public static EPARAMETER__E_ANNOTATIONS:number = 0;
+		public static EPARAMETER__NAME:number = 1;
+		public static EPARAMETER__ORDERED:number = 2;
+		public static EPARAMETER__UNIQUE:number = 3;
+		public static EPARAMETER__LOWER_BOUND:number = 4;
+		public static EPARAMETER__UPPER_BOUND:number = 5;
+		public static EPARAMETER__MANY:number = 6;
+		public static EPARAMETER__REQUIRED:number = 7;
+		public static EPARAMETER__E_TYPE:number = 8;
+		public static EPARAMETER__E_GENERIC_TYPE:number = 9;
+		public static EPARAMETER__E_OPERATION:number = 10;
 		
 		public static EREFERENCE:number = 14;
 		public static EREFERENCE_FEATURE_COUNT:number = EcorePackageImpl.ESTRUCTURALFEATURE_FEATURE_COUNT + 6;
 		public static EREFERENCE_OPERATION_COUNT:number = EcorePackageImpl.ESTRUCTURALFEATURE_OPERATION_COUNT + 0;
 		
-		public static EREFERENCE_EANNOTATIONS:number = 0;
-		public static EREFERENCE_NAME:number = 1;
-		public static EREFERENCE_ORDERED:number = 2;
-		public static EREFERENCE_UNIQUE:number = 3;
-		public static EREFERENCE_LOWERBOUND:number = 4;
-		public static EREFERENCE_UPPERBOUND:number = 5;
-		public static EREFERENCE_MANY:number = 6;
-		public static EREFERENCE_REQUIRED:number = 7;
-		public static EREFERENCE_ETYPE:number = 8;
-		public static EREFERENCE_EGENERICTYPE:number = 9;
-		public static EREFERENCE_CHANGEABLE:number = 10;
-		public static EREFERENCE_VOLATILE:number = 11;
-		public static EREFERENCE_TRANSIENT:number = 12;
-		public static EREFERENCE_DEFAULTVALUELITERAL:number = 13;
-		public static EREFERENCE_DEFAULTVALUE:number = 14;
-		public static EREFERENCE_UNSETTABLE:number = 15;
-		public static EREFERENCE_DERIVED:number = 16;
-		public static EREFERENCE_ECONTAININGCLASS:number = 17;
-		public static EREFERENCE_CONTAINMENT:number = 18;
-		public static EREFERENCE_CONTAINER:number = 19;
-		public static EREFERENCE_RESOLVEPROXIES:number = 20;
-		public static EREFERENCE_EOPPOSITE:number = 21;
-		public static EREFERENCE_EREFERENCETYPE:number = 22;
-		public static EREFERENCE_EKEYS:number = 23;
+		public static EREFERENCE__E_ANNOTATIONS:number = 0;
+		public static EREFERENCE__NAME:number = 1;
+		public static EREFERENCE__ORDERED:number = 2;
+		public static EREFERENCE__UNIQUE:number = 3;
+		public static EREFERENCE__LOWER_BOUND:number = 4;
+		public static EREFERENCE__UPPER_BOUND:number = 5;
+		public static EREFERENCE__MANY:number = 6;
+		public static EREFERENCE__REQUIRED:number = 7;
+		public static EREFERENCE__E_TYPE:number = 8;
+		public static EREFERENCE__E_GENERIC_TYPE:number = 9;
+		public static EREFERENCE__CHANGEABLE:number = 10;
+		public static EREFERENCE__VOLATILE:number = 11;
+		public static EREFERENCE__TRANSIENT:number = 12;
+		public static EREFERENCE__DEFAULT_VALUE_LITERAL:number = 13;
+		public static EREFERENCE__DEFAULT_VALUE:number = 14;
+		public static EREFERENCE__UNSETTABLE:number = 15;
+		public static EREFERENCE__DERIVED:number = 16;
+		public static EREFERENCE__E_CONTAINING_CLASS:number = 17;
+		public static EREFERENCE__CONTAINMENT:number = 18;
+		public static EREFERENCE__CONTAINER:number = 19;
+		public static EREFERENCE__RESOLVE_PROXIES:number = 20;
+		public static EREFERENCE__E_OPPOSITE:number = 21;
+		public static EREFERENCE__E_REFERENCE_TYPE:number = 22;
+		public static EREFERENCE__E_KEYS:number = 23;
 		
 		public static ESTRINGTOSTRINGMAPENTRY:number = 48;
 		public static ESTRINGTOSTRINGMAPENTRY_FEATURE_COUNT:number = 2;
 		public static ESTRINGTOSTRINGMAPENTRY_OPERATION_COUNT:number = 0;
 		
-		public static ESTRINGTOSTRINGMAPENTRY_KEY:number = 0;
-		public static ESTRINGTOSTRINGMAPENTRY_VALUE:number = 1;
+		public static ESTRING_TO_STRING_MAP_ENTRY__KEY:number = 0;
+		public static ESTRING_TO_STRING_MAP_ENTRY__VALUE:number = 1;
 		
 		public static EGENERICTYPE:number = 50;
 		public static EGENERICTYPE_FEATURE_COUNT:number = 6;
 		public static EGENERICTYPE_OPERATION_COUNT:number = 1;
 		
-		public static EGENERICTYPE_EUPPERBOUND:number = 0;
-		public static EGENERICTYPE_ETYPEARGUMENTS:number = 1;
-		public static EGENERICTYPE_ERAWTYPE:number = 2;
-		public static EGENERICTYPE_ELOWERBOUND:number = 3;
-		public static EGENERICTYPE_ETYPEPARAMETER:number = 4;
-		public static EGENERICTYPE_ECLASSIFIER:number = 5;
+		public static EGENERIC_TYPE__E_UPPER_BOUND:number = 0;
+		public static EGENERIC_TYPE__E_TYPE_ARGUMENTS:number = 1;
+		public static EGENERIC_TYPE__E_RAW_TYPE:number = 2;
+		public static EGENERIC_TYPE__E_LOWER_BOUND:number = 3;
+		public static EGENERIC_TYPE__E_TYPE_PARAMETER:number = 4;
+		public static EGENERIC_TYPE__E_CLASSIFIER:number = 5;
 		public static EGENERICTYPE___ISINSTANCE__OBJECT:number = 0; 
 		
 		public static ETYPEPARAMETER:number = 51;
 		public static ETYPEPARAMETER_FEATURE_COUNT:number = EcorePackageImpl.ENAMEDELEMENT_FEATURE_COUNT + 1;
 		public static ETYPEPARAMETER_OPERATION_COUNT:number = EcorePackageImpl.ENAMEDELEMENT_OPERATION_COUNT + 0;
 		
-		public static ETYPEPARAMETER_EANNOTATIONS:number = 0;
-		public static ETYPEPARAMETER_NAME:number = 1;
-		public static ETYPEPARAMETER_EBOUNDS:number = 2;
+		public static ETYPE_PARAMETER__E_ANNOTATIONS:number = 0;
+		public static ETYPE_PARAMETER__NAME:number = 1;
+		public static ETYPE_PARAMETER__E_BOUNDS:number = 2;
 		
 		public static EBIGDECIMAL:number = 17;
 		
@@ -2793,165 +2759,5 @@ export class EcorePackageImpl extends EPackageImpl implements EcorePackage{
 		public getETreeIterator=():EDataType=>{return this.ETreeIteratorEDataType;}
 		public getEInvocationTargetException=():EDataType=>{return this.EInvocationTargetExceptionEDataType;}
 		
-		/*
-		public static Literals = {
-			EATTRIBUTE: EcorePackageImpl.eINSTANCE.getEAttribute(), 
-			
-			EANNOTATION: EcorePackageImpl.eINSTANCE.getEAnnotation_(), 
-			
-			ECLASS: EcorePackageImpl.eINSTANCE.getEClass(), 
-			
-			ECLASSIFIER: EcorePackageImpl.eINSTANCE.getEClassifier_(), 
-			
-			EDATATYPE: EcorePackageImpl.eINSTANCE.getEDataType(), 
-			
-			EENUM: EcorePackageImpl.eINSTANCE.getEEnum(), 
-			
-			EENUMLITERAL: EcorePackageImpl.eINSTANCE.getEEnumLiteral(), 
-			
-			EFACTORY: EcorePackageImpl.eINSTANCE.getEFactory(), 
-			
-			EMODELELEMENT: EcorePackageImpl.eINSTANCE.getEModelElement(), 
-			
-			ENAMEDELEMENT: EcorePackageImpl.eINSTANCE.getENamedElement(), 
-			
-			EOBJECT: EcorePackageImpl.eINSTANCE.getEObject(), 
-			
-			EOPERATION: EcorePackageImpl.eINSTANCE.getEOperation(), 
-			
-			EPACKAGE: EcorePackageImpl.eINSTANCE.getEPackage(), 
-			
-			EPARAMETER: EcorePackageImpl.eINSTANCE.getEParameter(), 
-			
-			EREFERENCE: EcorePackageImpl.eINSTANCE.getEReference(), 
-			
-			ESTRUCTURALFEATURE: EcorePackageImpl.eINSTANCE.getEStructuralFeature(), 
-			
-			ETYPEDELEMENT: EcorePackageImpl.eINSTANCE.getETypedElement(), 
-			
-			EBIGDECIMAL: EcorePackageImpl.eINSTANCE.getEBigDecimal(), 
-			EBIGINTEGER: EcorePackageImpl.eINSTANCE.getEBigInteger(), 
-			EBOOLEAN: EcorePackageImpl.eINSTANCE.getEBoolean(), 
-			EBOOLEANOBJECT: EcorePackageImpl.eINSTANCE.getEBooleanObject(), 
-			EBYTE: EcorePackageImpl.eINSTANCE.getEByte(), 
-			EBYTEARRAY: EcorePackageImpl.eINSTANCE.getEByteArray(), 
-			EBYTEOBJECT: EcorePackageImpl.eINSTANCE.getEByteObject(), 
-			ECHAR: EcorePackageImpl.eINSTANCE.getEChar(), 
-			ECHARACTEROBJECT: EcorePackageImpl.eINSTANCE.getECharacterObject(), 
-			EDATE: EcorePackageImpl.eINSTANCE.getEDate(), 
-			EDIAGNOSTICCHAIN: EcorePackageImpl.eINSTANCE.getEDiagnosticChain(), 
-			EDOUBLE: EcorePackageImpl.eINSTANCE.getEDouble(), 
-			EDOUBLEOBJECT: EcorePackageImpl.eINSTANCE.getEDoubleObject(), 
-			EELIST: EcorePackageImpl.eINSTANCE.getEEList(), 
-			EENUMERATOR: EcorePackageImpl.eINSTANCE.getEEnumerator(), 
-			EFEATUREMAP: EcorePackageImpl.eINSTANCE.getEFeatureMap(), 
-			EFEATUREMAPENTRY: EcorePackageImpl.eINSTANCE.getEFeatureMapEntry(), 
-			EFLOAT: EcorePackageImpl.eINSTANCE.getEFloat(), 
-			EFLOATOBJECT: EcorePackageImpl.eINSTANCE.getEFloatObject(), 
-			EINT: EcorePackageImpl.eINSTANCE.getEInt(), 
-			EINTEGEROBJECT: EcorePackageImpl.eINSTANCE.getEIntegerObject(), 
-			EJAVACLASS: EcorePackageImpl.eINSTANCE.getEJavaClass(), 
-			EJAVAOBJECT: EcorePackageImpl.eINSTANCE.getEJavaObject(), 
-			ELONG: EcorePackageImpl.eINSTANCE.getELong(), 
-			ELONGOBJECT: EcorePackageImpl.eINSTANCE.getELongObject(), 
-			EMAP: EcorePackageImpl.eINSTANCE.getEMap(), 
-			ERESOURCE: EcorePackageImpl.eINSTANCE.getEResource(), 
-			ERESOURCESET: EcorePackageImpl.eINSTANCE.getEResourceSet(), 
-			ESHORT: EcorePackageImpl.eINSTANCE.getEShort(), 
-			ESHORTOBJECT: EcorePackageImpl.eINSTANCE.getEShortObject(), 
-			ESTRING: EcorePackageImpl.eINSTANCE.getEString(), 
-			ESTRINGTOSTRINGMAPENTRY: EcorePackageImpl.eINSTANCE.getEStringToStringMapEntry(), 
-			
-			ETREEITERATOR: EcorePackageImpl.eINSTANCE.getETreeIterator(), 
-			EGENERICTYPE: EcorePackageImpl.eINSTANCE.getEGenericType(), 
-			
-			ETYPEPARAMETER: EcorePackageImpl.eINSTANCE.getETypeParameter(), 
-			
-			EINVOCATIONTARGETEXCEPTION: EcorePackageImpl.eINSTANCE.getEInvocationTargetException(), 
-			EMODELELEMENT_EANNOTATIONS: EcorePackageImpl.eINSTANCE.getEModelElement_EAnnotations(), 
-			ENAMEDELEMENT_NAME: EcorePackageImpl.eINSTANCE.getENamedElement_Name(), 
-			ETYPEDELEMENT_ORDERED: EcorePackageImpl.eINSTANCE.getETypedElement_Ordered(), 
-			ETYPEDELEMENT_UNIQUE: EcorePackageImpl.eINSTANCE.getETypedElement_Unique(), 
-			ETYPEDELEMENT_LOWERBOUND: EcorePackageImpl.eINSTANCE.getETypedElement_LowerBound(), 
-			ETYPEDELEMENT_UPPERBOUND: EcorePackageImpl.eINSTANCE.getETypedElement_UpperBound(), 
-			ETYPEDELEMENT_MANY: EcorePackageImpl.eINSTANCE.getETypedElement_Many(), 
-			ETYPEDELEMENT_REQUIRED: EcorePackageImpl.eINSTANCE.getETypedElement_Required(), 
-			ETYPEDELEMENT_ETYPE: EcorePackageImpl.eINSTANCE.getETypedElement_EType(), 
-			ETYPEDELEMENT_EGENERICTYPE: EcorePackageImpl.eINSTANCE.getETypedElement_EGenericType(), 
-			ESTRUCTURALFEATURE_CHANGEABLE: EcorePackageImpl.eINSTANCE.getEStructuralFeature_Changeable(), 
-			ESTRUCTURALFEATURE_VOLATILE: EcorePackageImpl.eINSTANCE.getEStructuralFeature_Volatile(), 
-			ESTRUCTURALFEATURE_TRANSIENT: EcorePackageImpl.eINSTANCE.getEStructuralFeature_Transient(), 
-			ESTRUCTURALFEATURE_DEFAULTVALUELITERAL: EcorePackageImpl.eINSTANCE.getEStructuralFeature_DefaultValueLiteral(), 
-			ESTRUCTURALFEATURE_DEFAULTVALUE: EcorePackageImpl.eINSTANCE.getEStructuralFeature_DefaultValue(), 
-			ESTRUCTURALFEATURE_UNSETTABLE: EcorePackageImpl.eINSTANCE.getEStructuralFeature_Unsettable(), 
-			ESTRUCTURALFEATURE_DERIVED: EcorePackageImpl.eINSTANCE.getEStructuralFeature_Derived(), 
-			ESTRUCTURALFEATURE_ECONTAININGCLASS: EcorePackageImpl.eINSTANCE.getEStructuralFeature_EContainingClass(), 
-			EATTRIBUTE_ID: EcorePackageImpl.eINSTANCE.getEAttribute_ID(), 
-			EATTRIBUTE_EATTRIBUTETYPE: EcorePackageImpl.eINSTANCE.getEAttribute_EAttributeType(), 
-			EANNOTATION_SOURCE: EcorePackageImpl.eINSTANCE.getEAnnotation_Source(), 
-			EANNOTATION_DETAILS: EcorePackageImpl.eINSTANCE.getEAnnotation_Details(), 
-			EANNOTATION_EMODELELEMENT: EcorePackageImpl.eINSTANCE.getEAnnotation_EModelElement(), 
-			EANNOTATION_CONTENTS: EcorePackageImpl.eINSTANCE.getEAnnotation_Contents(), 
-			EANNOTATION_REFERENCES: EcorePackageImpl.eINSTANCE.getEAnnotation_References(), 
-			ECLASSIFIER_INSTANCECLASSNAME: EcorePackageImpl.eINSTANCE.getEClassifier_InstanceClassName(), 
-			ECLASSIFIER_INSTANCECLASS: EcorePackageImpl.eINSTANCE.getEClassifier_InstanceClass(), 
-			ECLASSIFIER_DEFAULTVALUE: EcorePackageImpl.eINSTANCE.getEClassifier_DefaultValue(), 
-			ECLASSIFIER_INSTANCETYPENAME: EcorePackageImpl.eINSTANCE.getEClassifier_InstanceTypeName(), 
-			ECLASSIFIER_EPACKAGE: EcorePackageImpl.eINSTANCE.getEClassifier_EPackage(), 
-			ECLASSIFIER_ETYPEPARAMETERS: EcorePackageImpl.eINSTANCE.getEClassifier_ETypeParameters(), 
-			ECLASS_ABSTRACT: EcorePackageImpl.eINSTANCE.getEClass_Abstract(), 
-			ECLASS_INTERFACE: EcorePackageImpl.eINSTANCE.getEClass_Interface(), 
-			ECLASS_ESUPERTYPES: EcorePackageImpl.eINSTANCE.getEClass_ESuperTypes(), 
-			ECLASS_EOPERATIONS: EcorePackageImpl.eINSTANCE.getEClass_EOperations(), 
-			ECLASS_EALLATTRIBUTES: EcorePackageImpl.eINSTANCE.getEClass_EAllAttributes(), 
-			ECLASS_EALLREFERENCES: EcorePackageImpl.eINSTANCE.getEClass_EAllReferences(), 
-			ECLASS_EREFERENCES: EcorePackageImpl.eINSTANCE.getEClass_EReferences(), 
-			ECLASS_EATTRIBUTES: EcorePackageImpl.eINSTANCE.getEClass_EAttributes(), 
-			ECLASS_EALLCONTAINMENTS: EcorePackageImpl.eINSTANCE.getEClass_EAllContainments(), 
-			ECLASS_EALLOPERATIONS: EcorePackageImpl.eINSTANCE.getEClass_EAllOperations(), 
-			ECLASS_EALLSTRUCTURALFEATURES: EcorePackageImpl.eINSTANCE.getEClass_EAllStructuralFeatures(), 
-			ECLASS_EALLSUPERTYPES: EcorePackageImpl.eINSTANCE.getEClass_EAllSuperTypes(), 
-			ECLASS_EIDATTRIBUTE: EcorePackageImpl.eINSTANCE.getEClass_EIDAttribute(), 
-			ECLASS_ESTRUCTURALFEATURES: EcorePackageImpl.eINSTANCE.getEClass_EStructuralFeatures(), 
-			ECLASS_EGENERICSUPERTYPES: EcorePackageImpl.eINSTANCE.getEClass_EGenericSuperTypes(), 
-			ECLASS_EALLGENERICSUPERTYPES: EcorePackageImpl.eINSTANCE.getEClass_EAllGenericSuperTypes(), 
-			EDATATYPE_SERIALIZABLE: EcorePackageImpl.eINSTANCE.getEDataType_Serializable(), 
-			EENUM_ELITERALS: EcorePackageImpl.eINSTANCE.getEEnum_ELiterals(), 
-			EENUMLITERAL_VALUE: EcorePackageImpl.eINSTANCE.getEEnumLiteral_Value(), 
-			EENUMLITERAL_INSTANCE: EcorePackageImpl.eINSTANCE.getEEnumLiteral_Instance(), 
-			EENUMLITERAL_LITERAL: EcorePackageImpl.eINSTANCE.getEEnumLiteral_Literal(), 
-			EENUMLITERAL_EENUM: EcorePackageImpl.eINSTANCE.getEEnumLiteral_EEnum(), 
-			EFACTORY_EPACKAGE: EcorePackageImpl.eINSTANCE.getEFactory_EPackage(), 
-			EOPERATION_ECONTAININGCLASS: EcorePackageImpl.eINSTANCE.getEOperation_EContainingClass(), 
-			EOPERATION_ETYPEPARAMETERS: EcorePackageImpl.eINSTANCE.getEOperation_ETypeParameters(), 
-			EOPERATION_EPARAMETERS: EcorePackageImpl.eINSTANCE.getEOperation_EParameters(), 
-			EOPERATION_EEXCEPTIONS: EcorePackageImpl.eINSTANCE.getEOperation_EExceptions(), 
-			EOPERATION_EGENERICEXCEPTIONS: EcorePackageImpl.eINSTANCE.getEOperation_EGenericExceptions(), 
-			EPACKAGE_NSURI: EcorePackageImpl.eINSTANCE.getEPackage_NsURI(), 
-			EPACKAGE_NSPREFIX: EcorePackageImpl.eINSTANCE.getEPackage_NsPrefix(), 
-			EPACKAGE_EFACTORYINSTANCE: EcorePackageImpl.eINSTANCE.getEPackage_EFactoryInstance(), 
-			EPACKAGE_ECLASSIFIERS: EcorePackageImpl.eINSTANCE.getEPackage_EClassifiers(), 
-			EPACKAGE_ESUBPACKAGES: EcorePackageImpl.eINSTANCE.getEPackage_ESubpackages(), 
-			EPACKAGE_ESUPERPACKAGE: EcorePackageImpl.eINSTANCE.getEPackage_ESuperPackage(), 
-			EPARAMETER_EOPERATION: EcorePackageImpl.eINSTANCE.getEParameter_EOperation(), 
-			EREFERENCE_CONTAINMENT: EcorePackageImpl.eINSTANCE.getEReference_Containment(), 
-			EREFERENCE_CONTAINER: EcorePackageImpl.eINSTANCE.getEReference_Container(), 
-			EREFERENCE_RESOLVEPROXIES: EcorePackageImpl.eINSTANCE.getEReference_ResolveProxies(), 
-			EREFERENCE_EOPPOSITE: EcorePackageImpl.eINSTANCE.getEReference_EOpposite(), 
-			EREFERENCE_EREFERENCETYPE: EcorePackageImpl.eINSTANCE.getEReference_EReferenceType(), 
-			EREFERENCE_EKEYS: EcorePackageImpl.eINSTANCE.getEReference_EKeys(), 
-			ESTRINGTOSTRINGMAPENTRY_KEY: EcorePackageImpl.eINSTANCE.getEStringToStringMapEntry_Key(), 
-			ESTRINGTOSTRINGMAPENTRY_VALUE: EcorePackageImpl.eINSTANCE.getEStringToStringMapEntry_Value(), 
-			EGENERICTYPE_EUPPERBOUND: EcorePackageImpl.eINSTANCE.getEGenericType_EUpperBound(), 
-			EGENERICTYPE_ETYPEARGUMENTS: EcorePackageImpl.eINSTANCE.getEGenericType_ETypeArguments(), 
-			EGENERICTYPE_ERAWTYPE: EcorePackageImpl.eINSTANCE.getEGenericType_ERawType(), 
-			EGENERICTYPE_ELOWERBOUND: EcorePackageImpl.eINSTANCE.getEGenericType_ELowerBound(), 
-			EGENERICTYPE_ETYPEPARAMETER: EcorePackageImpl.eINSTANCE.getEGenericType_ETypeParameter(), 
-			EGENERICTYPE_ECLASSIFIER: EcorePackageImpl.eINSTANCE.getEGenericType_EClassifier(), 
-			ETYPEPARAMETER_EBOUNDS: EcorePackageImpl.eINSTANCE.getETypeParameter_EBounds()
-		}
-		*/
-		
-
  
 }

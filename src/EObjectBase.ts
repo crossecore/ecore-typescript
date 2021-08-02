@@ -1,18 +1,17 @@
-import {ENotificationImpl} from "./ENotificationImpl";
-import {NotificationImpl} from "./NotificationImpl";
-import {EStructuralFeature} from "./EStructuralFeature";
-import {Resource} from "./Resource";
-import {EStructuralFeatureImpl} from "./EStructuralFeatureImpl";
-import {EcorePackageLiterals} from "./EcorePackageLiterals";
-import {BasicEObjectImpl} from "./BasicEObjectImpl";
-import {EClass} from "./EClass";
-import {EList} from "./EList";
-import {NotificationChain} from "./NotificationChain";
-import {EObject} from "./EObject";
-import {EOperation} from "./EOperation";
-import {TreeIterator} from "./TreeIterator";
-import {InternalEObject} from "./InternalEObject";
-import {EReference} from "./EReference";
+import {ENotificationImpl} from "ecore/ENotificationImpl";
+import {NotificationImpl} from "ecore/NotificationImpl";
+import {EStructuralFeature} from "ecore/EStructuralFeature";
+import {Resource} from "ecore/Resource";
+import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
+import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
+import {EClass} from "ecore/EClass";
+import {EList} from "ecore/EList";
+import {NotificationChain} from "ecore/NotificationChain";
+import {EObject} from "ecore/EObject";
+import {EOperation} from "ecore/EOperation";
+import {TreeIterator} from "ecore/TreeIterator";
+import {InternalEObject} from "ecore/InternalEObject";
+import {EReference} from "ecore/EReference";
 		
 			export class EObjectBase
 			extends BasicEObjectImpl
@@ -30,12 +29,12 @@ import {EReference} from "./EReference";
 					return null;
 				};
 				
-				public eContainingFeature(): EStructuralFeature {
+				public eIsProxy(): boolean {
 					/*TODO implement function*/ 
 					return null;
 				};
 				
-				public eIsProxy(): boolean {
+				public eContainingFeature(): EStructuralFeature {
 					/*TODO implement function*/ 
 					return null;
 				};
@@ -81,21 +80,21 @@ import {EReference} from "./EReference";
 				};
 				public eGet(...args:Array<any>):any {
 					if(
-						args[0] instanceof EStructuralFeatureImpl && 
+						args[0] instanceof EStructuralFeature && 
 						typeof args[1] === "boolean"
 					)
 					{
-						return this.eGet_EStructuralFeature_boolean(args[0], args[1]);
+						return this.eGet_EStructuralFeature_EBoolean(args[0], args[1]);
 					}
 					if(
-						args[0] instanceof EStructuralFeatureImpl
+						args[0] instanceof EStructuralFeature
 					)
 					{
 						return this.eGet_EStructuralFeature(args[0]);
 					}
 				};
 				
-				public eGet_EStructuralFeature_boolean(feature:EStructuralFeature, resolve:boolean): any {
+				public eGet_EStructuralFeature_EBoolean(feature:EStructuralFeature, resolve:boolean): any {
 					/*TODO implement function*/ 
 					return null;
 				};

@@ -1,8 +1,8 @@
-import {EAttribute} from "./EAttribute";
-import {EReference} from "./EReference";
-import {EDataType} from "./EDataType";
-import {EClass} from "./EClass";
-import {EPackage} from "./EPackage";
+import {EClass} from "ecore/EClass";
+import {EAttribute} from "ecore/EAttribute";
+import {EDataType} from "ecore/EDataType";
+import {EReference} from "ecore/EReference";
+import {EPackage} from "ecore/EPackage";
 export interface EcorePackage extends EPackage {
 	getEModelElement():EClass;
 	getEModelElement_EAnnotations():EReference;

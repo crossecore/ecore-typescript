@@ -1,16 +1,16 @@
-import {OrderedSet} from "./OrderedSet";
-import {ENotificationImpl} from "./ENotificationImpl";
-import {NotificationImpl} from "./NotificationImpl";
-import {EDataType} from "./EDataType";
-import {EcorePackageLiterals} from "./EcorePackageLiterals";
-import {BasicEObjectImpl} from "./BasicEObjectImpl";
-import {EPackage} from "./EPackage";
-import {EFactory} from "./EFactory";
-import {EClass} from "./EClass";
-import {NotificationChain} from "./NotificationChain";
-import {EObject} from "./EObject";
-import {EModelElementImpl} from "./EModelElementImpl";
-import {InternalEObject} from "./InternalEObject";
+import {OrderedSet} from "ecore/OrderedSet";
+import {ENotificationImpl} from "ecore/ENotificationImpl";
+import {NotificationImpl} from "ecore/NotificationImpl";
+import {EDataType} from "ecore/EDataType";
+import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
+import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
+import {EPackage} from "ecore/EPackage";
+import {EFactory} from "ecore/EFactory";
+import {EClass} from "ecore/EClass";
+import {NotificationChain} from "ecore/NotificationChain";
+import {EObject} from "ecore/EObject";
+import {EModelElementImpl} from "ecore/EModelElementImpl";
+import {InternalEObject} from "ecore/InternalEObject";
 		
 			export class EFactoryBase
 			extends EModelElementImpl
@@ -22,13 +22,13 @@ import {InternalEObject} from "./InternalEObject";
 					return this._ePackage;
 				}
 				set ePackage(value:EPackage) {
-					if (value != this._ePackage) {
+					if (value != this.ePackage) {
 						let msgs:NotificationChain = null;
-						if (this._ePackage != null){
-							msgs = (this._ePackage).eInverseRemove(this, EcorePackageLiterals.EPACKAGE_EFACTORYINSTANCE, /*EFactory*/ null , msgs);
+						if (this.ePackage != null){
+							msgs = (this.ePackage).eInverseRemove(this, EcorePackageLiterals.EPACKAGE__E_FACTORY_INSTANCE, /*EFactory*/ null , msgs);
 						}
 						if (value != null){
-							msgs = value.eInverseAdd(this, EcorePackageLiterals.EPACKAGE_EFACTORYINSTANCE, /*EFactory*/ null, msgs);
+							msgs = value.eInverseAdd(this, EcorePackageLiterals.EPACKAGE__E_FACTORY_INSTANCE, /*EFactory*/ null, msgs);
 						}
 						msgs = this.basicSetEPackage(value, msgs);
 						if (msgs != null) {
@@ -36,7 +36,7 @@ import {InternalEObject} from "./InternalEObject";
 						}
 					}
 					else if (this.eNotificationRequired()){
-						this.eNotify(new ENotificationImpl(this, NotificationImpl.SET,EcorePackageLiterals.EFACTORY_EPACKAGE , value, value));
+						this.eNotify(new ENotificationImpl(this, NotificationImpl.SET,EcorePackageLiterals.EFACTORY__E_PACKAGE , value, value));
 					}
 				}
 
@@ -65,33 +65,29 @@ import {InternalEObject} from "./InternalEObject";
 			
 				public eInverseAdd(otherEnd:InternalEObject, featureID:number, msgs:NotificationChain): NotificationChain{
 					switch (featureID) {
-						case EcorePackageLiterals.EFACTORY_EPACKAGE:
-							if (this._ePackage != null){
-								msgs = this._ePackage.eInverseRemove(this, EcorePackageLiterals.EFACTORY_EPACKAGE, /*EPackage*/ null, msgs);
+						case EcorePackageLiterals.EFACTORY__E_PACKAGE:
+							if (this.ePackage != null){
+								msgs = this.ePackage.eInverseRemove(this, EcorePackageLiterals.EFACTORY__E_PACKAGE, /*EPackage*/ null, msgs);
 							}
 							return this.basicSetEPackage(otherEnd as EPackage, msgs);
 					}
-					//return this.eInverseAddFromEModelElement(otherEnd, featureID, msgs);
 					return super.eInverseAdd(otherEnd, featureID, msgs);
 				}
-				//public eInverseAddFromEFactory = this.eInverseAdd;
 				
 				public eInverseRemove(otherEnd:InternalEObject, featureID:number, msgs:NotificationChain):NotificationChain{
 					switch (featureID) {
-						case EcorePackageLiterals.EFACTORY_EPACKAGE:
+						case EcorePackageLiterals.EFACTORY__E_PACKAGE:
 							return this.basicSetEPackage(null, msgs);
 					}
-					//return this.eInverseRemoveFromEModelElement(otherEnd, featureID, msgs);
 					return super.eInverseRemove(otherEnd, featureID, msgs);
 				}
 				
-				//public eInverseRemoveFromEFactory = this.eInverseRemove;
 			
 				public basicSetEPackage(newobj:EPackage, msgs:NotificationChain):NotificationChain {
-					let oldobj = this._ePackage;
+					const oldobj = this._ePackage;
 					this._ePackage = newobj;
 					if (this.eNotificationRequired()) {
-						let notification = new ENotificationImpl(this, NotificationImpl.SET, EcorePackageLiterals.EFACTORY_EPACKAGE, oldobj, newobj);
+						let notification = new ENotificationImpl(this, NotificationImpl.SET, EcorePackageLiterals.EFACTORY__E_PACKAGE, oldobj, newobj);
 						if (msgs == null){
 							msgs = notification;
 						}
@@ -105,9 +101,9 @@ import {InternalEObject} from "./InternalEObject";
 			
 				public eGet_number_boolean_boolean(featureID:number, resolve:boolean, coreType:boolean):any{
 					switch (featureID) {
-						case EcorePackageLiterals.EFACTORY_EANNOTATIONS:
+						case EcorePackageLiterals.EFACTORY__E_ANNOTATIONS:
 							return this.eAnnotations;
-						case EcorePackageLiterals.EFACTORY_EPACKAGE:
+						case EcorePackageLiterals.EFACTORY__E_PACKAGE:
 							return this.ePackage;
 					}
 					//return this.eGetFromEModelElement(featureID, resolve, coreType);
@@ -116,7 +112,7 @@ import {InternalEObject} from "./InternalEObject";
 				
 				public eSet_number_any(featureID:number, newValue:any):void {
 					switch (featureID) {
-						case EcorePackageLiterals.EFACTORY_EPACKAGE:
+						case EcorePackageLiterals.EFACTORY__E_PACKAGE:
 							this.ePackage = <EPackage> newValue;
 							return;
 					}

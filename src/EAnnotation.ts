@@ -1,7 +1,7 @@
-import {OrderedSet} from "./OrderedSet";
-import {EMap} from "./EMap";
-import {EObject} from "./EObject";
-import {EModelElement} from "./EModelElement";
+import {OrderedSet} from "ecore/OrderedSet";
+import {EMap} from "ecore/EMap";
+import {EObject} from "ecore/EObject";
+import {EModelElement} from "ecore/EModelElement";
 
 export interface EAnnotation
 extends EModelElement

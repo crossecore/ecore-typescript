@@ -1,7 +1,7 @@
-import {OrderedSet} from "./OrderedSet";
-import {ENamedElement} from "./ENamedElement";
-import {EPackage} from "./EPackage";
-import {ETypeParameter} from "./ETypeParameter";
+import {OrderedSet} from "ecore/OrderedSet";
+import {ENamedElement} from "ecore/ENamedElement";
+import {EPackage} from "ecore/EPackage";
+import {ETypeParameter} from "ecore/ETypeParameter";
 
 export interface EClassifier
 extends ENamedElement

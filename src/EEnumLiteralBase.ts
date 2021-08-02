@@ -1,15 +1,15 @@
-import {OrderedSet} from "./OrderedSet";
-import {EClass} from "./EClass";
-import {NotificationChain} from "./NotificationChain";
-import {Enumerator} from "./Enumerator";
-import {ENotificationImpl} from "./ENotificationImpl";
-import {NotificationImpl} from "./NotificationImpl";
-import {ENamedElementImpl} from "./ENamedElementImpl";
-import {EEnumLiteral} from "./EEnumLiteral";
-import {EcorePackageLiterals} from "./EcorePackageLiterals";
-import {EEnum} from "./EEnum";
-import {InternalEObject} from "./InternalEObject";
-import {BasicEObjectImpl} from "./BasicEObjectImpl";
+import {OrderedSet} from "ecore/OrderedSet";
+import {EClass} from "ecore/EClass";
+import {NotificationChain} from "ecore/NotificationChain";
+import {Enumerator} from "ecore/Enumerator";
+import {ENotificationImpl} from "ecore/ENotificationImpl";
+import {NotificationImpl} from "ecore/NotificationImpl";
+import {ENamedElementImpl} from "ecore/ENamedElementImpl";
+import {EEnumLiteral} from "ecore/EEnumLiteral";
+import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
+import {EEnum} from "ecore/EEnum";
+import {InternalEObject} from "ecore/InternalEObject";
+import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
 		
 			export class EEnumLiteralBase
 			extends ENamedElementImpl
@@ -38,7 +38,7 @@ import {BasicEObjectImpl} from "./BasicEObjectImpl";
 				}
 				get eEnum():EEnum{
 				
-					if (this.eContainerFeatureID() != EcorePackageLiterals.EENUMLITERAL_EENUM) return null;
+					if (this.eContainerFeatureID() != EcorePackageLiterals.EENUM_LITERAL__E_ENUM) return null;
 					return this.eInternalContainer() as EEnum;
 				}
 
@@ -52,47 +52,38 @@ import {BasicEObjectImpl} from "./BasicEObjectImpl";
 			
 				public eInverseAdd(otherEnd:InternalEObject, featureID:number, msgs:NotificationChain): NotificationChain{
 					switch (featureID) {
-						case EcorePackageLiterals.EENUMLITERAL_EENUM:
+						case EcorePackageLiterals.EENUM_LITERAL__E_ENUM:
 							if (this.eInternalContainer() != null) {
 								msgs = this.eBasicRemoveFromContainer(msgs);
 							}
 							return this.basicSetEEnum(otherEnd as EEnum, msgs);
 					}
-					//return this.eInverseAddFromENamedElement(otherEnd, featureID, msgs);
 					return super.eInverseAdd(otherEnd, featureID, msgs);
 				}
-				//public eInverseAddFromEEnumLiteral = this.eInverseAdd;
 				
 				public eInverseRemove(otherEnd:InternalEObject, featureID:number, msgs:NotificationChain):NotificationChain{
 					switch (featureID) {
-						case EcorePackageLiterals.EENUMLITERAL_EENUM:
+						case EcorePackageLiterals.EENUM_LITERAL__E_ENUM:
 							return this.basicSetEEnum(null, msgs);
 					}
-					//return this.eInverseRemoveFromENamedElement(otherEnd, featureID, msgs);
 					return super.eInverseRemove(otherEnd, featureID, msgs);
 				}
 				
-				//public eInverseRemoveFromEEnumLiteral = this.eInverseRemove;
 			
-				public basicSetEEnum(newobj:EEnum, msgs:NotificationChain):NotificationChain {
-						msgs = this.eBasicSetContainer(newobj, EcorePackageLiterals.EENUMLITERAL_EENUM, msgs);
-						return msgs;
-				}
-				
 			
 				public eGet_number_boolean_boolean(featureID:number, resolve:boolean, coreType:boolean):any{
 					switch (featureID) {
-						case EcorePackageLiterals.EENUMLITERAL_EANNOTATIONS:
+						case EcorePackageLiterals.EENUM_LITERAL__E_ANNOTATIONS:
 							return this.eAnnotations;
-						case EcorePackageLiterals.EENUMLITERAL_NAME:
+						case EcorePackageLiterals.EENUM_LITERAL__NAME:
 							return this.name;
-						case EcorePackageLiterals.EENUMLITERAL_VALUE:
+						case EcorePackageLiterals.EENUM_LITERAL__VALUE:
 							return this.value;
-						case EcorePackageLiterals.EENUMLITERAL_INSTANCE:
+						case EcorePackageLiterals.EENUM_LITERAL__INSTANCE:
 							return this.instance;
-						case EcorePackageLiterals.EENUMLITERAL_LITERAL:
+						case EcorePackageLiterals.EENUM_LITERAL__LITERAL:
 							return this.literal;
-						case EcorePackageLiterals.EENUMLITERAL_EENUM:
+						case EcorePackageLiterals.EENUM_LITERAL__E_ENUM:
 							return this.eEnum;
 					}
 					//return this.eGetFromENamedElement(featureID, resolve, coreType);
@@ -101,13 +92,13 @@ import {BasicEObjectImpl} from "./BasicEObjectImpl";
 				
 				public eSet_number_any(featureID:number, newValue:any):void {
 					switch (featureID) {
-						case EcorePackageLiterals.EENUMLITERAL_VALUE:
+						case EcorePackageLiterals.EENUM_LITERAL__VALUE:
 							this.value = <number> newValue;
 							return;
-						case EcorePackageLiterals.EENUMLITERAL_INSTANCE:
+						case EcorePackageLiterals.EENUM_LITERAL__INSTANCE:
 							this.instance = <Enumerator> newValue;
 							return;
-						case EcorePackageLiterals.EENUMLITERAL_LITERAL:
+						case EcorePackageLiterals.EENUM_LITERAL__LITERAL:
 							this.literal = <string> newValue;
 							return;
 					}

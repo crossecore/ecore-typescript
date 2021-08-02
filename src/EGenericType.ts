@@ -1,7 +1,8 @@
-import {OrderedSet} from "./OrderedSet";
-import {EClassifier} from "./EClassifier";
-import {InternalEObject} from "./InternalEObject";
-import {ETypeParameter} from "./ETypeParameter";
+import {OrderedSet} from "ecore/OrderedSet";
+import {EGenericType} from "ecore/EGenericType";
+import {EClassifier} from "ecore/EClassifier";
+import {InternalEObject} from "ecore/InternalEObject";
+import {ETypeParameter} from "ecore/ETypeParameter";
 
 export interface EGenericType
 extends InternalEObject

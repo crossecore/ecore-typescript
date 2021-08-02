@@ -1,18 +1,18 @@
-import {OrderedSet} from "./OrderedSet";
-import {ENotificationImpl} from "./ENotificationImpl";
-import {NotificationImpl} from "./NotificationImpl";
-import {AbstractCollection} from "./AbstractCollection";
-import {EClassifier} from "./EClassifier";
-import {EcorePackageLiterals} from "./EcorePackageLiterals";
-import {BasicEObjectImpl} from "./BasicEObjectImpl";
-import {EClass} from "./EClass";
-import {NotificationChain} from "./NotificationChain";
-import {EParameter} from "./EParameter";
-import {EGenericType} from "./EGenericType";
-import {EOperation} from "./EOperation";
-import {InternalEObject} from "./InternalEObject";
-import {ETypedElementImpl} from "./ETypedElementImpl";
-import {ETypeParameter} from "./ETypeParameter";
+import {OrderedSet} from "ecore/OrderedSet";
+import {ENotificationImpl} from "ecore/ENotificationImpl";
+import {NotificationImpl} from "ecore/NotificationImpl";
+import {AbstractCollection} from "ecore/AbstractCollection";
+import {EClassifier} from "ecore/EClassifier";
+import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
+import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
+import {EClass} from "ecore/EClass";
+import {NotificationChain} from "ecore/NotificationChain";
+import {EParameter} from "ecore/EParameter";
+import {EGenericType} from "ecore/EGenericType";
+import {EOperation} from "ecore/EOperation";
+import {InternalEObject} from "ecore/InternalEObject";
+import {ETypedElementImpl} from "ecore/ETypedElementImpl";
+import {ETypeParameter} from "ecore/ETypeParameter";
 		
 			export class EOperationBase
 			extends ETypedElementImpl
@@ -20,14 +20,14 @@ import {ETypeParameter} from "./ETypeParameter";
 			{
 				get eContainingClass():EClass{
 				
-					if (this.eContainerFeatureID() != EcorePackageLiterals.EOPERATION_ECONTAININGCLASS) return null;
+					if (this.eContainerFeatureID() != EcorePackageLiterals.EOPERATION__E_CONTAINING_CLASS) return null;
 					return this.eInternalContainer() as EClass;
 				}
 				private _eTypeParameters:OrderedSet<ETypeParameter> = null;
 				
 				get eTypeParameters():OrderedSet<ETypeParameter>{
 					if(this._eTypeParameters===null){
-						this._eTypeParameters = new OrderedSet<ETypeParameter>(this, EcorePackageLiterals.EOPERATION_ETYPEPARAMETERS, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.EOPERATION_ETYPEPARAMETERS);
+						this._eTypeParameters = new OrderedSet<ETypeParameter>(this, EcorePackageLiterals.EOPERATION__E_TYPE_PARAMETERS, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.EOPERATION__E_TYPE_PARAMETERS);
 							
 					}
 					return this._eTypeParameters;
@@ -39,7 +39,7 @@ import {ETypeParameter} from "./ETypeParameter";
 				
 				get eParameters():OrderedSet<EParameter>{
 					if(this._eParameters===null){
-						this._eParameters = new OrderedSet<EParameter>(this, EcorePackageLiterals.EOPERATION_EPARAMETERS, EcorePackageLiterals.EPARAMETER_EOPERATION);
+						this._eParameters = new OrderedSet<EParameter>(this, EcorePackageLiterals.EOPERATION__E_PARAMETERS, EcorePackageLiterals.EPARAMETER__E_OPERATION);
 							
 					}
 					return this._eParameters;
@@ -51,7 +51,7 @@ import {ETypeParameter} from "./ETypeParameter";
 				
 				get eExceptions():OrderedSet<EClassifier>{
 					if(this._eExceptions===null){
-						this._eExceptions = new OrderedSet<EClassifier>(this, EcorePackageLiterals.EOPERATION_EEXCEPTIONS, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.EOPERATION_EEXCEPTIONS);
+						this._eExceptions = new OrderedSet<EClassifier>(this, EcorePackageLiterals.EOPERATION__E_EXCEPTIONS, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.EOPERATION__E_EXCEPTIONS);
 							
 					}
 					return this._eExceptions;
@@ -63,7 +63,7 @@ import {ETypeParameter} from "./ETypeParameter";
 				
 				get eGenericExceptions():OrderedSet<EGenericType>{
 					if(this._eGenericExceptions===null){
-						this._eGenericExceptions = new OrderedSet<EGenericType>(this, EcorePackageLiterals.EOPERATION_EGENERICEXCEPTIONS, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.EOPERATION_EGENERICEXCEPTIONS);
+						this._eGenericExceptions = new OrderedSet<EGenericType>(this, EcorePackageLiterals.EOPERATION__E_GENERIC_EXCEPTIONS, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.EOPERATION__E_GENERIC_EXCEPTIONS);
 							
 					}
 					return this._eGenericExceptions;
@@ -92,69 +92,60 @@ import {ETypeParameter} from "./ETypeParameter";
 			
 				public eInverseAdd(otherEnd:InternalEObject, featureID:number, msgs:NotificationChain): NotificationChain{
 					switch (featureID) {
-						case EcorePackageLiterals.EOPERATION_ECONTAININGCLASS:
+						case EcorePackageLiterals.EOPERATION__E_CONTAINING_CLASS:
 							if (this.eInternalContainer() != null) {
 								msgs = this.eBasicRemoveFromContainer(msgs);
 							}
 							return this.basicSetEContainingClass(otherEnd as EClass, msgs);
-						case EcorePackageLiterals.EOPERATION_EPARAMETERS:
+						case EcorePackageLiterals.EOPERATION__E_PARAMETERS:
 							return this.eParameters.basicAdd(otherEnd as EParameter, msgs);
 					}
-					//return this.eInverseAddFromETypedElement(otherEnd, featureID, msgs);
 					return super.eInverseAdd(otherEnd, featureID, msgs);
 				}
-				//public eInverseAddFromEOperation = this.eInverseAdd;
 				
 				public eInverseRemove(otherEnd:InternalEObject, featureID:number, msgs:NotificationChain):NotificationChain{
 					switch (featureID) {
-						case EcorePackageLiterals.EOPERATION_ECONTAININGCLASS:
+						case EcorePackageLiterals.EOPERATION__E_CONTAINING_CLASS:
 							return this.basicSetEContainingClass(null, msgs);
-						case EcorePackageLiterals.EOPERATION_EPARAMETERS:
+						case EcorePackageLiterals.EOPERATION__E_PARAMETERS:
 							return this.eParameters.basicRemove(otherEnd as EParameter, msgs);
 					}
-					//return this.eInverseRemoveFromETypedElement(otherEnd, featureID, msgs);
 					return super.eInverseRemove(otherEnd, featureID, msgs);
 				}
 				
-				//public eInverseRemoveFromEOperation = this.eInverseRemove;
 			
-				public basicSetEContainingClass(newobj:EClass, msgs:NotificationChain):NotificationChain {
-						msgs = this.eBasicSetContainer(newobj, EcorePackageLiterals.EOPERATION_ECONTAININGCLASS, msgs);
-						return msgs;
-				}
-				
 			
 				public eGet_number_boolean_boolean(featureID:number, resolve:boolean, coreType:boolean):any{
 					switch (featureID) {
-						case EcorePackageLiterals.EOPERATION_EANNOTATIONS:
+						case EcorePackageLiterals.EOPERATION__E_ANNOTATIONS:
 							return this.eAnnotations;
-						case EcorePackageLiterals.EOPERATION_NAME:
+						case EcorePackageLiterals.EOPERATION__NAME:
 							return this.name;
-						case EcorePackageLiterals.EOPERATION_ORDERED:
+						case EcorePackageLiterals.EOPERATION__ORDERED:
 							return this.ordered;
-						case EcorePackageLiterals.EOPERATION_UNIQUE:
+						case EcorePackageLiterals.EOPERATION__UNIQUE:
 							return this.unique;
-						case EcorePackageLiterals.EOPERATION_LOWERBOUND:
+						case EcorePackageLiterals.EOPERATION__LOWER_BOUND:
 							return this.lowerBound;
-						case EcorePackageLiterals.EOPERATION_UPPERBOUND:
+						case EcorePackageLiterals.EOPERATION__UPPER_BOUND:
 							return this.upperBound;
-						case EcorePackageLiterals.EOPERATION_MANY:
+						case EcorePackageLiterals.EOPERATION__MANY:
 							return this.many;
-						case EcorePackageLiterals.EOPERATION_REQUIRED:
+						case EcorePackageLiterals.EOPERATION__REQUIRED:
 							return this.required;
-						case EcorePackageLiterals.EOPERATION_ETYPE:
+						case EcorePackageLiterals.EOPERATION__E_TYPE:
 							return this.eType;
-						case EcorePackageLiterals.EOPERATION_EGENERICTYPE:
+						case EcorePackageLiterals.EOPERATION__E_GENERIC_TYPE:
 							return this.eGenericType;
-						case EcorePackageLiterals.EOPERATION_ECONTAININGCLASS:
+						case EcorePackageLiterals.EOPERATION__E_CONTAINING_CLASS:
 							return this.eContainingClass;
-						case EcorePackageLiterals.EOPERATION_ETYPEPARAMETERS:
+						case EcorePackageLiterals.EOPERATION__E_TYPE_PARAMETERS:
 							return this.eTypeParameters;
-						case EcorePackageLiterals.EOPERATION_EPARAMETERS:
+						case EcorePackageLiterals.EOPERATION__E_PARAMETERS:
 							return this.eParameters;
-						case EcorePackageLiterals.EOPERATION_EEXCEPTIONS:
+						case EcorePackageLiterals.EOPERATION__E_EXCEPTIONS:
 							return this.eExceptions;
-						case EcorePackageLiterals.EOPERATION_EGENERICEXCEPTIONS:
+						case EcorePackageLiterals.EOPERATION__E_GENERIC_EXCEPTIONS:
 							return this.eGenericExceptions;
 					}
 					//return this.eGetFromETypedElement(featureID, resolve, coreType);
@@ -163,19 +154,19 @@ import {ETypeParameter} from "./ETypeParameter";
 				
 				public eSet_number_any(featureID:number, newValue:any):void {
 					switch (featureID) {
-						case EcorePackageLiterals.EOPERATION_ETYPEPARAMETERS:
+						case EcorePackageLiterals.EOPERATION__E_TYPE_PARAMETERS:
 							this.eTypeParameters.clear();
 							this.eTypeParameters.addAll(newValue);
 							return;
-						case EcorePackageLiterals.EOPERATION_EPARAMETERS:
+						case EcorePackageLiterals.EOPERATION__E_PARAMETERS:
 							this.eParameters.clear();
 							this.eParameters.addAll(newValue);
 							return;
-						case EcorePackageLiterals.EOPERATION_EEXCEPTIONS:
+						case EcorePackageLiterals.EOPERATION__E_EXCEPTIONS:
 							this.eExceptions.clear();
 							this.eExceptions.addAll(newValue);
 							return;
-						case EcorePackageLiterals.EOPERATION_EGENERICEXCEPTIONS:
+						case EcorePackageLiterals.EOPERATION__E_GENERIC_EXCEPTIONS:
 							this.eGenericExceptions.clear();
 							this.eGenericExceptions.addAll(newValue);
 							return;

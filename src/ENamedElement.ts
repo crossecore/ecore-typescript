@@ -1,5 +1,5 @@
-import {OrderedSet} from "./OrderedSet";
-import {EModelElement} from "./EModelElement";
+import {OrderedSet} from "ecore/OrderedSet";
+import {EModelElement} from "ecore/EModelElement";
 
 export interface ENamedElement
 extends EModelElement

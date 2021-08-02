@@ -1,13 +1,13 @@
-import {OrderedSet} from "./OrderedSet";
-import {EClass} from "./EClass";
-import {NotificationChain} from "./NotificationChain";
-import {ENotificationImpl} from "./ENotificationImpl";
-import {NotificationImpl} from "./NotificationImpl";
-import {ENamedElement} from "./ENamedElement";
-import {EModelElementImpl} from "./EModelElementImpl";
-import {EcorePackageLiterals} from "./EcorePackageLiterals";
-import {InternalEObject} from "./InternalEObject";
-import {BasicEObjectImpl} from "./BasicEObjectImpl";
+import {OrderedSet} from "ecore/OrderedSet";
+import {EClass} from "ecore/EClass";
+import {NotificationChain} from "ecore/NotificationChain";
+import {ENotificationImpl} from "ecore/ENotificationImpl";
+import {NotificationImpl} from "ecore/NotificationImpl";
+import {ENamedElement} from "ecore/ENamedElement";
+import {EModelElementImpl} from "ecore/EModelElementImpl";
+import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
+import {InternalEObject} from "ecore/InternalEObject";
+import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
 		
 			export class ENamedElementBase
 			extends EModelElementImpl
@@ -33,9 +33,9 @@ import {BasicEObjectImpl} from "./BasicEObjectImpl";
 			
 				public eGet_number_boolean_boolean(featureID:number, resolve:boolean, coreType:boolean):any{
 					switch (featureID) {
-						case EcorePackageLiterals.ENAMEDELEMENT_EANNOTATIONS:
+						case EcorePackageLiterals.ENAMED_ELEMENT__E_ANNOTATIONS:
 							return this.eAnnotations;
-						case EcorePackageLiterals.ENAMEDELEMENT_NAME:
+						case EcorePackageLiterals.ENAMED_ELEMENT__NAME:
 							return this.name;
 					}
 					//return this.eGetFromEModelElement(featureID, resolve, coreType);
@@ -44,7 +44,7 @@ import {BasicEObjectImpl} from "./BasicEObjectImpl";
 				
 				public eSet_number_any(featureID:number, newValue:any):void {
 					switch (featureID) {
-						case EcorePackageLiterals.ENAMEDELEMENT_NAME:
+						case EcorePackageLiterals.ENAMED_ELEMENT__NAME:
 							this.name = <string> newValue;
 							return;
 					}

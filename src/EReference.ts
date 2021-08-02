@@ -1,7 +1,8 @@
-import {OrderedSet} from "./OrderedSet";
-import {EClass} from "./EClass";
-import {EAttribute} from "./EAttribute";
-import {EStructuralFeature} from "./EStructuralFeature";
+import {OrderedSet} from "ecore/OrderedSet";
+import {EClass} from "ecore/EClass";
+import {EAttribute} from "ecore/EAttribute";
+import {EStructuralFeature} from "ecore/EStructuralFeature";
+import {EReference} from "ecore/EReference";
 
 export interface EReference
 extends EStructuralFeature

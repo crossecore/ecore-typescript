@@ -1,6 +1,6 @@
-import {ETypedElement} from "./ETypedElement";
-import {OrderedSet} from "./OrderedSet";
-import {EClass} from "./EClass";
+import {ETypedElement} from "ecore/ETypedElement";
+import {OrderedSet} from "ecore/OrderedSet";
+import {EClass} from "ecore/EClass";
 
 export interface EStructuralFeature
 extends ETypedElement

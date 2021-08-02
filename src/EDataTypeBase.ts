@@ -1,13 +1,13 @@
-import {OrderedSet} from "./OrderedSet";
-import {EClass} from "./EClass";
-import {NotificationChain} from "./NotificationChain";
-import {ENotificationImpl} from "./ENotificationImpl";
-import {NotificationImpl} from "./NotificationImpl";
-import {EDataType} from "./EDataType";
-import {EcorePackageLiterals} from "./EcorePackageLiterals";
-import {EClassifierImpl} from "./EClassifierImpl";
-import {InternalEObject} from "./InternalEObject";
-import {BasicEObjectImpl} from "./BasicEObjectImpl";
+import {OrderedSet} from "ecore/OrderedSet";
+import {EClass} from "ecore/EClass";
+import {NotificationChain} from "ecore/NotificationChain";
+import {ENotificationImpl} from "ecore/ENotificationImpl";
+import {NotificationImpl} from "ecore/NotificationImpl";
+import {EDataType} from "ecore/EDataType";
+import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
+import {EClassifierImpl} from "ecore/EClassifierImpl";
+import {InternalEObject} from "ecore/InternalEObject";
+import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
 		
 			export class EDataTypeBase
 			extends EClassifierImpl
@@ -33,23 +33,23 @@ import {BasicEObjectImpl} from "./BasicEObjectImpl";
 			
 				public eGet_number_boolean_boolean(featureID:number, resolve:boolean, coreType:boolean):any{
 					switch (featureID) {
-						case EcorePackageLiterals.EDATATYPE_EANNOTATIONS:
+						case EcorePackageLiterals.EDATA_TYPE__E_ANNOTATIONS:
 							return this.eAnnotations;
-						case EcorePackageLiterals.EDATATYPE_NAME:
+						case EcorePackageLiterals.EDATA_TYPE__NAME:
 							return this.name;
-						case EcorePackageLiterals.EDATATYPE_INSTANCECLASSNAME:
+						case EcorePackageLiterals.EDATA_TYPE__INSTANCE_CLASS_NAME:
 							return this.instanceClassName;
-						case EcorePackageLiterals.EDATATYPE_INSTANCECLASS:
+						case EcorePackageLiterals.EDATA_TYPE__INSTANCE_CLASS:
 							return this.instanceClass;
-						case EcorePackageLiterals.EDATATYPE_DEFAULTVALUE:
+						case EcorePackageLiterals.EDATA_TYPE__DEFAULT_VALUE:
 							return this.defaultValue;
-						case EcorePackageLiterals.EDATATYPE_INSTANCETYPENAME:
+						case EcorePackageLiterals.EDATA_TYPE__INSTANCE_TYPE_NAME:
 							return this.instanceTypeName;
-						case EcorePackageLiterals.EDATATYPE_EPACKAGE:
+						case EcorePackageLiterals.EDATA_TYPE__E_PACKAGE:
 							return this.ePackage;
-						case EcorePackageLiterals.EDATATYPE_ETYPEPARAMETERS:
+						case EcorePackageLiterals.EDATA_TYPE__E_TYPE_PARAMETERS:
 							return this.eTypeParameters;
-						case EcorePackageLiterals.EDATATYPE_SERIALIZABLE:
+						case EcorePackageLiterals.EDATA_TYPE__SERIALIZABLE:
 							return this.serializable;
 					}
 					//return this.eGetFromEClassifier(featureID, resolve, coreType);
@@ -58,7 +58,7 @@ import {BasicEObjectImpl} from "./BasicEObjectImpl";
 				
 				public eSet_number_any(featureID:number, newValue:any):void {
 					switch (featureID) {
-						case EcorePackageLiterals.EDATATYPE_SERIALIZABLE:
+						case EcorePackageLiterals.EDATA_TYPE__SERIALIZABLE:
 							this.serializable = <boolean> newValue;
 							return;
 					}

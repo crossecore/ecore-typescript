@@ -1,14 +1,15 @@
-import {EClass} from "./EClass";
-import {EList} from "./EList";
-import {EStructuralFeature} from "./EStructuralFeature";
-import {Resource} from "./Resource";
-import {EOperation} from "./EOperation";
-import {TreeIterator} from "./TreeIterator";
-import {EReference} from "./EReference";
-import {Notifier} from "./Notifier";
+import {EClass} from "ecore/EClass";
+import {EList} from "ecore/EList";
+import {EObject} from "ecore/EObject";
+import {EStructuralFeature} from "ecore/EStructuralFeature";
+import {Resource} from "ecore/Resource";
+import {EOperation} from "ecore/EOperation";
+import {TreeIterator} from "ecore/TreeIterator";
+import {InternalEObject} from "ecore/InternalEObject";
+import {EReference} from "ecore/EReference";
 
 export interface EObject
-extends Notifier
+extends InternalEObject
 
 {
 	
@@ -40,7 +41,7 @@ extends Notifier
 	eGet(...args:Array<any>):any;
 	
 	eGet_EStructuralFeature(feature:EStructuralFeature): any ;
-	eGet_EStructuralFeature_boolean(feature:EStructuralFeature, resolve:boolean): any ;
+	eGet_EStructuralFeature_EBoolean(feature:EStructuralFeature, resolve:boolean): any ;
 	
 	eUnset(feature:EStructuralFeature): void ;
 

@@ -1,6 +1,6 @@
-import {OrderedSet} from "./OrderedSet";
-import {EAnnotation} from "./EAnnotation";
-import {InternalEObject} from "./InternalEObject";
+import {OrderedSet} from "ecore/OrderedSet";
+import {EAnnotation} from "ecore/EAnnotation";
+import {InternalEObject} from "ecore/InternalEObject";
 
 export interface EModelElement
 extends InternalEObject

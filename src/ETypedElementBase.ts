@@ -1,15 +1,15 @@
-import {ETypedElement} from "./ETypedElement";
-import {OrderedSet} from "./OrderedSet";
-import {EClass} from "./EClass";
-import {NotificationChain} from "./NotificationChain";
-import {ENotificationImpl} from "./ENotificationImpl";
-import {NotificationImpl} from "./NotificationImpl";
-import {EClassifier} from "./EClassifier";
-import {EGenericType} from "./EGenericType";
-import {ENamedElementImpl} from "./ENamedElementImpl";
-import {EcorePackageLiterals} from "./EcorePackageLiterals";
-import {InternalEObject} from "./InternalEObject";
-import {BasicEObjectImpl} from "./BasicEObjectImpl";
+import {ETypedElement} from "ecore/ETypedElement";
+import {OrderedSet} from "ecore/OrderedSet";
+import {EClass} from "ecore/EClass";
+import {NotificationChain} from "ecore/NotificationChain";
+import {ENotificationImpl} from "ecore/ENotificationImpl";
+import {NotificationImpl} from "ecore/NotificationImpl";
+import {EClassifier} from "ecore/EClassifier";
+import {EGenericType} from "ecore/EGenericType";
+import {ENamedElementImpl} from "ecore/ENamedElementImpl";
+import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
+import {InternalEObject} from "ecore/InternalEObject";
+import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
 		
 			export class ETypedElementBase
 			extends ENamedElementImpl
@@ -60,7 +60,7 @@ import {BasicEObjectImpl} from "./BasicEObjectImpl";
 					let oldvalue = this._eType;
 					this._eType = value;
 					if (this.eNotificationRequired()){
-						this.eNotify(new ENotificationImpl(this, NotificationImpl.SET,EcorePackageLiterals.ETYPEDELEMENT_ETYPE , oldvalue, value));
+						this.eNotify(new ENotificationImpl(this, NotificationImpl.SET,EcorePackageLiterals.ETYPED_ELEMENT__E_TYPE , oldvalue, value));
 					}
 				}
 				private _eGenericType:EGenericType = null;
@@ -69,13 +69,13 @@ import {BasicEObjectImpl} from "./BasicEObjectImpl";
 					return this._eGenericType;
 				}
 				set eGenericType(value:EGenericType) {
-					if (value != this._eGenericType) {
+					if (value != this.eGenericType) {
 						let msgs:NotificationChain = null;
-						if (this._eGenericType != null){
-							msgs = (this._eGenericType).eInverseRemove(this, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.ETYPEDELEMENT_EGENERICTYPE, /*null*/ null , msgs);
+						if (this.eGenericType != null){
+							msgs = (this.eGenericType).eInverseRemove(this, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.ETYPED_ELEMENT__E_GENERIC_TYPE, /*null*/ null , msgs);
 						}
 						if (value != null){
-							msgs = value.eInverseAdd(this, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.ETYPEDELEMENT_EGENERICTYPE, /*null*/ null, msgs);
+							msgs = value.eInverseAdd(this, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.ETYPED_ELEMENT__E_GENERIC_TYPE, /*null*/ null, msgs);
 						}
 						msgs = this.basicSetEGenericType(value, msgs);
 						if (msgs != null) {
@@ -83,7 +83,7 @@ import {BasicEObjectImpl} from "./BasicEObjectImpl";
 						}
 					}
 					else if (this.eNotificationRequired()){
-						this.eNotify(new ENotificationImpl(this, NotificationImpl.SET,EcorePackageLiterals.ETYPEDELEMENT_EGENERICTYPE , value, value));
+						this.eNotify(new ENotificationImpl(this, NotificationImpl.SET,EcorePackageLiterals.ETYPED_ELEMENT__E_GENERIC_TYPE , value, value));
 					}
 				}
 
@@ -97,10 +97,10 @@ import {BasicEObjectImpl} from "./BasicEObjectImpl";
 			
 			
 				public basicSetEGenericType(newobj:EGenericType, msgs:NotificationChain):NotificationChain {
-					let oldobj = this._eGenericType;
+					const oldobj = this._eGenericType;
 					this._eGenericType = newobj;
 					if (this.eNotificationRequired()) {
-						let notification = new ENotificationImpl(this, NotificationImpl.SET, EcorePackageLiterals.ETYPEDELEMENT_EGENERICTYPE, oldobj, newobj);
+						let notification = new ENotificationImpl(this, NotificationImpl.SET, EcorePackageLiterals.ETYPED_ELEMENT__E_GENERIC_TYPE, oldobj, newobj);
 						if (msgs == null){
 							msgs = notification;
 						}
@@ -111,10 +111,10 @@ import {BasicEObjectImpl} from "./BasicEObjectImpl";
 					return msgs;
 				}
 				public basicSetEType(newobj:EClassifier, msgs:NotificationChain):NotificationChain {
-					let oldobj = this._eType;
+					const oldobj = this._eType;
 					this._eType = newobj;
 					if (this.eNotificationRequired()) {
-						let notification = new ENotificationImpl(this, NotificationImpl.SET, EcorePackageLiterals.ETYPEDELEMENT_ETYPE, oldobj, newobj);
+						let notification = new ENotificationImpl(this, NotificationImpl.SET, EcorePackageLiterals.ETYPED_ELEMENT__E_TYPE, oldobj, newobj);
 						if (msgs == null){
 							msgs = notification;
 						}
@@ -128,25 +128,25 @@ import {BasicEObjectImpl} from "./BasicEObjectImpl";
 			
 				public eGet_number_boolean_boolean(featureID:number, resolve:boolean, coreType:boolean):any{
 					switch (featureID) {
-						case EcorePackageLiterals.ETYPEDELEMENT_EANNOTATIONS:
+						case EcorePackageLiterals.ETYPED_ELEMENT__E_ANNOTATIONS:
 							return this.eAnnotations;
-						case EcorePackageLiterals.ETYPEDELEMENT_NAME:
+						case EcorePackageLiterals.ETYPED_ELEMENT__NAME:
 							return this.name;
-						case EcorePackageLiterals.ETYPEDELEMENT_ORDERED:
+						case EcorePackageLiterals.ETYPED_ELEMENT__ORDERED:
 							return this.ordered;
-						case EcorePackageLiterals.ETYPEDELEMENT_UNIQUE:
+						case EcorePackageLiterals.ETYPED_ELEMENT__UNIQUE:
 							return this.unique;
-						case EcorePackageLiterals.ETYPEDELEMENT_LOWERBOUND:
+						case EcorePackageLiterals.ETYPED_ELEMENT__LOWER_BOUND:
 							return this.lowerBound;
-						case EcorePackageLiterals.ETYPEDELEMENT_UPPERBOUND:
+						case EcorePackageLiterals.ETYPED_ELEMENT__UPPER_BOUND:
 							return this.upperBound;
-						case EcorePackageLiterals.ETYPEDELEMENT_MANY:
+						case EcorePackageLiterals.ETYPED_ELEMENT__MANY:
 							return this.many;
-						case EcorePackageLiterals.ETYPEDELEMENT_REQUIRED:
+						case EcorePackageLiterals.ETYPED_ELEMENT__REQUIRED:
 							return this.required;
-						case EcorePackageLiterals.ETYPEDELEMENT_ETYPE:
+						case EcorePackageLiterals.ETYPED_ELEMENT__E_TYPE:
 							return this.eType;
-						case EcorePackageLiterals.ETYPEDELEMENT_EGENERICTYPE:
+						case EcorePackageLiterals.ETYPED_ELEMENT__E_GENERIC_TYPE:
 							return this.eGenericType;
 					}
 					//return this.eGetFromENamedElement(featureID, resolve, coreType);
@@ -155,22 +155,22 @@ import {BasicEObjectImpl} from "./BasicEObjectImpl";
 				
 				public eSet_number_any(featureID:number, newValue:any):void {
 					switch (featureID) {
-						case EcorePackageLiterals.ETYPEDELEMENT_ORDERED:
+						case EcorePackageLiterals.ETYPED_ELEMENT__ORDERED:
 							this.ordered = <boolean> newValue;
 							return;
-						case EcorePackageLiterals.ETYPEDELEMENT_UNIQUE:
+						case EcorePackageLiterals.ETYPED_ELEMENT__UNIQUE:
 							this.unique = <boolean> newValue;
 							return;
-						case EcorePackageLiterals.ETYPEDELEMENT_LOWERBOUND:
+						case EcorePackageLiterals.ETYPED_ELEMENT__LOWER_BOUND:
 							this.lowerBound = <number> newValue;
 							return;
-						case EcorePackageLiterals.ETYPEDELEMENT_UPPERBOUND:
+						case EcorePackageLiterals.ETYPED_ELEMENT__UPPER_BOUND:
 							this.upperBound = <number> newValue;
 							return;
-						case EcorePackageLiterals.ETYPEDELEMENT_ETYPE:
+						case EcorePackageLiterals.ETYPED_ELEMENT__E_TYPE:
 							this.eType = <EClassifier> newValue;
 							return;
-						case EcorePackageLiterals.ETYPEDELEMENT_EGENERICTYPE:
+						case EcorePackageLiterals.ETYPED_ELEMENT__E_GENERIC_TYPE:
 							this.eGenericType = <EGenericType> newValue;
 							return;
 					}

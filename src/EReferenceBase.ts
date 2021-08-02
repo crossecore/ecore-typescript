@@ -1,15 +1,15 @@
-import {OrderedSet} from "./OrderedSet";
-import {EClass} from "./EClass";
-import {EAttribute} from "./EAttribute";
-import {NotificationChain} from "./NotificationChain";
-import {ENotificationImpl} from "./ENotificationImpl";
-import {NotificationImpl} from "./NotificationImpl";
-import {EStructuralFeatureImpl} from "./EStructuralFeatureImpl";
-import {AbstractCollection} from "./AbstractCollection";
-import {EcorePackageLiterals} from "./EcorePackageLiterals";
-import {InternalEObject} from "./InternalEObject";
-import {BasicEObjectImpl} from "./BasicEObjectImpl";
-import {EReference} from "./EReference";
+import {OrderedSet} from "ecore/OrderedSet";
+import {EClass} from "ecore/EClass";
+import {EAttribute} from "ecore/EAttribute";
+import {NotificationChain} from "ecore/NotificationChain";
+import {ENotificationImpl} from "ecore/ENotificationImpl";
+import {NotificationImpl} from "ecore/NotificationImpl";
+import {EStructuralFeatureImpl} from "ecore/EStructuralFeatureImpl";
+import {AbstractCollection} from "ecore/AbstractCollection";
+import {EcorePackageLiterals} from "ecore/EcorePackageLiterals";
+import {InternalEObject} from "ecore/InternalEObject";
+import {BasicEObjectImpl} from "ecore/BasicEObjectImpl";
+import {EReference} from "ecore/EReference";
 		
 			export class EReferenceBase
 			extends EStructuralFeatureImpl
@@ -42,7 +42,7 @@ import {EReference} from "./EReference";
 					let oldvalue = this._eOpposite;
 					this._eOpposite = value;
 					if (this.eNotificationRequired()){
-						this.eNotify(new ENotificationImpl(this, NotificationImpl.SET,EcorePackageLiterals.EREFERENCE_EOPPOSITE , oldvalue, value));
+						this.eNotify(new ENotificationImpl(this, NotificationImpl.SET,EcorePackageLiterals.EREFERENCE__E_OPPOSITE , oldvalue, value));
 					}
 				}
 				get eReferenceType():EClass{
@@ -54,7 +54,7 @@ import {EReference} from "./EReference";
 				
 				get eKeys():OrderedSet<EAttribute>{
 					if(this._eKeys===null){
-						this._eKeys = new OrderedSet<EAttribute>(this, EcorePackageLiterals.EREFERENCE_EKEYS, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.EREFERENCE_EKEYS);
+						this._eKeys = new OrderedSet<EAttribute>(this, EcorePackageLiterals.EREFERENCE__E_KEYS, BasicEObjectImpl.EOPPOSITE_FEATURE_BASE - EcorePackageLiterals.EREFERENCE__E_KEYS);
 							
 					}
 					return this._eKeys;
@@ -73,10 +73,10 @@ import {EReference} from "./EReference";
 			
 			
 				public basicSetEOpposite(newobj:EReference, msgs:NotificationChain):NotificationChain {
-					let oldobj = this._eOpposite;
+					const oldobj = this._eOpposite;
 					this._eOpposite = newobj;
 					if (this.eNotificationRequired()) {
-						let notification = new ENotificationImpl(this, NotificationImpl.SET, EcorePackageLiterals.EREFERENCE_EOPPOSITE, oldobj, newobj);
+						let notification = new ENotificationImpl(this, NotificationImpl.SET, EcorePackageLiterals.EREFERENCE__E_OPPOSITE, oldobj, newobj);
 						if (msgs == null){
 							msgs = notification;
 						}
@@ -90,53 +90,53 @@ import {EReference} from "./EReference";
 			
 				public eGet_number_boolean_boolean(featureID:number, resolve:boolean, coreType:boolean):any{
 					switch (featureID) {
-						case EcorePackageLiterals.EREFERENCE_EANNOTATIONS:
+						case EcorePackageLiterals.EREFERENCE__E_ANNOTATIONS:
 							return this.eAnnotations;
-						case EcorePackageLiterals.EREFERENCE_NAME:
+						case EcorePackageLiterals.EREFERENCE__NAME:
 							return this.name;
-						case EcorePackageLiterals.EREFERENCE_ORDERED:
+						case EcorePackageLiterals.EREFERENCE__ORDERED:
 							return this.ordered;
-						case EcorePackageLiterals.EREFERENCE_UNIQUE:
+						case EcorePackageLiterals.EREFERENCE__UNIQUE:
 							return this.unique;
-						case EcorePackageLiterals.EREFERENCE_LOWERBOUND:
+						case EcorePackageLiterals.EREFERENCE__LOWER_BOUND:
 							return this.lowerBound;
-						case EcorePackageLiterals.EREFERENCE_UPPERBOUND:
+						case EcorePackageLiterals.EREFERENCE__UPPER_BOUND:
 							return this.upperBound;
-						case EcorePackageLiterals.EREFERENCE_MANY:
+						case EcorePackageLiterals.EREFERENCE__MANY:
 							return this.many;
-						case EcorePackageLiterals.EREFERENCE_REQUIRED:
+						case EcorePackageLiterals.EREFERENCE__REQUIRED:
 							return this.required;
-						case EcorePackageLiterals.EREFERENCE_ETYPE:
+						case EcorePackageLiterals.EREFERENCE__E_TYPE:
 							return this.eType;
-						case EcorePackageLiterals.EREFERENCE_EGENERICTYPE:
+						case EcorePackageLiterals.EREFERENCE__E_GENERIC_TYPE:
 							return this.eGenericType;
-						case EcorePackageLiterals.EREFERENCE_CHANGEABLE:
+						case EcorePackageLiterals.EREFERENCE__CHANGEABLE:
 							return this.changeable;
-						case EcorePackageLiterals.EREFERENCE_VOLATILE:
+						case EcorePackageLiterals.EREFERENCE__VOLATILE:
 							return this.volatile;
-						case EcorePackageLiterals.EREFERENCE_TRANSIENT:
+						case EcorePackageLiterals.EREFERENCE__TRANSIENT:
 							return this.transient;
-						case EcorePackageLiterals.EREFERENCE_DEFAULTVALUELITERAL:
+						case EcorePackageLiterals.EREFERENCE__DEFAULT_VALUE_LITERAL:
 							return this.defaultValueLiteral;
-						case EcorePackageLiterals.EREFERENCE_DEFAULTVALUE:
+						case EcorePackageLiterals.EREFERENCE__DEFAULT_VALUE:
 							return this.defaultValue;
-						case EcorePackageLiterals.EREFERENCE_UNSETTABLE:
+						case EcorePackageLiterals.EREFERENCE__UNSETTABLE:
 							return this.unsettable;
-						case EcorePackageLiterals.EREFERENCE_DERIVED:
+						case EcorePackageLiterals.EREFERENCE__DERIVED:
 							return this.derived;
-						case EcorePackageLiterals.EREFERENCE_ECONTAININGCLASS:
+						case EcorePackageLiterals.EREFERENCE__E_CONTAINING_CLASS:
 							return this.eContainingClass;
-						case EcorePackageLiterals.EREFERENCE_CONTAINMENT:
+						case EcorePackageLiterals.EREFERENCE__CONTAINMENT:
 							return this.containment;
-						case EcorePackageLiterals.EREFERENCE_CONTAINER:
+						case EcorePackageLiterals.EREFERENCE__CONTAINER:
 							return this.container;
-						case EcorePackageLiterals.EREFERENCE_RESOLVEPROXIES:
+						case EcorePackageLiterals.EREFERENCE__RESOLVE_PROXIES:
 							return this.resolveProxies;
-						case EcorePackageLiterals.EREFERENCE_EOPPOSITE:
+						case EcorePackageLiterals.EREFERENCE__E_OPPOSITE:
 							return this.eOpposite;
-						case EcorePackageLiterals.EREFERENCE_EREFERENCETYPE:
+						case EcorePackageLiterals.EREFERENCE__E_REFERENCE_TYPE:
 							return this.eReferenceType;
-						case EcorePackageLiterals.EREFERENCE_EKEYS:
+						case EcorePackageLiterals.EREFERENCE__E_KEYS:
 							return this.eKeys;
 					}
 					//return this.eGetFromEStructuralFeature(featureID, resolve, coreType);
@@ -145,16 +145,16 @@ import {EReference} from "./EReference";
 				
 				public eSet_number_any(featureID:number, newValue:any):void {
 					switch (featureID) {
-						case EcorePackageLiterals.EREFERENCE_CONTAINMENT:
+						case EcorePackageLiterals.EREFERENCE__CONTAINMENT:
 							this.containment = <boolean> newValue;
 							return;
-						case EcorePackageLiterals.EREFERENCE_RESOLVEPROXIES:
+						case EcorePackageLiterals.EREFERENCE__RESOLVE_PROXIES:
 							this.resolveProxies = <boolean> newValue;
 							return;
-						case EcorePackageLiterals.EREFERENCE_EOPPOSITE:
+						case EcorePackageLiterals.EREFERENCE__E_OPPOSITE:
 							this.eOpposite = <EReference> newValue;
 							return;
-						case EcorePackageLiterals.EREFERENCE_EKEYS:
+						case EcorePackageLiterals.EREFERENCE__E_KEYS:
 							this.eKeys.clear();
 							this.eKeys.addAll(newValue);
 							return;
